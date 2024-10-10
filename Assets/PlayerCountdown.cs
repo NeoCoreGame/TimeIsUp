@@ -1,0 +1,54 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using Unity.Netcode;
+using Unity.VisualScripting;
+using UnityEngine;
+
+public class PlayerCountdown : NetworkBehaviour
+{
+
+    public NetworkVariable<float> avaliableTime = new NetworkVariable<float>();
+    public TextMeshProUGUI timerText;
+
+    private AddedTimeUI _addedTimeUI;
+
+    private void Update()
+    {
+        if (IsOwner)
+        {
+            ShowTime(avaliableTime.Value);
+        }
+    }
+
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+
+        timerText = GameObject.FindGameObjectWithTag("PlayerCountdown").GetComponent<TextMeshProUGUI>();
+        _addedTimeUI = FindObjectOfType<AddedTimeUI>();
+
+    }
+
+    public string ShowTime(float timerCount)
+    {
+        //Calculo minutos, segundos y milisegundos de vuelta
+        int minutes = (int)(timerCount / 60f);
+        int seconds = (int)(timerCount - 60f * minutes);
+        int cents = (int)((timerCount - minutes * 60f - seconds) * 100f);
+
+        return timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, cents);
+    }
+
+    public void TimeVariation(float timeVariation)
+    {
+        _addedTimeUI.LaunchText(timeVariation);
+        TimeVariationServerRpc(timeVariation);
+    }
+
+    [ServerRpc]
+    private void TimeVariationServerRpc(float timeVariation)
+    {
+        avaliableTime.Value += timeVariation;
+    }
+}

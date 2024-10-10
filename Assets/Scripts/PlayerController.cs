@@ -5,45 +5,80 @@ using UnityEngine.InputSystem;
 using Unity.Netcode;
 using TMPro;
 using static Unity.Burst.Intrinsics.X86;
+using Unity.Collections;
+using UnityEngine.SceneManagement;
 
-public class PlayerController : NetworkBehaviour
+public class PlayerController : NetworkBehaviour, IShootable
 {
-    CharacterController _cController;
+    //PRIVATE
+    private CharacterController _cController;
 
-    Vector3 _movement;
-    Vector2 recievedInput;
-    Transform _playerTransform;
+    private Vector3 _movement;
+    private Vector3 _gravMovement;
+    private Vector2 recievedInput;
 
-    float _speed = 10f;
+    private PlayerCountdown _playerCountdown;
+    private HealthController _healthController;
 
+    //PUBLIC
+    [Header("Movement Parameters")]
+    public float gravity;
+
+    public float _speed;
+    public float _fallingSpeed;
+
+    [Header("PlayerUI")]
     public TextMeshPro _playerNumber;
 
+    [Header("Ground Check Parameters")]
+    public bool isGrounded;
+    public Transform groundCheck;
+    public float groundDistance;
+    public LayerMask groundMask;
 
-    
 
-    // Start is called before the first frame update
-    void Start()
+
+    public override void OnNetworkSpawn()
     {
-        _playerTransform = transform;
-        _cController = GetComponent<CharacterController>();
+        base.OnNetworkSpawn();
 
-        if(IsOwner) { GetComponent<PlayerInput>().enabled = true; }
+        _cController = GetComponent<CharacterController>();
+        _playerCountdown = GetComponent<PlayerCountdown>();
+        _healthController = GetComponent<HealthController>();
+
+        if (IsOwner)
+        {
+            GetComponent<PlayerInput>().enabled = true;
+        }
+
+        _gravMovement = new Vector3(0f,gravity,0f); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space)) { TakeDamage(10); }
     }
+
 
     private void FixedUpdate()
     {
         if (IsServer)
         {
+
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
             _movement = transform.right * recievedInput.x + transform.forward * recievedInput.y;
-            _cController.Move(_movement * _speed * Time.deltaTime); 
+            _cController.Move(_movement * _speed * Time.deltaTime);
+
+            if (!isGrounded)
+            {
+                _cController.Move(_gravMovement * _fallingSpeed * Time.deltaTime);
+            }
         }
     }
+
+
 
     #region Input
     public void OnMove(InputAction.CallbackContext context)
@@ -59,4 +94,36 @@ public class PlayerController : NetworkBehaviour
     }
     #endregion
 
+    public override void OnDestroy()
+    {
+        //Limpio al jugador
+        ServerGameManager.Instance.GetCoundownManager().contadores.Remove(_playerCountdown);
+
+
+        //Funcion base
+        base.OnDestroy();
+    }
+    public void TakeDamage(int dmg)
+    {
+
+        OnTakeDamageServerRpc(dmg);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void OnTakeDamageServerRpc(int dmgTaken)
+    {
+        _healthController.HP.Value -= dmgTaken;
+
+
+    }
+
+    public int GetHealth()
+    {
+        return _healthController.HP.Value;
+    }
+
+    public float GetTimeReward()
+    {
+        return 100f;
+    }
 }

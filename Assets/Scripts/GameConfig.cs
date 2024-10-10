@@ -11,9 +11,4 @@ public class GameConfig : MonoBehaviour
         QualitySettings.vSyncCount = 1;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -16,17 +16,24 @@ public class MouseLook : NetworkBehaviour
     public float mouseX;
     public float mouseY;
 
-    // Start is called before the first frame update
-    void Start()
+
+    public override void OnNetworkSpawn()
     {
+        base.OnNetworkSpawn();
+
+        if (IsServer)
+        {
+            head = transform;
+            player = transform.parent.transform.parent.transform; 
+        }
+
         if (IsOwner)
         {
             Camera.main.transform.parent = transform;
             Camera.main.transform.localPosition = new Vector3(0f, 0.6f, 0.5f);
 
+
             Cursor.lockState = CursorLockMode.Locked;
-            head = transform;
-            player = transform.parent.transform.parent.transform;
         }
     }
     
@@ -38,7 +45,7 @@ public class MouseLook : NetworkBehaviour
         {
             player.Rotate(Vector3.up * mouseX);
             transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-
+            //head.Rotate(Vector3.right * xRotation);
 
 
         }
@@ -57,9 +64,7 @@ public class MouseLook : NetworkBehaviour
         mouseY = input.y * mouseSensitivity;
 
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
-        Debug.Log("Intentando mirar " + mouseX + " , " + mouseY + " , " + xRotation);
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);  
 
     }
     #endregion
