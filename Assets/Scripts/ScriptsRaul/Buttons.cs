@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
-    //HACER UN BUTTONSMANAGER
+
     GameObject mainMenuElements;
     GameObject settingsMenuElements;
 
