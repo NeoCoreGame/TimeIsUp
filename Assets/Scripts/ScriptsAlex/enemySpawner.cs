@@ -16,12 +16,16 @@ public class enemySpawner : MonoBehaviour
     private int randomSpawn;
     public GameObject[] spawnPoint;
 
+    public EnemySystem _enemySystem;
+
     // Start is called before the first frame update
     void Start()
     {
         enemyCount = 0;
         enemy2Count = 0;
         StartCoroutine(enemySpawn());
+
+        _enemySystem = FindObjectOfType<EnemySystem>();
     }
 
     private void spawnEnemy1(int spawn)
@@ -32,6 +36,10 @@ public class enemySpawner : MonoBehaviour
         {
             enemy.transform.position = spawnPoint[spawn].transform.position;
             enemy.SetActive(true);
+
+            //GameObject child = enemy.transform.GetChild(0).transform.gameObject;
+            //_enemySystem.EnemyStartupHealth(child, -100);
+
             enemyCount++;
         }
     }

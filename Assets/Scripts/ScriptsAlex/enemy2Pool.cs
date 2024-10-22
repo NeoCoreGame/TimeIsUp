@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 public class enemy2Pool : MonoBehaviour
@@ -7,7 +8,7 @@ public class enemy2Pool : MonoBehaviour
     public static enemy2Pool instance;
 
     private List<GameObject> pooledEnemies = new List<GameObject>();
-    private int enemiesToPool = 40;
+    private int enemiesToPool = 10;
 
     [SerializeField] private GameObject enemy;
 
@@ -18,15 +19,16 @@ public class enemy2Pool : MonoBehaviour
             instance = this;
         }
     }
-    // Start is called before the first frame update
-    void Start()
+
+
+    public void InitializePool(GameObject enemy, EnemySystem _enemySystem)
     {
-        for (int i = 0; i < enemiesToPool; i++)
-        {
-            GameObject obj = Instantiate(enemy);
-            obj.SetActive(false);
-            pooledEnemies.Add(obj);
-        }
+            //GameObject obj = Instantiate(enemy);
+            //obj.transform.GetChild(0).GetComponent<Enemy>().InitializeEnemy();
+            //obj.SetActive(false);
+            //pooledEnemies.Add(obj);
+            //obj.GetComponent<NetworkObject>().Spawn();
+        
     }
 
     public GameObject GetPooledEnemy()

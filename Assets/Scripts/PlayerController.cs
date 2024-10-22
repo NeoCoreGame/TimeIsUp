@@ -7,6 +7,7 @@ using TMPro;
 using static Unity.Burst.Intrinsics.X86;
 using Unity.Collections;
 using UnityEngine.SceneManagement;
+using Unity.Netcode.Components;
 
 public class PlayerController : NetworkBehaviour, IShootable
 {
@@ -50,6 +51,7 @@ public class PlayerController : NetworkBehaviour, IShootable
         {
             GetComponent<PlayerInput>().enabled = true;
         }
+        
 
         _gravMovement = new Vector3(0f,gravity,0f); 
     }
@@ -57,7 +59,7 @@ public class PlayerController : NetworkBehaviour, IShootable
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) { TakeDamage(10); }
+        //if (Input.GetKeyDown(KeyCode.Space)) { TakeDamage(10); }
     }
 
 
@@ -114,8 +116,14 @@ public class PlayerController : NetworkBehaviour, IShootable
     {
         _healthController.HP.Value -= dmgTaken;
 
+        if (_healthController.HP.Value <= 0)
+        {
+            //GetComponent<NetworkTransform>().Teleport(new Vector3(-45f, 9f, 26f),transform.rotation,transform.localScale);
+            _playerCountdown.TimeVariation(-60);
+            _healthController.HP.Value = 100;
 
-    }
+        }
+    }   
 
     public int GetHealth()
     {

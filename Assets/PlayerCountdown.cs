@@ -46,7 +46,7 @@ public class PlayerCountdown : NetworkBehaviour
         TimeVariationServerRpc(timeVariation);
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     private void TimeVariationServerRpc(float timeVariation)
     {
         avaliableTime.Value += timeVariation;

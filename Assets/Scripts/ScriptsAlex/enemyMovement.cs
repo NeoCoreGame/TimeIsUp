@@ -17,11 +17,11 @@ public class enemyBehaviour : MonoBehaviour
     void Start()
     {
         position = GetComponent<Transform>();
-        speed = 10f;
+        speed = 3f;
 
         initialPosition = position.position;
 
-        finalPosition = new Vector3(Random.Range(0f, 50f), initialPosition.y , Random.Range(0f, 50f));
+        finalPosition = new Vector3(Random.Range(-60f, -20f), initialPosition.y , Random.Range(20f, 40f));
     }
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class enemyBehaviour : MonoBehaviour
         if (transform.position == finalPosition)
         {
             initialPosition = finalPosition;
-            finalPosition = new Vector3(Random.Range(0f, 50f), initialPosition.y ,Random.Range(0f, 50f));
+            finalPosition = new Vector3(Random.Range(-60f, -20f), initialPosition.y, Random.Range(20f, 40f));
         }
     }
 

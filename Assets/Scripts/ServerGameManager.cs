@@ -7,6 +7,7 @@ using Unity.Collections;
 using Unity.Netcode;
 using Unity.Services.Qos.V2.Models;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class ServerGameManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class ServerGameManager : MonoBehaviour
 
     CountdownManager _countdownManager;
     ServerMessageManager _messageManager;
+    EnemySystem _enemySystem;
 
 
     void Awake() //Inicializa la instancia del singleton
@@ -46,16 +48,18 @@ public class ServerGameManager : MonoBehaviour
 
         _countdownManager = GetComponent<CountdownManager>();
         _messageManager = GameObject.FindGameObjectWithTag("ServerMessages").GetComponent<ServerMessageManager>();
+        _enemySystem = FindObjectOfType<EnemySystem>();
+        
     }
 
     private void OnClientConnected(ulong obj) //Ocurren en server y cliente
     {
         if (_networkManager.IsServer)
         {
+            Debug.Log("WOLASSS");
             GameObject player = Instantiate(_playerPrefab);
             player.GetComponent<NetworkObject>().SpawnAsPlayerObject(obj); //Ocurre en servidor
 
-            player.transform.position = new Vector3(0f,3f,0f);
 
             string playerID = player.GetComponent<NetworkObject>().OwnerClientId.ToString();
             player.GetComponent<PlayerController>()._playerNumber.text = playerID;
@@ -66,6 +70,12 @@ public class ServerGameManager : MonoBehaviour
             _countdownManager.StartCounter(player.GetComponent<PlayerCountdown>());
 
             _messageManager.ServerMessage("+ Cliente " + playerID + " conectado");
+
+            if (_countdownManager.contadores.Count ==1)
+            {
+                _enemySystem.InitializePools();
+            
+            }
         }
     }
 
@@ -76,17 +86,19 @@ public class ServerGameManager : MonoBehaviour
         _messageManager.ServerMessage("+ Servidor operativo");
     }
 
-    public void DamageEnemy(Enemy enemy, int dmg)
+    public NetworkManager GetNetworkManager()
     {
-        if (_networkManager.IsServer)
-        {
-            enemy.Hp.Value -= dmg;
-        }
+        return _networkManager;
     }
-
-
+    public NetworkManager GetEnemySystem()
+    {
+        return _networkManager;
+    }
     public CountdownManager GetCoundownManager()
     {
         return _countdownManager;
     }
+
+
+
 }

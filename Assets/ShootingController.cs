@@ -66,12 +66,11 @@ public class ShootingController : NetworkBehaviour
 
             if (Physics.Raycast(rI, out RaycastHit hitInfo, shootingRange, enemyLayer))
             {
-
                 if (hitInfo.collider.gameObject.TryGetComponent(out IShootable interactObj))
                 {
                     interactObj.TakeDamage(WeaponDmg);
 
-                    if(interactObj.GetHealth() <= 0)
+                    if (interactObj.GetHealth() <= 0)
                     {
                         _playerCountdown.TimeVariation(interactObj.GetTimeReward());
                     }
