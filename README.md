@@ -1,14 +1,44 @@
 # TIME IS UP
-## Introducción
-### Concepto general
-### Público general
-### Propósitos del juego
-### Plataformas
-### Sinópsis
-### Género
-### Estilo visual
+## 1. Historial de versiones
+### GDD versión 0.1.0:
+   - Se ha añadido pegi al apartado de introducción
+   - Se ha completado el apartado de monetización y modelo de negocio
+   - Se ha separado los apartados de personajes y enemigos de la narrativa
+   - Se han completado los apartados de jugabilidad, personajes jugables, enemigos y controles
+   - Se ha creado el apartado de interfaces y pantalla, diseño de escenario y música y sonido
+   - Se han añadido los diseños de personajes a los apartados de arte
+   - Se han revisado los apartados existentes
 
-## Monetización y modelo de negocio
+## 2. Introducción
+El presente documento introduce el Game Design Document (GDD) del videojuego “Time Is Up”. A lo largo del desarrollo de este, se explicará a detalle las características que lo definen, así como el propósito del juego y su modelo de negocio. 
+
+### Concepto general
+“Time Is Up” consiste en un videojuego competitivo 3D, basado en la temática de “Arena”, en la que se concentran dos o más jugadores que competirán entre sí para ganar tiempo de partida. 
+Las partidas consistirán alrededor de 15-20 minutos en la que los jugadores tendrán un tiempo base (5 minutos) y necesitarán aumentarlo para que la partida no acabe. Para ganar tiempo tendrán que matar oleadas de enemigos y hacerse más fuertes para así poder derrotar al contrincante y que este se quede sin tiempo.
+
+### Público general
+Al ser un juego competitivo, nuestro objetivo es hacer llegar nuestro videojuego a un público mayor de 16 años, haciendo énfasis en el público más joven.
+Se busca que el usuario haga uso de sus habilidades y conocimientos como jugador para intentar llegar a ser el mejor. Aquellos jugadores que hayan tenido una experiencia previa con shooters o juegos de acción, tendrán una ventaja frente a los jugadores noveles.
+
+### Propósitos del juego
+El objetivo principal del juego competitivo es proporcionar una experiencia emocionante y desafiante para los jugadores, donde se pongan a prueba y desarrollen tanto sus habilidades estratégicas como su destreza física y mental en un entorno de competencia directa. Los jugadores deberán mejorar constantemente para superar a sus oponentes, adaptándose a cambios en las mecánicas del juego y optimizando su rendimiento.
+
+### Plataformas
+Time Is Up estará disponible para WebGL, por lo que será posible jugarlo a través de ordenador con teclado y ratón, y desde móvil con controles táctiles. 
+
+### Sinópsis
+En un universo al borde de la destrucción, una fuerza desconocida ha convocado a los mejores guerreros de distintas realidades a Fricb, una arena mística donde el tiempo es la única moneda de supervivencia. Estos héroes no llegaron por voluntad propia; han sido atraídos por una entidad enigmática que controla el destino del cosmos. Su misión es clara: luchar y ganar tiempo, o ver cómo su mundo se desvanece en el olvido. En cada combate, dos equipos se enfrentan frenéticamente contra oleadas de enemigos y entre sí, para acumular tiempo vital que podría ser la única salvación de sus respectivos universos. Solo un equipo logrará alargar la vida de su mundo, mientras el otro verá cómo el reloj marca el fin de su realidad. ¿Tienes lo necesario para derrotar a tus enemigos y salvar tu universo antes de que Time Is Up?
+
+### Género
+El videojuego "Time Is Up" es del género arena competitiva en 3D. Está diseñado para partidas cortas y frenéticas en las que los jugadores deben competir entre sí, enfrentándose a oleadas de enemigos para ganar tiempo de juego. Combina elementos de shooters en primera persona y gestión de recursos, donde el tiempo es el recurso clave.
+
+### Estilo visual
+El estilo del proyecto se desarrollará en 3D, tanto el escenario como los personajes, con texturas cartoon para que sea más cercano al jugador. Las partidas serán en primera persona, para que el juego sea más inmersivo.
+
+### PEGI
+El juego posee un PEGI 7, puesto que se puede observar violencia implícita al tener que eliminar a tus enemigos, pero no llega a ser muy gráfica.
+
+## 3. Monetización y modelo de negocio
 Se ha optado por un juego **Free To Play** para que se pueda llegar a la mayor cantidad de público posible y que todos puedan disfrutar sin compromiso.
 
 Se ha optado por un modelo de negocio Freemium, con monetización a través de microtransacciones. De esta forma, cualquiera que quiera acceder al juego podrá realizarlo sin problemas y la empresa se mantendrá a flote a través de pagos opcionales dentro del juego.
@@ -292,4 +322,66 @@ mantener la retención a través de contenido constante y aumentar el valor de v
     - **Interacción en eventos**: Número de jugadores participando en torneos y eventos especiales.
     - **Feedback de la comunidad**: Opiniones y sugerencias recopiladas a través de encuestas y foros.
 
-## Narrativa
+## 4. Narrativa
+### Mundo
+
+## 5. Gameplay
+### Jugabilidad	
+### Sistema HUD
+### Personajes jugables	
+### Personajes enemigos
+### Controles
+
+## 6. Interfaces y pantallas
+### Pantalla de inicio	
+### Tutoriales	
+### Diagrama de flujo de interfaces	
+### Interfaz de juego	
+### Pantallas de Victoria / Derrota	
+### Pantalla de selección de personaje	
+### Pantalla de personalización	
+### Pantalla de Battle Pass	
+### Pantalla de compra	
+### Pantalla de carga	
+### Pantalla de opciones	
+### Pantalla de controles	
+### Pantalla de usuario	
+### Pantalla de créditos	
+### Diagrama de flujo de pantallas
+
+## 7. Diseño de escenario 
+### Conceptos de escenarios
+### Gray Boxing
+### Props
+### Spawn de enemigos
+
+## 8. Arte 2D
+### Arte conceptual
+### Paleta de colores
+### Texturas
+
+## 9. Arte 3D
+### Modelado personajes jugables
+### Modelado enemigos
+### Modelado de escenario
+
+## 10. Animaciones
+### Rigging
+### Frames de animación
+
+## 11. Arte técnico
+### VFX
+### Iluminación
+
+## 12. Música y sonudi
+### Temas musicales
+### Efectos de sonido
+
+## 13. Integrantes del equipo
+### Manuel Alejandro Villalba Cruz	
+### Alejandro Tobías Márquez	
+### Raúl González Suero	
+### Andrea Gallardo Lasso	
+### Daniel Borrego Cruz	
+### Blanca García Vera
+
