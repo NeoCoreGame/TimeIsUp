@@ -433,6 +433,10 @@ Los controles están diseñados para ser intuitivos, pero permiten un alto grado
 </div>
 
 ### Diagrama de flujo de pantallas
+<div align="center">
+   <img src="Assets/Imagenes GDD/DiagramaFlujo.png" alt="Diagrama Flujo" width="500" height="250">
+</div>
+
 
 ## 7. Diseño de escenario 
 ### Conceptos de escenarios
