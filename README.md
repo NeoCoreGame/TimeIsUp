@@ -323,14 +323,43 @@ mantener la retención a través de contenido constante y aumentar el valor de v
     - **Feedback de la comunidad**: Opiniones y sugerencias recopiladas a través de encuestas y foros.
 
 ## 4. Narrativa
-### Mundo
+### 4.1. Mundo
+El universo de "Time Is Up" está formado por múltiples realidades paralelas, cada una habitada por civilizaciones avanzadas que enfrentan una inminente catástrofe: el colapso del tiempo mismo. Las fuerzas que controlan el tejido del tiempo han comenzado a desmoronarse, y los mundos están desapareciendo uno por uno. Detrás de esta destrucción se encuentra una entidad misteriosa, conocida solo como El Cronarca, que busca restablecer el equilibrio del tiempo, pero solo un mundo puede ser salvado. Los héroes de cada realidad son convocados a la arena de Fabric, un plano místico suspendido en el vacío del tiempo, donde lucharán por asegurar la existencia continua de su universo. Los jugadores deberán enfrentarse a criaturas corruptas que habitan este reino, mientras compiten con otros combatientes por los últimos fragmentos de tiempo que pueden salvar sus mundos.
 
 ## 5. Gameplay
-### Jugabilidad	
-### Sistema HUD
-### Personajes jugables	
-### Personajes enemigos
+### 5.1. Jugabilidad	
+El juego ofrece una experiencia rápida y llena de acción. Los jugadores comienzan con un tiempo base y deben enfrentarse a oleadas de enemigos para ganar tiempo adicional, así como derrotar a otros jugadores y enemigos más grandes. La jugabilidad se centra en eliminar enemigos, ganar ventajas, y robar tiempo de los oponentes. Los controles básicos incluyen movimiento en 3D y habilidades especiales únicas para cada personaje además de la capacidad de invocar un aliado​.
+### 5.2. Sistema HUD
+**Vida:** La vida se muestra mediante una barra que se completa proporcionalmente a la cantidad de vida restante del personaje. Se comienza con la vida al máximo y esta se pierde cuando se recibe un golpe de un enemigo. Al perder toda la vida el jugador aparecerá en otra zona del mapa y será penalizado con la pérdida de tiempo.
+
+**Tiempo:** El tiempo se mostrará con un contador en pantalla con una cuenta atrás, pero se irá consiguiendo más tiempo a medida que derrotemos enemigos. Si el contador baja a 0, implica la derrota en esa partida.
+
+**Habilidad:** Se mostrará un cuadro con la imagen de la habilidad, que se encontrará en gris cuando esta no esté disponible. Una vez disponible la habilidad, la imagen se mostrará a color, lo que indicará que ya puede ser usada.
+
+**Munición**
+
+### 5.3. Personajes jugables	
+**Niño Splash:** este personaje posee un arma con el que podrá disparar agua. Su habilidad especial es un globo de agua grande a modo de bomba que hace daño en el área en el que caiga. Es un personaje que dispone de poca vida y daño pero en cambio demuestra tener una gran velocidad.
+
+**Robot Tostadora:** este personaje prepara tostadas que serán lanzadas hacia el enemigo para hacerles un gran daño. Su habilidad especial es alargar su brazo y atraer a un personaje como si de un gancho se tratase. Posee una gran vida a cambio de ser lento en cuanto a movimientos. Es excelente en el combate cuerpo a cuerpo debido a su gran daño.
+
+**Abuelita Jardinera:** este personaje lanza las verduras que cosecha contra sus enemigos. Con su habilidad especial prepara unas raíces que le permiten bloquear el movimiento de los enemigos alcanzados. Este personaje tiene un equilibrio entre cantidad de vida, velocidad y la cantidad de daño que hace.
+
+### 5.4. Personajes enemigos
+**Enemigo base:** dará 1 minuto más a tu tiempo. Se moverá por el mapa de manera aleatoria.
+
+**Enemigo volador:** dará 2 minutos más a tu tiempo. Aparecerán menos que el enemigo base y serán más difíciles de disparar porque mantendrán distancia con el jugador. Se moverá por el mapa en zonas concretas que patrullará y atacará al jugador cuando entre en su campo de visión.
+
+**Enemigo tanque:** una vez ejecutado, se convertirá en tu aliado y te ayudará con los enemigos base. Se moverá lento e intentará atacar a quien lo dañe.
+
+**Enemigo escurridizo:** le dará vida al personaje. Se encontrarán en sitios alejados de la zona de combate. Se encargará de huir de los jugadores para que sea complicado conseguir la ventaja.
+
+**Enemigo explosivo:** se autodestruirá al acercarse al jugador, causando daño en un área. Si el jugador lo elimina antes de que explote, ganará 30 segundos adicionales.
+
+**Enemigo final:** roba la mitad del tiempo de tu contrincante.Aparecerá en una zona específica del mapa donde esperará a que los jugadores le ataquen. Será un enemigo duro para crear un mayor desafío.
+
 ### Controles
+Los controles están diseñados para ser intuitivos, pero permiten un alto grado de maestría. Los jugadores se moverán en un entorno 3D utilizando las teclas "W", "A", "S", "D" para la dirección (arriba, izquierda, abajo y derecha), mientras que el "Espacio" se utiliza para saltar y esquivar ataques enemigos. Con el click principal del ratón, los jugadores disparan sus armas o activan ataques primarios. Cada personaje tiene una habilidad especial que se activa con la tecla "E", mientras que con la tecla "Q" pueden invocar un aliado para asistir en el combate.
 
 ## 6. Interfaces y pantallas
 ### Pantalla de inicio	
@@ -439,20 +468,46 @@ Finalmente se optó por una representación más simple con la representación d
 <u>Logo del juego:</u>
 
 #### Personajes jugables
-<u>Niño Agua:</u>
+<u>**Niño Agua:**  al ser un niño con habilidades de agua, se ha querido dar un estilo infantil en donde el personaje se encuentre vestido con una malla de superhéroe y que al mismo tiempo se vea como un neopreno. Se le ha añadido también el casco en forma de pez para dar más sensación de que es un niño pequeño.
+</u>
 <div align="center">
    <img src="Assets/Arte/Personajes/NiñoAgua.jpg" alt="Niño Agua" width="650" height="375">
 </div>
+Este niño tiene una personalidad inmadura e infantil, debido a su poca edad. En el campo de batalla es algo creativo y posee un ingenio para salir de situaciones peligrosas con gran solvencia. Le gusta mucho divertirse y siente que tiene que salvar al mundo de la situación en la que se encuentra. 
 
-<u>Robot Tostadora:</u>
+<p></p>
+
+<u>**Robot Tostadora:**  para este personaje, al ser un robot que lanza tostadas, se ha querido que a pesar de su tamaño grande, siga teniendo un toque tierno al ser un robot que está tematizado con el entorno de la panadería. 
+</u>
 <div align="center">
    <img src="Assets/Arte/Personajes/RobotTostadora.jpg" alt="Robot Tostadora" width="750" height="250">
 </div>
+Este robot posee un gran sentido de la justicia y se ha modificado así mismo para poder hacer frente a la invasión. Odia el conflicto pero quiere proteger a los seres indefensos puesto que tuvo que ver cómo la fusión de los mundos destruyó su fábrica sin poder hacer nada por ella. A pesar de su naturaleza robótica, después de la invasión se ha visto reprogramada a tal forma de casi parecer un ser humano, llegando a poseer atisbo de humanidad y sentimentalidad.
+
+<p></p>
+
+**Abuelita Jardinera:** Esta anciana vivía plácidamente en su casa con jardín cuando llegó el colapso. Recogió todos los utensilios que pudo de su casa y salvó todas las plantas que pudo de su jardín. El colapso transformó a las plantas haciéndolas agresivas, la anciana llegó a controlar la agresividad de las mismas para su propio beneficio y poder luchar por la vida de su universo. Es una persona calmada y calculadora, tiene una capacidad excepcional para desarrollar estrategias de combates que le permitan resolver cualquier inconveniente con el que se encuentre.
+
 
 #### Enemigos
+**Enemigo base:** Criaturas sin mente que patrullan sin rumbo, sembrando el caos y buscando consumir el tiempo de los héroes que se crucen en su camino.
+
 <div align="center">
    <img src="Assets/Arte/Enemigos/EnemigoBase.png" alt="Enemigo Base" width="500" height="400">
 </div>
+
+<p></p>
+
+**Enemigo volador:** Exploradores aéreos de mirada aguda, patrullan zonas estratégicas y atacan solo cuando los jugadores invaden su territorio, manteniéndose siempre fuera de alcance.
+
+**Enemigo tanque:** Fueron guerreros del primer mundo en colapsar; ahora, liberados de su corrupción, son aliados lentos pero poderosos.
+
+**Enemigo escurridizo:** Portadores de una energía vital única, siempre huyen del combate, protegiendo con recelo el tiempo de sus aliados.
+
+**Enemigo explosivo:** Instigadores del caos, buscan acercarse para autodestruirse junto al héroe, llevándose parte de su tiempo en una explosión mortal. 
+
+**Enemigo final:** Mano derecha de la entidad invasora, este implacable guardián defiende su posición con ferocidad, ansioso por robar el tiempo de aquellos que osen enfrentarlo.
+
 
 ### Paleta de colores
 ### Texturas
