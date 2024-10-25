@@ -433,14 +433,11 @@ Los controles están diseñados para ser intuitivos, pero permiten un alto grado
 </div>
 
 ### Diagrama de flujo de pantallas
+<div align="center">
+   <img src="Assets/Imagenes GDD/DiagramaFlujo.png" alt="Diagrama Flujo" width="500" height="250">
+</div>
 
-## 7. Diseño de escenario 
-### Conceptos de escenarios
-### Gray Boxing
-### Props
-### Spawn de enemigos
-
-## 8. Arte 2D
+## 7. Arte 2D
 ### Arte conceptual
 #### Logos
 <u>Logo de la empresa:</u>
@@ -453,12 +450,13 @@ Para el logo de la empresa se han desarrollado diferentes ideas sobre cómo podr
    <img src="Assets/Arte/Logos/LogoVersionRechazada3.jpg" alt="Logo2" width="600" height="400">
 </div>
 
-<div align="center">
+<p align="center">
    <img src="Assets/Arte/Logos/LogoVersionRechazada2.jpg" alt="Logo3" width="350" height="325">
-</div>
+   <img src="Assets/Arte/Logos/LogoVersionRechazada1.jpg" alt="Logo4" width="350" height="350">
+</p>
 
 <div align="center">
-   <img src="Assets/Arte/Logos/LogoVersionRechazada1.jpg" alt="Logo4" width="350" height="350">
+  
 </div>
 
 Finalmente se optó por una representación más simple con la representación de joysticks en las “O”:
@@ -514,7 +512,7 @@ Este robot posee un gran sentido de la justicia y se ha modificado así mismo pa
 ### Paleta de colores
 ### Texturas
 
-## 9. Arte 3D
+## 8. Arte 3D
 ### Modelado personajes jugables
 <u>**Robot Tostadora:**
 </u>
@@ -525,19 +523,19 @@ Este robot posee un gran sentido de la justicia y se ha modificado así mismo pa
 ### Modelado enemigos
 ### Modelado de escenario
 
-## 10. Animaciones
+## 9. Animaciones
 ### Rigging
 ### Frames de animación
 
-## 11. Arte técnico
+## 10. Arte técnico
 ### VFX
 ### Iluminación
 
-## 12. Música y sonudi
+## 11. Música y sonudi
 ### Temas musicales
 ### Efectos de sonido
 
-## 13. Integrantes del equipo
+## 12. Integrantes del equipo
 ### Manuel Alejandro Villalba Cruz	
 ### Alejandro Tobías Márquez	
 ### Raúl González Suero	
