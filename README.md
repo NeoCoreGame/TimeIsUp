@@ -334,19 +334,73 @@ mantener la retención a través de contenido constante y aumentar el valor de v
 
 ## 6. Interfaces y pantallas
 ### Pantalla de inicio	
+<div align="center">
+   <img src="Assets/Arte/Interfaces/InterfazInicio.png" alt="Interfaz Inicio" width="500" height="250">
+</div>
+
 ### Tutoriales	
+
 ### Diagrama de flujo de interfaces	
+
 ### Interfaz de juego	
+<div align="center">
+   <img src="Assets/Arte/Interfaces/InterfazJuego.png" alt="Interfaz Juego" width="500" height="250">
+</div>
+
 ### Pantallas de Victoria / Derrota	
+<div align="center">
+   <img src="Assets/Arte/Interfaces/InterfazVictoria.png" alt="Interfaz Victoria" width="500" height="250">
+</div>
+
+<div align="center">
+   <img src="Assets/Arte/Interfaces/InterfazDerrota.png" alt="Interfaz Derrota" width="500" height="250">
+</div>
+
 ### Pantalla de selección de personaje	
+<div align="center">
+   <img src="Assets/Arte/Interfaces/InterfazSeleccionPersonaje.png" alt="Interfaz Seleccion Personaje" width="500" height="250">
+</div>
+
 ### Pantalla de personalización	
+<div align="center">
+   <img src="Assets/Arte/Interfaces/InterfazPersonalizacion.png" alt="Interfaz Personalizacion" width="500" height="250">
+</div>
+
 ### Pantalla de Battle Pass	
+<div align="center">
+   <img src="Assets/Arte/Interfaces/InterfazBattlePass.png" alt="Interfaz Battle Pass" width="500" height="250">
+</div>
+
 ### Pantalla de compra	
+<div align="center">
+   <img src="Assets/Arte/Interfaces/InterfazCompra.png" alt="Interfaz Compra" width="500" height="250">
+</div>
+
 ### Pantalla de carga	
+<div align="center">
+   <img src="Assets/Arte/Interfaces/InterfazCarga.png" alt="Interfaz Carga" width="500" height="250">
+</div>
+
 ### Pantalla de opciones	
+<div align="center">
+   <img src="Assets/Arte/Interfaces/InterfazOpciones.png" alt="Interfaz Opciones" width="500" height="250">
+</div>
+
 ### Pantalla de controles	
+<div align="center">
+   <img src="Assets/Arte/Interfaces/InterfazControles.png" alt="Interfaz Controles" width="500" height="250">
+</div>
+
 ### Pantalla de usuario	
+<div align="center">
+   <img src="Assets/Arte/Interfaces/InterfazUsuario.png" alt="Interfaz Usuario" width="500" height="250">
+</div>
+
 ### Pantalla de créditos	
+<div align="center">
+   <img src="Assets/Arte/Interfaces/InterfazCreditos.png" alt="Interfaz Creditos" width="500" height="250">
+</div>
+
 ### Diagrama de flujo de pantallas
 
 ## 7. Diseño de escenario 
@@ -357,6 +411,49 @@ mantener la retención a través de contenido constante y aumentar el valor de v
 
 ## 8. Arte 2D
 ### Arte conceptual
+#### Logos
+<u>Logo de la empresa:</u>
+Para el logo de la empresa se han desarrollado diferentes ideas sobre cómo podría ser repensado el nombre “NEOCORE”:
+<div align="center">
+   <img src="Assets/Arte/Logos/LogoVersionRechazada4.png" alt="Logo1" width="350" height="300">
+</div>
+
+<div align="center">
+   <img src="Assets/Arte/Logos/LogoVersionRechazada3.jpg" alt="Logo2" width="600" height="400">
+</div>
+
+<div align="center">
+   <img src="Assets/Arte/Logos/LogoVersionRechazada2.jpg" alt="Logo3" width="350" height="325">
+</div>
+
+<div align="center">
+   <img src="Assets/Arte/Logos/LogoVersionRechazada1.jpg" alt="Logo4" width="350" height="350">
+</div>
+
+Finalmente se optó por una representación más simple con la representación de joysticks en las “O”:
+<p align="center">
+  <img src="Assets/Arte/Logos/NeoCoreVersiónBlanca.jpg" alt="LogoFinal1" width="320" height="250">
+  <img src="Assets/Arte/Logos/NeoCoreVersiónAzul.jpg" alt="LogoFinal2" width="320" height="250">
+</p>
+
+<u>Logo del juego:</u>
+
+#### Personajes jugables
+<u>Niño Agua:</u>
+<div align="center">
+   <img src="Assets/Arte/Personajes/NiñoAgua.jpg" alt="Niño Agua" width="650" height="375">
+</div>
+
+<u>Robot Tostadora:</u>
+<div align="center">
+   <img src="Assets/Arte/Personajes/RobotTostadora.jpg" alt="Robot Tostadora" width="750" height="250">
+</div>
+
+#### Enemigos
+<div align="center">
+   <img src="Assets/Arte/Enemigos/EnemigoBase.png" alt="Enemigo Base" width="500" height="400">
+</div>
+
 ### Paleta de colores
 ### Texturas
 
