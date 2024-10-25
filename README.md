@@ -172,7 +172,9 @@ brindando un motivo para regresar y jugar regularmente.
 ### Modelo de Canvas
 El **Business Model Canvas** es una herramienta que permite visualizar de manera integral el modelo de negocio de un producto o servicio. En este caso, se desglosa cada uno de los componentes clave del modelo de negocio para el juego.
 
-# METER IMAGEN DEL BUSSINESS MODEL CANVAS
+<div align="center">
+   <img src="Assets/Imagenes GDD/Canvas.png" alt="Business Model Canvas" width="500" height="300">
+</div>
 
 1. **Propuesta de valor**
 
@@ -514,6 +516,12 @@ Este robot posee un gran sentido de la justicia y se ha modificado así mismo pa
 
 ## 9. Arte 3D
 ### Modelado personajes jugables
+<u>**Robot Tostadora:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Personajes/Robot.png" alt="Business Model Canvas" width="500" height="400">
+</div>
+
 ### Modelado enemigos
 ### Modelado de escenario
 
