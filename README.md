@@ -377,10 +377,6 @@ Los controles están diseñados para ser intuitivos, pero permiten un alto grado
    <img src="Assets/Arte/Interfaces/InterfazInicio.png" alt="Interfaz Inicio" width="500" height="250">
 </div>
 
-### Tutoriales	
-
-### Diagrama de flujo de interfaces	
-
 ### Interfaz de juego	
 <div align="center">
    <img src="Assets/Arte/Interfaces/InterfazJuego.png" alt="Interfaz Juego" width="500" height="250">
@@ -442,7 +438,7 @@ Los controles están diseñados para ser intuitivos, pero permiten un alto grado
 
 ### Diagrama de flujo de pantallas
 <div align="center">
-   <img src="Assets/Imagenes GDD/DiagramaFlujo.png" alt="Diagrama Flujo" width="500" height="250">
+   <img src="Assets/Imagenes GDD/DiagramaFlujo.png" alt="Diagrama Flujo" width="500" height="200">
 </div>
 
 ## 7. Arte 2D
