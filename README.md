@@ -517,16 +517,37 @@ Este robot posee un gran sentido de la justicia y se ha modificado así mismo pa
 <u>**Robot Tostadora:**
 </u>
 <div align="center">
-   <img src="Assets/Arte/3D/Personajes/Robot.png" alt="Business Model Canvas" width="500" height="400">
+   <img src="Assets/Arte/3D/Personajes/Robot.png" alt="Robot Tostadora 3D" width="500" height="450">
+</div>
+
+<p></p>
+
+<u>**Niño Agua:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Personajes/NinoPez.png" alt="Niño Agua 3D" width="438" height="540">
 </div>
 
 ### Modelado enemigos
+<u>**Enemigo base:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Enemigos/Base.png" alt="Enemigo Base" width="692" height="388">
+    <img src="Assets/Arte/3D/Enemigos/BaseDead.png" alt="Enemigo Base Muerto" width="692" height="388">
+</div>
 ### Modelado de escenario
 
 ## 9. Animaciones
 ### Rigging
 ### Frames de animación
-
+<u>**Animaciones andar robot tostadora:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Personajes/WalkAnimation.gif" alt="Animacion andar" width="600" height="400">
+</div>
+<div align="center">
+   <img src="Assets/Arte/3D/Personajes/WalkGunAnimation.gif" alt="Animacion andar con arma" width="600" height="400">
+</div>
 ## 10. Arte técnico
 ### VFX
 ### Iluminación
