@@ -43,25 +43,33 @@ Se ha optado por un juego **Free To Play** para que se pueda llegar a la mayor c
 
 Se ha optado por un modelo de negocio Freemium, con monetización a través de microtransacciones. De esta forma, cualquiera que quiera acceder al juego podrá realizarlo sin problemas y la empresa se mantendrá a flote a través de pagos opcionales dentro del juego.
 ### Mapa de empatía
+<div align="center">
+   <img src="Assets/Imagenes GDD/MapaEmpatia.png" alt="Mapa de empatía" width="500" height="300">
+</div>
+
 1. ¿Qué piensa y siente el jugador?
    
    Los jugadores quieren destacar frente a sus oponentes y ser reconocidos por sus habilidades y estilo de juego único. Disfrutan la adrenalina de competir bajo presión y personalizar sus avatares para reflejar sus logros. Se frustran si no pueden dedicar el tiempo suficiente para mejorar y les molesta cometer errores que les hacen perder tiempo en las partidas.
 2. ¿Qué ve?
    
-   El juego ofrece gráficos cartoon vibrantes y enemigos visualmente distintos que facilitan identificar sus habilidades y recompensas. En el entorno externo, los jugadores ven a otros compartiendo sus skins y logros en redes sociales, mientras que influencers muestran estrategias para maximizar el uso del tiempo y progresar.
+   El juego ofrece gráficos cartoon vibrantes y enemigos visualmente distintos que facilitan identificar sus habilidades y recompensas, decisión tomada para que el juego llame la atención de los jugadores gracias a su apartado artístico. Además, los jugadores están acostumbrados a ver poca variedad en los enemigos, siendo estos muy similares y poco reconocibles, aspecto que queremos desarrollar para distinguirnos. En el entorno externo, los jugadores ven a otros compartiendo sus skins y logros en redes sociales, mientras que influencers muestran estrategias para maximizar el uso del tiempo y progresar.
 3. ¿Qué dice y hace?
 
-   Dentro del juego, participan en chats y forman equipos para discutir tácticas y celebrar o lamentar sus resultados. Fuera del juego, comentan en foros, comparten clips de sus jugadas y participan en eventos organizados por la comunidad, demostrando su compromiso.
+   Dentro del juego, participan en chats y forman equipos para discutir tácticas y celebrar o lamentar sus resultados, función implementada para facilitar la comunicación entre jugadores, debido a la falta de estos medios en otros juegos competitivos, que hace que los jugadores dependan de medios externos, o directamente no expresen sus opiniones y logros. Fuera del juego, comentan en foros, comparten clips de sus jugadas y participan en eventos organizados por la comunidad, demostrando su compromiso. El hecho de que los jugadores de nuestro juego participen en chats influye sobre otros jugadores, a los que incitan a participar más en la comunidad del juego.
 4. ¿Qué oye?
 
-    Reciben recomendaciones de amigos y otros jugadores sobre qué mejorar y qué comprar en la tienda. También siguen a influencers que comparten estrategias y discuten nuevas actualizaciones y mecánicas, lo que les ayuda a adaptarse a los cambios del juego.
+    Reciben recomendaciones de amigos y otros jugadores sobre qué mejorar y qué comprar en la tienda, lo que puede influenciar a los jugadores a tomar ciertas decisiones de compra, ya sean buenas o malas. También siguen a influencers que comparten estrategias y discuten nuevas actualizaciones y mecánicas, lo que les ayuda a adaptarse a los cambios del juego.
 5. ¿Qué esfuerzos realiza?
 
-    Los jugadores invierten tiempo en dominar estrategias y aprender nuevas mecánicas, preocupándose por no poder dedicarle suficiente tiempo para progresar al mismo ritmo que otros. Temen perder tiempo en errores pequeños y buscan optimizar cada segundo en las partidas.
+    Los jugadores invierten tiempo en dominar estrategias y aprender nuevas mecánicas, preocupándose por no poder dedicarle suficiente tiempo para progresar al mismo ritmo que otros. Temen perder tiempo en errores pequeños y buscan optimizar cada segundo en las partidas. Por ello, para evitar estas frustraciones, buscamos implementar un sistema que recompense a los jugadores con skins y efectos por el tiempo dedicado en el juego, para incitarles a continuar mejorando su técnica.
 6. ¿Qué resultados espera?
 
     Aspiran a ser los últimos en pie, acumulando colecciones completas de skins que reflejen su progreso. Buscan reconocimiento en la comunidad, participar en torneos y compartir sus logros para demostrar su dominio del juego y obtener notoriedad.
 ### Caja de herramientas
+<div align="center">
+   <img src="Assets/Imagenes GDD/CajaHerramientas.png" alt="Caja de herramientas" width="500" height="300">
+</div>
+
 El juego es gratuito con un modelo **freemium** que monetiza mediante microtransacciones estéticas (skins y efectos visuales) y un **Battle Pass**. Se dirige a jugadores competitivos de entre 16 y 30 años que valoran la personalización y disfrutan de partidas rápidas. 
 La propuesta de valor se centra en ofrecer una experiencia competitiva con opciones visuales únicas sin alterar la jugabilidad.
 
@@ -490,7 +498,8 @@ Este robot posee un gran sentido de la justicia y se ha modificado así mismo pa
 
 
 #### Enemigos
-**Enemigo base:** Criaturas sin mente que patrullan sin rumbo, sembrando el caos y buscando consumir el tiempo de los héroes que se crucen en su camino.
+**Enemigo base: Minion**
+- Criaturas sin mente que patrullan sin rumbo, sembrando el caos y buscando consumir el tiempo de los héroes que se crucen en su camino.
 
 <div align="center">
    <img src="Assets/Arte/Enemigos/EnemigoBase.png" alt="Enemigo Base" width="500" height="400">
@@ -498,34 +507,88 @@ Este robot posee un gran sentido de la justicia y se ha modificado así mismo pa
 
 <p></p>
 
-**Enemigo volador:** Exploradores aéreos de mirada aguda, patrullan zonas estratégicas y atacan solo cuando los jugadores invaden su territorio, manteniéndose siempre fuera de alcance.
+**Enemigo volador: Minion volador**
+- Exploradores aéreos de mirada aguda, patrullan zonas estratégicas y atacan solo cuando los jugadores invaden su territorio, manteniéndose siempre fuera de alcance.
 
-**Enemigo tanque:** Fueron guerreros del primer mundo en colapsar; ahora, liberados de su corrupción, son aliados lentos pero poderosos.
+**Enemigo tanque: Petsy** 
+- Fueron guerreros del primer mundo en colapsar; ahora, liberados de su corrupción, son aliados lentos pero poderosos.
 
-**Enemigo escurridizo:** Portadores de una energía vital única, siempre huyen del combate, protegiendo con recelo el tiempo de sus aliados.
+**Enemigo escurridizo: Slipsy** 
+- Portadores de una energía vital única, siempre huyen del combate, protegiendo con recelo el tiempo de sus aliados.
 
-**Enemigo explosivo:** Instigadores del caos, buscan acercarse para autodestruirse junto al héroe, llevándose parte de su tiempo en una explosión mortal. 
+**Enemigo explosivo: Detonatsy**
+- Instigadores del caos, buscan acercarse para autodestruirse junto al héroe, llevándose parte de su tiempo en una explosión mortal. 
 
-**Enemigo final:** Mano derecha de la entidad invasora, este implacable guardián defiende su posición con ferocidad, ansioso por robar el tiempo de aquellos que osen enfrentarlo.
+**Enemigo final: Latsy**
+- Mano derecha de la entidad invasora, este implacable guardián defiende su posición con ferocidad, ansioso por robar el tiempo de aquellos que osen enfrentarlo.
 
 
 ### Paleta de colores
 ### Texturas
 
 ## 8. Arte 3D
+### Modelado de escenario
+<u>**Blocking del primer escenario: fábrica**
+</u>
+Primera aproximación de la fábrica en 3D, empleada como “concept” del escenario donde ir probando distintas ideas. El blocking pasa por múltiples iteraciones hasta llegar al modelo final.
+<div align="center">
+   <img src="Assets/Arte/3D/Escenarios/Fabrica/Modelo/FabricaBlocking.png" alt="Blocking de la fábrica" width="500" height="450">
+</div>
+
+<u>**Modelo final del primer escenario: fábrica**
+</div>
+<p align="center">
+   <img src="Assets/Arte/3D/Escenarios/Fabrica/Modelo/Fabrica1.png" alt="Primera vista de la fábrica" width="692" height="388">
+   <img src="Assets/Arte/3D/Escenarios/Fabrica/Modelo/Fabrica2.png" alt="Segunda vista de la fábrica" width="692" height="388">
+   <img src="Assets/Arte/3D/Escenarios/Fabrica/Modelo/Fabrica3.png" alt="Tercera vista de la fábrica" width="692" height="388">
+   <img src="Assets/Arte/3D/Escenarios/Fabrica/Modelo/Fabrica4.png" alt="Vista general de la fábrica" width="692" height="500">
+</div>
+
+<u>**Texturas del primer escenario: fábrica**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/CardboardBox.png" alt="Caja de cartón pequeña" width="320" height="300">
+   <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/ConveyorBelt.png" alt="Cinta transportadora" width="320" height="300">
+   <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/ControlPanel.png" alt="Panel de control de la fábrica" width="692" height="300">
+   <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/ShipContainer.png" alt="Contenedor grande" width="350" height="320">
+   <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/Elevator.png" alt="Ascensor" width="320" height="320">
+   <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/Platforms.png" alt="Plataformas altas" width="692" height="400">
+</div>
+
 ### Modelado personajes jugables
 <u>**Robot Tostadora:**
 </u>
 <div align="center">
-   <img src="Assets/Arte/3D/Personajes/Robot.png" alt="Business Model Canvas" width="500" height="400">
+   <img src="Assets/Arte/3D/Personajes/Robot.png" alt="Robot Tostadora 3D" width="500" height="450">
+</div>
+
+<p></p>
+
+<u>**Niño Agua:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Personajes/NinoPez.png" alt="Niño Agua 3D" width="438" height="540">
 </div>
 
 ### Modelado enemigos
-### Modelado de escenario
+<u>**Enemigo base:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Enemigos/Base.png" alt="Enemigo Base" width="692" height="388">
+    <img src="Assets/Arte/3D/Enemigos/BaseDead.png" alt="Enemigo Base Muerto" width="692" height="388">
+</div>
 
 ## 9. Animaciones
 ### Rigging
 ### Frames de animación
+<u>**Animaciones andar robot tostadora:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Personajes/WalkAnimation.gif" alt="Animacion andar" width="600" height="400">
+</div>
+<div align="center">
+   <img src="Assets/Arte/3D/Personajes/WalkGunAnimation.gif" alt="Animacion andar con arma" width="600" height="400">
+</div>
 
 ## 10. Arte técnico
 ### VFX
