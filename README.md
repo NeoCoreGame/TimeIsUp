@@ -339,14 +339,20 @@ El universo de "Time Is Up" está formado por múltiples realidades paralelas, c
 ## 5. Gameplay
 ### 5.1. Jugabilidad	
 El juego ofrece una experiencia rápida y llena de acción. Los jugadores comienzan con un tiempo base y deben enfrentarse a oleadas de enemigos para ganar tiempo adicional, así como derrotar a otros jugadores y enemigos más grandes. La jugabilidad se centra en eliminar enemigos, ganar ventajas, y robar tiempo de los oponentes. Los controles básicos incluyen movimiento en 3D y habilidades especiales únicas para cada personaje además de la capacidad de invocar un aliado​.
+
 ### 5.2. Sistema HUD
-**Vida:** La vida se muestra mediante una barra que se completa proporcionalmente a la cantidad de vida restante del personaje. Se comienza con la vida al máximo y esta se pierde cuando se recibe un golpe de un enemigo. Al perder toda la vida el jugador aparecerá en otra zona del mapa y será penalizado con la pérdida de tiempo.
+**Tiempo**: El tiempo se mostrará con un contador en pantalla con una cuenta atrás, pero se irá consiguiendo más tiempo a medida que derrotemos enemigos. Si el contador baja a 0, implica la derrota en esa partida.
 
-**Tiempo:** El tiempo se mostrará con un contador en pantalla con una cuenta atrás, pero se irá consiguiendo más tiempo a medida que derrotemos enemigos. Si el contador baja a 0, implica la derrota en esa partida.
+**Vida**: La vida se muestra mediante una barra que se completa proporcionalmente a la cantidad de vida restante del personaje. Se comienza con la vida al máximo y esta se pierde cuando se recibe un golpe de un enemigo. Al perder toda la vida el jugador aparecerá en otra zona del mapa y será penalizado con la pérdida de tiempo.
 
-**Habilidad:** Se mostrará un cuadro con la imagen de la habilidad, que se encontrará en gris cuando esta no esté disponible. Una vez disponible la habilidad, la imagen se mostrará a color, lo que indicará que ya puede ser usada.
+**Habilidades**: Se mostrará un cuadro con la imagen de la habilidad, que se encontrará en gris cuando esta no esté disponible y se irá rellenando para indicar cuanto tiempo queda para poder usarla. Una vez disponible la habilidad, la imagen se mostrará a color, lo que indicará que ya puede ser usada.
 
-**Munición**
+**Icono del personaje**: Junto a la barra de vida y las habilidades, se mostrará un icono del personaje seleccionado para esa partida
+
+**Munición**: Se mostrará un indicador de la munición restante del arma del personaje junto con un icono específico para el arma del personaje.
+
+**Estado de la partida**: Al pulsar el tabulador, se mostrará un panel con el tiempo restante de cada jugador de la partida.
+
 
 ### 5.3. Personajes jugables	
 **Niño Splash:** este personaje posee un arma con el que podrá disparar agua. Su habilidad especial es un globo de agua grande a modo de bomba que hace daño en el área en el que caiga. Es un personaje que dispone de poca vida y daño pero en cambio demuestra tener una gran velocidad.
@@ -368,21 +374,21 @@ El juego ofrece una experiencia rápida y llena de acción. Los jugadores comien
 
 **Enemigo final:** roba la mitad del tiempo de tu contrincante.Aparecerá en una zona específica del mapa donde esperará a que los jugadores le ataquen. Será un enemigo duro para crear un mayor desafío.
 
-### Controles
+### 5.5. Controles
 Los controles están diseñados para ser intuitivos, pero permiten un alto grado de maestría. Los jugadores se moverán en un entorno 3D utilizando las teclas "W", "A", "S", "D" para la dirección (arriba, izquierda, abajo y derecha), mientras que el "Espacio" se utiliza para saltar y esquivar ataques enemigos. Con el click principal del ratón, los jugadores disparan sus armas o activan ataques primarios. Cada personaje tiene una habilidad especial que se activa con la tecla "E", mientras que con la tecla "Q" pueden invocar un aliado para asistir en el combate.
 
 ## 6. Interfaces y pantallas
-### Pantalla de inicio	
+### 6.1. Pantalla de inicio	
 <div align="center">
    <img src="Assets/Arte/Interfaces/InterfazInicio.png" alt="Interfaz Inicio" width="500" height="250">
 </div>
 
-### Interfaz de juego	
+### 6.2. Interfaz de juego	
 <div align="center">
    <img src="Assets/Arte/Interfaces/InterfazJuego.png" alt="Interfaz Juego" width="500" height="250">
 </div>
 
-### Pantallas de Victoria / Derrota	
+### 6.3. Pantallas de Victoria / Derrota	
 <div align="center">
    <img src="Assets/Arte/Interfaces/InterfazVictoria.png" alt="Interfaz Victoria" width="500" height="250">
 </div>
@@ -391,58 +397,58 @@ Los controles están diseñados para ser intuitivos, pero permiten un alto grado
    <img src="Assets/Arte/Interfaces/InterfazDerrota.png" alt="Interfaz Derrota" width="500" height="250">
 </div>
 
-### Pantalla de selección de personaje	
+### 6.4. Pantalla de selección de personaje	
 <div align="center">
    <img src="Assets/Arte/Interfaces/InterfazSeleccionPersonaje.png" alt="Interfaz Seleccion Personaje" width="500" height="250">
 </div>
 
-### Pantalla de personalización	
+### 6.5. Pantalla de personalización	
 <div align="center">
    <img src="Assets/Arte/Interfaces/InterfazPersonalizacion.png" alt="Interfaz Personalizacion" width="500" height="250">
 </div>
 
-### Pantalla de Battle Pass	
+### 6.6. Pantalla de Battle Pass	
 <div align="center">
    <img src="Assets/Arte/Interfaces/InterfazBattlePass.png" alt="Interfaz Battle Pass" width="500" height="250">
 </div>
 
-### Pantalla de compra	
+### 6.7. Pantalla de compra	
 <div align="center">
    <img src="Assets/Arte/Interfaces/InterfazCompra.png" alt="Interfaz Compra" width="500" height="250">
 </div>
 
-### Pantalla de carga	
+### 6.8. Pantalla de carga	
 <div align="center">
    <img src="Assets/Arte/Interfaces/InterfazCarga.png" alt="Interfaz Carga" width="500" height="250">
 </div>
 
-### Pantalla de opciones	
+### 6.9. Pantalla de opciones	
 <div align="center">
    <img src="Assets/Arte/Interfaces/InterfazOpciones.png" alt="Interfaz Opciones" width="500" height="250">
 </div>
 
-### Pantalla de controles	
+### 6.10. Pantalla de controles	
 <div align="center">
    <img src="Assets/Arte/Interfaces/InterfazControles.png" alt="Interfaz Controles" width="500" height="250">
 </div>
 
-### Pantalla de usuario	
+### 6.11. Pantalla de usuario	
 <div align="center">
    <img src="Assets/Arte/Interfaces/InterfazUsuario.png" alt="Interfaz Usuario" width="500" height="250">
 </div>
 
-### Pantalla de créditos	
+### 6.12. Pantalla de créditos	
 <div align="center">
    <img src="Assets/Arte/Interfaces/InterfazCreditos.png" alt="Interfaz Creditos" width="500" height="250">
 </div>
 
-### Diagrama de flujo de pantallas
+### 6.13. Diagrama de flujo de pantallas
 <div align="center">
    <img src="Assets/Imagenes GDD/DiagramaFlujo.png" alt="Diagrama Flujo" width="500" height="200">
 </div>
 
 ## 7. Arte 2D
-### Arte conceptual
+### 7.1. Arte conceptual
 #### Logos
 <u>Logo de la empresa:</u>
 Para el logo de la empresa se han desarrollado diferentes ideas sobre cómo podría ser repensado el nombre “NEOCORE”:
@@ -524,11 +530,11 @@ Esta anciana vivía plácidamente en su casa con jardín cuando llegó el colaps
 - Mano derecha de la entidad invasora, este implacable guardián defiende su posición con ferocidad, ansioso por robar el tiempo de aquellos que osen enfrentarlo.
 
 
-### Paleta de colores
-### Texturas
+### 7.2. Paleta de colores
+### 7.3. Texturas
 
 ## 8. Arte 3D
-### Modelado de escenario
+### 8.1. Modelado de escenario
 <u>**Blocking del primer escenario: fábrica**
 </u>
 Primera aproximación de la fábrica en 3D, empleada como “concept” del escenario donde ir probando distintas ideas. El blocking pasa por múltiples iteraciones hasta llegar al modelo final.
@@ -556,7 +562,7 @@ Primera aproximación de la fábrica en 3D, empleada como “concept” del esce
    <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/Platforms.png" alt="Plataformas altas" width="692" height="400">
 </div>
 
-### Modelado personajes jugables
+### 8.2. Modelado personajes jugables
 <u>**Robot Tostadora:**
 </u>
 <div align="center">
@@ -571,7 +577,7 @@ Primera aproximación de la fábrica en 3D, empleada como “concept” del esce
    <img src="Assets/Arte/3D/Personajes/NinoPez.png" alt="Niño Agua 3D" width="438" height="540">
 </div>
 
-### Modelado enemigos
+### 8.3. Modelado enemigos
 <u>**Enemigo base:**
 </u>
 <div align="center">
@@ -580,8 +586,9 @@ Primera aproximación de la fábrica en 3D, empleada como “concept” del esce
 </div>
 
 ## 9. Animaciones
-### Rigging
-### Frames de animación
+### 9.1. Rigging
+
+### 9.2. Frames de animación
 <u>**Animaciones andar robot tostadora:**
 </u>
 <div align="center">
@@ -592,12 +599,12 @@ Primera aproximación de la fábrica en 3D, empleada como “concept” del esce
 </div>
 
 ## 10. Arte técnico
-### VFX
-### Iluminación
+### 10.1. VFX
+### 10.2. Iluminación
 
-## 11. Música y sonudi
-### Temas musicales
-### Efectos de sonido
+## 11. Música y sonido
+### 11.1. Temas musicales
+### 11.2. Efectos de sonido
 
 ## 12. Integrantes del equipo
 ### Manuel Alejandro Villalba Cruz	
