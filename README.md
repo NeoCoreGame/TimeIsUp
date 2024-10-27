@@ -611,11 +611,17 @@ Primera aproximación de la fábrica en 3D, empleada como “concept” del esce
 ### 11.1. Temas musicales
 ### 11.2. Efectos de sonido
 
-## 12. Integrantes del equipo
+## 12. Integrantes del equipo y roles
 ### Manuel Alejandro Villalba Cruz	
-### Alejandro Tobías Márquez	
-### Raúl González Suero	
-### Andrea Gallardo Lasso	
-### Daniel Borrego Cruz	
+- Programador y diseñador de juego
+### Alejandro Tobías Márquez
+- Programador y narrativa
+### Raúl González Suero
+- Programador y polivalente (soporte para el resto del equipo)
+### Andrea Gallardo Lasso
+- Concept art y diseño de personajes
+### Daniel Borrego Cruz
+- Artista 3D, modelador y animador
 ### Blanca García Vera
+- Artista 3D y diseño de escenarios
 
