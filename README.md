@@ -587,6 +587,11 @@ Primera aproximación de la fábrica en 3D, empleada como “concept” del esce
 
 ## 9. Animaciones
 ### 9.1. Rigging
+<u> **Robot Tostadora:**
+</u>
+<div align="center">
+   <img src="Assets/Imagenes GDD/RobotRig.png" alt="RigRobot" width="429" height="362">
+</div>
 
 ### 9.2. Frames de animación
 <u>**Animaciones andar robot tostadora:**
