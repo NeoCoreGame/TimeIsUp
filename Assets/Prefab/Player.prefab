@@ -5367,6 +5367,7 @@ GameObject:
   - component: {fileID: 1032121349245684495}
   - component: {fileID: 491589732591098916}
   - component: {fileID: 6544860473220701062}
+  - component: {fileID: -3750110953520712991}
   - component: {fileID: 2843435861797364588}
   m_Layer: 7
   m_Name: Player
@@ -5665,6 +5666,23 @@ MonoBehaviour:
   healthStuff: {fileID: 0}
   hpSlider: {fileID: 0}
   hpText: {fileID: 0}
+--- !u!114 &-3750110953520712991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4334785916130375179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16359c9c8d6c1d44eb870ae440600c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  hookObject: {fileID: 4477507478420705727, guid: 595ed8d840f6df9448ec68bafab99ff0,
+    type: 3}
+  hookAbility: {fileID: 7299514905766494981, guid: 595ed8d840f6df9448ec68bafab99ff0,
+    type: 3}
 --- !u!136 &2843435861797364588
 CapsuleCollider:
   m_ObjectHideFlags: 0

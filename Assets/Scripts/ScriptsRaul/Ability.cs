@@ -3,33 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Abilty : MonoBehaviour
+public class Ability : MonoBehaviour
 {
 
     public float cooldown;
-    private float currentCooldown;
-    private Image icon;
-    private bool isOnCooldown = false;
+    public float currentCooldown;
+    public Image icon;
+    public bool isOnCooldown = false;
 
-    private void Start()
-    {
-        icon = GameObject.Find("IconGray").GetComponent<Image>();
-        icon.fillAmount = 0;
-    }
+    //private void Start()
+    //{
+    //    icon = GameObject.Find("IconGray").GetComponent<Image>();
+    //    icon.fillAmount = 0;
+    //}
 
-    private void Update()
-    {
+    //private void Update()
+    //{
 
-        AbilityInput();
-        AbilityCooldown();
+    //    AbilityInput();
+    //    AbilityCooldown();
 
-    }
+    //}
 
     public void AbilityInput()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !isOnCooldown)
+        if (Input.GetKeyDown(KeyCode.Q) && !isOnCooldown)
         {
-            Debug.Log("space pressed");
+            Debug.Log("Q pressed");
             isOnCooldown=true;
             currentCooldown = cooldown;
         }
@@ -56,9 +56,9 @@ public class Abilty : MonoBehaviour
             {
                 if (icon != null)
                 {
-                    Debug.Log(currentCooldown);
-                    Debug.Log(cooldown);
-                    Debug.Log(currentCooldown / cooldown);
+                    //Debug.Log(currentCooldown);
+                    //Debug.Log(cooldown);
+                    //Debug.Log(currentCooldown / cooldown);
                     icon.fillAmount = currentCooldown / cooldown;
                 }
             }
