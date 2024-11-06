@@ -5432,7 +5432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 4246340768
+  GlobalObjectIdHash: 1739082062
   InScenePlacedSourceGlobalObjectIdHash: 1158524312
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -5640,7 +5640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072acd2d67d20ac47a843576295f3ebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootingRange: 100
+  shootingRange: 200
   shootingCooldown: 0.5
   enemyLayer:
     serializedVersion: 2

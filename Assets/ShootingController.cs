@@ -24,11 +24,17 @@ public class ShootingController : NetworkBehaviour
 
     private PlayerCountdown _playerCountdown;
 
+    private Camera playerCam;
+
 
     // Start is called before the first frame update
     void Start()
     {
         _playerCountdown = GetComponent<PlayerCountdown>();
+
+        playerCam = Camera.main;
+
+
     }
 
     // Update is called once per frame
@@ -41,11 +47,12 @@ public class ShootingController : NetworkBehaviour
         {
             Shoot();
         }
+
     }
 
     public void Shoot()
     {
-        Debug.Log("PUMMMM");
+        Debug.Log("Disparo");
         pS.Play();
         shootingCdTimer = shootingCooldown;
 
@@ -62,12 +69,13 @@ public class ShootingController : NetworkBehaviour
         {
             Shoot();
 
-            Ray rI = new Ray(transform.position, transform.forward);
+            Ray rI = new Ray(playerCam.transform.position, playerCam.transform.forward);
 
             if (Physics.Raycast(rI, out RaycastHit hitInfo, shootingRange, enemyLayer))
             {
                 if (hitInfo.collider.gameObject.TryGetComponent(out IShootable interactObj))
                 {
+                    Debug.Log("Au");
                     interactObj.TakeDamage(WeaponDmg);
 
                     if (interactObj.GetHealth() <= 0)

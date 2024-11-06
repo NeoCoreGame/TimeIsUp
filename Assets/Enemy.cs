@@ -30,9 +30,11 @@ public class Enemy : NetworkBehaviour, IShootable
         base.OnNetworkSpawn();
 
         InitializeEnemy();
+
     }
     public void InitializeEnemy()
     {
+        
 
         hpText.text = Hp.Value.ToString();
 
