@@ -8,6 +8,7 @@ TagManager:
   - ServerMessages
   - HealthStuff
   - Enemy
+  - DeadScreen
   layers:
   - Default
   - TransparentFX

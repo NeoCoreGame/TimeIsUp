@@ -24,6 +24,7 @@ public class PlayerController : NetworkBehaviour, IShootable
     //PUBLIC
     [Header("Movement Parameters")]
     public float gravity;
+    public NetworkVariable<bool> canMove = new NetworkVariable<bool>();
 
     public float _speed;
     public float _fallingSpeed;
@@ -37,6 +38,8 @@ public class PlayerController : NetworkBehaviour, IShootable
     public float groundDistance;
     public LayerMask groundMask;
 
+    private RespawnPlayerManager _respawnPlayerManager;
+
 
 
     public override void OnNetworkSpawn()
@@ -46,36 +49,31 @@ public class PlayerController : NetworkBehaviour, IShootable
         _cController = GetComponent<CharacterController>();
         _playerCountdown = GetComponent<PlayerCountdown>();
         _healthController = GetComponent<HealthController>();
+        _respawnPlayerManager = FindObjectOfType<RespawnPlayerManager>();
 
         if (IsOwner)
         {
             GetComponent<PlayerInput>().enabled = true;
         }
         
-
-        _gravMovement = new Vector3(0f,gravity,0f); 
+        _gravMovement = new Vector3(0f,gravity,0f);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.Space)) { TakeDamage(10); }
-    }
-
 
     private void FixedUpdate()
     {
         if (IsServer)
         {
 
-            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-            _movement = transform.right * recievedInput.x + transform.forward * recievedInput.y;
-            _cController.Move(_movement * _speed * Time.deltaTime);
-
-            if (!isGrounded)
+            if (canMove.Value)
             {
-                _cController.Move(_gravMovement * _fallingSpeed * Time.deltaTime);
+                isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+                _movement = transform.right * recievedInput.x + transform.forward * recievedInput.y;
+                _cController.Move(_movement * _speed * Time.deltaTime);
+            }
+            if (!isGrounded)
+                {
+                    _cController.Move(_gravMovement * _fallingSpeed * Time.deltaTime);
             }
         }
     }
@@ -91,7 +89,9 @@ public class PlayerController : NetworkBehaviour, IShootable
     [ServerRpc]
     public void OnMoveServerRpc(Vector2 input)
     {
-        recievedInput = input;
+        
+            recievedInput = input; 
+        
         //_movement = new Vector3(aux.x, 0f, aux.y);
     }
     #endregion
@@ -120,7 +120,8 @@ public class PlayerController : NetworkBehaviour, IShootable
         {
             //GetComponent<NetworkTransform>().Teleport(new Vector3(-45f, 9f, 26f),transform.rotation,transform.localScale);
             _playerCountdown.TimeVariation(-60);
-            _healthController.HP.Value = 100;
+            // _healthController.HP.Value = 100;
+            _respawnPlayerManager.RespawnPlayer(_healthController);
 
         }
     }   
@@ -133,5 +134,10 @@ public class PlayerController : NetworkBehaviour, IShootable
     public float GetTimeReward()
     {
         return 100f;
+    }
+
+    public CharacterController GetController()
+    {
+        return _cController;
     }
 }

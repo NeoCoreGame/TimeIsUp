@@ -10,11 +10,14 @@ public class CountdownManager : MonoBehaviour
 
     public List<PlayerCountdown> contadores;
 
-    private float startingTime = 360f;
+    //private float startingTime = 360f;
+    private float startingTime = 20f;
+    private RespawnPlayerManager _respawnPlayerManager;
 
     private void Start()
     {
         _networkManager = NetworkManager.Singleton;
+        _respawnPlayerManager = FindObjectOfType<RespawnPlayerManager>();
     }
 
     public void StartCounter(PlayerCountdown _playerCountdown)
@@ -33,13 +36,12 @@ public class CountdownManager : MonoBehaviour
 
                 _contador.avaliableTime.Value -= Time.deltaTime;
 
-                if(_contador.avaliableTime.Value <= 0f)
+                if(_contador.avaliableTime.Value <= 0f && _contador.GetComponent<PlayerController>().enabled)
                 {
-                    //contadores.Remove(_contador);
-                    //Destroy(_contador.gameObject);
                     _contador.gameObject.GetComponent<PlayerInput>().enabled = false;
                     _contador.gameObject.GetComponent<PlayerController>().enabled = false;
-                    gameObject.transform.position = new Vector3(0, 3000f, 0);
+                    _respawnPlayerManager.RespawnPlayer(_contador.GetComponent<HealthController>());
+                  
                 }
 
             }

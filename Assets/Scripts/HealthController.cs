@@ -19,6 +19,7 @@ public class HealthController : NetworkBehaviour
     public TextMeshProUGUI hpText;
 
     private CameraHit _camhit;
+    public RectTransform DeadScreen;
 
     public override void OnNetworkSpawn()
     {
@@ -31,10 +32,20 @@ public class HealthController : NetworkBehaviour
             hpSlider = healthStuff.transform.GetChild(0).GetComponent<Slider>();
             hpText = healthStuff.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
 
-            OnHealthChange(0, HP.Value);
 
             _camhit = Camera.main.GetComponent<CameraHit>();
             _camhit.InitializeScript(new Vector3(0f, 0.6f, 0.5f));
+
+            DeadScreen = GameObject.FindGameObjectWithTag("DeadScreen").GetComponent<RectTransform>();
+            DeadScreen.localScale = Vector3.zero;
+
+            HP.OnValueChanged += OnHealthChange;
+
+            UpdateHealth(HP.Value);
+
+            
+
+            
         }
     }
 
@@ -43,9 +54,7 @@ public class HealthController : NetworkBehaviour
     {
         if (IsOwner)
         {
-            HP.OnValueChanged += OnHealthChange;
-
-            UpdateHealth(HP.Value);
+            
         }
     }
 
@@ -59,9 +68,17 @@ public class HealthController : NetworkBehaviour
     {
         UpdateHealth(newValue);
 
-        if (previousValue > newValue)
+        if (newValue != 100)
         {
             _camhit.GetHit();
+        }
+        if(newValue <= 0)
+        {
+            DeadScreen.localScale = Vector3.one;
+        }
+        if(newValue >= 100)
+        {
+            DeadScreen.localScale = Vector3.zero;
         }
     }
 }

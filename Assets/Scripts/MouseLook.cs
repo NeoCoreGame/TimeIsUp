@@ -24,7 +24,7 @@ public class MouseLook : NetworkBehaviour
         if (IsServer)
         {
             head = transform;
-            player = transform.parent.transform.parent.transform; 
+            //player = transform.parent.transform.parent.transform; 
         }
 
         if (IsOwner)
@@ -33,7 +33,7 @@ public class MouseLook : NetworkBehaviour
             Camera.main.transform.localPosition = new Vector3(0f, 0.6f, 0.5f);
 
 
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.lockState = CursorLockMode.Locked;
         }
     }
     
@@ -45,7 +45,7 @@ public class MouseLook : NetworkBehaviour
         {
             player.Rotate(Vector3.up * mouseX);
             transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-            //head.Rotate(Vector3.right * xRotation);
+            head.Rotate(Vector3.right * xRotation);
 
 
         }

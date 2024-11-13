@@ -13,6 +13,7 @@ public class PlayerCountdown : NetworkBehaviour
 
     private AddedTimeUI _addedTimeUI;
 
+
     private void Update()
     {
         if (IsOwner)
@@ -28,6 +29,9 @@ public class PlayerCountdown : NetworkBehaviour
         timerText = GameObject.FindGameObjectWithTag("PlayerCountdown").GetComponent<TextMeshProUGUI>();
         _addedTimeUI = FindObjectOfType<AddedTimeUI>();
 
+
+        avaliableTime.OnValueChanged += OnCounterChange;
+
     }
 
     public string ShowTime(float timerCount)
@@ -39,16 +43,32 @@ public class PlayerCountdown : NetworkBehaviour
 
         return timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, cents);
     }
+    public void OnCounterChange(float previousValue, float newValue)
+    {
+        if (newValue < 0f && GetComponent<HealthController>().DeadScreen.localScale != Vector3.one)
+        {
+            GetComponent<HealthController>().DeadScreen.localScale = Vector3.one;
+
+
+        }
+    }
 
     public void TimeVariation(float timeVariation)
     {
+        
+
         _addedTimeUI.LaunchText(timeVariation);
         TimeVariationServerRpc(timeVariation);
+
+
     }
 
     [ServerRpc(RequireOwnership = false)]
     private void TimeVariationServerRpc(float timeVariation)
     {
         avaliableTime.Value += timeVariation;
+
+        
+
     }
 }

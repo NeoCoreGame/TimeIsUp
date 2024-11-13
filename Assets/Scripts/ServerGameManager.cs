@@ -7,7 +7,6 @@ using Unity.Collections;
 using Unity.Netcode;
 using Unity.Services.Qos.V2.Models;
 using UnityEngine;
-using static UnityEngine.EventSystems.EventTrigger;
 
 public class ServerGameManager : MonoBehaviour
 {
@@ -17,8 +16,12 @@ public class ServerGameManager : MonoBehaviour
     GameObject _playerPrefab;
 
     CountdownManager _countdownManager;
+    RespawnPlayerManager _respawnPlayerManager;
     ServerMessageManager _messageManager;
     EnemySystem _enemySystem;
+
+    private LobbyManager _lobbyManager;
+    private PlayerInfo _playerInfo;
 
 
     void Awake() //Inicializa la instancia del singleton
@@ -31,9 +34,6 @@ public class ServerGameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-
-
     }
 
     // Start is called before the first frame update
@@ -47,8 +47,13 @@ public class ServerGameManager : MonoBehaviour
         _networkManager.OnClientConnectedCallback += OnClientConnected;
 
         _countdownManager = GetComponent<CountdownManager>();
+        _respawnPlayerManager = GetComponent<RespawnPlayerManager>();   
         _messageManager = GameObject.FindGameObjectWithTag("ServerMessages").GetComponent<ServerMessageManager>();
         _enemySystem = FindObjectOfType<EnemySystem>();
+
+
+            _lobbyManager = FindObjectOfType<LobbyManager>();
+        
         
     }
 
@@ -56,16 +61,19 @@ public class ServerGameManager : MonoBehaviour
     {
         if (_networkManager.IsServer)
         {
-            Debug.Log("WOLASSS");
             GameObject player = Instantiate(_playerPrefab);
-            player.GetComponent<NetworkObject>().SpawnAsPlayerObject(obj); //Ocurre en servidor
-
 
             string playerID = player.GetComponent<NetworkObject>().OwnerClientId.ToString();
+            player.GetComponent<PlayerInfo>().SetPlayerName("QueZz " + playerID);
+
+            player.GetComponent<NetworkObject>().SpawnAsPlayerObject(obj); //Ocurre en servidor
+
+            _lobbyManager.AddConnectedPlayers(player);
+
+
             player.GetComponent<PlayerController>()._playerNumber.text = playerID;
 
-            HealthController hC = player.GetComponent<HealthController>();
-            hC.HP.Value = 100;
+            _respawnPlayerManager.StartHealth(player.GetComponent<HealthController>());
 
             _countdownManager.StartCounter(player.GetComponent<PlayerCountdown>());
 

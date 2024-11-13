@@ -23,9 +23,22 @@ public class enemySpawner : MonoBehaviour
     {
         enemyCount = 0;
         enemy2Count = 0;
-        StartCoroutine(enemySpawn());
 
         _enemySystem = FindObjectOfType<EnemySystem>();
+    }
+
+    public void EnableSpawning(bool enableSpawn)
+    {
+        if(enableSpawn)
+        {
+
+            StartCoroutine(enemySpawn());
+        }
+        else
+        {
+
+            StopCoroutine(enemySpawn());
+        }
     }
 
     private void spawnEnemy1(int spawn)
