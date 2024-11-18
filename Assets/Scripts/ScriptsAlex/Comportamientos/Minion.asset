@@ -1,0 +1,384 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db249917b7c50574eaa600c74aff1437, type: 3}
+  m_Name: Minion
+  m_EditorClassIdentifier: 
+  data:
+    graphs:
+    - name: Minion
+      id: f5feced7-af3c-47d7-977b-9f0abf75bdf6
+      graph:
+        rid: 7358834908103704636
+      nodes:
+      - name: Deambular
+        id: 143797ef-9d06-4643-b8b7-4e32369d6701
+        position: {x: 754, y: -589}
+        node:
+          rid: 7358834908103704637
+        references:
+        - fieldName: Action
+          value:
+            rid: 7358834915307159552
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - ec4e2ce3-5e7e-48e2-94ec-2db6a03e20b3
+        childIds:
+        - 585b8d62-b8e6-4178-9ed2-3eb53b8fb745
+        - 94b6fc9e-6f12-42be-9254-7e55b1221755
+      - name: Avanzando
+        id: 6ca56563-7212-4941-b1e7-44abd1f9353d
+        position: {x: 1000, y: -167}
+        node:
+          rid: 7358834908103704638
+        references:
+        - fieldName: Action
+          value:
+            rid: 7358834908103704728
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 585b8d62-b8e6-4178-9ed2-3eb53b8fb745
+        - 913e4ccf-4af6-4a1e-be29-d581c7c7cd20
+        childIds:
+        - 7d62e43f-b448-4cef-bcce-525f93f8f6dd
+        - ec4e2ce3-5e7e-48e2-94ec-2db6a03e20b3
+        - 94b6fc9e-6f12-42be-9254-7e55b1221755
+      - name: Aturdido
+        id: 3201880b-60fc-4d58-bbee-fe8cdc8d7ff9
+        position: {x: 242, y: -77}
+        node:
+          rid: 7358834908103704639
+        references:
+        - fieldName: Action
+          value:
+            rid: 7358834908103704661
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 94b6fc9e-6f12-42be-9254-7e55b1221755
+        childIds: []
+      - name: Atacando
+        id: daf759cf-4f2a-4231-886c-a5c395ce5d1a
+        position: {x: 722, y: 233}
+        node:
+          rid: 7358834908103704640
+        references:
+        - fieldName: Action
+          value:
+            rid: 7358834908103704723
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 7d62e43f-b448-4cef-bcce-525f93f8f6dd
+        childIds:
+        - 913e4ccf-4af6-4a1e-be29-d581c7c7cd20
+        - 94b6fc9e-6f12-42be-9254-7e55b1221755
+      - name: perseguirJugador
+        id: 585b8d62-b8e6-4178-9ed2-3eb53b8fb745
+        position: {x: 1091, y: -454}
+        node:
+          rid: 7358834908103704641
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7358834908103704642
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 143797ef-9d06-4643-b8b7-4e32369d6701
+        childIds:
+        - 6ca56563-7212-4941-b1e7-44abd1f9353d
+      - name: jugadorPerdido
+        id: ec4e2ce3-5e7e-48e2-94ec-2db6a03e20b3
+        position: {x: 830, y: -362}
+        node:
+          rid: 7358834908103704646
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7358834908103704648
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 6ca56563-7212-4941-b1e7-44abd1f9353d
+        childIds:
+        - 143797ef-9d06-4643-b8b7-4e32369d6701
+      - name: AtaqueTerminado
+        id: 913e4ccf-4af6-4a1e-be29-d581c7c7cd20
+        position: {x: 1260, y: 21}
+        node:
+          rid: 7358834908103704649
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7358834908103704652
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - daf759cf-4f2a-4231-886c-a5c395ce5d1a
+        childIds:
+        - 6ca56563-7212-4941-b1e7-44abd1f9353d
+      - name: cercaJugador
+        id: 7d62e43f-b448-4cef-bcce-525f93f8f6dd
+        position: {x: 897, y: 8}
+        node:
+          rid: 7358834908103704650
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7358834908103704651
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 6ca56563-7212-4941-b1e7-44abd1f9353d
+        childIds:
+        - daf759cf-4f2a-4231-886c-a5c395ce5d1a
+      - name: estarAturdido
+        id: 94b6fc9e-6f12-42be-9254-7e55b1221755
+        position: {x: 540, y: -240}
+        node:
+          rid: 7358834908103704659
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7358834908103704664
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 6ca56563-7212-4941-b1e7-44abd1f9353d
+        - daf759cf-4f2a-4231-886c-a5c395ce5d1a
+        - 143797ef-9d06-4643-b8b7-4e32369d6701
+        childIds:
+        - 3201880b-60fc-4d58-bbee-fe8cdc8d7ff9
+    pushPerceptions:
+    - name: beingStunned
+      targetNodeIds:
+      - 94b6fc9e-6f12-42be-9254-7e55b1221755
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 7358834908103704636
+      type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7358834908103704637
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7358834908103704638
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7358834908103704639
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7358834908103704640
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7358834908103704641
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7358834908103704642
+      type: {class: CompoundPerceptionWrapper, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        compoundPerception:
+          rid: 7358834908103704643
+        subPerceptions:
+        - perception:
+            rid: 7358834908103704644
+        - perception:
+            rid: 7358834908103704645
+    - rid: 7358834908103704643
+      type: {class: OrPerception, ns: BehaviourAPI.Core.Perceptions, asm: BehaviourAPI.Core}
+      data: 
+    - rid: 7358834908103704644
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: playerClose
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7358834908103704645
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: beingAttacked
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7358834908103704646
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7358834908103704648
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: playerLost
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7358834908103704649
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7358834908103704650
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7358834908103704651
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: onObjective
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7358834908103704652
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: attackFinished
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7358834908103704659
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7358834908103704661
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: 
+          methodName: stunned
+    - rid: 7358834908103704664
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: goingStunned
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7358834908103704723
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: 
+          methodName: attacking
+    - rid: 7358834908103704728
+      type: {class: ChaseAction, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
+      data:
+        speed: 0
+        target: {fileID: 0}
+        maxDistance: 0.2
+        maxTime: 300
+    - rid: 7358834915307159552
+      type: {class: PatrolAction, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
+      data:
+        maxDistance: 13

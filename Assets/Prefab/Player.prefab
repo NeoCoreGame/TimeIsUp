@@ -5432,7 +5432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1739082062
+  GlobalObjectIdHash: 4246340768
   InScenePlacedSourceGlobalObjectIdHash: 1158524312
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -5454,6 +5454,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: -9.8
+  canMove:
+    m_InternalValue: 0
   _speed: 20
   _fallingSpeed: 2
   _playerNumber: {fileID: 2990560789763475572}
@@ -5666,6 +5668,7 @@ MonoBehaviour:
   healthStuff: {fileID: 0}
   hpSlider: {fileID: 0}
   hpText: {fileID: 0}
+  DeadScreen: {fileID: 0}
 --- !u!114 &-3750110953520712991
 MonoBehaviour:
   m_ObjectHideFlags: 0

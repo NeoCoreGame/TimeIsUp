@@ -53,15 +53,17 @@ public class EnemySystem : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     public void OnTakeDamageServerRpc(int enemyIndex, int dmgTaken)
     {
-        
-            Enemy e = enemies[enemyIndex].transform.GetChild(0).transform.GetComponent<Enemy>();
-            e.Hp.Value -= dmgTaken;
 
-            if (e.Hp.Value <= 0)
-            {
-                GameObject parent = e.transform.parent.gameObject;
-                parent.SetActive(false);
-                e.Hp.Value = 100;
+        Enemy e = enemies[enemyIndex].transform.GetChild(0).transform.GetComponent<Enemy>();
+        e.Hp.Value -= dmgTaken;
+
+        if (e.Hp.Value <= 0)
+        {
+            GameObject parent = e.transform.parent.gameObject;
+            parent.SetActive(false);
+            e.Hp.Value = 100;
+            e.hpThreshold = e.Hp.Value * 20 / 100;
+            e.dmg = 20;
         }
         
     }

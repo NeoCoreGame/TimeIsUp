@@ -21,7 +21,10 @@ public class Enemy : NetworkBehaviour, IShootable
 
     public TextMeshPro hpText;
 
+    public bool hitted;
+    public int hpThreshold;
     public int TimeReward;
+    public int dmg;
 
      EnemySystem _enemySystem;
 
@@ -45,12 +48,22 @@ public class Enemy : NetworkBehaviour, IShootable
 
     private void OnDamageTaken(int previousValue, int newValue)
     {
+        hitted = true;
         hpText.text = Hp.Value.ToString();
 
         if(Hp.Value <= 0)
         {
             //Destroy(gameObject);
         }
+    }
+
+    public bool GetHit()
+    {
+        return hitted;
+    }
+    public int GetDmg()
+    {
+        return dmg;
     }
 
     public int GetHealth()

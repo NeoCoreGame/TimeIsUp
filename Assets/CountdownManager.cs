@@ -11,7 +11,7 @@ public class CountdownManager : MonoBehaviour
     public List<PlayerCountdown> contadores;
 
     //private float startingTime = 360f;
-    private float startingTime = 20f;
+    private float startingTime = 360f;
     private RespawnPlayerManager _respawnPlayerManager;
 
     private void Start()
