@@ -267,6 +267,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8af8735d8a124744bc8e0b654ecef6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 2
+  currentCooldown: 3.3815565
+  icon: {fileID: 0}
+  isOnCooldown: 1
   tagsToCheck:
   - Enemy
   speed: 20

@@ -5086,7 +5086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2368767718
+  GlobalObjectIdHash: 3880515151
   InScenePlacedSourceGlobalObjectIdHash: 1158524312
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -5108,7 +5108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: -9.8
-  canMove: 0
+  canMove:
+    m_InternalValue: 0
   _speed: 20
   _fallingSpeed: 2
   _playerNumber: {fileID: 2990560789763475572}
@@ -5321,6 +5322,7 @@ MonoBehaviour:
   healthStuff: {fileID: 0}
   hpSlider: {fileID: 0}
   hpText: {fileID: 0}
+  DeadScreen: {fileID: 0}
 --- !u!114 &-3750110953520712991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5328,15 +5330,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4334785916130375179}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16359c9c8d6c1d44eb870ae440600c38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
+  granny: {fileID: 4334785916130375179}
   hookObject: {fileID: 4477507478420705727, guid: 595ed8d840f6df9448ec68bafab99ff0,
     type: 3}
   hookAbility: {fileID: 7299514905766494981, guid: 595ed8d840f6df9448ec68bafab99ff0,
+    type: 3}
+  bombObject: {fileID: 1128379459909755085, guid: 92b5ca3585333f24181d4165ed0b68af,
+    type: 3}
+  bombAbility: {fileID: 4208324330999811255, guid: 92b5ca3585333f24181d4165ed0b68af,
+    type: 3}
+  stunObject: {fileID: 2976253913707804107, guid: 2bb9297f75a69ac46892a0052784c15e,
+    type: 3}
+  stunAbility: {fileID: 587219440532303080, guid: 2bb9297f75a69ac46892a0052784c15e,
     type: 3}
 --- !u!136 &2843435861797364588
 CapsuleCollider:

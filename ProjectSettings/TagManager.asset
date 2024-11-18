@@ -9,6 +9,7 @@ TagManager:
   - HealthStuff
   - Enemy
   - DeadScreen
+  - Map
   layers:
   - Default
   - TransparentFX
