@@ -216,6 +216,9 @@ GameObject:
   - component: {fileID: 4884404079837928076}
   - component: {fileID: -8973864581450668157}
   - component: {fileID: 1069942760179261576}
+  - component: {fileID: 8601139075466162285}
+  - component: {fileID: -9011842462742624927}
+  - component: {fileID: -5359833681409389910}
   m_Layer: 6
   m_Name: Enemigo
   m_TagString: Enemy
@@ -300,7 +303,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8247629546058775762}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0daff600040c124d80b251d3ffea5be, type: 3}
   m_Name: 
@@ -358,6 +361,70 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &8601139075466162285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8247629546058775762}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb2ae3e2acf6db4cbca013e6f36233e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeOnLoop: 1
+  interruptOptions: 0
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 256
+  rangoVision: 20
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  rangoAtaque: 2
+--- !u!114 &-9011842462742624927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8247629546058775762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7c64ccbe120c1f4db5094f533877b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp:
+    m_InternalValue: 0
+  hpText: {fileID: 0}
+  hitted: 0
+  hpThreshold: 0
+  TimeReward: 0
+  dmg: 0
+--- !u!114 &-5359833681409389910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8247629546058775762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f07632001f03fa44b0bc3e6726a8810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeOnLoop: 0
+  interruptOptions: 0
+  Avanzando_action_target: {fileID: 0}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 256
+  rangoVision: 20
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  rangoAtaque: 3
 --- !u!1001 &883645276656306837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -626,7 +693,10 @@ MonoBehaviour:
   Hp:
     m_InternalValue: 100
   hpText: {fileID: 6064350187775754913}
+  hitted: 0
+  hpThreshold: 0
   TimeReward: 10
+  dmg: 0
 --- !u!4 &849473681237241214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 368b58a222446554eae3aad7b5917692,
