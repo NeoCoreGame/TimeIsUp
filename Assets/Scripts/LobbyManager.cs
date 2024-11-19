@@ -40,6 +40,10 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
     private enemySpawner spawner;
     private Destinies destinies;
 
+    private InitialCountdown startCountdown;
+
+    private RectTransform lobbyRect;
+
 
 
     void Awake() //Configuración del singleton
@@ -65,6 +69,11 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
         spawner = FindObjectOfType<enemySpawner>();
         destinies = FindObjectOfType<Destinies>();
 
+        startCountdown = FindObjectOfType<InitialCountdown>();
+
+        
+
+        lobbyRect = GetComponent<RectTransform>();
     }
     private void Update()
     {
@@ -79,6 +88,8 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
             foreach (PlayerInfo p in playerInfos) { jugadores.text += "\n" + p.playerName; }
             players.Value = jugadores.text;
 
+            
+
             //Cuando los votos se acaben, selecciono el circuito más votado
 
             if (VotosTotales == playerObjects.Count && playerObjects.Count != 0 && !finishedVote)
@@ -91,8 +102,11 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
                 startGame.Value = true;
 
                 Invoke("TeleportPlayers", 1f); //Coloco a los jugadores
-                Invoke("FreePlayers", 4f); //Los dejo caer
-                Invoke("StartRace", 4f); //Comienzo la carrera
+
+                Invoke("CountOneCountdown", 1f); //Los dejo caer
+                Invoke("CountOneCountdown", 2f); //Los dejo caer
+                Invoke("CountOneCountdown", 3f); //Los dejo caer
+                Invoke("CountOneCountdown", 4f); //Los dejo caer
             }
             else if (!finishedVote) //Si no se ha votado, muestro los votos por el momento en el host
             {
@@ -107,17 +121,34 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
         }
 
 
-        if (movePlayers.Value && gameObject.activeSelf) //Si la carrera comienza, invoco funciones para prepararla
+        if (startCountdown.contador.Value ==3 && lobbyRect.localScale != Vector3.zero) //Si la carrera comienza, invoco funciones para prepararla
         {
 
-            spawner.EnableSpawning(true);
             Cursor.lockState = CursorLockMode.Locked;
 
-            gameObject.SetActive(false);
+            lobbyRect.localScale = Vector3.zero;
 
         }
 
+    }
 
+    public void CountOneCountdown()
+    {
+        startCountdown.SubstractOne();
+
+        if(startCountdown.contador.Value <= 0)
+        {
+            FreePlayers();
+            StartRace();
+            spawner.EnableSpawning(true);
+            Invoke("RestartInitialCountdown", 2f);
+        }
+    }
+
+    public void RestartInitialCountdown()
+    {
+
+        startCountdown.contador.Value = 4;
     }
     public void AddConnectedPlayers(GameObject newPlayer) //Funcion que añade a un jugador a la lista de coches
     {

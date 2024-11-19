@@ -21,7 +21,6 @@ public class ServerGameManager : MonoBehaviour
     EnemySystem _enemySystem;
 
     private LobbyManager _lobbyManager;
-    private PlayerInfo _playerInfo;
 
 
     void Awake() //Inicializa la instancia del singleton
@@ -53,6 +52,7 @@ public class ServerGameManager : MonoBehaviour
 
 
             _lobbyManager = FindObjectOfType<LobbyManager>();
+
         
         
     }

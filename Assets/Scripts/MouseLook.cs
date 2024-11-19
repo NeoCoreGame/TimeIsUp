@@ -16,6 +16,7 @@ public class MouseLook : NetworkBehaviour
     public float mouseX;
     public float mouseY;
 
+    private PlayerController playerController;
 
     public override void OnNetworkSpawn()
     {
@@ -32,7 +33,7 @@ public class MouseLook : NetworkBehaviour
             Camera.main.transform.parent = transform;
             Camera.main.transform.localPosition = new Vector3(0f, 0.6f, 0.5f);
 
-
+            playerController = GetComponentInParent<PlayerController>();
             //Cursor.lockState = CursorLockMode.Locked;
         }
     }
@@ -60,11 +61,14 @@ public class MouseLook : NetworkBehaviour
     [ServerRpc]
     public void OnLookServerRpc(Vector2 input)
     {
-        mouseX = input.x * mouseSensitivity;
-        mouseY = input.y * mouseSensitivity;
+        if (playerController.canMove.Value)
+        {
+            mouseX = input.x * mouseSensitivity;
+            mouseY = input.y * mouseSensitivity;
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);  
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        }
 
     }
     #endregion

@@ -32,7 +32,6 @@ public class HealthController : NetworkBehaviour
             hpSlider = healthStuff.transform.GetChild(0).GetComponent<Slider>();
             hpText = healthStuff.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
 
-
             _camhit = Camera.main.GetComponent<CameraHit>();
             _camhit.InitializeScript(new Vector3(0f, 0.6f, 0.5f));
 
@@ -42,19 +41,7 @@ public class HealthController : NetworkBehaviour
             HP.OnValueChanged += OnHealthChange;
 
             UpdateHealth(HP.Value);
-
-            
-
-            
-        }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (IsOwner)
-        {
-            
+         
         }
     }
 
