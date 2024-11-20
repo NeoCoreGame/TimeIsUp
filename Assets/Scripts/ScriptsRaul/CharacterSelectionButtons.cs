@@ -3,58 +3,65 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CharacterSelectionButtons : MonoBehaviour
 {
-    public Character character1;
-    public Character character2;
-    public Character character3;
+    public GameObject character1Selection;
+    public GameObject character2Selection;
+    public GameObject character3Selection;
 
-    public Character[] charactersArray;
+    public GameObject character1Info;
+    public GameObject character2Info;
+    public GameObject character3Info;
+
+    public Color color;
 
     private int referenceID = 0;
-    private int lastReferenceID = 0;
 
-
-    //Character Selection Menu
-    public void RightArrow()
+    public void Character1Selection()
     {
-        lastReferenceID = referenceID;
+        character1Info.SetActive(true);
+        character2Info.SetActive(false);
+        character3Info.SetActive(false);
 
-        if (referenceID > charactersArray.Length-2)
-        {
-            referenceID = 0;
-        }
-        else
-        {
-            referenceID++;
-        }
-        
-        
-        CharacterShowed(referenceID, lastReferenceID);
+        referenceID = 0;
+        color.a = character1Selection.GetComponent<Image>().color.a;
+        color.a = 0.5f;
+        character1Selection.GetComponent<Image>().color = color;
+        color.a = 0f;
+        character2Selection.GetComponent<Image>().color = color;
+        character3Selection.GetComponent<Image>().color = color;
     }
 
-    public void LeftArrow()
+    public void Character2Selection()
     {
-        lastReferenceID = referenceID;
+        character1Info.SetActive(false);
+        character2Info.SetActive(true);
+        character3Info.SetActive(false);
 
-        if (referenceID < 1)
-        {
-            referenceID = charactersArray.Length-1;
-        }
-        else
-        {
-            referenceID--;
-        }
-        
-
-        CharacterShowed(referenceID, lastReferenceID);
+        referenceID = 1;
+        color.a = character2Selection.GetComponent<Image>().color.a;
+        color.a = 0.5f;
+        character2Selection.GetComponent<Image>().color = color;
+        color.a = 0f;
+        character1Selection.GetComponent<Image>().color = color;
+        character3Selection.GetComponent<Image>().color = color;
     }
 
-    public void CharacterShowed(int ID, int lastID)
+    public void Character3Selection()
     {
-        charactersArray[lastID].gameObject.SetActive(false);
-        charactersArray[ID].gameObject.SetActive(true);
+        character1Info.SetActive(false);
+        character2Info.SetActive(false);
+        character3Info.SetActive(true);
+
+        referenceID = 2;
+        color.a = character3Selection.GetComponent<Image>().color.a;
+        color.a = 0.5f;
+        character3Selection.GetComponent<Image>().color = color;
+        color.a = 0f;
+        character1Selection.GetComponent<Image>().color = color;
+        character2Selection.GetComponent<Image>().color = color;
     }
 
     public void ConfirmButton()
@@ -68,6 +75,4 @@ public class CharacterSelectionButtons : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-
-    
 }
