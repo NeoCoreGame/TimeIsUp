@@ -22,6 +22,7 @@ public class bombAbility : Ability
     {
         if (collision.gameObject.tag == "Map")
         {
+            Debug.Log("NOANODNSOANNO");
             EnemiesHit();
             Destroy(gameObject);
         }

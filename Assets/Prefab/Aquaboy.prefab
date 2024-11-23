@@ -5345,9 +5345,9 @@ MonoBehaviour:
     type: 3}
   bombAbility: {fileID: 4208324330999811255, guid: 92b5ca3585333f24181d4165ed0b68af,
     type: 3}
-  stunObject: {fileID: 2976253913707804107, guid: 2bb9297f75a69ac46892a0052784c15e,
+  stunObject: {fileID: 6950745442304941973, guid: 702112b1a77a6b34a914dc6cb350ffb1,
     type: 3}
-  stunAbility: {fileID: 587219440532303080, guid: 2bb9297f75a69ac46892a0052784c15e,
+  stunAbility: {fileID: 2418965728175313521, guid: 702112b1a77a6b34a914dc6cb350ffb1,
     type: 3}
 --- !u!136 &2843435861797364588
 CapsuleCollider:

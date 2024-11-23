@@ -17,12 +17,14 @@ public class hookAbility : Ability
     [HideInInspector]
     public Transform collidedWith;
     private LineRenderer line;
+    //public GameObject hook;
     private bool collided;
 
 
     private void Start()
     {
         line = transform.Find("Line").GetComponent<LineRenderer>();
+        //hook.transform.LookAt(caster);
     }
 
     private void Update()
@@ -33,6 +35,10 @@ public class hookAbility : Ability
             line.SetPosition(1, transform.position);
 
             var dist = Vector3.Distance(transform.position, caster.position);
+            //var dir = (transform.position - caster.position) / dist;
+
+            //hook.transform.LookAt(dir);
+
             if (collided)
             {
                 transform.LookAt(caster);

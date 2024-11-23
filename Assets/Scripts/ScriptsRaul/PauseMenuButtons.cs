@@ -14,7 +14,7 @@ public class PauseMenuButtons : MonoBehaviour
 
         pauseMenuCanvas = GameObject.Find("PauseMenuCanvas");
         settingsMenuElements = GameObject.Find("SettingsMenuElements");
-        pauseMenuElements = GameObject.Find("PauseMenuElements");
+        pauseMenuElements = GameObject.Find("PauseMenu");
 
     }
 
