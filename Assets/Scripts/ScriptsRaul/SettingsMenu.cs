@@ -12,6 +12,9 @@ public class SettingsMenu : MonoBehaviour
     public GameObject musicVolumeSlider;
     public GameObject sfxVolumeSlider;
 
+    public GameObject confirmationPanel;
+    public GameObject settingsPanel;
+
 
     public class SettingsValues
     {
@@ -41,6 +44,8 @@ public class SettingsMenu : MonoBehaviour
         Debug.Log(settingsData);
         System.IO.File.WriteAllText(filePath, settingsData);
         Debug.Log("Data saved");
+        confirmationPanel.SetActive(false);
+        settingsPanel.SetActive(true);
     }
 
     public void LoadFromJson()
@@ -78,5 +83,19 @@ public class SettingsMenu : MonoBehaviour
     {
         audioMixer.SetFloat("SFXVolume", sfxVolume);
         settingsValues.sfxVolume = sfxVolume;
+    }
+
+    public void ConfirmationToggle()
+    {
+        if (confirmationPanel.activeSelf == true)
+        {
+            settingsPanel.SetActive(true);
+            confirmationPanel.SetActive(false);
+        }
+        else
+        {
+            confirmationPanel.SetActive(true);
+            settingsPanel.SetActive(false);
+        }
     }
 }

@@ -13,6 +13,7 @@ public class Buttons : MonoBehaviour
     GameObject shopElements;
     GameObject personalizationElements;
     GameObject battlePassElements;
+    GameObject shopPreviewElements;
 
 
     private void Awake()
@@ -25,10 +26,12 @@ public class Buttons : MonoBehaviour
         shopElements = GameObject.Find("ShopElements");
         personalizationElements = GameObject.Find("PersonalizationElements");
         battlePassElements = GameObject.Find("BattlePassElements");
+        shopPreviewElements = GameObject.Find("Preview");
 
     }
     private void Start()
     {
+        shopPreviewElements.SetActive(false);
         settingsMenuElements.SetActive(false);
         creditsElements.SetActive(false);
         controlsElements.SetActive(false);
@@ -86,6 +89,8 @@ public class Buttons : MonoBehaviour
 
         //Main Menu Dissapears
         mainMenuElements.SetActive(false);
+        battlePassElements.SetActive(false);
+        personalizationElements.SetActive(false);
 
     }
 
@@ -97,6 +102,8 @@ public class Buttons : MonoBehaviour
 
         //Main Menu Dissapears
         mainMenuElements.SetActive(false);
+        battlePassElements.SetActive(false);
+        shopElements.SetActive(false);
 
     }
 
@@ -108,6 +115,8 @@ public class Buttons : MonoBehaviour
 
         //Main Menu Dissapears
         mainMenuElements.SetActive(false);
+        shopElements.SetActive(false);
+        personalizationElements.SetActive(false);
 
     }
 
@@ -164,6 +173,20 @@ public class Buttons : MonoBehaviour
 
         //Settings Menu Dissapears
         shopElements.SetActive(false);
+
+    }
+
+    public void TogglePreview()
+    {
+
+        if (shopPreviewElements.activeSelf)
+        {
+            shopPreviewElements.SetActive(false);
+        }
+        else
+        {
+            shopPreviewElements.SetActive(true);
+        }
 
     }
 

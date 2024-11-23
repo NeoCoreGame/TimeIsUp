@@ -29,13 +29,13 @@ public class abilityController : MonoBehaviour
         hookAbility.isOnCooldown = false;
 
         //Bomb Ability
-        bombAbility.icon = GameObject.Find("hookAbilityGrayIcon").GetComponent<Image>();
+        bombAbility.icon = GameObject.Find("bombAbilityGrayIcon").GetComponent<Image>();
         bombAbility.icon.fillAmount = 0;
         bombAbility.cooldown = 5;
         bombAbility.isOnCooldown = false;
 
         //Stun Ability
-        stunAbility.icon = GameObject.Find("hookAbilityGrayIcon").GetComponent<Image>();
+        stunAbility.icon = GameObject.Find("stunAbilityGrayIcon").GetComponent<Image>();
         stunAbility.icon.fillAmount = 0;
         stunAbility.cooldown = 2;
         stunAbility.isOnCooldown = false;
@@ -43,26 +43,33 @@ public class abilityController : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Q) && !hookAbility.isOnCooldown)
-        //{
-        //    HookAbility();
-        //}
-        //hookAbility.AbilityInput();
-        //hookAbility.AbilityCooldown();
-
-        //if (Input.GetKeyDown(KeyCode.Q) && !bombAbility.isOnCooldown)
-        //{
-        //    BombAbility();
-        //}
-        //bombAbility.AbilityInput();
-        //bombAbility.AbilityCooldown();
-
-        if (Input.GetKeyDown(KeyCode.Q) && !stunAbility.isOnCooldown)
+        switch (StaticData.characterID)
         {
-            StunAbility();
+            case 0:
+                if (Input.GetKeyDown(KeyCode.Q) && !hookAbility.isOnCooldown)
+                {
+                    HookAbility();
+                }
+                hookAbility.AbilityInput();
+                hookAbility.AbilityCooldown();
+                break;
+            case 1:
+                if (Input.GetKeyDown(KeyCode.Q) && !bombAbility.isOnCooldown)
+                {
+                    BombAbility();
+                }
+                bombAbility.AbilityInput();
+                bombAbility.AbilityCooldown();
+                break;
+            case 2:
+                if (Input.GetKeyDown(KeyCode.Q) && !stunAbility.isOnCooldown)
+                {
+                    StunAbility();
+                }
+                stunAbility.AbilityInput();
+                stunAbility.AbilityCooldown();
+                break;
         }
-        stunAbility.AbilityInput();
-        stunAbility.AbilityCooldown();
     }
 
 
