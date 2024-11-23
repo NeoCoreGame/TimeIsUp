@@ -62,6 +62,18 @@ public class PauseMenuButtons : MonoBehaviour
         settingsMenuElements.SetActive(false);
     }
 
+    public void ToggleSettings()
+    {
+        if (!settingsMenuElements.activeSelf)
+        {
+            settingsMenuElements.SetActive(true);
+        }
+        else
+        {
+            settingsMenuElements.SetActive(false);
+        }
+    }
+
     public void ExitGame()
     {
         SceneManager.LoadScene(1);

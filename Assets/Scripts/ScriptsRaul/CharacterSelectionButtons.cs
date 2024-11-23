@@ -15,6 +15,9 @@ public class CharacterSelectionButtons : MonoBehaviour
     public GameObject character2Info;
     public GameObject character3Info;
 
+    public GameObject characterSelectElements;
+    public GameObject settingsElements;
+
     public Color color;
 
     private int referenceID = 0;
@@ -64,6 +67,20 @@ public class CharacterSelectionButtons : MonoBehaviour
         character2Selection.GetComponent<Image>().color = color;
     }
 
+    public void ToggleSettings()
+    {
+        if (!settingsElements.activeSelf)
+        {
+            characterSelectElements.SetActive(false);
+            settingsElements.SetActive(true);
+        }
+        else
+        {
+            characterSelectElements.SetActive(true);
+            settingsElements.SetActive(false);
+        }
+    }
+
     public void ConfirmButton()
     {
         //Enviar referenceID
@@ -73,6 +90,6 @@ public class CharacterSelectionButtons : MonoBehaviour
 
     public void BackButton()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }
