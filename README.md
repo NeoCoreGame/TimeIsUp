@@ -720,7 +720,7 @@ Este enemigo es capaz de convertirse en tu aliado una vez derrotado, es por ello
 <u>**Robot Tostadora:**
 </u>
 <div align="center">
-   <img src="Assets/Arte/3D/Personajes/Robot.png" alt="Robot Tostadora 3D" width="500" height="450">
+   <img src="Assets/Arte/3D/Personajes/Robot Tostadora.png" alt="Robot Tostadora 3D"  width="340" height="540">
 </div>
 
 <p></p>
@@ -728,33 +728,52 @@ Este enemigo es capaz de convertirse en tu aliado una vez derrotado, es por ello
 <u>**Niño Agua:**
 </u>
 <div align="center">
-   <img src="Assets/Arte/3D/Personajes/NinoPez.png" alt="Niño Agua 3D" width="438" height="540">
+   <img src="Assets/Arte/3D/Personajes/Niño.png" alt="Niño Agua 3D" width="340" height="540">
+</div>
+<p></p>
+
+<u>**Abuela Jardinera:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Personajes/Abuela.png" alt="Niño Agua 3D" width="340" height="540">
 </div>
 
 ### 8.3. Modelado enemigos
-<u>**Enemigo base:**
+<u>**Minion:**
 </u>
 <div align="center">
-   <img src="Assets/Arte/3D/Enemigos/Base.png" alt="Enemigo Base" width="692" height="388">
-    <img src="Assets/Arte/3D/Enemigos/BaseDead.png" alt="Enemigo Base Muerto" width="692" height="388">
+   <img src="Assets/Arte/3D/Enemigos/Minion.png" alt="Enemigo Base" width="340" height="540">
+</div>
+
+<u>**Escurridizo:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Enemigos/Escurridizo.png" alt="Enemigo Base" width="340" height="540">
+</div>
+
+<u>**Golem:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Enemigos/Golem.png" alt="Enemigo Base" width="340" height="540">
+</div>
+
+<u>**Explosivo:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Enemigos/Explosivo.png" alt="Enemigo Base" width="340" height="540">
+</div>
+
+<u>**Volador:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Enemigos/Volador.png" alt="Enemigo Base" width="340" height="540">
 </div>
 
 ## 9. Animaciones
-### 9.1. Rigging
-<u> **Robot Tostadora:**
+<u>**Robot Tostadora:**
 </u>
 <div align="center">
-   <img src="Assets/Imagenes GDD/RobotRig.png" alt="RigRobot" width="429" height="362">
-</div>
-
-### 9.2. Frames de animación
-<u>**Animaciones andar robot tostadora:**
-</u>
-<div align="center">
-   <img src="Assets/Arte/3D/Personajes/WalkAnimation.gif" alt="Animacion andar" width="600" height="400">
-</div>
-<div align="center">
-   <img src="Assets/Arte/3D/Personajes/WalkGunAnimation.gif" alt="Animacion andar con arma" width="600" height="400">
+   <img src="Assets/Arte/3D/Animaciones/RobotWalk.gif" alt="Animacion andar" width="960" height="540">
 </div>
 
 ## 10. Arte técnico
