@@ -14,6 +14,8 @@
    - Se ha completado el turn around de todos los personajes jugables
    - Se ha añadido el turn around de cinco enemigos
    - Se ha completado el diseño de las interfaces del juego
+   - Se ha añadido la versión final del primer escenario
+   - Se ha añadido el segundo escenario
 
 
 ## 2. Introducción
