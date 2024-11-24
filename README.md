@@ -16,6 +16,8 @@
    - Se ha completado el diseño de las interfaces del juego
    - Se ha añadido la versión final del primer escenario
    - Se ha añadido el segundo escenario
+   - Se han modelado y texturizado todos los personajes menos el final
+   - Se han riggeado y animado todos los personajes, tanto enemigos como jugables
 
 
 ## 2. Introducción
