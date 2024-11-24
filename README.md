@@ -836,11 +836,12 @@ Este enemigo es capaz de convertirse en tu aliado una vez derrotado, es por ello
 ## 11. Música y sonido
 ### 11.1. Temas musicales
 Actualmente, tenemos un compositor trabajando en la banda sonora de nuestro videojuego.
+
 Compositor: Victor Gil Torres.
 
 ### 11.2. Efectos de sonido
-Botones:
-Se ha añadido efecto de sonido para los botones, obtenido de free sound, y editado posteriormente con audacity.
+Botones: Se ha añadido efecto de sonido para los botones, obtenido de free sound, y editado posteriormente con audacity.
+
 Efecto: https://freesound.org/people/Glaneur%20de%20sons/sounds/104946/
 
 ## 12. Post-Mortem (Alpha)
