@@ -644,8 +644,9 @@ Este enemigo es capaz de convertirse en tu aliado una vez derrotado, es por ello
 **Interfaces**
 Se han hecho varias pruebas de color para las interfaces, siguiendo esa temática cartoon con colores llamativos:
 <div align="center">
-   <img src="Assets/Arte/Imagenes GDD/ColorInterfaces.png" alt="Estudio Color Interfaces" width="500" height="260">
+   <img src="Assets/Imagenes GDD/ColorInterfaces.png" alt="Estudio Color Interfaces" width="500" height="260">
 </div>
+
 Finalmente se escogió la paleta de colores de azul con toques rojos:
 <div align="center">
    <img src="Assets/Arte/Interfaces GDD/InterfazCreditos.png" alt="Interfaz Creditos" width="500" height="260">
