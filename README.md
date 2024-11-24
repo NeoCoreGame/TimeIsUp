@@ -506,7 +506,7 @@ Los controles están diseñados para ser intuitivos, pero permiten un alto grado
 
 ### 6.10. Pantalla de controles	
 <div align="center">
-   <img src="Assets/Arte/Interfaces Bocetos/InterfazControles.png" alt="Interfaz Controles" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/IntezfazControles.png" alt="Interfaz Controles" width="500" height="250">
 </div>
 <div align="center">
    <img src="Assets/Arte/Interfaces GDD/InterfazControles.png" alt="Interfaz Controles" width="500" height="260">
@@ -530,7 +530,7 @@ Los controles están diseñados para ser intuitivos, pero permiten un alto grado
 
 ### 6.13. Diagrama de flujo de pantallas
 <div align="center">
-   <img src="Assets/Imagenes Bocetos/DiagramaFlujo.png" alt="Diagrama Flujo" width="500" height="200">
+   <img src="Assets/Imagenes GDD/DiagramaFlujo.png" alt="Diagrama Flujo" width="500" height="200">
 </div>
 
 ## 7. Arte 2D
@@ -641,7 +641,16 @@ Este enemigo es capaz de convertirse en tu aliado una vez derrotado, es por ello
 
 
 ### 7.2. Paleta de colores
-### 7.3. Texturas
+**Interfaces**
+Se han hecho varias pruebas de color para las interfaces, siguiendo esa temática cartoon con colores llamativos:
+<div align="center">
+   <img src="Assets/Arte/Imagenes GDD/ColorInterfaces.png" alt="Estudio Color Interfaces" width="500" height="260">
+</div>
+Finalmente se escogió la paleta de colores de azul con toques rojos:
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazCreditos.png" alt="Interfaz Creditos" width="500" height="260">
+</div>
+
 
 ## 8. Arte 3D
 ### 8.1. Modelado de escenario
