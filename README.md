@@ -490,10 +490,7 @@ Los controles están diseñados para ser intuitivos, pero permiten un alto grado
    <img src="Assets/Arte/Interfaces Bocetos/InterfazCarga.png" alt="Interfaz Carga" width="500" height="250">
 </div>
 <div align="center">
-   <img src="Assets/Arte/Interfaces GDD/InterfazCargaGif.gif" alt="Interfaz Carga" width="500" height="250">
-</div>
-<div align="center">
-   <img src="Assets/Arte/Interfaces GDD/InterfazCarga.png" alt="Interfaz Carga" width="500" height="260">
+   <img src="Assets/Arte/Interfaces GDD/InterfazCargaGif.GIF" alt="Interfaz Carga" width="500" height="250">
 </div>
 
 ### 6.9. Pantalla de opciones	
