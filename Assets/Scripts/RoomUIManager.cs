@@ -6,11 +6,20 @@ using Unity.Services.Core;
 using Unity.Services.Relay.Models;
 using Unity.Services.Relay;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using System;
 
 public class HelloWorldManager : MonoBehaviour
 {
     const int maxConnections = 50;
     string joinCode = "Enter room code...";
+
+    public Button hostButton;
+    public Button joinButton;
+    public TMP_InputField field;
+
+    public GameObject lobbyInterf;
     void OnGUI()
     {
         GUILayout.BeginArea(new Rect(10, 10, 300, 300));
@@ -22,19 +31,35 @@ public class HelloWorldManager : MonoBehaviour
         {
             StatusLabels();
 
+            lobbyInterf.SetActive(false);
+
         }
 
         GUILayout.EndArea();
     }
 
-     void StartButtons()
+    private void Start()
+    {
+
+        hostButton.onClick.AddListener(StartHost);
+        joinButton.onClick.AddListener(StartClient);
+        field.onValueChanged.AddListener(ChangeCode);
+    }
+
+    void StartButtons()
     {
         if (GUILayout.Button("Host")) StartHost();
         if (GUILayout.Button("Client")) StartClient();
         joinCode = GUILayout.TextField(joinCode);
+
+
         //if (GUILayout.Button("Server")) NetworkManager.Singleton.StartServer();
     }
 
+    private void ChangeCode(string arg0)
+    {
+        joinCode = field.text;
+    }
     async void StartHost()
     {
         await UnityServices.InitializeAsync();
@@ -60,11 +85,11 @@ public class HelloWorldManager : MonoBehaviour
 
         var joinAllocation = await RelayService.Instance.JoinAllocationAsync(joinCode: joinCode);
         NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(new RelayServerData(joinAllocation, "wss"));
-        
+
         NetworkManager.Singleton.StartClient();
     }
 
-     void StatusLabels()
+    void StatusLabels()
     {
         var mode = NetworkManager.Singleton.IsHost ?
             "Host" : NetworkManager.Singleton.IsServer ? "Server" : "Client";

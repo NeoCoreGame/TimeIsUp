@@ -16,7 +16,7 @@ public class MouseLook : NetworkBehaviour
     public float mouseX;
     public float mouseY;
 
-    private PlayerController playerController;
+    public PlayerController playerController;
 
     public override void OnNetworkSpawn()
     {
@@ -61,8 +61,10 @@ public class MouseLook : NetworkBehaviour
     [ServerRpc]
     public void OnLookServerRpc(Vector2 input)
     {
+        Debug.Log(" Casi Moviendote baby");
         if (playerController.canMove.Value)
         {
+            Debug.Log("Moviendote baby");
             mouseX = input.x * mouseSensitivity;
             mouseY = input.y * mouseSensitivity;
 
