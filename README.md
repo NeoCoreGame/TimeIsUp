@@ -611,7 +611,7 @@ Este enemigo es capaz de convertirse en tu aliado una vez derrotado, es por ello
 ### 8.1. Modelado de escenario
 <u>**Blocking del primer escenario: fábrica**
 </u>
-Primera aproximación de la fábrica en 3D, empleada como “concept” del escenario donde ir probando distintas ideas. El blocking pasa por múltiples iteraciones hasta llegar al modelo final.
+- Primera aproximación de la fábrica en 3D, empleada como “concept” del escenario donde ir probando distintas ideas. El blocking pasa por múltiples iteraciones hasta llegar al modelo final.
 <div align="center">
    <img src="Assets/Arte/3D/Escenarios/Fabrica/Modelo/FabricaBlocking.png" alt="Blocking de la fábrica" width="500" height="450">
 </div>
@@ -625,7 +625,7 @@ Primera aproximación de la fábrica en 3D, empleada como “concept” del esce
    <img src="Assets/Arte/3D/Escenarios/Fabrica/Modelo/Fabrica4.png" alt="Vista general de la fábrica" width="692" height="500">
 </div>
 
-<u>**Texturas del primer escenario: fábrica**
+<u>**Texturas props fábrica**
 </u>
 <div align="center">
    <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/CardboardBox.png" alt="Caja de cartón pequeña" width="320" height="300">
@@ -634,6 +634,61 @@ Primera aproximación de la fábrica en 3D, empleada como “concept” del esce
    <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/ShipContainer.png" alt="Contenedor grande" width="350" height="320">
    <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/Elevator.png" alt="Ascensor" width="320" height="320">
    <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/Platforms.png" alt="Plataformas altas" width="692" height="400">
+</div>
+
+<u>**Modelo final fábrica (con texturas)**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/FabricaTexturas1.png" alt="Primera vista de la fábrica texturizada" width="692" height="388">
+   <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/FabricaTexturas2.png" alt="Segunda vista de la fábrica texturizada" width="692" height="388">
+</div>
+
+<u>**Modelo final fábrica en Unity (con texturas)**
+<div align="center">
+   <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/FabricaUnity.png" alt="Vista de la fábrica texturizada y redimensionada en Unity" width="692" height="388">
+</div>
+
+
+<u>**Blocking del segundo escenario: isla**
+</u>
+- Primeros blocking de la isla en 3D, empleados como “concept” del escenario donde ir probando distintas ideas. El blocking pasa por múltiples iteraciones hasta llegar al modelo final, como se puede apreciar en las imágenes.
+<div align="center">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Modelo/IslaBlocking1.png" alt="Primera vista del blocking de la isla" width="692" height="500">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Modelo/IslaBlocking2.png" alt="Segunda vista del blocking de la isla" width="692" height="500">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Modelo/IslaBlocking3.png" alt="Tercera vista del blocking de la isla" width="692" height="388">
+</div>
+
+
+<u>**Modelo final del segundo escenario: isla**
+</div>
+<p align="center">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Modelo/IslaModelo1.png" alt="Primera vista de la isla" width="692" height="500">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Modelo/IslaModelo2.png" alt="Segunda vista de la isla" width="692" height="500">
+</div>
+
+
+<u>**Texturas props isla**
+</div>
+<p align="center">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/Dock.png" alt="Puerto" width="692" height="500">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/Tent.png" alt="Puestos de la madera" width="320" height="300">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/Ship.png" alt="Barco" width="692" height="500">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/Palmtree.png" alt="Palmera" width="320" height="300">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/Box.png" alt="Caja de fruta" width="320" height="300">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/Stairs.png" alt="Escaleras" width="300" height="600">
+</div>
+
+<u>**Modelo final isla (con texturas)**
+</div>
+<p align="center">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/IslaTexturas1.png" alt="Primera vista de la isla texturizada" width="692" height="500">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Modelo/IslaTexturas2.png" alt="Segunda vista de la isla texturizada" width="692" height="500">
+</div>
+
+<u>**Modelo final isla en Unity (con texturas)**
+</div>
+<p align="center">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/IslaUnity.png" alt="Vista de la isla texturizada en Unity" width="692" height="500">
 </div>
 
 ### 8.2. Modelado personajes jugables
