@@ -8,6 +8,13 @@
    - Se ha creado el apartado de interfaces y pantalla, diseño de escenario y música y sonido
    - Se han añadido los diseños de personajes a los apartados de arte
    - Se han revisado los apartados existentes
+### GDD versión 0.2.0: 
+   - Se ha añadido el postmortem de la versión Alpha
+   - Se ha ampliado el apartado de la narrativa del juego
+   - Se ha completado el turn around de todos los personajes jugables
+   - Se ha añadido el turn around de cinco enemigos
+   - Se ha completado el diseño de las interfaces del juego
+
 
 ## 2. Introducción
 El presente documento introduce el Game Design Document (GDD) del videojuego “Time Is Up”. A lo largo del desarrollo de este, se explicará a detalle las características que lo definen, así como el propósito del juego y su modelo de negocio. 
@@ -334,7 +341,34 @@ mantener la retención a través de contenido constante y aumentar el valor de v
 
 ## 4. Narrativa
 ### 4.1. Mundo
-El universo de "Time Is Up" está formado por múltiples realidades paralelas, cada una habitada por civilizaciones avanzadas que enfrentan una inminente catástrofe: el colapso del tiempo mismo. Las fuerzas que controlan el tejido del tiempo han comenzado a desmoronarse, y los mundos están desapareciendo uno por uno. Detrás de esta destrucción se encuentra una entidad misteriosa, conocida solo como El Cronarca, que busca restablecer el equilibrio del tiempo, pero solo un mundo puede ser salvado. Los héroes de cada realidad son convocados a la arena de Fabric, un plano místico suspendido en el vacío del tiempo, donde lucharán por asegurar la existencia continua de su universo. Los jugadores deberán enfrentarse a criaturas corruptas que habitan este reino, mientras compiten con otros combatientes por los últimos fragmentos de tiempo que pueden salvar sus mundos.
+El universo de "Time Is Up" está formado por múltiples realidades paralelas, cada una habitada por civilizaciones avanzadas que enfrentan una inminente catástrofe: el colapso del tiempo mismo. Las fuerzas que controlan el tejido del tiempo han comenzado a desmoronarse, y los mundos están desapareciendo uno por uno. Detrás de esta destrucción se encuentra una entidad misteriosa, conocida solo como El Cronarca, que busca restablecer el equilibrio del tiempo, pero solo un mundo puede ser salvado. Los héroes de cada realidad son convocados a la arena de Momentum, un plano místico suspendido en el vacío del tiempo, donde lucharán por asegurar la existencia continua de su universo. Los jugadores deberán enfrentarse a criaturas corruptas que habitan este reino, mientras compiten con otros combatientes por los últimos fragmentos de tiempo que pueden salvar sus mundos.
+### 4.2. El Cronarca
+El Cronarca es una entidad mística que existe en el universo desde su mismísima creación. Nació por la necesidad de observar, controlar y preservar la línea temporal. Durante el primer eón, El Cronarca estuvo observador con lo que ocurría con el tiempo, solventando cualquier inconveniente que pudiese alterar la línea temporal. 
+
+Una perturbación en el universo creó una explosión temporal que dejó a El Cronarca en un estado de letargo durante eones y eones.
+
+La línea temporal, al estar sin vigía, se vio alterada, creando realidades paralelas conocidas como Parallels. La creación de estas realidades se debieron a la fragmentación del Cronos. 
+
+El continuo deterioro del tiempo llevó a la creación de unas criaturas que viven por y para conseguir tiempo. Buscan el tiempo del universo para absorberlo y volverse más fuertes.
+
+Una nueva perturbación temporal consiguió despertar a El Cronarca. Una vez despierto empezó un arduo plan para restablecer el equilibrio del tiempo. Para ello primero consiguió amaestrar las criaturas creadas por el propio deterioro del tiempo, convirtiéndolas en su ejército personal conocido como el CronoSerum. Con el ejército de su lado, El Cronarca empezó con su plan de reconstrucción de la línea temporal, destruyendo los Parallels hasta que solo quedase uno. El Cronarca decidió tiempo después de la aniquilación de algunas realidades que crearía un torneo entre Parallels para decidir que Parallel es la merecedora de persistir en el tiempo. Los combates entre realidades se desarrollarían en Momentum, un espacio creado por El Cronarca fuera de la línea temporal.
+### 4.3. Momentum
+El espacio creado por El Cronarca posee varias entidades donde se desarrollan los combates entre Parallels. Cada entidad está originada por cada Parallel, dando lugar a extraños lugares muy similares a cada realidad paralela pero con un aura siniestra y desolada, como si fuese la Parallel después de la aniquilación temporal.
+### 4.4. CronoSerum
+El ejército de El Cronarca está formado por seis tipos de monstruos temporales. 
+ - El Minion es la criatura temporal más primigenia. Fue el primer monstruo en aparecer.
+ - El Minion Volador es la evolución del Minion, esta evolución solo se consigue lograr si los Minions absorben varios Cronos en su transcurso vital.
+ - Petsy se originaronpor la absorción temporal de los primeros guerreros de las primeras Parallels en colapsar. Los Minions absorbieron su energía crónica convirtiéndose en unos monstruos gigantes.
+ - Slipsy se crean a partir de una alteración crónica en los Minions, rehúsan del combate y huyen de él, se preocupan por mantener a salvo a sus aliados
+ - Detonatsy son tanques de energía crónica. Evolucionaron desde los Minions que absorbieron grandes cantidades de tiempo en un periodo muy corto de tiempo. Han absorbido tanta energía crónica que su único objetivo es explotar cerca de los enemigos para acabar con su energía.
+ - Latsy son los seres temporales más puros y más desarrollados del ejército. Son heraldos de El Cronarca y su último recurso en batalla. Suelen tomar posiciones de guardia.
+### 4.5. Cronos
+El Cronos es la energía vital del tiempo, la energía temporal del universo. Desde el origen del universo se mantuvo como una entidad inseparable, pero después de la primer perturbación temporal que originó el largo letargo de El Cronarca se dividió en infinidad de fragmentos que se expandieron a lo largo de todo el Universo, originando las realidades paralelas conocidas como Parallels.
+### 4.6. Parallels
+Las realidades paralelas originadas después de la primera perturbación temporal. El desarrollo de cada una es único y diferente respecto a las demás aunque pueda haber similitudes puesto que hay infinidad de realidades y posibilidades. Hay tres realidades que destacan frente a las demás.
+ - Robotic: es una realidad donde los robots consiguieron dominar el mundo y controlar todo el desarrollo tecnológico. Los humanos fueron aniquilados por los autómatas que se rebelaron contra ellos. Tosty Dory pertenece a esta realidad
+ - Aquatic: es una realidad que fue sucumbida por el imparable ascenso del nivel del mar, los humanos se adaptaron a la vida acuática, llegando a ser capaces de controlar el agua de maneras inimaginables SplashKid pertenece a esta realidad
+ - Greenic: es una realidad donde la vegetación salvaje absorbió las estructuras humanas. Los humanos se convirtieron en excelentes manipuladores de los plantas y vegetales, desarrollando increíbles técnicas de fertilidad. Petunia pertenece a esta realidad
 
 ## 5. Gameplay
 ### 5.1. Jugabilidad	
@@ -380,71 +414,114 @@ Los controles están diseñados para ser intuitivos, pero permiten un alto grado
 ## 6. Interfaces y pantallas
 ### 6.1. Pantalla de inicio	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazInicio.png" alt="Interfaz Inicio" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazInicio.png" alt="Interfaz Inicio" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazMenu.png" alt="Interfaz Inicio" width="500" height="260">
 </div>
 
 ### 6.2. Interfaz de juego	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazJuego.png" alt="Interfaz Juego" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazJuego.png" alt="Interfaz Juego" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazJugador.png" alt="Interfaz Juego" width="500" height="260">
 </div>
 
 ### 6.3. Pantallas de Victoria / Derrota	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazVictoria.png" alt="Interfaz Victoria" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazVictoria.png" alt="Interfaz Victoria" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazVictoria.png" alt="Interfaz Victoria" width="500" height="260">
 </div>
 
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazDerrota.png" alt="Interfaz Derrota" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazDerrota.png" alt="Interfaz Derrota" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazDerrota.png" alt="Interfaz Derrota" width="500" height="260">
 </div>
 
 ### 6.4. Pantalla de selección de personaje	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazSeleccionPersonaje.png" alt="Interfaz Seleccion Personaje" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazSeleccionPersonaje.png" alt="Interfaz Seleccion Personaje" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazSeleccionPersonaje.png" alt="Interfaz Seleccion Personaje" width="500" height="260">
 </div>
 
 ### 6.5. Pantalla de personalización	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazPersonalizacion.png" alt="Interfaz Personalizacion" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazPersonalizacion.png" alt="Interfaz Personalizacion" width="500" height="250">
 </div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazPersonalizar.png" alt="Interfaz Personalizar" width="500" height="260">
+</div>
+
 
 ### 6.6. Pantalla de Battle Pass	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazBattlePass.png" alt="Interfaz Battle Pass" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazBattlePass.png" alt="Interfaz Battle Pass" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazBattlePass.png" alt="Interfaz Battle Pass" width="500" height="260">
 </div>
 
 ### 6.7. Pantalla de compra	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazCompra.png" alt="Interfaz Compra" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazCompra.png" alt="Interfaz Compra" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazTienda.png" alt="Interfaz Compra" width="500" height="260">
 </div>
 
 ### 6.8. Pantalla de carga	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazCarga.png" alt="Interfaz Carga" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazCarga.png" alt="Interfaz Carga" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazCargaGif.gif" alt="Interfaz Carga" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazCarga.png" alt="Interfaz Carga" width="500" height="260">
 </div>
 
 ### 6.9. Pantalla de opciones	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazOpciones.png" alt="Interfaz Opciones" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazOpciones.png" alt="Interfaz Opciones" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazOpciones.png" alt="Interfaz Opciones" width="500" height="260">
 </div>
 
 ### 6.10. Pantalla de controles	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazControles.png" alt="Interfaz Controles" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazControles.png" alt="Interfaz Controles" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazControles.png" alt="Interfaz Controles" width="500" height="260">
 </div>
 
 ### 6.11. Pantalla de usuario	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazUsuario.png" alt="Interfaz Usuario" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazUsuario.png" alt="Interfaz Usuario" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazSala.png" alt="Interfaz Usuario" width="500" height="260">
 </div>
 
 ### 6.12. Pantalla de créditos	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazCreditos.png" alt="Interfaz Creditos" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazCreditos.png" alt="Interfaz Creditos" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazCreditos.png" alt="Interfaz Creditos" width="500" height="260">
 </div>
 
 ### 6.13. Diagrama de flujo de pantallas
 <div align="center">
-   <img src="Assets/Imagenes GDD/DiagramaFlujo.png" alt="Diagrama Flujo" width="500" height="200">
+   <img src="Assets/Imagenes Bocetos/DiagramaFlujo.png" alt="Diagrama Flujo" width="500" height="200">
 </div>
 
 ## 7. Arte 2D
@@ -476,6 +553,13 @@ Finalmente se optó por una representación más simple con la representación d
 </p>
 
 <u>Logo del juego:</u>
+Para el logo del juego se quiso incorporar una representación de que el tiempo corre ya que el nombre del juego es “Time Is Up”, así que se decidió hacer esta representación con un reloj de arena.
+<div align="center">
+   <img src="Assets/Arte/Logos/LogoJuego1.png" alt="LogoJuego1" width="400" height="300">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Logos/LogoJuego2.png" alt="LogoJuego2" width="500" height="150">
+</div>
 
 #### Personajes jugables
 <u>**Niño Agua:**  al ser un niño con habilidades de agua, se ha querido dar un estilo infantil en donde el personaje se encuentre vestido con una malla de superhéroe y que al mismo tiempo se vea como un neopreno. Se le ha añadido también el casco en forma de pez para dar más sensación de que es un niño pequeño.
@@ -490,7 +574,7 @@ Este niño tiene una personalidad inmadura e infantil, debido a su poca edad. En
 <u>**Robot Tostadora:**  para este personaje, al ser un robot que lanza tostadas, se ha querido que a pesar de su tamaño grande, siga teniendo un toque tierno al ser un robot que está tematizado con el entorno de la panadería. 
 </u>
 <div align="center">
-   <img src="Assets/Arte/Personajes/RobotTostadora.jpg" alt="Robot Tostadora" width="750" height="250">
+   <img src="Assets/Arte/Personajes/RobotTostadora.jpg" alt="Robot Tostadora" width="750" height="220">
 </div>
 Este robot posee un gran sentido de la justicia y se ha modificado así mismo para poder hacer frente a la invasión. Odia el conflicto pero quiere proteger a los seres indefensos puesto que tuvo que ver cómo la fusión de los mundos destruyó su fábrica sin poder hacer nada por ella. A pesar de su naturaleza robótica, después de la invasión se ha visto reprogramada a tal forma de casi parecer un ser humano, llegando a poseer atisbo de humanidad y sentimentalidad.
 
@@ -499,7 +583,7 @@ Este robot posee un gran sentido de la justicia y se ha modificado así mismo pa
 <u>**Abuelita Jardinera:** para la abuela, se ha querido borrar el aspecto cariñoso de una abuela jardinera y darle un toque más cañero poniendo unas gafas oscuras al personaje.
 </u>
 <div align="center">
-   <img src="Assets/Arte/Personajes/AbuelitaJardinera.jpg" alt="Abuelita Jardinera" width="250" height="350">
+   <img src="Assets/Arte/Personajes/AbuelitaJardinera.png" alt="Abuelita Jardinera" width="650" height="350">
 </div>
 Esta anciana vivía plácidamente en su casa con jardín cuando llegó el colapso. Recogió todos los utensilios que pudo de su casa y salvó todas las plantas que pudo de su jardín. El colapso transformó a las plantas haciéndolas agresivas, la anciana llegó a controlar la agresividad de las mismas para su propio beneficio y poder luchar por la vida de su universo. Es una persona calmada y calculadora, tiene una capacidad excepcional para desarrollar estrategias de combates que le permitan resolver cualquier inconveniente con el que se encuentre.
 
@@ -516,15 +600,32 @@ Esta anciana vivía plácidamente en su casa con jardín cuando llegó el colaps
 
 **Enemigo volador: Minion volador**
 - Exploradores aéreos de mirada aguda, patrullan zonas estratégicas y atacan solo cuando los jugadores invaden su territorio, manteniéndose siempre fuera de alcance.
+<div align="center">
+   <img src="Assets/Arte/Enemigos/EnemigoVolador.png" alt="Enemigo Volador" width="500" height="350">
+</div>
 
 **Enemigo tanque: Petsy** 
 - Fueron guerreros del primer mundo en colapsar; ahora, liberados de su corrupción, son aliados lentos pero poderosos.
+<div align="center">
+   <img src="Assets/Arte/Enemigos/EnemigoTanque.png" alt="Enemigo Tanque" width="800" height="200">
+</div>
+
+Este enemigo es capaz de convertirse en tu aliado una vez derrotado, es por ello que cambia su aspecto malévolo por uno más amigable al unirse al jugador:
+<div align="center">
+   <img src="Assets/Arte/Enemigos/EnemigoTanqueCaras.png" alt="Enemigo Tanque" width="400" height="400">
+</div>
 
 **Enemigo escurridizo: Slipsy** 
 - Portadores de una energía vital única, siempre huyen del combate, protegiendo con recelo el tiempo de sus aliados.
+<div align="center">
+   <img src="Assets/Arte/Enemigos/EnemigoEscurridizo.png" alt="Enemigo Escurridizo" width="500" height="470">
+</div>
 
 **Enemigo explosivo: Detonatsy**
 - Instigadores del caos, buscan acercarse para autodestruirse junto al héroe, llevándose parte de su tiempo en una explosión mortal. 
+<div align="center">
+   <img src="Assets/Arte/Enemigos/EnemigoExplosivo.png" alt="Enemigo Explosivo" width="400" height="500">
+</div>
 
 **Enemigo final: Latsy**
 - Mano derecha de la entidad invasora, este implacable guardián defiende su posición con ferocidad, ansioso por robar el tiempo de aquellos que osen enfrentarlo.
@@ -537,7 +638,7 @@ Esta anciana vivía plácidamente en su casa con jardín cuando llegó el colaps
 ### 8.1. Modelado de escenario
 <u>**Blocking del primer escenario: fábrica**
 </u>
-Primera aproximación de la fábrica en 3D, empleada como “concept” del escenario donde ir probando distintas ideas. El blocking pasa por múltiples iteraciones hasta llegar al modelo final.
+- Primera aproximación de la fábrica en 3D, empleada como “concept” del escenario donde ir probando distintas ideas. El blocking pasa por múltiples iteraciones hasta llegar al modelo final.
 <div align="center">
    <img src="Assets/Arte/3D/Escenarios/Fabrica/Modelo/FabricaBlocking.png" alt="Blocking de la fábrica" width="500" height="450">
 </div>
@@ -551,7 +652,7 @@ Primera aproximación de la fábrica en 3D, empleada como “concept” del esce
    <img src="Assets/Arte/3D/Escenarios/Fabrica/Modelo/Fabrica4.png" alt="Vista general de la fábrica" width="692" height="500">
 </div>
 
-<u>**Texturas del primer escenario: fábrica**
+<u>**Texturas props fábrica**
 </u>
 <div align="center">
    <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/CardboardBox.png" alt="Caja de cartón pequeña" width="320" height="300">
@@ -560,6 +661,59 @@ Primera aproximación de la fábrica en 3D, empleada como “concept” del esce
    <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/ShipContainer.png" alt="Contenedor grande" width="350" height="320">
    <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/Elevator.png" alt="Ascensor" width="320" height="320">
    <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/Platforms.png" alt="Plataformas altas" width="692" height="400">
+</div>
+
+<u>**Modelo final fábrica (con texturas)**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/FabricaTexturas1.png" alt="Primera vista de la fábrica texturizada" width="692" height="388">
+   <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/FabricaTexturas2.png" alt="Segunda vista de la fábrica texturizada" width="692" height="388">
+</div>
+
+<u>**Modelo final fábrica en Unity (con texturas)**
+<div align="center">
+   <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/FabricaUnity.png" alt="Vista de la fábrica texturizada y redimensionada en Unity" width="692" height="388">
+</div>
+
+
+<u>**Blocking del segundo escenario: isla**
+</u>
+- Primeros blocking de la isla en 3D, empleados como “concept” del escenario donde ir probando distintas ideas. El blocking pasa por múltiples iteraciones hasta llegar al modelo final, como se puede apreciar en las imágenes.
+<div align="center">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Modelo/IslaBlocking1.png" alt="Primera vista del blocking de la isla" width="692" height="500">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Modelo/IslaBlocking2.png" alt="Segunda vista del blocking de la isla" width="692" height="500">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Modelo/IslaBlocking3.png" alt="Tercera vista del blocking de la isla" width="692" height="388">
+</div>
+
+
+<u>**Modelo final del segundo escenario: isla**
+</div>
+<p align="center">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Modelo/IslaModelo1.png" alt="Primera vista de la isla" width="692" height="500">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Modelo/IslaModelo2.png" alt="Segunda vista de la isla" width="692" height="500">
+</div>
+
+
+<u>**Texturas props isla**
+</div>
+<p align="center">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/Tent.png" alt="Puestos de la madera" width="500" height="500">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/Ship.png" alt="Barco" width="692" height="500">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/Palmtree.png" alt="Palmera" width="500" height="500">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/Stairs.png" alt="Escaleras" width="300" height="600">
+</div>
+
+<u>**Modelo final isla (con texturas)**
+</div>
+<p align="center">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/IslaTexturas1.png" alt="Primera vista de la isla texturizada" width="692" height="500">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/IslaTexturas2.png" alt="Segunda vista de la isla texturizada" width="692" height="500">
+</div>
+
+<u>**Modelo final isla en Unity (con texturas)**
+</div>
+<p align="center">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/IslaUnity.png" alt="Vista de la isla texturizada en Unity" width="692" height="500">
 </div>
 
 ### 8.2. Modelado personajes jugables
@@ -610,8 +764,22 @@ Primera aproximación de la fábrica en 3D, empleada como “concept” del esce
 ## 11. Música y sonido
 ### 11.1. Temas musicales
 ### 11.2. Efectos de sonido
+## 12. Post-Mortem (Alpha)
+### 12.1. Equipo
+**- Equipo NeoCore:** en general el equipo, a pesar de haber encontrado problemas inesperados a la hora de realizar el desarrollo de sus actividades, está muy contento con el trabajo realizado, la comunicación y colaboración de todos los participantes. Se considera que se podría haber realizado más para el lanzamiento de esta alpha, porque a pesar de la buena comunicación dentro del equipo, es la primera vez que se trabaja juntos entre muchos de los miembros y todavía falta desarrollar la sinergía grupal para que el desarrollo vaya mucho más fluido, a pesar de esto, se ha realizado un gran trabajo en equipo.
+### 12.2 Integrantes
+**- niconii:** desde mi punto de vista como diseñadora de niveles y modeladora, pude realizar el blocking, para posteriormente refinarlo y hacer el escenario final sin texturas, para que el equipo de programación pudiese empezar a trabajar con él lo antes posible. Sin embargo, no pude llegar a meter en la alpha las texturas del escenario, ni los props por separado, para que se pudiese editar el nivel más fácilmente en Unity y que los programadores pudieran modificarlo sobre la marcha. Aún así, estoy muy satisfecha con el equipo de desarrollo, ya que tuvimos una idea muy clara del juego desde el primer día y nos organizamos lo más rápido posible para repartir las tareas y realizar partes del proyecto definitivas lo antes posible, A nivel personal, disfrute especialmente realizando las texturas del escenario. Debido a las limitaciones que presenta un juego en web, el modelado del escenario tenía que ser de muy baja poligonización, por lo que en sí el escenario no decía mucho. Pero quise dedicar la mayor parte del tiempo texturizando, para dar personalidad al escenario, así como todo el detalle que le faltaba al modelado, aún siendo texturas de baja resolución.
 
-## 12. Integrantes del equipo y roles
+**- Kr1veN:** en mi caso desde el diseño 3D de los personajes, solo dio tiempo a hacer uno, el robot, y del cual no me quedé contento con la animación que hice de andar. Esto será revisado y mejorado para la siguiente versión. También empecé con un segundo personaje, el niño de agua, pero me bloqueé porque no me convencía lo que estaba haciendo y no me quedaba nada satisfecho con el modelo por mucho que lo cambiase. Hasta que ya después con la encargada de los diseños de personaje se hablaron y cambiaron algunas cosas del diseño y se hizo una segunda versión la cuál nos convivencia a ambos y el modelo avanzó rápidamente después. Una cosa que me gustó fue el rig del robot, el cual costó hacerlo debido a la reducida movilidad del mecha, pero luego de unas cuantas pruebas de ensayo y error se consiguió un rig con el que trabajar bastante bien con los movimientos robóticos del mecha. Pese a ello aún le queda trabajo ya que las animaciones con el rig actual están muy limitadas y eso es un problema. Sin embargo el diseño del mecha quedó bastante bien y se ve un personaje bastante chulo.
+
+**- QueZz:** desde mi perspectiva como programador estoy muy contento con la comunicación fluida que ha habido en todo momento entre el equipo de programación y el equipo de diseño. Desde el principio hemos tenido las ideas claras y nos organizamos lo más rápido que pudimos siguiendo todos una misma idea sobre lo que queríamos tener y no tener dentro del juego. Con mi parte de programador no estoy muy contento, puesto que la parte de generar los enemigos me llevó más tiempo del que debería y aún así va a necesitar retoques cuando estén todos los enemigos programados puesto que hay comportamientos distintos para cada enemigo que requerirán un spawn distinto. Por la parte de narrativa siento que, a pesar de ser un juego multijugador sin posibilidad de singleplayer, se ha creado una historia rica que hace que se entiendan más a los personajes y el entorno del juego para que los jugadores puedan sentirse más o menos representados con ellos teniendo la posibilidad de enriquecer la historia con futuros personajes y escenarios.
+
+**- Raúl:** como programador y encargado de ayudar a quien lo necesite dentro del equipo como soporte extra en su área, para el desarrollo de la alpha, considero que hice mucho énfasis en el desarrollo de la funcionalidad de las interfaces al principio del proyecto, programando funcionalidades que no dieron tiempo a pulirse para la beta, como la selección de personajes, ya que no se habían desarrollado todos ellos. Entre estas funcionalidades destacan el menú principal con ajustes para audio con persistencia, la selección de personajes, y apartados de la interfaz in-game como mostrar el cooldown de una habilidad. Podría haber priorizado el desarrollo de las habilidades de estos para poder mostrar un apartado más cercano a la jugabilidad final que buscamos. En cuanto a ayudar, he estado apoyando el desarrollo del diseño de interfaces y el logo de la empresa. Además, la comunicación ha sido muy fluida a lo largo del proyecto y estoy muy contento con la forma de trabajar del equipo.
+
+**- Rindow:** en mi caso, como encargada de la parte de diseño 2D del juego, a pesar de la dificultad para conseguir inspiración con el tema asignado, estoy contenta con el trabajo que he realizado hasta el momento. Para la alpha he podido desarrollar el logo principal de la empresa, el cual tuvo varias versiones tanto en color como en forma hasta que al final dimos con la definitiva. Por otro lado hice los bocetos de cómo van a ser las interfaces de todo el juego. También hice el turn around de los dos primeros personajes jugables y uno de los enemigos, en un principio me costó el materializar las ideas que habíamos hablado en grupo, ya que al ser personajes que no tienen mucha relación entre sí (niño de agua, robot tostadora y abuela jardinera) quería que tuviesen algo que los uniese, ya sea por el estilo o por el tono en la gama de colores de los personajes. Me costó bastante arrancar al hacer el primer personaje, ya que no sabía qué estilo darle a los personajes y que al mismo tiempo conservarán su personalidad. Tras varias pruebas y después de hacer el niño de agua un par de veces, formé un estilo final cartoon que al mismo tiempo no tuviese demasiado detalle para tener en mente siempre a mis compañeros de modelado 3D y programación. 
+
+**- Xopo:** Como diseñador de juego y programador, estoy contento con el progreso en el juego por el momento. Hemos conseguido un concepto de juego robusto y dinámico con el que el equipo está orgulloso, aparte de consolidar la idea, dejar claras las mecánicas, los personajes, enemigos, elementos del mapa… para que cada persona del equipo pueda llevar a cabo su trabajo con toda la fluidez necesaria. Además, hemos conseguido introducir en la Alpha la estructura básica pero clave del proyecto, integrando todos los elementos necesarios para que el juego funcione correctamente en línea desde Itch.Io, además de haber realizado varias pruebas para asegurarnos de que tenga la optimización necesaria, e implementado varias mecánicas clave de juego correctamente, como el movimiento de los personajes, enemigos básicos y su correcto spawn, el contador de tiempo, disparo, la sincronización entre clientes, entre otros. Si bien al juego todavía le falta forma y trabajo para asemejarse a la idea en nuestra cabeza, tenemos la estructura base del mismo, las mecánicas básicas y la estructura de red, por lo que el resto del desarrollo consiste en ir añadiendo sistemas y puliendo los existentes sin necesidad de preocuparnos por la conectividad más allá de la sincronización.
+## 13. Integrantes del equipo y roles
 ### Manuel Alejandro Villalba Cruz	
 - Programador y diseñador de juego
 ### Alejandro Tobías Márquez
