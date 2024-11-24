@@ -13,9 +13,12 @@ public class stunAbility : Ability
 
     private List<GameObject> stunedEnemies = new List<GameObject>();
 
+    public Animator _animator;
+
     void Start()
     {
         roots = gameObject;
+        _animator.SetTrigger("Up");
     }
 
     private void Update()

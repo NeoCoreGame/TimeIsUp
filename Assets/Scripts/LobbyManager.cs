@@ -45,7 +45,6 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
     private RectTransform lobbyRect;
 
 
-
     void Awake() //Configuración del singleton
     {
         if (Instance == null)

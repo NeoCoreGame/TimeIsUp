@@ -52,7 +52,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6950745442304941973}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -105,6 +105,7 @@ MonoBehaviour:
   isOnCooldown: 0
   cam: {fileID: 0}
   roots: {fileID: 0}
+  _animator: {fileID: 9029030383253310559}
 --- !u!64 &7989742925544747806
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -236,7 +237,11 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: -5568371526223589888, guid: 6ce927e50bbd3fb46a178273cee8b4a4, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6ce927e50bbd3fb46a178273cee8b4a4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9029030383253310559}
   m_SourcePrefab: {fileID: 100100000, guid: 6ce927e50bbd3fb46a178273cee8b4a4, type: 3}
 --- !u!4 &8469043302252256050 stripped
 Transform:
@@ -244,3 +249,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8215321627263040729}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9134362926987461000 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6ce927e50bbd3fb46a178273cee8b4a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8215321627263040729}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &9029030383253310559
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9134362926987461000}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cee36d61dce79d34fb22ad27b7a40031, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

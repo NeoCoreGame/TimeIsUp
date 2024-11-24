@@ -8,6 +8,8 @@ using static Unity.Burst.Intrinsics.X86;
 using Unity.Collections;
 using UnityEngine.SceneManagement;
 using Unity.Netcode.Components;
+using Unity.Collections.LowLevel.Unsafe;
+using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerController : NetworkBehaviour, IShootable
 {
@@ -40,23 +42,55 @@ public class PlayerController : NetworkBehaviour, IShootable
 
     private RespawnPlayerManager _respawnPlayerManager;
 
+    public NetworkVariable<int> selectedCharacter = new NetworkVariable<int>();
+    public GameObject[] characters;
+
+    private InitialCountdown iC;
 
 
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
 
+        if (IsOwner)
+        {
+            OnCharacterChangeServerRpc(4);
+
+        }
+
         _cController = GetComponent<CharacterController>();
         _playerCountdown = GetComponent<PlayerCountdown>();
         _healthController = GetComponent<HealthController>();
         _respawnPlayerManager = FindObjectOfType<RespawnPlayerManager>();
 
+        Invoke("FixerN", 1f);
+
         if (IsOwner)
         {
-            GetComponent<PlayerInput>().enabled = true;
+
+            Invoke("SetupGame", 2f);
         }
-        
+
+        Invoke("ChangeCharacters", 3f);
+
         _gravMovement = new Vector3(0f,gravity,0f);
+    }
+    public void FixerN()
+    {
+
+        selectedCharacter.OnValueChanged += OnCharacterChange;
+    }
+
+    public void SetupGame()
+    {
+        iC = FindObjectOfType<InitialCountdown>();
+        iC.StartCounter();
+
+        GetComponent<PlayerInput>().enabled = true;
+        GetComponent<abilityController>().enabled = true;
+        OnCharacterChangeServerRpc(StaticData.characterID);
+
+        Invoke("SetCameraToCharacter", 3f);
     }
 
     private void FixedUpdate()
@@ -78,7 +112,11 @@ public class PlayerController : NetworkBehaviour, IShootable
         }
     }
 
-
+    public void SetCameraToCharacter()
+    {
+        GetComponent<MouseLook>().SetCamera(this, characters[selectedCharacter.Value].transform.GetChild(2).transform.position);
+        
+    }
 
     #region Input
     public void OnMove(InputAction.CallbackContext context)
@@ -124,8 +162,42 @@ public class PlayerController : NetworkBehaviour, IShootable
             _respawnPlayerManager.RespawnPlayer(_healthController);
 
         }
-    }   
+    }
+    public void OnCharacterChange(int previousValue, int newValue)
+    {
+        Debug.Log("VAMASOOS");
+        foreach (GameObject c in characters) { c.SetActive(false); }
+        characters[newValue].SetActive(true);
+        if (IsOwner)
+        {
+            characters[newValue].transform.GetChild(1).gameObject.layer = 10;
+            characters[newValue].transform.GetChild(0).transform.GetChild(0).transform.GetChild(2).transform.GetChild(0).transform.GetChild(0).transform.GetChild(3).gameObject.layer = 9;
 
+            if (newValue == 2)
+            {
+
+
+                characters[newValue].transform.GetChild(0).transform.GetChild(0).transform.GetChild(2).transform.GetChild(0).transform.GetChild(0).transform.GetChild(2).transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).transform.GetChild(4).gameObject.layer = 10;
+            }
+            GetComponent<ShootingController>().SetAnim();
+        }
+
+    }
+
+    public void ChangeCharacters()
+    {
+        foreach (GameObject c in characters) { c.SetActive(false); }
+        characters[selectedCharacter.Value].SetActive(true);
+        characters[selectedCharacter.Value].GetComponent<Animator>().enabled = true;
+    }
+
+
+    [ServerRpc(RequireOwnership = false)]
+    public void OnCharacterChangeServerRpc(int value)
+    {
+        selectedCharacter.Value = value;
+        Debug.Log(value);
+    }
     public int GetHealth()
     {
         return _healthController.HP.Value;
@@ -139,5 +211,10 @@ public class PlayerController : NetworkBehaviour, IShootable
     public CharacterController GetController()
     {
         return _cController;
+    }
+
+    public void Stun(float time)
+    {
+        throw new System.NotImplementedException();
     }
 }

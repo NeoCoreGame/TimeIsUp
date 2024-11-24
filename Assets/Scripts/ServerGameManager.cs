@@ -41,20 +41,17 @@ public class ServerGameManager : MonoBehaviour
         _networkManager = NetworkManager.Singleton;
         _playerPrefab = _networkManager.NetworkConfig.Prefabs.Prefabs[0].Prefab;
 
-
         _networkManager.OnServerStarted += OnServerStarted;
         _networkManager.OnClientConnectedCallback += OnClientConnected;
 
         _countdownManager = GetComponent<CountdownManager>();
-        _respawnPlayerManager = GetComponent<RespawnPlayerManager>();   
+        _respawnPlayerManager = GetComponent<RespawnPlayerManager>();
         _messageManager = GameObject.FindGameObjectWithTag("ServerMessages").GetComponent<ServerMessageManager>();
         _enemySystem = FindObjectOfType<EnemySystem>();
 
 
-            _lobbyManager = FindObjectOfType<LobbyManager>();
+        _lobbyManager = FindObjectOfType<LobbyManager>();
 
-        
-        
     }
 
     private void OnClientConnected(ulong obj) //Ocurren en server y cliente
@@ -63,8 +60,8 @@ public class ServerGameManager : MonoBehaviour
         {
             GameObject player = Instantiate(_playerPrefab);
 
-            string playerID = player.GetComponent<NetworkObject>().OwnerClientId.ToString();
-            player.GetComponent<PlayerInfo>().SetPlayerName("QueZz " + playerID);
+            string playerID = player.GetComponent<NetworkObject>().NetworkObjectId.ToString();
+            player.GetComponent<PlayerInfo>().SetPlayerName("Player");
 
             player.GetComponent<NetworkObject>().SpawnAsPlayerObject(obj); //Ocurre en servidor
 
@@ -79,10 +76,10 @@ public class ServerGameManager : MonoBehaviour
 
             _messageManager.ServerMessage("+ Cliente " + playerID + " conectado");
 
-            if (_countdownManager.contadores.Count ==1)
+            if (_countdownManager.contadores.Count == 1)
             {
                 _enemySystem.InitializePools();
-            
+
             }
         }
     }

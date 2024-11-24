@@ -32,6 +32,7 @@ public class PauseMenuButtons : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && !pauseMenuCanvas.activeInHierarchy)
         {
             pauseMenuCanvas.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
         }   
         else if (Input.GetKeyDown(KeyCode.Escape) && pauseMenuCanvas.activeInHierarchy)
         {
@@ -45,6 +46,7 @@ public class PauseMenuButtons : MonoBehaviour
     {
 
         pauseMenuCanvas.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
 
     }
 

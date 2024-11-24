@@ -20,6 +20,8 @@ public class HelloWorldManager : MonoBehaviour
     public TMP_InputField field;
 
     public GameObject lobbyInterf;
+    public TextMeshProUGUI code;
+
     void OnGUI()
     {
         GUILayout.BeginArea(new Rect(10, 10, 300, 300));
@@ -32,6 +34,7 @@ public class HelloWorldManager : MonoBehaviour
             StatusLabels();
 
             lobbyInterf.SetActive(false);
+            code.text = "Codigo: " + joinCode;
 
         }
 
@@ -48,10 +51,9 @@ public class HelloWorldManager : MonoBehaviour
 
     void StartButtons()
     {
-        if (GUILayout.Button("Host")) StartHost();
-        if (GUILayout.Button("Client")) StartClient();
-        joinCode = GUILayout.TextField(joinCode);
-
+        //if (GUILayout.Button("Host")) StartHost();
+        //if (GUILayout.Button("Client")) StartClient();
+        //joinCode = GUILayout.TextField(joinCode);
 
         //if (GUILayout.Button("Server")) NetworkManager.Singleton.StartServer();
     }

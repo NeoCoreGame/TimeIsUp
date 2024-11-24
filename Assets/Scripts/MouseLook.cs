@@ -22,31 +22,38 @@ public class MouseLook : NetworkBehaviour
     {
         base.OnNetworkSpawn();
 
-        if (IsServer)
-        {
-            head = transform;
-            //player = transform.parent.transform.parent.transform; 
-        }
-
-        if (IsOwner)
-        {
-            Camera.main.transform.parent = transform;
-            Camera.main.transform.localPosition = new Vector3(0f, 0.6f, 0.5f);
-
-            playerController = GetComponentInParent<PlayerController>();
-            //Cursor.lockState = CursorLockMode.Locked;
-        }
     }
-    
+
+    public void SetCamera(PlayerController c, Vector3 pos)
+    {
+        playerController = c;
+        head = playerController.characters[playerController.selectedCharacter.Value].transform.GetChild(0).transform.GetChild(0).transform.GetChild(2).transform.GetChild(0).transform.GetChild(0);
+
+        Camera.main.transform.localPosition = pos;
+        Camera.main.transform.parent = head.transform;
+
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
         //No la multiplico por Time.DeltaTime para que no dependa del FrameRate
-        if (IsServer)
+        if (playerController.IsServer)
         {
             player.Rotate(Vector3.up * mouseX);
-            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-            head.Rotate(Vector3.right * xRotation);
+            //head.Rotate(Vector3.right * xRotation);
+
+
+        }
+    }
+
+    void LateUpdate()
+    {
+        //No la multiplico por Time.DeltaTime para que no dependa del FrameRate
+        if (playerController.IsServer)
+        {
+            head.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            //head.Rotate(Vector3.right * xRotation);
 
 
         }
@@ -55,16 +62,15 @@ public class MouseLook : NetworkBehaviour
     #region Input
     public void OnLook(InputAction.CallbackContext context)
     {
+        Debug.Log(context.ReadValue<Vector2>());
         OnLookServerRpc(context.ReadValue<Vector2>());
     }
 
     [ServerRpc]
     public void OnLookServerRpc(Vector2 input)
     {
-        Debug.Log(" Casi Moviendote baby");
-        if (playerController.canMove.Value)
+        if (playerController != null &&playerController.canMove.Value)
         {
-            Debug.Log("Moviendote baby");
             mouseX = input.x * mouseSensitivity;
             mouseY = input.y * mouseSensitivity;
 
