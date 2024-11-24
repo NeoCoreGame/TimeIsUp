@@ -25,12 +25,15 @@ public class ShootingController : NetworkBehaviour
     private PlayerCountdown _playerCountdown;
 
     private Camera playerCam;
+    private PlayerController playerController;
+    public Animator _anim;
 
 
     // Start is called before the first frame update
     void Start()
     {
         _playerCountdown = GetComponent<PlayerCountdown>();
+        playerController = GetComponent<PlayerController>();
 
         playerCam = Camera.main;
 
@@ -50,9 +53,14 @@ public class ShootingController : NetworkBehaviour
 
     }
 
+    public void SetAnim()
+    {
+        _anim = playerController.characters[playerController.selectedCharacter.Value].GetComponent<Animator>();
+    }
+
     public void Shoot()
     {
-        Debug.Log("Disparo");
+        _anim.SetTrigger("Attack");
         pS.Play();
         shootingCdTimer = shootingCooldown;
 
@@ -65,9 +73,10 @@ public class ShootingController : NetworkBehaviour
     {
 
         float isShooting = context.ReadValue<float>();
+
+        OnShootServerRpc(context.ReadValue<float>());
         if (isShooting == 1 && shootingCdTimer <= 0f)
         {
-            Shoot();
 
             Ray rI = new Ray(playerCam.transform.position, playerCam.transform.forward);
 
@@ -87,9 +96,10 @@ public class ShootingController : NetworkBehaviour
                 }
 
             }
+
+            Shoot();
         }
 
-        OnShootServerRpc(context.ReadValue<float>());
 
     }
 

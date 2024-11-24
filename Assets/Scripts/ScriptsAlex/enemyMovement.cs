@@ -28,6 +28,7 @@ public class enemyBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         position = GetComponent<Transform>();
         groundCheck = transform.GetChild(2);
         navMeshAgent = GetComponent<NavMeshAgent>();

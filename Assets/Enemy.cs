@@ -9,6 +9,8 @@ public interface IShootable
 {
     public void TakeDamage(int dmg);
 
+    public void Stun(float time);
+
     public int GetHealth();
 
     public float GetTimeReward();
@@ -44,6 +46,8 @@ public class Enemy : NetworkBehaviour, IShootable
         Hp.OnValueChanged += OnDamageTaken;
 
         _enemySystem = FindObjectOfType<EnemySystem>();
+
+        if(IsServer) { GetComponent<enemyBehaviour>().enabled = true; }
     }
 
     private void OnDamageTaken(int previousValue, int newValue)
@@ -55,6 +59,10 @@ public class Enemy : NetworkBehaviour, IShootable
         {
             //Destroy(gameObject);
         }
+    }
+    public void Stun(float time)
+    {
+        throw new NotImplementedException();
     }
 
     public bool GetHit()
@@ -81,4 +89,5 @@ public class Enemy : NetworkBehaviour, IShootable
         _enemySystem.EnemyTakeDamage(gameObject, dmg);
     }
 
+    
 }

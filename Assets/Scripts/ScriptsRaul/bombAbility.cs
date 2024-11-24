@@ -36,6 +36,16 @@ public class bombAbility : Ability
             {
                 //QUITAR VIDA AQUI!!!
                 Debug.Log("EnemyHit");
+                if (collider.gameObject.TryGetComponent(out IShootable interactObj))
+                {
+                    if (interactObj.GetHealth() <= dmg)
+                    {
+                        //_playerCountdown.TimeVariation(interactObj.GetTimeReward());
+                    }
+                    interactObj.TakeDamage(dmg);
+
+
+                }
             }
         }
 

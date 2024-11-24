@@ -16,12 +16,13 @@ public class InitialCountdown : NetworkBehaviour
     {
         base.OnNetworkSpawn();
 
-        if (IsOwner)
-        {
-            counter = transform.GetChild(2).transform.GetComponent<TextMeshProUGUI>();
-            iCRect = GetComponent<RectTransform>();
-            contador.OnValueChanged += OnCounterChange;
-        }
+    }
+
+    public void StartCounter()
+    {
+        counter = transform.GetChild(2).transform.GetComponent<TextMeshProUGUI>();
+        iCRect = GetComponent<RectTransform>();
+        contador.OnValueChanged += OnCounterChange;
     }
 
     private void Update()

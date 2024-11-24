@@ -141,19 +141,19 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -2225258502165233556}
-    m_Position: {x: 270, y: 260, z: 0}
+    m_Position: {x: 800, y: 330, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3605124453079070366}
-    m_Position: {x: -50, y: 420, z: 0}
+    m_Position: {x: 160, y: 370, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7664154029212908278}
-    m_Position: {x: 90, y: 440, z: 0}
+    m_Position: {x: 620, y: 510, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2528689739402095514}
-    m_Position: {x: 350, y: 440, z: 0}
+    m_Position: {x: 880, y: 510, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2841765514906167177}
-    m_Position: {x: 260, y: 670, z: 0}
+    m_Position: {x: 790, y: 740, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -172,7 +172,13 @@ AnimatorController:
   m_PrefabAsset: {fileID: 0}
   m_Name: AquaBoy
   serializedVersion: 5
-  m_AnimatorParameters: []
+  m_AnimatorParameters:
+  - m_Name: Attack
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer

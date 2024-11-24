@@ -87,7 +87,7 @@ public class CharacterSelectionButtons : MonoBehaviour
         if (referenceID != 1)
         {
             StaticData.characterID = referenceID;
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(2);
         }
     }
 
