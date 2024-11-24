@@ -8,6 +8,13 @@
    - Se ha creado el apartado de interfaces y pantalla, diseño de escenario y música y sonido
    - Se han añadido los diseños de personajes a los apartados de arte
    - Se han revisado los apartados existentes
+GDD versión 0.2.0: 
+   - Se ha añadido el postmortem de la versión Alpha
+   - Se ha ampliado el apartado de la narrativa del juego
+   - Se ha completado el turn around de todos los personajes jugables
+   - Se ha añadido el turn around de cinco enemigos
+   - Se ha completado el diseño de las interfaces del juego
+
 
 ## 2. Introducción
 El presente documento introduce el Game Design Document (GDD) del videojuego “Time Is Up”. A lo largo del desarrollo de este, se explicará a detalle las características que lo definen, así como el propósito del juego y su modelo de negocio. 
@@ -380,71 +387,114 @@ Los controles están diseñados para ser intuitivos, pero permiten un alto grado
 ## 6. Interfaces y pantallas
 ### 6.1. Pantalla de inicio	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazInicio.png" alt="Interfaz Inicio" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazInicio.png" alt="Interfaz Inicio" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazMenu.png" alt="Interfaz Inicio" width="500" height="260">
 </div>
 
 ### 6.2. Interfaz de juego	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazJuego.png" alt="Interfaz Juego" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazJuego.png" alt="Interfaz Juego" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazJugador.png" alt="Interfaz Juego" width="500" height="260">
 </div>
 
 ### 6.3. Pantallas de Victoria / Derrota	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazVictoria.png" alt="Interfaz Victoria" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazVictoria.png" alt="Interfaz Victoria" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazVictoria.png" alt="Interfaz Victoria" width="500" height="260">
 </div>
 
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazDerrota.png" alt="Interfaz Derrota" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazDerrota.png" alt="Interfaz Derrota" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazDerrota.png" alt="Interfaz Derrota" width="500" height="260">
 </div>
 
 ### 6.4. Pantalla de selección de personaje	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazSeleccionPersonaje.png" alt="Interfaz Seleccion Personaje" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazSeleccionPersonaje.png" alt="Interfaz Seleccion Personaje" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazSeleccionPersonaje.png" alt="Interfaz Seleccion Personaje" width="500" height="260">
 </div>
 
 ### 6.5. Pantalla de personalización	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazPersonalizacion.png" alt="Interfaz Personalizacion" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazPersonalizacion.png" alt="Interfaz Personalizacion" width="500" height="250">
 </div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazPersonalizar.png" alt="Interfaz Personalizar" width="500" height="260">
+</div>
+
 
 ### 6.6. Pantalla de Battle Pass	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazBattlePass.png" alt="Interfaz Battle Pass" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazBattlePass.png" alt="Interfaz Battle Pass" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazBattlePass.png" alt="Interfaz Battle Pass" width="500" height="260">
 </div>
 
 ### 6.7. Pantalla de compra	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazCompra.png" alt="Interfaz Compra" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazCompra.png" alt="Interfaz Compra" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazTienda.png" alt="Interfaz Compra" width="500" height="260">
 </div>
 
 ### 6.8. Pantalla de carga	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazCarga.png" alt="Interfaz Carga" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazCarga.png" alt="Interfaz Carga" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazCargaGif.gif" alt="Interfaz Carga" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazCarga.png" alt="Interfaz Carga" width="500" height="260">
 </div>
 
 ### 6.9. Pantalla de opciones	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazOpciones.png" alt="Interfaz Opciones" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazOpciones.png" alt="Interfaz Opciones" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazOpciones.png" alt="Interfaz Opciones" width="500" height="260">
 </div>
 
 ### 6.10. Pantalla de controles	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazControles.png" alt="Interfaz Controles" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazControles.png" alt="Interfaz Controles" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazControles.png" alt="Interfaz Controles" width="500" height="260">
 </div>
 
 ### 6.11. Pantalla de usuario	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazUsuario.png" alt="Interfaz Usuario" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazUsuario.png" alt="Interfaz Usuario" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazSala.png" alt="Interfaz Usuario" width="500" height="260">
 </div>
 
 ### 6.12. Pantalla de créditos	
 <div align="center">
-   <img src="Assets/Arte/Interfaces/InterfazCreditos.png" alt="Interfaz Creditos" width="500" height="250">
+   <img src="Assets/Arte/Interfaces Bocetos/InterfazCreditos.png" alt="Interfaz Creditos" width="500" height="250">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Interfaces GDD/InterfazCreditos.png" alt="Interfaz Creditos" width="500" height="260">
 </div>
 
 ### 6.13. Diagrama de flujo de pantallas
 <div align="center">
-   <img src="Assets/Imagenes GDD/DiagramaFlujo.png" alt="Diagrama Flujo" width="500" height="200">
+   <img src="Assets/Imagenes Bocetos/DiagramaFlujo.png" alt="Diagrama Flujo" width="500" height="200">
 </div>
 
 ## 7. Arte 2D
@@ -476,6 +526,13 @@ Finalmente se optó por una representación más simple con la representación d
 </p>
 
 <u>Logo del juego:</u>
+Para el logo del juego se quiso incorporar una representación de que el tiempo corre ya que el nombre del juego es “Time Is Up”, así que se decidió hacer esta representación con un reloj de arena.
+<div align="center">
+   <img src="Assets/Arte/Logos/LogoJuego1.png" alt="LogoJuego1" width="400" height="300">
+</div>
+<div align="center">
+   <img src="Assets/Arte/Logos/LogoJuego2.png" alt="LogoJuego2" width="500" height="150">
+</div>
 
 #### Personajes jugables
 <u>**Niño Agua:**  al ser un niño con habilidades de agua, se ha querido dar un estilo infantil en donde el personaje se encuentre vestido con una malla de superhéroe y que al mismo tiempo se vea como un neopreno. Se le ha añadido también el casco en forma de pez para dar más sensación de que es un niño pequeño.
@@ -490,7 +547,7 @@ Este niño tiene una personalidad inmadura e infantil, debido a su poca edad. En
 <u>**Robot Tostadora:**  para este personaje, al ser un robot que lanza tostadas, se ha querido que a pesar de su tamaño grande, siga teniendo un toque tierno al ser un robot que está tematizado con el entorno de la panadería. 
 </u>
 <div align="center">
-   <img src="Assets/Arte/Personajes/RobotTostadora.jpg" alt="Robot Tostadora" width="750" height="250">
+   <img src="Assets/Arte/Personajes/RobotTostadora.jpg" alt="Robot Tostadora" width="750" height="220">
 </div>
 Este robot posee un gran sentido de la justicia y se ha modificado así mismo para poder hacer frente a la invasión. Odia el conflicto pero quiere proteger a los seres indefensos puesto que tuvo que ver cómo la fusión de los mundos destruyó su fábrica sin poder hacer nada por ella. A pesar de su naturaleza robótica, después de la invasión se ha visto reprogramada a tal forma de casi parecer un ser humano, llegando a poseer atisbo de humanidad y sentimentalidad.
 
@@ -499,7 +556,7 @@ Este robot posee un gran sentido de la justicia y se ha modificado así mismo pa
 <u>**Abuelita Jardinera:** para la abuela, se ha querido borrar el aspecto cariñoso de una abuela jardinera y darle un toque más cañero poniendo unas gafas oscuras al personaje.
 </u>
 <div align="center">
-   <img src="Assets/Arte/Personajes/AbuelitaJardinera.jpg" alt="Abuelita Jardinera" width="250" height="350">
+   <img src="Assets/Arte/Personajes/AbuelitaJardinera.png" alt="Abuelita Jardinera" width="650" height="350">
 </div>
 Esta anciana vivía plácidamente en su casa con jardín cuando llegó el colapso. Recogió todos los utensilios que pudo de su casa y salvó todas las plantas que pudo de su jardín. El colapso transformó a las plantas haciéndolas agresivas, la anciana llegó a controlar la agresividad de las mismas para su propio beneficio y poder luchar por la vida de su universo. Es una persona calmada y calculadora, tiene una capacidad excepcional para desarrollar estrategias de combates que le permitan resolver cualquier inconveniente con el que se encuentre.
 
@@ -516,15 +573,32 @@ Esta anciana vivía plácidamente en su casa con jardín cuando llegó el colaps
 
 **Enemigo volador: Minion volador**
 - Exploradores aéreos de mirada aguda, patrullan zonas estratégicas y atacan solo cuando los jugadores invaden su territorio, manteniéndose siempre fuera de alcance.
+<div align="center">
+   <img src="Assets/Arte/Enemigos/EnemigoVolador.png" alt="Enemigo Volador" width="500" height="350">
+</div>
 
 **Enemigo tanque: Petsy** 
 - Fueron guerreros del primer mundo en colapsar; ahora, liberados de su corrupción, son aliados lentos pero poderosos.
+<div align="center">
+   <img src="Assets/Arte/Enemigos/EnemigoTanque.png" alt="Enemigo Tanque" width="800" height="200">
+</div>
+
+Este enemigo es capaz de convertirse en tu aliado una vez derrotado, es por ello que cambia su aspecto malévolo por uno más amigable al unirse al jugador:
+<div align="center">
+   <img src="Assets/Arte/Enemigos/EnemigoTanqueCaras.png" alt="Enemigo Tanque" width="400" height="400">
+</div>
 
 **Enemigo escurridizo: Slipsy** 
 - Portadores de una energía vital única, siempre huyen del combate, protegiendo con recelo el tiempo de sus aliados.
+<div align="center">
+   <img src="Assets/Arte/Enemigos/EnemigoEscurridizo.png" alt="Enemigo Escurridizo" width="500" height="470">
+</div>
 
 **Enemigo explosivo: Detonatsy**
 - Instigadores del caos, buscan acercarse para autodestruirse junto al héroe, llevándose parte de su tiempo en una explosión mortal. 
+<div align="center">
+   <img src="Assets/Arte/Enemigos/EnemigoExplosivo.png" alt="Enemigo Explosivo" width="400" height="500">
+</div>
 
 **Enemigo final: Latsy**
 - Mano derecha de la entidad invasora, este implacable guardián defiende su posición con ferocidad, ansioso por robar el tiempo de aquellos que osen enfrentarlo.
