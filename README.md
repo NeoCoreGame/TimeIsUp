@@ -773,7 +773,55 @@ Este enemigo es capaz de convertirse en tu aliado una vez derrotado, es por ello
 <u>**Robot Tostadora:**
 </u>
 <div align="center">
-   <img src="Assets/Arte/3D/Animaciones/RobotWalk.gif" alt="Animacion andar" width="960" height="540">
+   <img src="Assets/Arte/3D/Animaciones/RobotWalk.gif" alt="Animacion andar" width="640" height="360">
+</div>
+
+<u>**Niño agua:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Animaciones/ChicoPezWalk.gif" alt="Animacion andar" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/ChicoPezHello.gif" alt="Animacion saludo" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/ChicoPezAttack.gif" alt="Animacion ataque" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/ChicoPezHability.gif" alt="Animacion habilidad" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/ChicoPezDeath.gif" alt="Animacion muerte" width="640" height="360">
+</div>
+
+<u>**Abuela Jardinera:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Animaciones/AbuelaWalk.gif" alt="Animacion andar" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/AbuelaAttack.gif" alt="Animacion ataque" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/AbuelaHability.gif" alt="Animacion habilidad" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/AbuelaDeath.gif" alt="Animacion muerte" width="640" height="360">
+</div>
+
+<u>**Escurridizo:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Animaciones/EscurridizoWalk.gif" alt="Animacion andar" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/EscurridizoDeath.gif" alt="Animacion muerte" width="640" height="360">
+</div>
+
+<u>**Explosivo:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Animaciones/ExplosivoWalk.gif" alt="Animacion andar" width="640" height="360">
+</div>
+
+<u>**Golem:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Animaciones/GolemWalk.gif" alt="Animacion andar" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/GolemAtaque.gif" alt="Animacion ataque" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/GolemDeath.gif" alt="Animacion muerte" width="640" height="360">
+</div>
+
+<u>**Volador:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Animaciones/VoladorFly.gif" alt="Animacion volar" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/VoladorAttack.gif" alt="Animacion ataque" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/VoladorDeath.gif" alt="Animacion muerte" width="640" height="360">
 </div>
 
 ## 10. Arte técnico
