@@ -677,7 +677,7 @@ Este enemigo es capaz de convertirse en tu aliado una vez derrotado, es por ello
 
 <u>**Modelo final fábrica en Unity (con texturas)**
 <div align="center">
-   <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/FabricaUnity.png" alt="Vista de la fábrica texturizada y redimensionada en Unity" width="692" height="388">
+   <img src="Assets/Arte/3D/Escenarios/Fabrica/Texturas/FabricaEscenarioUnity.png" alt="Vista de la fábrica texturizada y redimensionada en Unity" width="692" height="388">
 </div>
 
 
