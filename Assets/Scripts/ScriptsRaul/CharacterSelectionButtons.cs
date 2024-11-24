@@ -84,8 +84,11 @@ public class CharacterSelectionButtons : MonoBehaviour
     public void ConfirmButton()
     {
         //Enviar referenceID
-        StaticData.characterID = referenceID;
-        SceneManager.LoadScene(3);
+        if (referenceID != 1)
+        {
+            StaticData.characterID = referenceID;
+            SceneManager.LoadScene(3);
+        }
     }
 
     public void BackButton()
