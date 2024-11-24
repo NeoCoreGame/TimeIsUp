@@ -670,11 +670,9 @@ Este enemigo es capaz de convertirse en tu aliado una vez derrotado, es por ello
 <u>**Texturas props isla**
 </div>
 <p align="center">
-   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/Dock.png" alt="Puerto" width="692" height="500">
-   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/Tent.png" alt="Puestos de la madera" width="320" height="300">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/Tent.png" alt="Puestos de la madera" width="500" height="500">
    <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/Ship.png" alt="Barco" width="692" height="500">
-   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/Palmtree.png" alt="Palmera" width="320" height="300">
-   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/Box.png" alt="Caja de fruta" width="320" height="300">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/Palmtree.png" alt="Palmera" width="500" height="500">
    <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/Stairs.png" alt="Escaleras" width="300" height="600">
 </div>
 
@@ -682,7 +680,7 @@ Este enemigo es capaz de convertirse en tu aliado una vez derrotado, es por ello
 </div>
 <p align="center">
    <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/IslaTexturas1.png" alt="Primera vista de la isla texturizada" width="692" height="500">
-   <img src="Assets/Arte/3D/Escenarios/Isla/Modelo/IslaTexturas2.png" alt="Segunda vista de la isla texturizada" width="692" height="500">
+   <img src="Assets/Arte/3D/Escenarios/Isla/Texturas/IslaTexturas2.png" alt="Segunda vista de la isla texturizada" width="692" height="500">
 </div>
 
 <u>**Modelo final isla en Unity (con texturas)**
