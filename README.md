@@ -342,6 +342,7 @@ mantener la retención a través de contenido constante y aumentar el valor de v
 ## 4. Narrativa
 ### 4.1. Mundo
 El universo de "Time Is Up" está formado por múltiples realidades paralelas, cada una habitada por civilizaciones avanzadas que enfrentan una inminente catástrofe: el colapso del tiempo mismo. Las fuerzas que controlan el tejido del tiempo han comenzado a desmoronarse, y los mundos están desapareciendo uno por uno. Detrás de esta destrucción se encuentra una entidad misteriosa, conocida solo como El Cronarca, que busca restablecer el equilibrio del tiempo, pero solo un mundo puede ser salvado. Los héroes de cada realidad son convocados a la arena de Momentum, un plano místico suspendido en el vacío del tiempo, donde lucharán por asegurar la existencia continua de su universo. Los jugadores deberán enfrentarse a criaturas corruptas que habitan este reino, mientras compiten con otros combatientes por los últimos fragmentos de tiempo que pueden salvar sus mundos.
+
 ### 4.2. El Cronarca
 El Cronarca es una entidad mística que existe en el universo desde su mismísima creación. Nació por la necesidad de observar, controlar y preservar la línea temporal. Durante el primer eón, El Cronarca estuvo observador con lo que ocurría con el tiempo, solventando cualquier inconveniente que pudiese alterar la línea temporal. 
 
@@ -352,8 +353,10 @@ La línea temporal, al estar sin vigía, se vio alterada, creando realidades par
 El continuo deterioro del tiempo llevó a la creación de unas criaturas que viven por y para conseguir tiempo. Buscan el tiempo del universo para absorberlo y volverse más fuertes.
 
 Una nueva perturbación temporal consiguió despertar a El Cronarca. Una vez despierto empezó un arduo plan para restablecer el equilibrio del tiempo. Para ello primero consiguió amaestrar las criaturas creadas por el propio deterioro del tiempo, convirtiéndolas en su ejército personal conocido como el CronoSerum. Con el ejército de su lado, El Cronarca empezó con su plan de reconstrucción de la línea temporal, destruyendo los Parallels hasta que solo quedase uno. El Cronarca decidió tiempo después de la aniquilación de algunas realidades que crearía un torneo entre Parallels para decidir que Parallel es la merecedora de persistir en el tiempo. Los combates entre realidades se desarrollarían en Momentum, un espacio creado por El Cronarca fuera de la línea temporal.
+
 ### 4.3. Momentum
 El espacio creado por El Cronarca posee varias entidades donde se desarrollan los combates entre Parallels. Cada entidad está originada por cada Parallel, dando lugar a extraños lugares muy similares a cada realidad paralela pero con un aura siniestra y desolada, como si fuese la Parallel después de la aniquilación temporal.
+
 ### 4.4. CronoSerum
 El ejército de El Cronarca está formado por seis tipos de monstruos temporales. 
  - El Minion es la criatura temporal más primigenia. Fue el primer monstruo en aparecer.
@@ -362,8 +365,10 @@ El ejército de El Cronarca está formado por seis tipos de monstruos temporales
  - Slipsy se crean a partir de una alteración crónica en los Minions, rehúsan del combate y huyen de él, se preocupan por mantener a salvo a sus aliados
  - Detonatsy son tanques de energía crónica. Evolucionaron desde los Minions que absorbieron grandes cantidades de tiempo en un periodo muy corto de tiempo. Han absorbido tanta energía crónica que su único objetivo es explotar cerca de los enemigos para acabar con su energía.
  - Latsy son los seres temporales más puros y más desarrollados del ejército. Son heraldos de El Cronarca y su último recurso en batalla. Suelen tomar posiciones de guardia.
+ - 
 ### 4.5. Cronos
 El Cronos es la energía vital del tiempo, la energía temporal del universo. Desde el origen del universo se mantuvo como una entidad inseparable, pero después de la primer perturbación temporal que originó el largo letargo de El Cronarca se dividió en infinidad de fragmentos que se expandieron a lo largo de todo el Universo, originando las realidades paralelas conocidas como Parallels.
+
 ### 4.6. Parallels
 Las realidades paralelas originadas después de la primera perturbación temporal. El desarrollo de cada una es único y diferente respecto a las demás aunque pueda haber similitudes puesto que hay infinidad de realidades y posibilidades. Hay tres realidades que destacan frente a las demás.
  - Robotic: es una realidad donde los robots consiguieron dominar el mundo y controlar todo el desarrollo tecnológico. Los humanos fueron aniquilados por los autómatas que se rebelaron contra ellos. Tosty Dory pertenece a esta realidad
@@ -830,7 +835,14 @@ Este enemigo es capaz de convertirse en tu aliado una vez derrotado, es por ello
 
 ## 11. Música y sonido
 ### 11.1. Temas musicales
+Actualmente, tenemos un compositor trabajando en la banda sonora de nuestro videojuego.
+Compositor: Victor Gil Torres.
+
 ### 11.2. Efectos de sonido
+Botones:
+Se ha añadido efecto de sonido para los botones, obtenido de free sound, y editado posteriormente con audacity.
+Efecto: https://freesound.org/people/Glaneur%20de%20sons/sounds/104946/
+
 ## 12. Post-Mortem (Alpha)
 ### 12.1. Equipo
 **- Equipo NeoCore:** en general el equipo, a pesar de haber encontrado problemas inesperados a la hora de realizar el desarrollo de sus actividades, está muy contento con el trabajo realizado, la comunicación y colaboración de todos los participantes. Se considera que se podría haber realizado más para el lanzamiento de esta alpha, porque a pesar de la buena comunicación dentro del equipo, es la primera vez que se trabaja juntos entre muchos de los miembros y todavía falta desarrollar la sinergía grupal para que el desarrollo vaya mucho más fluido, a pesar de esto, se ha realizado un gran trabajo en equipo.
