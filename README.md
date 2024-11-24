@@ -365,7 +365,7 @@ El ejército de El Cronarca está formado por seis tipos de monstruos temporales
  - Slipsy se crean a partir de una alteración crónica en los Minions, rehúsan del combate y huyen de él, se preocupan por mantener a salvo a sus aliados
  - Detonatsy son tanques de energía crónica. Evolucionaron desde los Minions que absorbieron grandes cantidades de tiempo en un periodo muy corto de tiempo. Han absorbido tanta energía crónica que su único objetivo es explotar cerca de los enemigos para acabar con su energía.
  - Latsy son los seres temporales más puros y más desarrollados del ejército. Son heraldos de El Cronarca y su último recurso en batalla. Suelen tomar posiciones de guardia.
- - 
+   
 ### 4.5. Cronos
 El Cronos es la energía vital del tiempo, la energía temporal del universo. Desde el origen del universo se mantuvo como una entidad inseparable, pero después de la primer perturbación temporal que originó el largo letargo de El Cronarca se dividió en infinidad de fragmentos que se expandieron a lo largo de todo el Universo, originando las realidades paralelas conocidas como Parallels.
 
@@ -394,24 +394,24 @@ El juego ofrece una experiencia rápida y llena de acción. Los jugadores comien
 
 
 ### 5.3. Personajes jugables	
-**Niño Splash:** este personaje posee un arma con el que podrá disparar agua. Su habilidad especial es un globo de agua grande a modo de bomba que hace daño en el área en el que caiga. Es un personaje que dispone de poca vida y daño pero en cambio demuestra tener una gran velocidad.
+**Splash Kid (Niño Splash):** este personaje posee un arma con el que podrá disparar agua. Su habilidad especial es un globo de agua grande a modo de bomba que hace daño en el área en el que caiga. Es un personaje que dispone de poca vida y daño pero en cambio demuestra tener una gran velocidad.
 
-**Robot Tostadora:** este personaje prepara tostadas que serán lanzadas hacia el enemigo para hacerles un gran daño. Su habilidad especial es alargar su brazo y atraer a un personaje como si de un gancho se tratase. Posee una gran vida a cambio de ser lento en cuanto a movimientos. Es excelente en el combate cuerpo a cuerpo debido a su gran daño.
+**Tosty Dory (Robot Tostadora):** este personaje prepara tostadas que serán lanzadas hacia el enemigo para hacerles un gran daño. Su habilidad especial es alargar su brazo y atraer a un personaje como si de un gancho se tratase. Posee una gran vida a cambio de ser lento en cuanto a movimientos. Es excelente en el combate cuerpo a cuerpo debido a su gran daño.
 
-**Abuelita Jardinera:** este personaje lanza las verduras que cosecha contra sus enemigos. Con su habilidad especial prepara unas raíces que le permiten bloquear el movimiento de los enemigos alcanzados. Este personaje tiene un equilibrio entre cantidad de vida, velocidad y la cantidad de daño que hace.
+**Petunia (Abuelita Jardinera):** este personaje lanza las verduras que cosecha contra sus enemigos. Con su habilidad especial prepara unas raíces que le permiten bloquear el movimiento de los enemigos alcanzados. Este personaje tiene un equilibrio entre cantidad de vida, velocidad y la cantidad de daño que hace.
 
 ### 5.4. Personajes enemigos
-**Enemigo base:** dará 1 minuto más a tu tiempo. Se moverá por el mapa de manera aleatoria.
+**Minion:** este enemigo al ser eliminado otorgará al jugador diez segundos de tiempo extra. Se moverá por el mapa de manera aleatoria y atacará a quien lo ataque primero.
 
-**Enemigo volador:** dará 2 minutos más a tu tiempo. Aparecerán menos que el enemigo base y serán más difíciles de disparar porque mantendrán distancia con el jugador. Se moverá por el mapa en zonas concretas que patrullará y atacará al jugador cuando entre en su campo de visión.
+**Minion Volador:** este enemigo al ser eliminado otorgará diez segundos de tiempo extra. Patrullará una zona del mapa y se mantendrá a rango del jugador mientras lo ataca.
 
-**Enemigo tanque:** una vez ejecutado, se convertirá en tu aliado y te ayudará con los enemigos base. Se moverá lento e intentará atacar a quien lo dañe.
+**Petsy:** este enemigo, una vez ejecutado, se convertirá en tu aliado (lo podrás invocar) y te ayudará con los enemigos base y rival. Se moverá lento hacia los jugadores.
 
-**Enemigo escurridizo:** le dará vida al personaje. Se encontrarán en sitios alejados de la zona de combate. Se encargará de huir de los jugadores para que sea complicado conseguir la ventaja.
+**Slipsy:** este enemigo le otorgará vida al personaje al ser derrotado. Se encuentran alejados de los sitios de combate y evitarán el enfrentamiento contra los jugadores todo lo posible.
 
-**Enemigo explosivo:** se autodestruirá al acercarse al jugador, causando daño en un área. Si el jugador lo elimina antes de que explote, ganará 30 segundos adicionales.
+**Detonatsy:** este enemigo buscará a los jugadores para explotar una vez se aproximen lo suficiente a su posición.
 
-**Enemigo final:** roba la mitad del tiempo de tu contrincante.Aparecerá en una zona específica del mapa donde esperará a que los jugadores le ataquen. Será un enemigo duro para crear un mayor desafío.
+**Latsy:** este enemigo al ser eliminado roba la mitad del tiempo a tu contrincante. Este enemigo atacará a quien lo ataque y posee una gran cantidad de daño.
 
 ### 5.5. Controles
 Los controles están diseñados para ser intuitivos, pero permiten un alto grado de maestría. Los jugadores se moverán en un entorno 3D utilizando las teclas "W", "A", "S", "D" para la dirección (arriba, izquierda, abajo y derecha), mientras que el "Espacio" se utiliza para saltar y esquivar ataques enemigos. Con el click principal del ratón, los jugadores disparan sus armas o activan ataques primarios. Cada personaje tiene una habilidad especial que se activa con la tecla "E", mientras que con la tecla "Q" pueden invocar un aliado para asistir en el combate.
@@ -567,7 +567,7 @@ Para el logo del juego se quiso incorporar una representación de que el tiempo 
 </div>
 
 #### Personajes jugables
-<u>**Niño Agua:**  al ser un niño con habilidades de agua, se ha querido dar un estilo infantil en donde el personaje se encuentre vestido con una malla de superhéroe y que al mismo tiempo se vea como un neopreno. Se le ha añadido también el casco en forma de pez para dar más sensación de que es un niño pequeño.
+<u>**SplashKid (Niño Splash):**  al ser un niño con habilidades de agua, se ha querido dar un estilo infantil en donde el personaje se encuentre vestido con una malla de superhéroe y que al mismo tiempo se vea como un neopreno. Se le ha añadido también el casco en forma de pez para dar más sensación de que es un niño pequeño.
 </u>
 <div align="center">
    <img src="Assets/Arte/Personajes/NiñoAgua.jpg" alt="Niño Agua" width="650" height="375">
@@ -576,7 +576,7 @@ Este niño tiene una personalidad inmadura e infantil, debido a su poca edad. En
 
 <p></p>
 
-<u>**Robot Tostadora:**  para este personaje, al ser un robot que lanza tostadas, se ha querido que a pesar de su tamaño grande, siga teniendo un toque tierno al ser un robot que está tematizado con el entorno de la panadería. 
+<u>**Tosty Dory (Robot Tostadora):**  para este personaje, al ser un robot que lanza tostadas, se ha querido que a pesar de su tamaño grande, siga teniendo un toque tierno al ser un robot que está tematizado con el entorno de la panadería. 
 </u>
 <div align="center">
    <img src="Assets/Arte/Personajes/RobotTostadora.jpg" alt="Robot Tostadora" width="750" height="220">
@@ -585,7 +585,7 @@ Este robot posee un gran sentido de la justicia y se ha modificado así mismo pa
 
 <p></p>
 
-<u>**Abuelita Jardinera:** para la abuela, se ha querido borrar el aspecto cariñoso de una abuela jardinera y darle un toque más cañero poniendo unas gafas oscuras al personaje.
+<u>**Petunia (Abuelita Jardinera):** para la abuela, se ha querido borrar el aspecto cariñoso de una abuela jardinera y darle un toque más cañero poniendo unas gafas oscuras al personaje.
 </u>
 <div align="center">
    <img src="Assets/Arte/Personajes/AbuelitaJardinera.png" alt="Abuelita Jardinera" width="650" height="350">
