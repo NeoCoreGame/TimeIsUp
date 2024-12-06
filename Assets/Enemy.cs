@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Collections.LowLevel.Unsafe;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.UI;
 
 public interface IShootable
 {
@@ -19,16 +21,17 @@ public class Enemy : NetworkBehaviour, IShootable
 {
 
     [SerializeField]
-    public NetworkVariable<int> Hp = new NetworkVariable<int>();
+    public NetworkVariable<int> Hp = new NetworkVariable<int>(100);
 
-    public TextMeshPro hpText;
 
     public bool hitted;
     public int hpThreshold;
     public int TimeReward;
     public int dmg;
 
-     EnemySystem _enemySystem;
+    EnemySystem _enemySystem;
+
+    public Image sliderFill;
 
     public override void OnNetworkSpawn()
     {
@@ -39,23 +42,25 @@ public class Enemy : NetworkBehaviour, IShootable
     }
     public void InitializeEnemy()
     {
-        
-
-        hpText.text = Hp.Value.ToString();
+       // sliderFill.fillAmount = 1;
+        if (IsServer) { Hp.Value = 100; }
 
         Hp.OnValueChanged += OnDamageTaken;
+        // hpText.text = Hp.Value.ToString();
+
 
         _enemySystem = FindObjectOfType<EnemySystem>();
 
-        if(IsServer) { GetComponent<enemyBehaviour>().enabled = true; }
     }
 
     private void OnDamageTaken(int previousValue, int newValue)
     {
         hitted = true;
-        hpText.text = Hp.Value.ToString();
+        //hpText.text = Hp.Value.ToString();
 
-        if(Hp.Value <= 0)
+       // sliderFill.fillAmount = newValue / 100f;
+
+        if (Hp.Value <= 0)
         {
             //Destroy(gameObject);
         }
@@ -89,5 +94,5 @@ public class Enemy : NetworkBehaviour, IShootable
         _enemySystem.EnemyTakeDamage(gameObject, dmg);
     }
 
-    
+
 }

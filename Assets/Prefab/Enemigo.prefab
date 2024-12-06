@@ -212,7 +212,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6687758130921798751}
   - component: {fileID: 2249439430109987832}
-  - component: {fileID: 9123381901019736072}
+  - component: {fileID: 8816030516446653007}
+  - component: {fileID: 7453274371024014433}
   m_Layer: 6
   m_Name: visionCollider
   m_TagString: Untagged
@@ -230,7 +231,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 5, z: 20}
+  m_LocalScale: {x: 20, y: 3, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7262349509655636433}
@@ -243,7 +244,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7271155530530356284}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &9123381901019736072
+--- !u!64 &8816030516446653007
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -265,6 +266,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &7453274371024014433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7271155530530356284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 459f2e96dde21284a84d22be8d742501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8247629546058775762
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +289,6 @@ GameObject:
   - component: {fileID: 7262349509655636433}
   - component: {fileID: 2042366735128998157}
   - component: {fileID: 2915719955166075943}
-  - component: {fileID: 4884404079837928076}
   - component: {fileID: -8973864581450668157}
   - component: {fileID: 1069942760179261576}
   - component: {fileID: -9011842462742624927}
@@ -321,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 4025513271
+  GlobalObjectIdHash: 920970836
   InScenePlacedSourceGlobalObjectIdHash: 4025513271
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -361,26 +373,6 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 0
   SlerpPosition: 0
---- !u!114 &4884404079837928076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8247629546058775762}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0daff600040c124d80b251d3ffea5be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  position: {fileID: 0}
-  speed: 0
-  isGrounded: 0
-  groundCheck: {fileID: 0}
-  groundDistance: 0.1
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!136 &-8973864581450668157
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -440,11 +432,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hp:
     m_InternalValue: 0
-  hpText: {fileID: 6064350187775754913}
   hitted: 0
   hpThreshold: 0
   TimeReward: 0
   dmg: 0
+  sliderFill: {fileID: 0}
 --- !u!114 &1844798958490847051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,13 +452,15 @@ MonoBehaviour:
   executeOnLoop: 0
   interruptOptions: 0
   _player: {fileID: 4334785916130375179, guid: f1beeaa28b1e36d408c8b955d8d91b25, type: 3}
-  _visionCollider: {fileID: 9123381901019736072}
+  _visionCollider: {fileID: 8816030516446653007}
   _attackCollider: {fileID: 1467082530877776138}
   position: {fileID: 0}
   groundCheck: {fileID: 0}
+  finalPosition: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
     m_Bits: 256
+  jugadorVisto: 0
   playerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -835,11 +829,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hp:
     m_InternalValue: 100
-  hpText: {fileID: 6064350187775754913}
   hitted: 0
   hpThreshold: 0
   TimeReward: 10
   dmg: 0
+  sliderFill: {fileID: 0}
 --- !u!4 &849473681237241214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 368b58a222446554eae3aad7b5917692,

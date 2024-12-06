@@ -10,7 +10,6 @@ using BehaviourAPI.StateMachines;
 using BehaviourAPI.UnityToolkit.GUIDesigner.Framework;
 using Random = UnityEngine.Random;
 using BehaviourAPI.UnityToolkit.GUIDesigner.Runtime;
-using System.Diagnostics;
 using System.Collections;
 using BehaviourAPI.StateMachines.StackFSMs;
 using UnityEngine.UIElements;
@@ -20,7 +19,7 @@ public class MinionBehaviour : BehaviourRunner
 {
     BSRuntimeDebugger _debugger;
 
-    [SerializeField] GameObject _player;
+    [HideInInspector] public GameObject _player;
     [SerializeField] Collider _visionCollider;
     [SerializeField] Collider _attackCollider;
 
@@ -31,9 +30,9 @@ public class MinionBehaviour : BehaviourRunner
     private Transform[] destinies;
 
     public Transform groundCheck;
-    private Vector3 finalPosition;
+    [HideInInspector] public Vector3 finalPosition;
     private float _speed;
-    private float arrivingOffset = 6f;
+    private float arrivingOffset = 1f;
 
     private bool atacado;
     private int valorAtacado;
@@ -43,7 +42,7 @@ public class MinionBehaviour : BehaviourRunner
 
     public LayerMask groundMask;
     private float rangoVision;
-    private bool jugadorVisto;
+    [HideInInspector] public bool jugadorVisto;
 
     public LayerMask playerMask;
     private float rangoAtaque;
@@ -51,6 +50,7 @@ public class MinionBehaviour : BehaviourRunner
 
 
     private bool goStunned;
+
 
     protected override void Init()
     {
@@ -172,13 +172,19 @@ public class MinionBehaviour : BehaviourRunner
     }
 	
 	private Status UpdateAvanzando()
-	{
+    {
+        finalPosition = _player.GetComponent<Transform>().position;
+        _meshAgent.SetDestination(finalPosition);
+
+
         if (HasArrived())
         {
             return Status.Success;
         }
-
         return Status.Running;
+
+        
+
     }
 
     private void StartAtacando()
@@ -223,21 +229,12 @@ public class MinionBehaviour : BehaviourRunner
 
     private bool playerClose()
 	{
-
-        if (_visionCollider.bounds.Contains(_player.GetComponent<Transform>().position))
-        {
-            Vector3 direction = (_player.GetComponent<Transform>().position - transform.position).normalized;
-            Ray ray = new Ray(transform.position + transform.up, direction * 20);
-
-            jugadorVisto = Physics.Raycast(ray, out RaycastHit hit, rangoVision) && hit.collider.gameObject.transform == _player;
-
-            return jugadorVisto;
-        }
-
         return jugadorVisto;
     }
-	
-	private bool beingAttacked()
+
+    
+
+    private bool beingAttacked()
 	{
         if (_enemy.Hp.Value < valorAtacado)
         {
@@ -250,7 +247,7 @@ public class MinionBehaviour : BehaviourRunner
 
     private bool playerLost()
     {
-        return !beingAttacked() && !playerClose();
+        return !playerClose();
     }
 
     private bool onObjective()

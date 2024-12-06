@@ -29,7 +29,9 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
     NetworkVariable<bool> startGame = new NetworkVariable<bool>(); //Network variable de booleano que comienza la carrera
     NetworkVariable<bool> movePlayers = new NetworkVariable<bool>(); //Network variable que bloquea/desbloquea a los jugadores
 
-    public int VotosTotales; //Votos totales
+    public int VotosFabrica; //Votos totales
+    public int VotosBarco; //Votos totales
+    public int VotosTotales;
 
     public bool finishedVote; //Indicador de que la votación ha terminado
 
@@ -43,6 +45,16 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
     private InitialCountdown startCountdown;
 
     private RectTransform lobbyRect;
+
+    public Transform[] factorySpawn;
+    public Transform[] boatSpawn;
+
+    private Transform[] electedSpawn;
+
+    public Image mapF;
+    public Image mapB;
+    public Image mapLayout;
+    private int selectedMapIdx;
 
 
     void Awake() //Configuración del singleton
@@ -62,7 +74,7 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
     {
         //Suscribo funciones de cambio de valor
 
-        players.OnValueChanged += OnTextChanged; 
+        players.OnValueChanged += OnTextChanged;
         votos.OnValueChanged += OnVote;
 
         spawner = FindObjectOfType<enemySpawner>();
@@ -70,13 +82,13 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
 
         startCountdown = FindObjectOfType<InitialCountdown>();
 
-        
+
 
         lobbyRect = GetComponent<RectTransform>();
     }
     private void Update()
     {
-       
+
         if (IsServer) //Si es el servidor
         {
             //Actualiza la lista de nombres de jugadores y los almacena en la networkVariable
@@ -87,7 +99,7 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
             foreach (PlayerInfo p in playerInfos) { jugadores.text += "\n" + p.playerName; }
             players.Value = jugadores.text;
 
-            
+
 
             //Cuando los votos se acaben, selecciono el circuito más votado
 
@@ -95,12 +107,26 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
             {
                 finishedVote = true;
 
-                votos.Value = "Votos acabados";         
+                if (VotosFabrica > VotosBarco) { electedSpawn = factorySpawn; }
+                else if (VotosFabrica < VotosBarco) { electedSpawn = boatSpawn; }
+                else
+                {
+                    int chance = UnityEngine.Random.Range(0, 10);
+                    if (chance < 6) { electedSpawn = factorySpawn; }
+                    else
+                    {
+                        electedSpawn = boatSpawn;
+
+                    }
+                }
+
+                votos.Value = "Votos acabados";
                 votacionesHechas.text = "Votaciones: " + votos.Value.ToString();
 
                 startGame.Value = true;
 
                 Invoke("TeleportPlayers", 1f); //Coloco a los jugadores
+                Invoke("TeleportPlayers", 3f); //Coloco a los jugadores
 
                 Invoke("CountOneCountdown", 1f); //Los dejo caer
                 Invoke("CountOneCountdown", 2f); //Los dejo caer
@@ -109,7 +135,7 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
             }
             else if (!finishedVote) //Si no se ha votado, muestro los votos por el momento en el host
             {
-                votos.Value = "" + VotosTotales + " / " + playerObjects.Count;
+                votos.Value = "" + VotosFabrica + " / " + playerObjects.Count;
                 votacionesHechas.text = "Votaciones: " + votos.Value.ToString();
             }
         }
@@ -120,7 +146,7 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
         }
 
 
-        if (startCountdown.contador.Value ==3 && lobbyRect.localScale != Vector3.zero) //Si la carrera comienza, invoco funciones para prepararla
+        if (startCountdown.contador.Value == 3 && lobbyRect.localScale != Vector3.zero) //Si la carrera comienza, invoco funciones para prepararla
         {
 
             Cursor.lockState = CursorLockMode.Locked;
@@ -135,7 +161,7 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
     {
         startCountdown.SubstractOne();
 
-        if(startCountdown.contador.Value <= 0)
+        if (startCountdown.contador.Value <= 0)
         {
             FreePlayers();
             StartRace();
@@ -176,9 +202,22 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
     {
         if (IsServer)
         {
-            foreach(GameObject p in playerObjects) { p.transform.position = destinies.desinyGroup[UnityEngine.Random.Range(0,destinies.desinyGroup.Length)].position; }
+            List<int> aux = new List<int>() { 0, 1, 2, 3 };
 
-        }   
+            foreach (GameObject p in playerObjects)
+            {
+                if (aux.Count == 0)
+                {
+                    aux = new List<int>() { 0, 1, 2, 3 };
+                }
+
+                int rNumber = UnityEngine.Random.Range(0, aux.Count);
+                aux.Remove(rNumber);
+                p.GetComponent<PlayerController>().TeleportPlayer(electedSpawn[rNumber].position);
+
+            }
+
+        }
     }
 
     public void FreePlayers() //Funcion que deja caer a los jugadores en el circuito
@@ -221,7 +260,7 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
             ResetLobby();
 
             startGame.Value = false;
-            movePlayers.Value = false; 
+            movePlayers.Value = false;
         }
 
         gameObject.SetActive(true);
@@ -241,7 +280,7 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
     [ServerRpc(RequireOwnership = false)]
     public void ResetVotesServerRpc() //Llamada Rpc que restablece los votos
     {
-        VotosTotales = 0;
+        VotosFabrica = 0;
         finishedVote = false;
 
     }
@@ -249,7 +288,16 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
     [ServerRpc(RequireOwnership = false)]
     public void PlayerVoteServerRpc() //Llamada Rpc que vota por NASCAR
     {
-        VotosTotales += 1;
+
+        if (selectedMapIdx == 0)
+        {
+            VotosFabrica += 1;
+        }
+        else
+        {
+            VotosBarco += 1;
+        }
+        VotosTotales++;
 
     }
 
@@ -282,6 +330,19 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
             }
 
         }
+    }
+
+    public void SelectMap(int mapIdx)
+    {
+        if (mapIdx == 0)
+        {
+            mapLayout.rectTransform.position = mapF.transform.position;
+        }
+        else if (mapIdx == 1)
+        {
+            mapLayout.rectTransform.position = mapB.transform.position;
+        }
+        selectedMapIdx = mapIdx;
     }
 }
 

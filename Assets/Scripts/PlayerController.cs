@@ -134,6 +134,21 @@ public class PlayerController : NetworkBehaviour, IShootable
     }
     #endregion
 
+    public void TeleportPlayer(Vector3 newPosition)
+    {
+        OnTeleportServerRpc(newPosition);
+    }
+
+    [ServerRpc]
+    public void OnTeleportServerRpc(Vector3 newPosition)
+    {
+        _cController.enabled = false;
+        transform.position = newPosition;
+        _cController.enabled = true;
+
+        //_movement = new Vector3(aux.x, 0f, aux.y);
+    }
+
     public override void OnDestroy()
     {
         //Limpio al jugador
@@ -165,11 +180,12 @@ public class PlayerController : NetworkBehaviour, IShootable
     }
     public void OnCharacterChange(int previousValue, int newValue)
     {
-        Debug.Log("VAMASOOS");
+     //   Debug.Log("VAMASOOS");
         foreach (GameObject c in characters) { c.SetActive(false); }
         characters[newValue].SetActive(true);
         if (IsOwner)
         {
+            Invoke("RidOfAnim", 2f);
             characters[newValue].transform.GetChild(1).gameObject.layer = 10;
             characters[newValue].transform.GetChild(0).transform.GetChild(0).transform.GetChild(2).transform.GetChild(0).transform.GetChild(0).transform.GetChild(3).gameObject.layer = 9;
 
@@ -182,6 +198,11 @@ public class PlayerController : NetworkBehaviour, IShootable
             GetComponent<ShootingController>().SetAnim();
         }
 
+    }
+
+    public void RidOfAnim()
+    {
+        transform.GetChild(0).GetComponent<Animator>().enabled = false;
     }
 
     public void ChangeCharacters()

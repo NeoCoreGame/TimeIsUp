@@ -35,7 +35,7 @@ public class bombAbility : Ability
             if(collider.tag == "Enemy")
             {
                 //QUITAR VIDA AQUI!!!
-                Debug.Log("EnemyHit");
+             //   Debug.Log("EnemyHit");
                 if (collider.gameObject.TryGetComponent(out IShootable interactObj))
                 {
                     if (interactObj.GetHealth() <= dmg)

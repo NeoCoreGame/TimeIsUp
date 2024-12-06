@@ -42,7 +42,7 @@ public class stunAbility : Ability
                     if (enemy.tag == "Enemy")
                     {
                         //VOLVER A MOVER ENEMIGOS AQUI!!!
-                        Debug.Log("EnemyMoves");
+                      //  Debug.Log("EnemyMoves");
                     }
                 }
                 stunedEnemies.Clear();

@@ -62,7 +62,7 @@ public class MouseLook : NetworkBehaviour
     #region Input
     public void OnLook(InputAction.CallbackContext context)
     {
-        Debug.Log(context.ReadValue<Vector2>());
+        //Debug.Log(context.ReadValue<Vector2>());
         OnLookServerRpc(context.ReadValue<Vector2>());
     }
 
