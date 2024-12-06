@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class VisionColliderEnemy : MonoBehaviour
 {
-    private MinionBehaviour m_Minion;
+    private IEnemyBehaviour m_Minion;
 
     private void Start()
     {
-        m_Minion = transform.parent.GetComponent<MinionBehaviour>();
+        m_Minion = transform.parent.GetComponent<IEnemyBehaviour>();
     }
 
 
@@ -17,8 +17,7 @@ public class VisionColliderEnemy : MonoBehaviour
         //Debug.Log(other.gameObject);
         if (other.GetComponent<PlayerController>())
         {
-            m_Minion.jugadorVisto = true;
-            m_Minion._player = other.gameObject;
+            m_Minion.DetectPlayer(other.gameObject);
         }
     }
 
@@ -27,8 +26,7 @@ public class VisionColliderEnemy : MonoBehaviour
         //Debug.Log(other.gameObject);
         if (other.GetComponent<PlayerController>())
         {
-            m_Minion.jugadorVisto = false;
-           // m_Minion._player = null;
+            m_Minion.CleanPlayer();
         }
     }
 

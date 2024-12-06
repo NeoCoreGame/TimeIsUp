@@ -7,12 +7,73 @@ using BehaviourAPI.Core.Perceptions;
 using BehaviourAPI.UnityToolkit;
 using BehaviourAPI.BehaviourTrees;
 using BehaviourAPI.StateMachines;
+using BehaviourAPI.UnityToolkit.GUIDesigner.Runtime;
+using UnityEngine.AI;
 
-public class TanqueBehaviour : BehaviourRunner
+public class TanqueBehaviour : BehaviourRunner, IEnemyBehaviour
 {
-	
-	
-	protected override BehaviourGraph CreateGraph()
+    BSRuntimeDebugger _debugger;
+
+    [HideInInspector] public GameObject _player;
+	private PlayerController _pC;
+    [SerializeField] Collider _visionCollider;
+    [SerializeField] Collider _attackCollider;
+
+    private Enemy _enemy;
+
+    public Transform position;
+    private NavMeshAgent _meshAgent;
+    private Transform[] destinies;
+
+    public Transform groundCheck;
+    [HideInInspector] public Vector3 finalPosition;
+    private float _speed;
+    private float arrivingOffset = 1f;
+
+    private bool atacado;
+    private int valorAtacado;
+
+    private bool ataqueFinalizado;
+    private bool animacion = false;
+
+    public LayerMask groundMask;
+    private float rangoVision;
+    [HideInInspector] public bool jugadorVisto;
+
+    public LayerMask playerMask;
+    private float rangoAtaque;
+    private bool enObjetivo;
+
+
+    private bool goStunned;
+
+	[HideInInspector] public bool atacarPlayerFar;
+    [HideInInspector] public bool atacarPlayerClose;
+    protected override void Init()
+    {
+        _debugger = GetComponent<BSRuntimeDebugger>();
+
+        _enemy = GetComponent<Enemy>();
+
+        position = GetComponent<Transform>();
+        groundCheck = transform.GetChild(2);
+
+        _meshAgent = GetComponent<NavMeshAgent>();
+        _speed = 3f;
+        _meshAgent.speed = _speed;
+
+        destinies = FindObjectOfType<Destinies>().desinyGroup;
+
+        rangoVision = _visionCollider.transform.localScale.x;
+        rangoAtaque = _attackCollider.transform.localScale.x;
+
+        valorAtacado = _enemy.Hp.Value;
+
+
+        base.Init();
+    }
+
+    protected override BehaviourGraph CreateGraph()
 	{
 		var Tanque = new BehaviourTree();
 		var Tanque_1 = new FSM();
@@ -21,19 +82,22 @@ public class TanqueBehaviour : BehaviourRunner
 		
 		var NoInvocado_action = new SubsystemAction(Tanque_1, true, ExecutionInterruptOptions.None);
 		var NoInvocado = Tanque.CreateLeafNode("NoInvocado", NoInvocado_action);
+
 		
-		var NoInvocado_1 = Tanque.CreateDecorator<ConditionNode>("NoInvocado", NoInvocado);
-		
-		var succeder1 = Tanque.CreateDecorator<SuccederNode>("succeder1", NoInvocado_1);
+		var NoInvocado_1 = Tanque.CreateDecorator<ConditionNode>("NoInvocado_1", NoInvocado);
+        var NoInvocadoPerception = new ConditionPerception();
+        NoInvocadoPerception.onCheck = noInvocado;
+        NoInvocado_1.SetPerception(NoInvocadoPerception);
 		
 		var Invocado_action = new SubsystemAction(TanqueInvocado, true, ExecutionInterruptOptions.None);
 		var Invocado = Tanque.CreateLeafNode("Invocado", Invocado_action);
 		
-		var Invocado_1 = Tanque.CreateDecorator<ConditionNode>("Invocado", Invocado);
-		
-		var succeder2 = Tanque.CreateDecorator<SuccederNode>("succeder2", Invocado_1);
-		
-		var Selector = Tanque.CreateComposite<SelectorNode>("Selector", false, succeder1, succeder2);
+		var Invocado_1 = Tanque.CreateDecorator<ConditionNode>("Invocado_1", Invocado);
+        var InvocadoPerception = new ConditionPerception();
+        InvocadoPerception.onCheck = invocado;
+        Invocado_1.SetPerception(InvocadoPerception);
+	
+		var Selector = Tanque.CreateComposite<SelectorNode>("Selector", false, NoInvocado_1, Invocado_1);
 		Selector.IsRandomized = false;
 		
 		var Idle = Tanque_1.CreateState("Idle");
@@ -63,7 +127,7 @@ public class TanqueBehaviour : BehaviourRunner
 		var PrimerAtaque_1_action = new FunctionalAction();
 		PrimerAtaque_1_action.onStarted = StartAtaqueBasico;
 		PrimerAtaque_1_action.onUpdated = UpdateAtaqueBasico;
-		var PrimerAtaque_1 = TanqueAtaques.CreateLeafNode("PrimerAtaque", PrimerAtaque_1_action);
+		var PrimerAtaque_1 = TanqueAtaques.CreateLeafNode("PrimerAtaque_1", PrimerAtaque_1_action);
 		
 		var PrimerAtaque = TanqueAtaques.CreateDecorator<ConditionNode>("PrimerAtaque", PrimerAtaque_1);
 		
@@ -108,7 +172,7 @@ public class TanqueBehaviour : BehaviourRunner
 		var Perseguir_1_action = new FunctionalAction();
 		Perseguir_1_action.onStarted = StartPerseguir;
 		Perseguir_1_action.onUpdated = UpdatePerseguir;
-		var Perseguir_1 = TanqueInvocado.CreateState("Perseguir", Perseguir_1_action);
+		var Perseguir_1 = TanqueInvocado.CreateState("Perseguir_1", Perseguir_1_action);
 		
 		var AtacarBasico_action = new FunctionalAction();
 		AtacarBasico_action.onStarted = StartAtacar;
@@ -131,97 +195,167 @@ public class TanqueBehaviour : BehaviourRunner
 		var jugadorMuyCerca_perception = new ConditionPerception();
 		jugadorMuyCerca_perception.onCheck = onObjectiveClose;
 		var jugadorMuyCerca = TanqueInvocado.CreateTransition("jugadorMuyCerca", Perseguir_1, AtacarFuerte, jugadorMuyCerca_perception);
-		
-		return Tanque;
+
+        _debugger.RegisterGraph(Tanque);
+        _debugger.RegisterGraph(Tanque_1);
+        _debugger.RegisterGraph(TanqueAtaques);
+        _debugger.RegisterGraph(TanqueInvocado);
+        return Tanque;
 	}
+
 	
 	private void StartPerseguir()
 	{
-		throw new System.NotImplementedException();
-	}
+        finalPosition = _player.transform.position;
+        _meshAgent.SetDestination(finalPosition);
+    }
 	
 	private Status UpdatePerseguir()
 	{
-		throw new System.NotImplementedException();
-	}
-	
-	private Boolean playerClose()
+        finalPosition = _player.transform.position;
+        _meshAgent.SetDestination(finalPosition);
+
+
+        if (HasArrived())
+        {
+            return Status.Success;
+        }
+        return Status.Running;
+    }
+
+    public bool HasArrived()
+    {
+        if (Vector3.Distance(finalPosition, transform.position) < arrivingOffset)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private Boolean playerClose()
 	{
-		throw new System.NotImplementedException();
+		return jugadorVisto;
 	}
 	
 	private Boolean playerLost()
 	{
-		throw new System.NotImplementedException();
+		return !jugadorVisto;
 	}
 	
 	private Boolean onObjective()
 	{
-		throw new System.NotImplementedException();
+		return atacarPlayerFar;
 	}
 	
 	private void StartAtaqueBasico()
 	{
-		throw new System.NotImplementedException();
+		//Lanzar animacion
+		_pC.TakeDamage(20);
 	}
 	
 	private Status UpdateAtaqueBasico()
 	{
-		throw new System.NotImplementedException();
+		//nada que añadir.
+		atacarPlayerFar = false;
+		return Status.Success;
 	}
 	
 	private void StartAtaqueFuerte()
 	{
-		throw new System.NotImplementedException();
-	}
+		//Lanzar animacion
+        _pC.TakeDamage(50);
+    }
 	
 	private Status UpdateAtaqueFuerte()
 	{
-		throw new System.NotImplementedException();
-	}
+        //nada que añadir.
+        atacarPlayerClose= false;
+        return Status.Success;
+    }
 	
 	private void StartAtaquesBasicos()
 	{
-		throw new System.NotImplementedException();
-	}
+		//LAnzar animacion 
+		Invoke("AtacarPlayer", .5f);
+        Invoke("AtacarPlayer", 1f);
+    }
+
+	public void AtacarPlayer()
+	{
+
+        _pC.TakeDamage(20);
+    }
 	
 	private Status UpdateAtaquesBasicos()
 	{
-		throw new System.NotImplementedException();
+		// nada que añadir
+
+		return Status.Success;
 	}
 	
 	private void StartAtaqueIndividual()
-	{
-		throw new System.NotImplementedException();
-	}
+    {
+        _pC.TakeDamage(20);
+    }
 	
 	private Status UpdateAtaqueIndividual()
-	{
-		throw new System.NotImplementedException();
-	}
+    {
+        // nada que añadir
+
+        return Status.Success;
+    }
 	
 	private void StartAtacar()
-	{
-		throw new System.NotImplementedException();
-	}
+    {
+        _pC.TakeDamage(20);
+    }
 	
 	private Status UpdateAtacar()
-	{
-		throw new System.NotImplementedException();
-	}
+    {
+        // nada que añadir
+
+        return Status.Success;
+    }
 	
 	private void StartAtacarFuerte()
-	{
-		throw new System.NotImplementedException();
-	}
+    {
+        _pC.TakeDamage(50);
+    }
 	
 	private Status UpdateAtacarFuerte()
-	{
-		throw new System.NotImplementedException();
-	}
+    {
+        // nada que añadir
+
+        return Status.Success;
+    }
 	
 	private Boolean onObjectiveClose()
 	{
-		throw new System.NotImplementedException();
+
+		return atacarPlayerClose;
 	}
+
+    private bool noInvocado()
+    {
+        return false;
+    }
+
+    private bool invocado()
+    {
+        return true;
+    }
+
+    public void DetectPlayer(GameObject player)
+    {
+        jugadorVisto = true;
+        _player = player;
+		_pC = player.GetComponent<PlayerController>();
+    }
+
+    public void CleanPlayer()
+    {
+
+        jugadorVisto = false;
+    }
 }
