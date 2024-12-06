@@ -1,0 +1,1120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6820069002685772756
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6e9920114b81b984083bf9873fdb8d63,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -54.55515
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6e9920114b81b984083bf9873fdb8d63,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.58
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6e9920114b81b984083bf9873fdb8d63,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 47.75
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6e9920114b81b984083bf9873fdb8d63,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6e9920114b81b984083bf9873fdb8d63,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6e9920114b81b984083bf9873fdb8d63,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6e9920114b81b984083bf9873fdb8d63,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6e9920114b81b984083bf9873fdb8d63,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6e9920114b81b984083bf9873fdb8d63,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6e9920114b81b984083bf9873fdb8d63,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6e9920114b81b984083bf9873fdb8d63,
+        type: 3}
+      propertyPath: m_Name
+      value: EditorEnemigoGolem
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e9920114b81b984083bf9873fdb8d63,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2862767731878738978}
+  m_SourcePrefab: {fileID: 100100000, guid: 6e9920114b81b984083bf9873fdb8d63, type: 3}
+--- !u!1 &5937056362540420741 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e9920114b81b984083bf9873fdb8d63,
+    type: 3}
+  m_PrefabInstance: {fileID: 6820069002685772756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2862767731878738978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5937056362540420741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7033c32493b38240a6a2c47736ac9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeOnLoop: 0
+  interruptOptions: 0
+  _eventHandler:
+    debugStatusChanges: 0
+    identifier: 
+  data:
+    graphs:
+    - name: Tanque
+      id: cf152d61-51b3-45b5-aa48-2d813781f833
+      graph:
+        rid: 7514706925730660566
+      nodes:
+      - name: Selector
+        id: 1e1888af-67bc-4f1b-8690-87653f8168cf
+        position: {x: 753, y: 51}
+        node:
+          rid: 7514706925730660567
+        references: []
+        parentIds: []
+        childIds:
+        - 9d8b6b6f-141e-4fad-9d6a-924cf860e3b9
+        - 359f2006-9102-4a29-b5cf-3435915618f6
+      - name: NoInvocado
+        id: 3528155c-1e6b-44c3-b017-be80fcaa209f
+        position: {x: 475, y: 564}
+        node:
+          rid: 7514706925730660568
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660576
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 709137e0-c329-468f-bfff-7908e79298b2
+        childIds: []
+      - name: Invocado
+        id: 3cd6ddc6-59ef-4e7c-8cc3-a7af2663fef5
+        position: {x: 860, y: 569}
+        node:
+          rid: 7514706925730660569
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660579
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 39906b55-268d-421e-90f5-51ea11146f6a
+        childIds: []
+      - name: succeder1
+        id: 9d8b6b6f-141e-4fad-9d6a-924cf860e3b9
+        position: {x: 598, y: 263}
+        node:
+          rid: 7514706925730660573
+        references: []
+        parentIds:
+        - 1e1888af-67bc-4f1b-8690-87653f8168cf
+        childIds:
+        - 709137e0-c329-468f-bfff-7908e79298b2
+      - name: NoInvocado
+        id: 709137e0-c329-468f-bfff-7908e79298b2
+        position: {x: 507, y: 372}
+        node:
+          rid: 7514706925730660574
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7514706925730660575
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 9d8b6b6f-141e-4fad-9d6a-924cf860e3b9
+        childIds:
+        - 3528155c-1e6b-44c3-b017-be80fcaa209f
+      - name: Invocado
+        id: 39906b55-268d-421e-90f5-51ea11146f6a
+        position: {x: 892, y: 399}
+        node:
+          rid: 7514706925730660577
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7514706925730660578
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 359f2006-9102-4a29-b5cf-3435915618f6
+        childIds:
+        - 3cd6ddc6-59ef-4e7c-8cc3-a7af2663fef5
+      - name: succeder2
+        id: 359f2006-9102-4a29-b5cf-3435915618f6
+        position: {x: 860, y: 267}
+        node:
+          rid: 7514706925730660633
+        references: []
+        parentIds:
+        - 1e1888af-67bc-4f1b-8690-87653f8168cf
+        childIds:
+        - 39906b55-268d-421e-90f5-51ea11146f6a
+    - name: Tanque
+      id: 8d78dada-38e3-4aa9-8a0d-7603b2b64ccc
+      graph:
+        rid: 7514706925730660580
+      nodes:
+      - name: Idle
+        id: 3129ffbf-7082-4664-aa77-77b7799d7be9
+        position: {x: 418, y: 508}
+        node:
+          rid: 7514706925730660581
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 04d00466-e911-48b2-a906-802ee4096cbb
+        childIds:
+        - 7725d1d4-6954-4ff6-814d-61934a444018
+      - name: jugadorEncontrado
+        id: 7725d1d4-6954-4ff6-814d-61934a444018
+        position: {x: 688, y: 356}
+        node:
+          rid: 7514706925730660582
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7514706925730660586
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 3129ffbf-7082-4664-aa77-77b7799d7be9
+        childIds:
+        - 3f764772-876b-46e5-bad8-3fc42b12c090
+      - name: jugadorPerdido
+        id: 04d00466-e911-48b2-a906-802ee4096cbb
+        position: {x: 696, y: 577}
+        node:
+          rid: 7514706925730660583
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7514706925730660585
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 3f764772-876b-46e5-bad8-3fc42b12c090
+        childIds:
+        - 3129ffbf-7082-4664-aa77-77b7799d7be9
+      - name: Perseguir
+        id: 3f764772-876b-46e5-bad8-3fc42b12c090
+        position: {x: 983, y: 463}
+        node:
+          rid: 7514706925730660584
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660587
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 7725d1d4-6954-4ff6-814d-61934a444018
+        - 2a59113d-19cb-458c-a8dd-a5dbef5c72da
+        childIds:
+        - 04d00466-e911-48b2-a906-802ee4096cbb
+        - a02b5829-e6e6-47fc-a759-e579901b8995
+      - name: Atacar
+        id: e5d2a516-8afc-4820-b487-b5d3528d9aa1
+        position: {x: 1531, y: 482}
+        node:
+          rid: 7514706925730660588
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660593
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - a02b5829-e6e6-47fc-a759-e579901b8995
+        childIds:
+        - 2a59113d-19cb-458c-a8dd-a5dbef5c72da
+      - name: entrarAtacar
+        id: a02b5829-e6e6-47fc-a759-e579901b8995
+        position: {x: 1269, y: 356}
+        node:
+          rid: 7514706925730660589
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7514706925730660591
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 3f764772-876b-46e5-bad8-3fc42b12c090
+        childIds:
+        - e5d2a516-8afc-4820-b487-b5d3528d9aa1
+      - name: salirAtacar
+        id: 2a59113d-19cb-458c-a8dd-a5dbef5c72da
+        position: {x: 1261, y: 555}
+        node:
+          rid: 7514706925730660590
+        references:
+        - fieldName: Perception
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - e5d2a516-8afc-4820-b487-b5d3528d9aa1
+        childIds:
+        - 3f764772-876b-46e5-bad8-3fc42b12c090
+    - name: TanqueAtaques
+      id: 94c2040e-ee3f-4cc8-b398-f090978ad4bf
+      graph:
+        rid: 7514706925730660595
+      nodes:
+      - name: Seleccion
+        id: 25997207-d807-49bf-af56-f560d081f784
+        position: {x: 1406, y: 228}
+        node:
+          rid: 7514706925730660596
+        references: []
+        parentIds: []
+        childIds:
+        - f6517db7-ce67-45c3-af5e-47175ad88580
+        - 15990fde-9bc5-45be-b86b-e88fdd9ee0d7
+      - name: PrimerAtaque
+        id: acdf13f7-5961-4a45-8437-d2f9e1665107
+        position: {x: 1145, y: 495}
+        node:
+          rid: 7514706925730660597
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7514706925730660599
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - f6517db7-ce67-45c3-af5e-47175ad88580
+        childIds:
+        - c190bf91-2808-470d-8873-7580332cd635
+      - name: succederAtaques
+        id: f6517db7-ce67-45c3-af5e-47175ad88580
+        position: {x: 1230, y: 382}
+        node:
+          rid: 7514706925730660598
+        references: []
+        parentIds:
+        - 25997207-d807-49bf-af56-f560d081f784
+        childIds:
+        - acdf13f7-5961-4a45-8437-d2f9e1665107
+      - name: PrimerAtaque
+        id: c190bf91-2808-470d-8873-7580332cd635
+        position: {x: 1115, y: 712}
+        node:
+          rid: 7514706925730660600
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660601
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - acdf13f7-5961-4a45-8437-d2f9e1665107
+        childIds: []
+      - name: Seleccion2
+        id: 15990fde-9bc5-45be-b86b-e88fdd9ee0d7
+        position: {x: 1574, y: 413}
+        node:
+          rid: 7514706925730660602
+        references: []
+        parentIds:
+        - 25997207-d807-49bf-af56-f560d081f784
+        childIds:
+        - 21d12e2b-94b5-4434-80e6-1f53b5d08989
+        - befcc75c-39aa-4eca-81c0-a818c6cb60f1
+      - name: succederAtaques2
+        id: 21d12e2b-94b5-4434-80e6-1f53b5d08989
+        position: {x: 1475, y: 547}
+        node:
+          rid: 7514706925730660603
+        references: []
+        parentIds:
+        - 15990fde-9bc5-45be-b86b-e88fdd9ee0d7
+        childIds:
+        - 0ee65d1a-9d74-48fc-9c20-70cf50781f5f
+      - name: mitadVida
+        id: 0ee65d1a-9d74-48fc-9c20-70cf50781f5f
+        position: {x: 1451, y: 668}
+        node:
+          rid: 7514706925730660604
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7514706925730660605
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 21d12e2b-94b5-4434-80e6-1f53b5d08989
+        childIds:
+        - 5c0fd98a-90e4-45ed-b357-c862d6406cc3
+      - name: AtaqueBasico
+        id: 3aef7ae8-a66f-477e-b288-8b439473cc81
+        position: {x: 1385, y: 1099}
+        node:
+          rid: 7514706925730660607
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660615
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 525b30c1-748c-4802-a56d-6bad01928fc7
+        childIds: []
+      - name: AtaqueFuerte
+        id: 3f6f61b2-2dd3-487b-bde6-bf0a0a94b422
+        position: {x: 1112, y: 1091}
+        node:
+          rid: 7514706925730660609
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660614
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 525b30c1-748c-4802-a56d-6bad01928fc7
+        childIds: []
+      - name: secuenciaAtaques
+        id: 525b30c1-748c-4802-a56d-6bad01928fc7
+        position: {x: 1265, y: 969}
+        node:
+          rid: 7514706925730660610
+        references: []
+        parentIds:
+        - 5c0fd98a-90e4-45ed-b357-c862d6406cc3
+        childIds:
+        - 3f6f61b2-2dd3-487b-bde6-bf0a0a94b422
+        - 3aef7ae8-a66f-477e-b288-8b439473cc81
+      - name: Seleccion3
+        id: 5c0fd98a-90e4-45ed-b357-c862d6406cc3
+        position: {x: 1425, y: 844}
+        node:
+          rid: 7514706925730660611
+        references: []
+        parentIds:
+        - 0ee65d1a-9d74-48fc-9c20-70cf50781f5f
+        childIds:
+        - 525b30c1-748c-4802-a56d-6bad01928fc7
+        - cdea8428-5c10-4517-9aef-14f1902fc0ee
+      - name: AtaquesBasicos
+        id: cdea8428-5c10-4517-9aef-14f1902fc0ee
+        position: {x: 1610, y: 977}
+        node:
+          rid: 7514706925730660616
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660617
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 5c0fd98a-90e4-45ed-b357-c862d6406cc3
+        childIds: []
+      - name: AtaqueIndividual
+        id: befcc75c-39aa-4eca-81c0-a818c6cb60f1
+        position: {x: 1764, y: 649}
+        node:
+          rid: 7514706925730660618
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660619
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 15990fde-9bc5-45be-b86b-e88fdd9ee0d7
+        childIds: []
+    - name: TanqueInvocado
+      id: 5fb1ea4c-3a12-4c75-93b6-f4b72c551dab
+      graph:
+        rid: 7514706925730660620
+      nodes:
+      - name: Perseguir
+        id: 2f30dab1-d1df-41ce-aa3d-665f96eea745
+        position: {x: 609, y: 679}
+        node:
+          rid: 7514706925730660621
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660622
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 69510c5b-9148-4ec8-8d13-0b7fd1e77b16
+        - acc5b05d-9076-4398-b99e-2c970fd3c1b6
+        childIds:
+        - 237109c7-77e7-4ce5-9694-532eabe29ab9
+        - 6c714c69-d43a-4b07-a078-77ceaace25ab
+      - name: AtacarBasico
+        id: 0416a10f-06fe-4442-9b6b-41c83d11b35d
+        position: {x: 1050, y: 360}
+        node:
+          rid: 7514706925730660623
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660624
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 237109c7-77e7-4ce5-9694-532eabe29ab9
+        childIds:
+        - 69510c5b-9148-4ec8-8d13-0b7fd1e77b16
+      - name: jugadorCerca
+        id: 237109c7-77e7-4ce5-9694-532eabe29ab9
+        position: {x: 563, y: 296}
+        node:
+          rid: 7514706925730660625
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7514706925730660626
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 2f30dab1-d1df-41ce-aa3d-665f96eea745
+        childIds:
+        - 0416a10f-06fe-4442-9b6b-41c83d11b35d
+      - name: ataqueTerminado
+        id: 69510c5b-9148-4ec8-8d13-0b7fd1e77b16
+        position: {x: 748, y: 448}
+        node:
+          rid: 7514706925730660627
+        references:
+        - fieldName: Perception
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 0416a10f-06fe-4442-9b6b-41c83d11b35d
+        childIds:
+        - 2f30dab1-d1df-41ce-aa3d-665f96eea745
+      - name: AtacarFuerte
+        id: ae437220-7522-41ae-9a8b-efdd234a62fa
+        position: {x: 1036, y: 847}
+        node:
+          rid: 7514706925730660628
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660632
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 6c714c69-d43a-4b07-a078-77ceaace25ab
+        childIds:
+        - acc5b05d-9076-4398-b99e-2c970fd3c1b6
+      - name: ataqueFuerteTerminado
+        id: acc5b05d-9076-4398-b99e-2c970fd3c1b6
+        position: {x: 992, y: 636}
+        node:
+          rid: 7514706925730660629
+        references:
+        - fieldName: Perception
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - ae437220-7522-41ae-9a8b-efdd234a62fa
+        childIds:
+        - 2f30dab1-d1df-41ce-aa3d-665f96eea745
+      - name: jugadorMuyCerca
+        id: 6c714c69-d43a-4b07-a078-77ceaace25ab
+        position: {x: 756, y: 884}
+        node:
+          rid: 7514706925730660630
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7514706925730660631
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 2f30dab1-d1df-41ce-aa3d-665f96eea745
+        childIds:
+        - ae437220-7522-41ae-9a8b-efdd234a62fa
+    pushPerceptions: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 7514706925730660566
+      type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660567
+      type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 7514706925730660568
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660569
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660573
+      type: {class: SuccederNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660574
+      type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660575
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: NoInvocado
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660576
+      type: {class: SubgraphAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        ExecuteOnLoop: 1
+        InterruptOptions: 0
+        subgraphId: 8d78dada-38e3-4aa9-8a0d-7603b2b64ccc
+    - rid: 7514706925730660577
+      type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660578
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: Invocado
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660579
+      type: {class: SubgraphAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        ExecuteOnLoop: 1
+        InterruptOptions: 0
+        subgraphId: 5fb1ea4c-3a12-4c75-93b6-f4b72c551dab
+    - rid: 7514706925730660580
+      type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7514706925730660581
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7514706925730660582
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7514706925730660583
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7514706925730660584
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7514706925730660585
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: playerLost
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660586
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: playerClose
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660587
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: StartPerseguir
+        update:
+          componentName: 
+          methodName: UpdatePerseguir
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660588
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7514706925730660589
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7514706925730660590
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: 2
+    - rid: 7514706925730660591
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: onObjective
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660593
+      type: {class: SubgraphAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        ExecuteOnLoop: 0
+        InterruptOptions: 2
+        subgraphId: 94c2040e-ee3f-4cc8-b398-f090978ad4bf
+    - rid: 7514706925730660595
+      type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660596
+      type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 7514706925730660597
+      type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660598
+      type: {class: SuccederNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660599
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: primerAtaque
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660600
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660601
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: StartAtaqueBasico
+        update:
+          componentName: 
+          methodName: UpdateAtaqueBasico
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660602
+      type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 7514706925730660603
+      type: {class: SuccederNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660604
+      type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660605
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: mitadVida
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660607
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660609
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660610
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 7514706925730660611
+      type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 1
+    - rid: 7514706925730660614
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: StartAtaqueFuerte
+        update:
+          componentName: 
+          methodName: UpdateAtaqueFuerte
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660615
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: StartAtaqueBasico
+        update:
+          componentName: 
+          methodName: UpdateAtaqueBasico
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660616
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660617
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: StartAtaquesBasicos
+        update:
+          componentName: 
+          methodName: UpdateAtaquesBasicos
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660618
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660619
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: StartAtaqueIndividual
+        update:
+          componentName: 
+          methodName: UpdateAtaqueIndividual
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660620
+      type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7514706925730660621
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7514706925730660622
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: StartPerseguir
+        update:
+          componentName: 
+          methodName: UpdatePerseguir
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660623
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7514706925730660624
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: StartAtacar
+        update:
+          componentName: 
+          methodName: UpdateAtacar
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660625
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7514706925730660626
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: onObjective
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660627
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: 2
+    - rid: 7514706925730660628
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7514706925730660629
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: 2
+    - rid: 7514706925730660630
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7514706925730660631
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: onObjectiveClose
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660632
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: StartAtacarFuerte
+        update:
+          componentName: 
+          methodName: UpdateAtacarFuerte
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660633
+      type: {class: SuccederNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 

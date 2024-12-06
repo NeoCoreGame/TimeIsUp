@@ -137,7 +137,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 16d250ae4b7c7b04bb54ce7453b100e8,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7123762213915949133}
+      addedObject: {fileID: 1859293213115495476}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 16d250ae4b7c7b04bb54ce7453b100e8,
         type: 3}
       insertIndex: -1
@@ -149,7 +149,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7689014930733165782}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7123762213915949133
+--- !u!114 &1859293213115495476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,17 +158,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7383008952562962823}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f35ecdd577225e4e8c19f93b6175798, type: 3}
+  m_Script: {fileID: 11500000, guid: 01256152098be1a4ba72ddff538b215f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   executeOnLoop: 0
   interruptOptions: 0
   outRange_perception_OtherTransform: {fileID: 0}
-  primerPunto: {fileID: 0}
-  segundoPunto: {fileID: 0}
-  tercerPunto: {fileID: 0}
-  _player: {fileID: 0}
-  _visionCollider: {fileID: 0}
 --- !u!114 &4108709825822387153
 MonoBehaviour:
   m_ObjectHideFlags: 0

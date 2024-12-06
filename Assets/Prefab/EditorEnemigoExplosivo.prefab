@@ -1,0 +1,424 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7409038490926406682
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f746990bf04169440b9b10ce3dddaf69,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -44.284676
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f746990bf04169440b9b10ce3dddaf69,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.37
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f746990bf04169440b9b10ce3dddaf69,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 62.702747
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f746990bf04169440b9b10ce3dddaf69,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f746990bf04169440b9b10ce3dddaf69,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f746990bf04169440b9b10ce3dddaf69,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f746990bf04169440b9b10ce3dddaf69,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f746990bf04169440b9b10ce3dddaf69,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f746990bf04169440b9b10ce3dddaf69,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f746990bf04169440b9b10ce3dddaf69,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f746990bf04169440b9b10ce3dddaf69,
+        type: 3}
+      propertyPath: m_Name
+      value: EditorEnemigoExplosivo
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f746990bf04169440b9b10ce3dddaf69,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6017655815223645819}
+  m_SourcePrefab: {fileID: 100100000, guid: f746990bf04169440b9b10ce3dddaf69, type: 3}
+--- !u!1 &7643550373827862859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f746990bf04169440b9b10ce3dddaf69,
+    type: 3}
+  m_PrefabInstance: {fileID: 7409038490926406682}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-6017655815223645819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7643550373827862859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7033c32493b38240a6a2c47736ac9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeOnLoop: 0
+  interruptOptions: 0
+  _eventHandler:
+    debugStatusChanges: 0
+    identifier: 
+  data:
+    graphs:
+    - name: Explosivo
+      id: b8967a2b-cc37-4f5d-8b3f-94b4f63055f3
+      graph:
+        rid: 7514706925730660416
+      nodes:
+      - name: Dormido
+        id: 3dd168db-5963-4a3a-aade-108231efca53
+        position: {x: 402, y: 178}
+        node:
+          rid: 7514706925730660417
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds: []
+        childIds:
+        - 4a883152-685a-47f8-a194-f15a9860c690
+        - 9277110b-cc24-4144-b4f8-f65aa9021a80
+      - name: JugadorDetectado
+        id: 4a883152-685a-47f8-a194-f15a9860c690
+        position: {x: 703, y: 205}
+        node:
+          rid: 7514706925730660418
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7514706925730660419
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 3dd168db-5963-4a3a-aade-108231efca53
+        childIds:
+        - dff64c29-5e73-481f-9256-14ba5090821d
+      - name: Persiguiendo
+        id: dff64c29-5e73-481f-9256-14ba5090821d
+        position: {x: 1028, y: 164}
+        node:
+          rid: 7514706925730660420
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660421
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 4a883152-685a-47f8-a194-f15a9860c690
+        - 71217f87-fa82-4ed1-8384-e54018b78f85
+        childIds:
+        - bd7cdb10-1ad9-48f9-9c8e-aa95aa8f7f9d
+        - e885c4a2-44a8-473c-8cd1-d7f4bb2e48d3
+      - name: JugadorCerca
+        id: bd7cdb10-1ad9-48f9-9c8e-aa95aa8f7f9d
+        position: {x: 1404, y: 170}
+        node:
+          rid: 7514706925730660422
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7514706925730660424
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: 7514706925730660426
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - dff64c29-5e73-481f-9256-14ba5090821d
+        childIds:
+        - 5c63bdd6-4778-45b1-bb87-e43a9bfde6a7
+      - name: Explotar
+        id: 5c63bdd6-4778-45b1-bb87-e43a9bfde6a7
+        position: {x: 1412, y: 419}
+        node:
+          rid: 7514706925730660423
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660427
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - bd7cdb10-1ad9-48f9-9c8e-aa95aa8f7f9d
+        - e885c4a2-44a8-473c-8cd1-d7f4bb2e48d3
+        childIds: []
+      - name: entrarExplotar
+        id: e885c4a2-44a8-473c-8cd1-d7f4bb2e48d3
+        position: {x: 1059, y: 376}
+        node:
+          rid: 7514706925730660428
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7514706925730660429
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - dff64c29-5e73-481f-9256-14ba5090821d
+        childIds:
+        - 5c63bdd6-4778-45b1-bb87-e43a9bfde6a7
+      - name: Moverse
+        id: c32cdffa-43e9-44e3-9a87-d78200f54631
+        position: {x: 740, y: -149}
+        node:
+          rid: 7514706925730660430
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660436
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 9277110b-cc24-4144-b4f8-f65aa9021a80
+        childIds:
+        - 71217f87-fa82-4ed1-8384-e54018b78f85
+      - name: Despertar
+        id: 9277110b-cc24-4144-b4f8-f65aa9021a80
+        position: {x: 433, y: -37}
+        node:
+          rid: 7514706925730660431
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7514706925730660432
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 3dd168db-5963-4a3a-aade-108231efca53
+        childIds:
+        - c32cdffa-43e9-44e3-9a87-d78200f54631
+      - name: JugadorVisto
+        id: 71217f87-fa82-4ed1-8384-e54018b78f85
+        position: {x: 1058, y: -40}
+        node:
+          rid: 7514706925730660433
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7514706925730660434
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - c32cdffa-43e9-44e3-9a87-d78200f54631
+        childIds:
+        - dff64c29-5e73-481f-9256-14ba5090821d
+    pushPerceptions: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 7514706925730660416
+      type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7514706925730660417
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7514706925730660418
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7514706925730660419
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: playerClose
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660420
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7514706925730660421
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: StartPersiguiendo
+        update:
+          componentName: 
+          methodName: UpdatePersiguiendo
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660422
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7514706925730660423
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7514706925730660424
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: onObjective
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660426
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: 
+          methodName: prepareExplode
+    - rid: 7514706925730660427
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: 
+          methodName: explode
+    - rid: 7514706925730660428
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7514706925730660429
+      type: {class: UnityTimePerception, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
+      data:
+        TotalTime: 60
+    - rid: 7514706925730660430
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7514706925730660431
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7514706925730660432
+      type: {class: UnityTimePerception, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
+      data:
+        TotalTime: 120
+    - rid: 7514706925730660433
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7514706925730660434
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: playerSeen
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660436
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: StartMoverse
+        update:
+          componentName: 
+          methodName: UpdateMoverse
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 

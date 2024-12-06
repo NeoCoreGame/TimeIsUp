@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4756709556266710156
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -34.005886
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.61
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 62.093395
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemigoEscurridizo
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7878912541778745260}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8429870375321245627}
+  m_SourcePrefab: {fileID: 100100000, guid: a22fd524d2a10d94f97baf4a27e39c6b, type: 3}
+--- !u!1 &5675190780578662877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4756709556266710156}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7878912541778745260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5675190780578662877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32d7cc538f17e64bb692495881d7a83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeOnLoop: 0
+  interruptOptions: 0
+  Huir_action_OtherTransform: {fileID: 0}
+--- !u!114 &8429870375321245627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5675190780578662877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1726e9fdb9ff2d4baa8710d607b31ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventHandler:
+    debugStatusChanges: 0
+    identifier: 

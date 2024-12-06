@@ -1,0 +1,584 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4756709556266710156
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -34.005886
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.61
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 62.093395
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      propertyPath: m_Name
+      value: EditorEnemigoEscurridizo
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2021170043471535418}
+  m_SourcePrefab: {fileID: 100100000, guid: a22fd524d2a10d94f97baf4a27e39c6b, type: 3}
+--- !u!1 &5675190780578662877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a22fd524d2a10d94f97baf4a27e39c6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4756709556266710156}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2021170043471535418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5675190780578662877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7033c32493b38240a6a2c47736ac9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeOnLoop: 0
+  interruptOptions: 0
+  _eventHandler:
+    debugStatusChanges: 0
+    identifier: 
+  data:
+    graphs:
+    - name: Escurridizo
+      id: 4b28b8c6-4b01-4020-80b5-91b089597f42
+      graph:
+        rid: 7514706925730660503
+      nodes:
+      - name: Patrullar
+        id: 969e1c47-549c-465e-9aa9-3fe063d642ba
+        position: {x: 299, y: 119}
+        node:
+          rid: 7514706925730660504
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660516
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds: []
+        childIds:
+        - a9edb8ef-1052-4ed4-9116-47c094ad6634
+      - name: Dashear
+        id: f55304cf-f980-4321-b5c4-2b943f8c0beb
+        position: {x: 1034, y: 290}
+        node:
+          rid: 7514706925730660518
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7514706925730660535
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - ca1914fa-724a-44b3-8aa6-569297505604
+        childIds:
+        - 7b104419-a2f1-4d71-894f-3a08f7fbb923
+      - name: Dash
+        id: 7b104419-a2f1-4d71-894f-3a08f7fbb923
+        position: {x: 887, y: 467}
+        node:
+          rid: 7514706925730660519
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660528
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - f55304cf-f980-4321-b5c4-2b943f8c0beb
+        childIds:
+        - 520bc647-96d7-4fc6-841b-f0d352533c2e
+      - name: Dash_Huir
+        id: 520bc647-96d7-4fc6-841b-f0d352533c2e
+        position: {x: 727, y: 292}
+        node:
+          rid: 7514706925730660521
+        references:
+        - fieldName: Perception
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 7b104419-a2f1-4d71-894f-3a08f7fbb923
+        childIds:
+        - ca1914fa-724a-44b3-8aa6-569297505604
+      - name: JugadorVisto
+        id: a9edb8ef-1052-4ed4-9116-47c094ad6634
+        position: {x: 588, y: 15}
+        node:
+          rid: 7514706925730660522
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7514706925730660523
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 969e1c47-549c-465e-9aa9-3fe063d642ba
+        childIds:
+        - ca1914fa-724a-44b3-8aa6-569297505604
+      - name: Atacar
+        id: dbdbedec-de3b-42e7-9cfb-e2ed20d9b972
+        position: {x: 1470, y: 106}
+        node:
+          rid: 7514706925730660524
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660525
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 7a6dddff-f567-4335-96ff-190c909e2ec0
+        childIds:
+        - 9e040f3a-ced2-455d-90d3-2351d60f2f79
+      - name: Atacar
+        id: 7a6dddff-f567-4335-96ff-190c909e2ec0
+        position: {x: 1188, y: -65}
+        node:
+          rid: 7514706925730660526
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7514706925730660537
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - ca1914fa-724a-44b3-8aa6-569297505604
+        childIds:
+        - dbdbedec-de3b-42e7-9cfb-e2ed20d9b972
+      - name: Atacar_Huir
+        id: 9e040f3a-ced2-455d-90d3-2351d60f2f79
+        position: {x: 1204, y: 122}
+        node:
+          rid: 7514706925730660527
+        references:
+        - fieldName: Perception
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - dbdbedec-de3b-42e7-9cfb-e2ed20d9b972
+        childIds:
+        - ca1914fa-724a-44b3-8aa6-569297505604
+      - name: Huir
+        id: ca1914fa-724a-44b3-8aa6-569297505604
+        position: {x: 880, y: 85}
+        node:
+          rid: 7514706925730660530
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660531
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - a9edb8ef-1052-4ed4-9116-47c094ad6634
+        - 520bc647-96d7-4fc6-841b-f0d352533c2e
+        - 9e040f3a-ced2-455d-90d3-2351d60f2f79
+        childIds:
+        - f55304cf-f980-4321-b5c4-2b943f8c0beb
+        - 7a6dddff-f567-4335-96ff-190c909e2ec0
+    - name: EscurridizoPatrullar
+      id: 4cb21956-4533-4580-9307-cf1159836a4a
+      graph:
+        rid: 7514706925730660505
+      nodes:
+      - name: iteraciones
+        id: b9da4aef-4475-459a-8fc7-fe6dbb1ad7f0
+        position: {x: 767, y: 14}
+        node:
+          rid: 7514706925730660506
+        references: []
+        parentIds: []
+        childIds:
+        - ffadfd13-77ca-48c9-b124-8250ad8c4b88
+      - name: Secuencia
+        id: ffadfd13-77ca-48c9-b124-8250ad8c4b88
+        position: {x: 767, y: 191}
+        node:
+          rid: 7514706925730660507
+        references: []
+        parentIds:
+        - b9da4aef-4475-459a-8fc7-fe6dbb1ad7f0
+        childIds:
+        - ea8f388b-75c3-47a2-8f9d-b2bf1287344d
+        - 5fcfa033-863e-426f-83aa-496a2397a266
+        - 3cd35229-7d0b-4d93-8716-2bfb4d37cb4e
+        - 1341daf4-d7ff-49e0-8dc6-56fbef4f19b4
+      - name: PrimerPunto
+        id: ea8f388b-75c3-47a2-8f9d-b2bf1287344d
+        position: {x: 399, y: 385}
+        node:
+          rid: 7514706925730660508
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660512
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - ffadfd13-77ca-48c9-b124-8250ad8c4b88
+        childIds: []
+      - name: SegundoPunto
+        id: 5fcfa033-863e-426f-83aa-496a2397a266
+        position: {x: 653, y: 385}
+        node:
+          rid: 7514706925730660509
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660513
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - ffadfd13-77ca-48c9-b124-8250ad8c4b88
+        childIds: []
+      - name: TercerPunto
+        id: 3cd35229-7d0b-4d93-8716-2bfb4d37cb4e
+        position: {x: 906, y: 385}
+        node:
+          rid: 7514706925730660510
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660514
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - ffadfd13-77ca-48c9-b124-8250ad8c4b88
+        childIds: []
+      - name: CuartoPunto
+        id: 1341daf4-d7ff-49e0-8dc6-56fbef4f19b4
+        position: {x: 1134, y: 377}
+        node:
+          rid: 7514706925730660511
+        references:
+        - fieldName: Action
+          value:
+            rid: 7514706925730660515
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - ffadfd13-77ca-48c9-b124-8250ad8c4b88
+        childIds: []
+    pushPerceptions: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 7514706925730660503
+      type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7514706925730660504
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7514706925730660505
+      type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660506
+      type: {class: LoopNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        Iterations: -1
+    - rid: 7514706925730660507
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 7514706925730660508
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660509
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660510
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660511
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706925730660512
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: PrimerStart
+        update:
+          componentName: 
+          methodName: PrimerUpdate
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660513
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: SegundoStart
+        update:
+          componentName: 
+          methodName: SegundoUpdate
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660514
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: TercerStart
+        update:
+          componentName: 
+          methodName: TercerUpdate
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660515
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: CuartoStart
+        update:
+          componentName: 
+          methodName: CuartoUpdate
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660516
+      type: {class: SubgraphAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        ExecuteOnLoop: 1
+        InterruptOptions: 0
+        subgraphId: 4cb21956-4533-4580-9307-cf1159836a4a
+    - rid: 7514706925730660518
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7514706925730660519
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7514706925730660521
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: 2
+    - rid: 7514706925730660522
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7514706925730660523
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: playerClose
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660524
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7514706925730660525
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: StartAtacar
+        update:
+          componentName: 
+          methodName: UpdateAtacar
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660526
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7514706925730660527
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: 2
+    - rid: 7514706925730660528
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: StartDash
+        update:
+          componentName: 
+          methodName: UpdateDash
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706925730660530
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 7514706925730660531
+      type: {class: FleeAction, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
+      data:
+        OtherTransform: {fileID: 0}
+        speed: 0
+        distance: 0
+        maxTimeRunning: 0
+    - rid: 7514706925730660535
+      type: {class: DistancePerception, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
+      data:
+        OtherTransform: {fileID: 0}
+        MaxDistance: 0
+    - rid: 7514706925730660537
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: attack
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
