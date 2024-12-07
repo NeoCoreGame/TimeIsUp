@@ -78,8 +78,8 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
         valorAtacado = _enemy.Hp.Value;
 
         int r = UnityEngine.Random.Range(0, destinies.Length);
-        chosenDestiny = destinies[r].position - new Vector3(-5f, 0f, 0f);
-        chosenDestinyTwo = destinies[r].position - new Vector3(5f, 0f, 0f);
+        chosenDestiny = destinies[r].position - new Vector3(-10f, 0f, 0f);
+        chosenDestinyTwo = destinies[r].position - new Vector3(10f, 0f, 0f);
 
         _animator = GetComponent<Animator>();
 

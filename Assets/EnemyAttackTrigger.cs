@@ -40,4 +40,24 @@ public class EnemyAttackTrigger : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (type == attackType.Close)
+        {
+            //Debug.Log(other.gameObject);
+            if (other.GetComponent<PlayerController>())
+            {
+                m_Minion.atacarPlayerClose = false;
+            }
+        }
+        else
+        {
+            //Debug.Log(other.gameObject);
+            if (other.GetComponent<PlayerController>())
+            {
+                m_Minion.atacarPlayerFar = false;
+            }
+        }
+    }
 }

@@ -50,7 +50,7 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
 
     private bool goStunned;
 
-    public bool invocado = true;
+    public bool invocado = false;
     private bool primerAtaque = true;
 
     private int halfHp;
@@ -60,6 +60,8 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
     [HideInInspector] public bool atacarPlayerClose;
 
     private Animator _animator;
+
+    private Enemy _enem;
     protected override void Init()
     {
         _debugger = GetComponent<BSRuntimeDebugger>();
@@ -277,14 +279,30 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
 
     private void StartPerseguir()
     {
-        finalPosition = _player.transform.position;
-        _meshAgent.SetDestination(finalPosition);
+        if (!invocado)
+        {
+            finalPosition = _player.transform.position;
+            _meshAgent.SetDestination(finalPosition); 
+        }
+        else
+        {
+            finalPosition = _enem.transform.position;
+            _meshAgent.SetDestination(finalPosition);
+        }
     }
 
     private Status UpdatePerseguir()
     {
-        finalPosition = _player.transform.position;
-        _meshAgent.SetDestination(finalPosition);
+        if (!invocado)
+        {
+            finalPosition = _player.transform.position;
+            _meshAgent.SetDestination(finalPosition);
+        }
+        else
+        {
+            finalPosition = _enem.transform.position;
+            _meshAgent.SetDestination(finalPosition);
+        }
 
 
         if (HasArrived())
@@ -308,7 +326,7 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
     {
         return jugadorVisto;
     }
-
+    
     private Boolean playerLost()
     {
         return !jugadorVisto;
@@ -316,7 +334,7 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
 
     private Boolean onObjective()
     {
-        ataqueFinalizado = false;
+      //  ataqueFinalizado = false;
         return atacarPlayerFar;
     }
 
@@ -329,28 +347,27 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
     {
         primerAtaque = false;
         ataqueFinalizado = false;
-        AnimacionAtacar();
+        _animator.SetTrigger("Attack_Hand");
     }
 
     private Status UpdateAtaqueBasico()
     {
         // nada que añadir
 
-        ataqueFinalizado = true;
         return Status.Success;
     }
 
     private void StartAtaqueFuerte()
     {
         ataqueFinalizado = false;
-        AnimacionAtacar();
+
+        _animator.SetTrigger("Attack_DHand");
     }
 
     private Status UpdateAtaqueFuerte()
     {
         // nada que añadir
 
-        ataqueFinalizado = true;
         return Status.Success;
     }
 
@@ -358,10 +375,15 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
     {
         // Secuencia de 2 ataques basicos
         ataqueFinalizado = false;
-
+        UnityEngine.Debug.Log("ATAQUES DOBLEEEEEEEEEEEEEEEEEEEEEEEEEEEEEES");
         AnimacionAtacar();
         Invoke("AnimacionAtacar", 1f);
 
+    }
+    private Status UpdateAtaquesBasicos()
+    {
+
+        return Status.Success;
     }
     public void AnimacionAtacar()
     {
@@ -372,26 +394,39 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
     public void DealDMGPlayer(int dmg)
     {
 
-        _pC.TakeDamage(dmg);
+        if (!invocado)
+        {
+            _pC.TakeDamage(dmg);
+            ataqueFinalizado = true; 
+        }
+        else
+        {
+            _enem.TakeDamage(dmg);
+            ataqueFinalizado = false;
+        }
     }
-    private Status UpdateAtaquesBasicos()
-    {
-
-        ataqueFinalizado = true;
-        return Status.Running;
-    }
+    
 
     private Boolean onObjectiveClose()
     {
-        ataqueFinalizado = false;
+        //ataqueFinalizado = false;
         return atacarPlayerClose;
     }
 
     public void DetectPlayer(GameObject player)
     {
-        jugadorVisto = true;
-        _player = player;
-        _pC = player.GetComponent<PlayerController>();
+        if (!invocado)
+        {
+            jugadorVisto = true;
+            _player = player;
+            _animator.SetBool("Walking", true);
+            _pC = player.GetComponent<PlayerController>(); 
+        }
+    }
+
+    public void DetectEnemy(Enemy e)
+    {
+        _enem = e;
     }
 
     public void CleanPlayer()
