@@ -51,6 +51,10 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
     private bool goStunned;
 
     public bool invocado = true;
+    private bool primerAtaque = true;
+
+    private int halfHp;
+    private bool mitadVida = false;
 
     [HideInInspector] public bool atacarPlayerFar;
     [HideInInspector] public bool atacarPlayerClose;
@@ -76,6 +80,7 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
 
         valorAtacado = _enemy.Hp.Value;
 
+        halfHp = _enemy.Hp.Value;
         _animator = GetComponent<Animator>();
 
         base.Init();
@@ -142,6 +147,9 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
         var primerAtaque = TanqueAtaques.CreateLeafNode("primerAtaque", primerAtaque_action);
 
         var primerAtaqueCondition = TanqueAtaques.CreateDecorator<ConditionNode>("primerAtaqueCondition", primerAtaque);
+        var primerAtaquePerception = new ConditionPerception();
+        primerAtaquePerception.onCheck = PrimerAtaque;
+        primerAtaqueCondition.SetPerception(primerAtaquePerception);
 
         var ataqueFuerte_action = new FunctionalAction();
         ataqueFuerte_action.onStarted = StartAtaqueFuerte;
@@ -165,6 +173,9 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
         seleccionAtaques3.IsRandomized = true;
 
         var mitadVidaCondition = TanqueAtaques.CreateDecorator<ConditionNode>("mitadVidaCondition", seleccionAtaques3);
+        var mitadVidaPerception = new ConditionPerception();
+        mitadVidaPerception.onCheck = MitadVida;
+        mitadVidaCondition.SetPerception(mitadVidaPerception);
 
         var ataqueBasico1_action = new FunctionalAction();
         ataqueBasico1_action.onStarted = StartAtaqueBasico;
@@ -226,6 +237,21 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
         _debugger.RegisterGraph(TanqueInvocado);
 
         return Tanque;
+    }
+
+    private bool MitadVida()
+    {
+        if(_enemy.Hp.Value <= halfHp)
+        {
+            mitadVida = true;
+        }
+
+        return mitadVida;
+    }
+
+    private bool PrimerAtaque()
+    {
+        return primerAtaque;
     }
 
     private bool NoInvocado()
@@ -301,6 +327,7 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
 
     private void StartAtaqueBasico()
     {
+        primerAtaque = false;
         ataqueFinalizado = false;
         AnimacionAtacar();
     }

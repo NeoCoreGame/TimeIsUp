@@ -348,7 +348,7 @@ MonoBehaviour:
         childIds: []
       - name: mitadVidaCondition
         id: 0ee65d1a-9d74-48fc-9c20-70cf50781f5f
-        position: {x: 1493, y: 623}
+        position: {x: 1479, y: 636}
         node:
           rid: 7514706925730660604
         references:
@@ -419,7 +419,7 @@ MonoBehaviour:
         references:
         - fieldName: Action
           value:
-            rid: 7514706934950002699
+            rid: 7514706958390394880
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -427,7 +427,7 @@ MonoBehaviour:
         childIds: []
       - name: ataqueBasico1
         id: befcc75c-39aa-4eca-81c0-a818c6cb60f1
-        position: {x: 1807, y: 620}
+        position: {x: 1824, y: 636}
         node:
           rid: 7514706925730660618
         references:
@@ -1120,59 +1120,6 @@ MonoBehaviour:
       type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data:
         IsRandomized: 0
-    - rid: 7514706934950002699
-      type: {class: CompoundActionWrapper, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
-        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        compoundAction:
-          rid: 7514706934950002700
-        subActions:
-        - action:
-            rid: 7514706934950002701
-        - action:
-            rid: 7514706934950002702
-    - rid: 7514706934950002700
-      type: {class: SequenceAction, ns: BehaviourAPI.Core.Actions, asm: BehaviourAPI.Core}
-      data:
-        TargetStatus: 2
-    - rid: 7514706934950002701
-      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
-        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        start:
-          componentName: 
-          methodName: StartAtaqueBasico
-        update:
-          componentName: 
-          methodName: UpdateAtaqueBasico
-        stop:
-          componentName: 
-          methodName: 
-        pause:
-          componentName: 
-          methodName: 
-        unpause:
-          componentName: 
-          methodName: 
-    - rid: 7514706934950002702
-      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
-        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        start:
-          componentName: 
-          methodName: StartAtaqueBasico
-        update:
-          componentName: 
-          methodName: UpdateAtaqueBasico
-        stop:
-          componentName: 
-          methodName: 
-        pause:
-          componentName: 
-          methodName: 
-        unpause:
-          componentName: 
-          methodName: 
     - rid: 7514706934950002703
       type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
         asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
@@ -1247,6 +1194,25 @@ MonoBehaviour:
         update:
           componentName: 
           methodName: UpdateIdleAction
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706958390394880
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: StartAtaquesBasicos
+        update:
+          componentName: 
+          methodName: UpdateAtaquesBasicos
         stop:
           componentName: 
           methodName: 
