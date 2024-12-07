@@ -102,9 +102,9 @@ MonoBehaviour:
       graph:
         rid: 7514706925730660503
       nodes:
-      - name: Patrullar
+      - name: patrullar
         id: 969e1c47-549c-465e-9aa9-3fe063d642ba
-        position: {x: 299, y: 119}
+        position: {x: 235, y: 129}
         node:
           rid: 7514706925730660504
         references:
@@ -116,15 +116,15 @@ MonoBehaviour:
         parentIds: []
         childIds:
         - a9edb8ef-1052-4ed4-9116-47c094ad6634
-      - name: Dashear
+      - name: dashear
         id: f55304cf-f980-4321-b5c4-2b943f8c0beb
-        position: {x: 1034, y: 290}
+        position: {x: 1050, y: 298}
         node:
           rid: 7514706925730660518
         references:
         - fieldName: Perception
           value:
-            rid: 7514706925730660535
+            rid: 7514706947638558722
           fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
             Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         - fieldName: Action
@@ -136,9 +136,9 @@ MonoBehaviour:
         - ca1914fa-724a-44b3-8aa6-569297505604
         childIds:
         - 7b104419-a2f1-4d71-894f-3a08f7fbb923
-      - name: Dash
+      - name: dash
         id: 7b104419-a2f1-4d71-894f-3a08f7fbb923
-        position: {x: 887, y: 467}
+        position: {x: 913, y: 501}
         node:
           rid: 7514706925730660519
         references:
@@ -151,15 +151,15 @@ MonoBehaviour:
         - f55304cf-f980-4321-b5c4-2b943f8c0beb
         childIds:
         - 520bc647-96d7-4fc6-841b-f0d352533c2e
-      - name: Dash_Huir
+      - name: dash_huir
         id: 520bc647-96d7-4fc6-841b-f0d352533c2e
-        position: {x: 727, y: 292}
+        position: {x: 735, y: 306}
         node:
           rid: 7514706925730660521
         references:
         - fieldName: Perception
           value:
-            rid: -2
+            rid: 7514706947638558720
           fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
             Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         - fieldName: Action
@@ -171,7 +171,7 @@ MonoBehaviour:
         - 7b104419-a2f1-4d71-894f-3a08f7fbb923
         childIds:
         - ca1914fa-724a-44b3-8aa6-569297505604
-      - name: JugadorVisto
+      - name: jugadorVisto
         id: a9edb8ef-1052-4ed4-9116-47c094ad6634
         position: {x: 588, y: 15}
         node:
@@ -191,7 +191,7 @@ MonoBehaviour:
         - 969e1c47-549c-465e-9aa9-3fe063d642ba
         childIds:
         - ca1914fa-724a-44b3-8aa6-569297505604
-      - name: Atacar
+      - name: atacar
         id: dbdbedec-de3b-42e7-9cfb-e2ed20d9b972
         position: {x: 1470, y: 106}
         node:
@@ -206,7 +206,7 @@ MonoBehaviour:
         - 7a6dddff-f567-4335-96ff-190c909e2ec0
         childIds:
         - 9e040f3a-ced2-455d-90d3-2351d60f2f79
-      - name: Atacar
+      - name: huir_Atacar
         id: 7a6dddff-f567-4335-96ff-190c909e2ec0
         position: {x: 1188, y: -65}
         node:
@@ -226,15 +226,15 @@ MonoBehaviour:
         - ca1914fa-724a-44b3-8aa6-569297505604
         childIds:
         - dbdbedec-de3b-42e7-9cfb-e2ed20d9b972
-      - name: Atacar_Huir
+      - name: atacar_Huir
         id: 9e040f3a-ced2-455d-90d3-2351d60f2f79
-        position: {x: 1204, y: 122}
+        position: {x: 1204, y: 138}
         node:
           rid: 7514706925730660527
         references:
         - fieldName: Perception
           value:
-            rid: -2
+            rid: 7514706947638558721
           fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
             Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         - fieldName: Action
@@ -246,7 +246,7 @@ MonoBehaviour:
         - dbdbedec-de3b-42e7-9cfb-e2ed20d9b972
         childIds:
         - ca1914fa-724a-44b3-8aa6-569297505604
-      - name: Huir
+      - name: huir
         id: ca1914fa-724a-44b3-8aa6-569297505604
         position: {x: 880, y: 85}
         node:
@@ -254,7 +254,7 @@ MonoBehaviour:
         references:
         - fieldName: Action
           value:
-            rid: 7514706925730660531
+            rid: 7514706947638558723
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -278,9 +278,9 @@ MonoBehaviour:
         parentIds: []
         childIds:
         - ffadfd13-77ca-48c9-b124-8250ad8c4b88
-      - name: Secuencia
+      - name: secuencia
         id: ffadfd13-77ca-48c9-b124-8250ad8c4b88
-        position: {x: 767, y: 191}
+        position: {x: 783, y: 206}
         node:
           rid: 7514706925730660507
         references: []
@@ -291,9 +291,9 @@ MonoBehaviour:
         - 5fcfa033-863e-426f-83aa-496a2397a266
         - 3cd35229-7d0b-4d93-8716-2bfb4d37cb4e
         - 1341daf4-d7ff-49e0-8dc6-56fbef4f19b4
-      - name: PrimerPunto
+      - name: primerPunto
         id: ea8f388b-75c3-47a2-8f9d-b2bf1287344d
-        position: {x: 399, y: 385}
+        position: {x: 338, y: 393}
         node:
           rid: 7514706925730660508
         references:
@@ -305,7 +305,7 @@ MonoBehaviour:
         parentIds:
         - ffadfd13-77ca-48c9-b124-8250ad8c4b88
         childIds: []
-      - name: SegundoPunto
+      - name: segundoPunto
         id: 5fcfa033-863e-426f-83aa-496a2397a266
         position: {x: 653, y: 385}
         node:
@@ -319,7 +319,7 @@ MonoBehaviour:
         parentIds:
         - ffadfd13-77ca-48c9-b124-8250ad8c4b88
         childIds: []
-      - name: TercerPunto
+      - name: tercerPunto
         id: 3cd35229-7d0b-4d93-8716-2bfb4d37cb4e
         position: {x: 906, y: 385}
         node:
@@ -333,7 +333,7 @@ MonoBehaviour:
         parentIds:
         - ffadfd13-77ca-48c9-b124-8250ad8c4b88
         childIds: []
-      - name: CuartoPunto
+      - name: cuartoPunto
         id: 1341daf4-d7ff-49e0-8dc6-56fbef4f19b4
         position: {x: 1134, y: 377}
         node:
@@ -475,7 +475,7 @@ MonoBehaviour:
     - rid: 7514706925730660521
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
-        StatusFlags: 2
+        StatusFlags: -1
     - rid: 7514706925730660522
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
@@ -528,7 +528,7 @@ MonoBehaviour:
     - rid: 7514706925730660527
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
-        StatusFlags: 2
+        StatusFlags: -1
     - rid: 7514706925730660528
       type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
         asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
@@ -551,18 +551,6 @@ MonoBehaviour:
     - rid: 7514706925730660530
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data: 
-    - rid: 7514706925730660531
-      type: {class: FleeAction, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
-      data:
-        OtherTransform: {fileID: 0}
-        speed: 0
-        distance: 0
-        maxTimeRunning: 0
-    - rid: 7514706925730660535
-      type: {class: DistancePerception, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
-      data:
-        OtherTransform: {fileID: 0}
-        MaxDistance: 0
     - rid: 7514706925730660537
       type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
         asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
@@ -574,6 +562,82 @@ MonoBehaviour:
           componentName: 
           methodName: attack
         reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706947638558720
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: DashFinished
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706947638558721
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: AttackFinished
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706947638558722
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: Dash
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7514706947638558723
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework,
+        asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: StartHuir
+        update:
+          componentName: 
+          methodName: UpdateHuir
+        stop:
           componentName: 
           methodName: 
         pause:
