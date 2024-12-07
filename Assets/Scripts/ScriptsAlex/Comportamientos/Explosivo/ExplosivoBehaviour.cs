@@ -6,18 +6,67 @@ using BehaviourAPI.Core.Actions;
 using BehaviourAPI.Core.Perceptions;
 using BehaviourAPI.UnityToolkit;
 using BehaviourAPI.StateMachines;
+using UnityEngine.AI;
+using BehaviourAPI.UnityToolkit.GUIDesigner.Runtime;
+using System.Diagnostics;
+using UnityEngine.UIElements;
+using System.Collections;
 
-public class ExplosivoBehaviour : BehaviourRunner
+public interface IEnemyBehaviour
 {
-	
-	
-	protected override BehaviourGraph CreateGraph()
+	void DetectPlayer(GameObject player);
+	void CleanPlayer();
+}
+
+
+public class ExplosivoBehaviour : BehaviourRunner, IEnemyBehaviour
+{
+
+    BSRuntimeDebugger _debugger;
+
+    [HideInInspector] public GameObject _player;
+    [SerializeField] Collider _visionCollider;
+    [SerializeField] Collider _attackCollider;
+
+    private Enemy _enemy;
+
+    public Transform position;
+    private NavMeshAgent _meshAgent;
+    private Transform[] destinies;
+
+    public Transform groundCheck;
+    [HideInInspector] public Vector3 finalPosition;
+    private float _speed;
+    private float arrivingOffset = 1f;
+
+    private bool atacado;
+    private int valorAtacado;
+
+    private bool ataqueFinalizado;
+    private bool animacion = false;
+
+    public LayerMask groundMask;
+    private float rangoVision;
+    [HideInInspector] public bool jugadorVisto;
+
+    public LayerMask playerMask;
+    private float rangoAtaque;
+    private bool enObjetivo;
+
+
+    private bool goStunned;
+    [HideInInspector] public bool explotarJugador;
+
+    protected override BehaviourGraph CreateGraph()
 	{
 		var Explosivo = new FSM();
 		
-		var Dormido = Explosivo.CreateState("Dormido");
-		
-		var Persiguiendo_action = new FunctionalAction();
+        var Dormido_action = new FunctionalAction();
+        Dormido_action.onStarted = StartDormido;
+        Dormido_action.onUpdated = UpdateDormido;
+        var Dormido = Explosivo.CreateState("Dormido", Dormido_action);
+
+        var Persiguiendo_action = new FunctionalAction();
 		Persiguiendo_action.onStarted = StartPersiguiendo;
 		Persiguiendo_action.onUpdated = UpdatePersiguiendo;
 		var Persiguiendo = Explosivo.CreateState("Persiguiendo", Persiguiendo_action);
@@ -55,36 +104,92 @@ public class ExplosivoBehaviour : BehaviourRunner
 		
 		return Explosivo;
 	}
-	
-	private void StartPersiguiendo()
+    protected override void Init()
+    {
+        _debugger = GetComponent<BSRuntimeDebugger>();
+
+        _enemy = GetComponent<Enemy>();
+
+        position = GetComponent<Transform>();
+        groundCheck = transform.GetChild(2);
+
+        _meshAgent = GetComponent<NavMeshAgent>();
+        _speed = 3f;
+        _meshAgent.speed = _speed;
+
+        destinies = FindObjectOfType<Destinies>().desinyGroup;
+
+        rangoVision = _visionCollider.transform.localScale.x;
+        rangoAtaque = _attackCollider.transform.localScale.x;
+
+        valorAtacado = _enemy.Hp.Value;
+
+
+        base.Init();
+    }
+
+
+
+    private void StartDormido()
+    {
+
+    }
+
+    private Status UpdateDormido()
+    {
+
+       
+
+        return Status.Running;
+    }
+    private void StartPersiguiendo()
 	{
-		throw new System.NotImplementedException();
-	}
+        finalPosition = _player.transform.position;
+        _meshAgent.SetDestination(finalPosition);
+    }
 	
 	private Status UpdatePersiguiendo()
 	{
-		throw new System.NotImplementedException();
-	}
-	
-	private Boolean playerClose()
+        finalPosition = _player.transform.position;
+        _meshAgent.SetDestination(finalPosition);
+
+        if (HasArrived())
+        {
+            return Status.Success;
+        }
+        return Status.Running;
+
+    }
+    public bool HasArrived()
+    {
+        if (Vector3.Distance(finalPosition, transform.position) < arrivingOffset)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private Boolean playerClose()
 	{
-		throw new System.NotImplementedException();
-	}
+        return jugadorVisto;
+    }
 	
 	private void explode()
-	{
-		throw new System.NotImplementedException();
+    {
+        Invoke("Espera", 2f);
 	}
 	
 	private Boolean onObjective()
 	{
-		throw new System.NotImplementedException();
+        return explotarJugador;
 	}
 	
 	private void prepareExplode()
 	{
-		throw new System.NotImplementedException();
-	}
+        //Lanzar animacion
+        _meshAgent.speed = 0f;
+    }
 	
 	private void StartMoverse()
 	{
@@ -98,6 +203,23 @@ public class ExplosivoBehaviour : BehaviourRunner
 	
 	private Boolean playerSeen()
 	{
-		throw new System.NotImplementedException();
-	}
+        return jugadorVisto;
+    }
+
+    public void DetectPlayer(GameObject player)
+    {
+        jugadorVisto = true;
+        _player = player;
+    }
+
+    public void CleanPlayer()
+    {
+
+        jugadorVisto = false;
+    }
+
+    public void Espera()
+    {
+        Destroy(gameObject);
+    }
 }

@@ -15,7 +15,7 @@ using BehaviourAPI.StateMachines.StackFSMs;
 using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
 
-public class MinionBehaviour : BehaviourRunner
+public class MinionBehaviour : BehaviourRunner, IEnemyBehaviour
 {
     BSRuntimeDebugger _debugger;
 
@@ -167,7 +167,7 @@ public class MinionBehaviour : BehaviourRunner
 
     private void StartAvanzando()
 	{
-        finalPosition = _player.GetComponent<Transform>().position;
+        finalPosition = _player.transform.position;
         _meshAgent.SetDestination(finalPosition);
     }
 	
@@ -288,5 +288,17 @@ public class MinionBehaviour : BehaviourRunner
     IEnumerator stun()
     {
         yield return new WaitForSeconds(2);
+    }
+
+    public void DetectPlayer(GameObject player)
+    {
+        jugadorVisto = true;
+        _player = player;
+    }
+
+    public void CleanPlayer()
+    {
+
+        jugadorVisto = false;
     }
 }

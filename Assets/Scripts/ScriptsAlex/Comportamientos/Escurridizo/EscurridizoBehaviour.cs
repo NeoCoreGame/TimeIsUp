@@ -7,13 +7,73 @@ using BehaviourAPI.Core.Perceptions;
 using BehaviourAPI.UnityToolkit;
 using BehaviourAPI.StateMachines;
 using BehaviourAPI.BehaviourTrees;
+using BehaviourAPI.UnityToolkit.GUIDesigner.Runtime;
+using UnityEngine.AI;
 
-public class EscurridizoBehaviour : BehaviourRunner
+public class EscurridizoBehaviour : BehaviourRunner, IEnemyBehaviour
 {
 	[SerializeField] private Transform Huir_action_OtherTransform;
-	
-	
-	protected override BehaviourGraph CreateGraph()
+
+    BSRuntimeDebugger _debugger;
+
+    [HideInInspector] public GameObject _player;
+    private PlayerController _pC;
+    [SerializeField] Collider _visionCollider;
+    [SerializeField] Collider _attackCollider;
+
+    private Enemy _enemy;
+
+    public Transform position;
+    private NavMeshAgent _meshAgent;
+    public Transform[] destinies;
+
+    public Transform groundCheck;
+    [HideInInspector] public Vector3 finalPosition;
+    private float _speed;
+    private float arrivingOffset =3f;
+
+    private bool atacado;
+    private int valorAtacado;
+
+    private bool ataqueFinalizado;
+    private bool animacion = false;
+
+    public LayerMask groundMask;
+    private float rangoVision;
+    [HideInInspector] public bool jugadorVisto;
+
+    public LayerMask playerMask;
+    private float rangoAtaque;
+    private bool enObjetivo;
+
+
+    private bool goStunned;
+
+    [HideInInspector] public bool atacarPlayer;
+    protected override void Init()
+    {
+        _debugger = GetComponent<BSRuntimeDebugger>();
+
+        _enemy = GetComponent<Enemy>();
+
+        position = GetComponent<Transform>();
+        groundCheck = transform.GetChild(2);
+
+        _meshAgent = GetComponent<NavMeshAgent>();
+        _speed = 3f;
+        _meshAgent.speed = _speed;
+
+        destinies = FindObjectOfType<Destinies>().desinyGroup;
+
+        rangoVision = _visionCollider.transform.localScale.x;
+        rangoAtaque = _attackCollider.transform.localScale.x;
+
+        valorAtacado = _enemy.Hp.Value;
+
+
+        base.Init();
+    }
+    protected override BehaviourGraph CreateGraph()
 	{
 		var Escurridizo = new FSM();
 		var EscurridizoPatrullar = new BehaviourTree();
@@ -51,7 +111,7 @@ public class EscurridizoBehaviour : BehaviourRunner
 		
 		var Atacar_1_perception = new ConditionPerception();
 		Atacar_1_perception.onCheck = attack;
-		var Atacar_1 = Escurridizo.CreateTransition("Atacar", Huir, Atacar, Atacar_1_perception);
+		var Atacar_1 = Escurridizo.CreateTransition("Atacar_1", Huir, Atacar, Atacar_1_perception);
 		
 		var Atacar_Huir = Escurridizo.CreateTransition("Atacar_Huir", Atacar, Huir, statusFlags: StatusFlags.Success);
 		
@@ -80,77 +140,154 @@ public class EscurridizoBehaviour : BehaviourRunner
 		
 		var iteraciones = EscurridizoPatrullar.CreateDecorator<LoopNode>("iteraciones", Secuencia);
 		iteraciones.Iterations = -1;
-		
-		return Escurridizo;
+        _debugger.RegisterGraph(Escurridizo);
+        _debugger.RegisterGraph(EscurridizoPatrullar);
+
+        EscurridizoPatrullar.SetRootNode(iteraciones);
+        return Escurridizo;
 	}
 	
 	private void StartDash()
 	{
-		throw new System.NotImplementedException();
+		
+		_meshAgent.speed = 7f;
+
+		Invoke("ReduceSpeed", 1f);
 	}
 	
 	private Status UpdateDash()
 	{
-		throw new System.NotImplementedException();
+		//Nada
+		return Status.Success;
 	}
+
+	public void ReduceSpeed()
+	{
+
+		_meshAgent.speed = 3.5f;
+    }
 	
 	private Boolean playerClose()
 	{
-		throw new System.NotImplementedException();
+		return jugadorVisto;
 	}
 	
 	private void StartAtacar()
 	{
-		throw new System.NotImplementedException();
+		//Lanzar animacion
+		_pC.TakeDamage(10);
 	}
 	
 	private Status UpdateAtacar()
 	{
-		throw new System.NotImplementedException();
-	}
+        //nada que añadir.
+        atacarPlayer = false;
+        return Status.Success;
+    }
 	
 	private Boolean attack()
 	{
-		throw new System.NotImplementedException();
+		return atacarPlayer;
 	}
-	
-	private void PrimerStart()
+
+    public bool HasArrived()
+    {
+		Debug.Log(Vector3.Distance(finalPosition, transform.position));
+        if (Vector3.Distance(finalPosition, transform.position) < arrivingOffset)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private void PrimerStart()
 	{
-		throw new System.NotImplementedException();
-	}
+		finalPosition = destinies[0].transform.position;
+        _meshAgent.SetDestination(finalPosition);
+    }
 	
 	private Status PrimerUpdate()
-	{
-		throw new System.NotImplementedException();
-	}
+    {
+        finalPosition = destinies[0].transform.position;
+        _meshAgent.SetDestination(finalPosition);
+
+
+        if (HasArrived())
+        {
+            Debug.Log("Deberia acabar");
+            return Status.Success;
+        }
+        Debug.Log("Sigue");
+        return Status.Running;
+    }
 	
 	private void SegundoStart()
 	{
-		throw new System.NotImplementedException();
-	}
+        finalPosition = destinies[1].transform.position;
+        _meshAgent.SetDestination(finalPosition);
+    }
 	
 	private Status SegundoUpdate()
 	{
-		throw new System.NotImplementedException();
-	}
+        finalPosition = destinies[1].transform.position;
+        _meshAgent.SetDestination(finalPosition);
+
+
+        if (HasArrived())
+        {
+            return Status.Success;
+        }
+        return Status.Running;
+    }
 	
 	private void TercerStart()
 	{
-		throw new System.NotImplementedException();
-	}
+        finalPosition = destinies[2].transform.position;
+        _meshAgent.SetDestination(finalPosition);
+    }
 	
 	private Status TercerUpdate()
 	{
-		throw new System.NotImplementedException();
-	}
+        finalPosition = destinies[2].transform.position;
+        _meshAgent.SetDestination(finalPosition);
+
+
+        if (HasArrived())
+        {
+            return Status.Success;
+        }
+        return Status.Running;
+    }
 	
 	private void CuartoStart()
 	{
-		throw new System.NotImplementedException();
-	}
+        finalPosition = destinies[3].transform.position;
+        _meshAgent.SetDestination(finalPosition);
+    }
 	
 	private Status CuartoUpdate()
 	{
-		throw new System.NotImplementedException();
-	}
+        finalPosition = destinies[3].transform.position;
+        _meshAgent.SetDestination(finalPosition);
+
+
+        if (HasArrived())
+        {
+            return Status.Success;
+        }
+        return Status.Running;
+    }
+
+    public void DetectPlayer(GameObject player)
+    {
+        jugadorVisto = true;
+        _player = player;
+    }
+
+    public void CleanPlayer()
+    {
+
+        jugadorVisto = false;
+    }
 }
