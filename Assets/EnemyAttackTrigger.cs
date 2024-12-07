@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAttackTrigger : MonoBehaviour
 {
-    private TanqueBehaviour m_Minion;
+    private TanqueBehaviourTres m_Minion;
 
     public enum attackType
     {
@@ -16,7 +16,7 @@ public class EnemyAttackTrigger : MonoBehaviour
 
     private void Start()
     {
-        m_Minion = transform.parent.GetComponent<TanqueBehaviour>();
+        m_Minion = transform.parent.GetComponent<TanqueBehaviourTres>();
     }
 
 

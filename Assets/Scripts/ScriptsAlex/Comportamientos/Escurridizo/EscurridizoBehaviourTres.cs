@@ -10,6 +10,7 @@ using BehaviourAPI.BehaviourTrees;
 using BehaviourAPI.UnityToolkit.GUIDesigner.Runtime;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
+using System.Linq;
 
 public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
 {
@@ -53,6 +54,8 @@ public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
     int random = Random.Range(0, 5);
     [HideInInspector] public bool atacarPlayer;
     [HideInInspector] public bool dashear;
+
+    private float timer;
 
     protected override void Init()
     {
@@ -155,32 +158,51 @@ public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
         return Escurridizo;
 	}
 
+    public Vector3 FarthestCorner()
+    {
+        List<float> distances = new List<float>();
+
+        foreach(Transform t in destinies)
+        {
+            float dist = Vector3.Distance(t.position, _player.transform.position);
+            distances.Add(dist);
+        }
+
+        float max = distances.Max();
+
+        return destinies[distances.IndexOf(max)].position;
+    }
+
     private void StartHuir()
     {
-        Vector3 dir = (transform.position - _player.transform.position).normalized;
-        finalPosition = transform.position + dir;
-
-        _meshAgent.SetDestination(finalPosition);
+        _meshAgent.SetDestination(FarthestCorner());
+        _meshAgent.speed = 7f;
     }
 
     private Status UpdateHuir()
     {
-        if(Time.deltaTime > 5)
-        {
-            random = Random.Range(0, 5);
+        //Timer del dash
+
+        timer += Time.deltaTime;
+
+
+        if(timer > 5) {
+
+            random = Random.Range(0, 3);
+
+            if(random != 0) { dashear = true; }
+
+            timer = 0f;
+
         }
 
-
-        Vector3 dir = (transform.position - _player.transform.position).normalized;
-        finalPosition = transform.position + dir;
+        _meshAgent.SetDestination(FarthestCorner());
 
         if (HasArrived())
         {
-            dir = (transform.position - _player.transform.position).normalized;
 
-            finalPosition = transform.position + dir;
 
-            _meshAgent.SetDestination(finalPosition);
+            _meshAgent.SetDestination(FarthestCorner());
         }
 
         return Status.Running;
@@ -188,29 +210,32 @@ public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
 
     private void StartDash()
     {
-        _meshAgent.speed = 7f;
+        _meshAgent.speed = 30f;
+        Invoke("ReduceSpeed", .5f);
     }
 
     private Status UpdateDash()
     {
         //Nada
-        Invoke("ReduceSpeed", 1f);
-        dashear = false;
-        return Status.Success;
+
+        if(dashear) { return Status.Running; }
+        else
+        {
+
+            return Status.Success;
+        }
     }
 
     public void ReduceSpeed()
     {
+        dashear = false;
         _meshAgent.speed = 3.5f;
     }
 
 
     private Boolean Dash()
     {
-        if(random != 0)
-        {
-            dashear = true;
-        }
+       
 
         return dashear;
     }
@@ -228,7 +253,7 @@ public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
     private void StartAtacar()
     {
         //Lanzar animacion
-        _pC.TakeDamage(10);
+        //_pC.TakeDamage(10);
     }
 
     private Status UpdateAtacar()
@@ -240,10 +265,7 @@ public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
 
     private Boolean attack()
     {
-        if(random == 0)
-        {
-            atacarPlayer = true;
-        }
+
 
         return atacarPlayer;
     }
@@ -268,6 +290,7 @@ public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
     {
         finalPosition = destinies[0].transform.position;
         _meshAgent.SetDestination(finalPosition);
+        _meshAgent.speed = 3.5f;
     }
 
     private Status PrimerUpdate()
@@ -289,6 +312,7 @@ public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
     {
         finalPosition = destinies[1].transform.position;
         _meshAgent.SetDestination(finalPosition);
+        _meshAgent.speed = 3.5f;
     }
 
     private Status SegundoUpdate()
@@ -308,6 +332,7 @@ public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
     {
         finalPosition = destinies[2].transform.position;
         _meshAgent.SetDestination(finalPosition);
+        _meshAgent.speed = 3.5f;
     }
 
     private Status TercerUpdate()
@@ -327,6 +352,7 @@ public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
     {
         finalPosition = destinies[3].transform.position;
         _meshAgent.SetDestination(finalPosition);
+        _meshAgent.speed = 3.5f;
     }
 
     private Status CuartoUpdate()
