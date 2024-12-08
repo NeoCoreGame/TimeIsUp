@@ -20,7 +20,7 @@ public class bombAbility : Ability
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Map")
+        if (collision.gameObject.tag == "Map" || collision.gameObject.tag == "Enemy")
         {
             EnemiesHit();
             Destroy(gameObject);

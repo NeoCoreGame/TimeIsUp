@@ -11,20 +11,26 @@ public class hookAbility : Ability
     public float returnSpeed;
     public float range;
     public float stopRange;
+    public GameObject hookTip;
+    public GameObject player;
 
     [HideInInspector]
     public Transform caster;
     [HideInInspector]
     public Transform collidedWith;
     private LineRenderer line;
-    //public GameObject hook;
+
     private bool collided;
 
 
     private void Start()
     {
         line = transform.Find("Line").GetComponent<LineRenderer>();
-        //hook.transform.LookAt(caster);
+        hookTip.transform.Rotate(0, 180, 0, Space.Self);
+        //Vector3 invertedPosition = caster.position * -1f;
+        //hookTip.transform.LookAt(caster);
+
+        
     }
 
     private void Update()
@@ -33,16 +39,20 @@ public class hookAbility : Ability
         {
             line.SetPosition(0, caster.position);
             line.SetPosition(1, transform.position);
-
+            //hookTip.transform.Rotate(0, 0, 180, Space.Self);
             var dist = Vector3.Distance(transform.position, caster.position);
             //var dir = (transform.position - caster.position) / dist;
 
-            //hook.transform.LookAt(dir);
+            //hookTip.transform.LookAt(dir);
 
             if (collided)
             {
+                Transform ogParent = hookTip.transform.parent;
+                hookTip.transform.parent = null;
                 transform.LookAt(caster);
+                hookTip.transform.parent = ogParent;
 
+                
                 if (dist < stopRange)
                 {
                     Destroy(gameObject);
@@ -68,6 +78,7 @@ public class hookAbility : Ability
         {
             Destroy(gameObject);
         }
+        //hookTip.transform.Rotate(0, 180, 0, Space.Self);
 
     }
 
@@ -83,6 +94,8 @@ public class hookAbility : Ability
     {
         speed = returnSpeed;
         collided = true;
+
+        //hookTip.transform.Rotate(0,0,180,Space.Self);
 
         if(collision)
         {
