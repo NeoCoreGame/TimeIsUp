@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.GraphicsBuffer;
@@ -21,6 +22,9 @@ public class abilityController : MonoBehaviour
     public GameObject skIcon;
     public GameObject tdIcon;
     public GameObject petuniaIcon;
+
+    GameObject hook;
+    private float mouseSensitivityAC;
 
     private void Start()
     {
@@ -102,6 +106,13 @@ public class abilityController : MonoBehaviour
                 }
                 hookAbility.AbilityInput();
                 hookAbility.AbilityCooldown();
+
+                if (!hook)
+                {
+                    granny.GetComponent<PlayerController>()._speed = 20;
+                    granny.GetComponent<MouseLook>().enabled = true;
+                    granny.GetComponent<ShootingController>().enabled = true;
+                }
                 break;
             case 2:
                 if (Input.GetKeyDown(KeyCode.Q) && !stunAbility.isOnCooldown)
@@ -117,8 +128,11 @@ public class abilityController : MonoBehaviour
 
     void HookAbility()
     {
+        granny.GetComponent<PlayerController>()._speed = 0;
+        granny.GetComponent<MouseLook>().enabled = false;
+        granny.GetComponent<ShootingController>().enabled = false;
         Debug.Log("Q apretada");
-        var hook = Instantiate(hookObject, granny.transform.position + granny.transform.forward, granny.transform.rotation);
+        hook = Instantiate(hookObject, granny.transform.position + granny.transform.forward, granny.transform.rotation);
         hook.GetComponent<hookAbility>().caster = transform;
     }
 
