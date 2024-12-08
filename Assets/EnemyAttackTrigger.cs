@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAttackTrigger : MonoBehaviour
 {
-    private TanqueBehaviour m_Minion;
+    private TanqueBehaviourTres m_Minion;
 
     public enum attackType
     {
@@ -16,7 +16,7 @@ public class EnemyAttackTrigger : MonoBehaviour
 
     private void Start()
     {
-        m_Minion = transform.parent.GetComponent<TanqueBehaviour>();
+        m_Minion = transform.parent.GetComponent<TanqueBehaviourTres>();
     }
 
 
@@ -37,6 +37,26 @@ public class EnemyAttackTrigger : MonoBehaviour
             if (other.GetComponent<PlayerController>())
             {
                 m_Minion.atacarPlayerFar = true;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (type == attackType.Close)
+        {
+            //Debug.Log(other.gameObject);
+            if (other.GetComponent<PlayerController>())
+            {
+                m_Minion.atacarPlayerClose = false;
+            }
+        }
+        else
+        {
+            //Debug.Log(other.gameObject);
+            if (other.GetComponent<PlayerController>())
+            {
+                m_Minion.atacarPlayerFar = false;
             }
         }
     }

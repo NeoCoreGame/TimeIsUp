@@ -25,6 +25,7 @@ public class ExplosivoBehaviour : BehaviourRunner, IEnemyBehaviour
     BSRuntimeDebugger _debugger;
 
     [HideInInspector] public GameObject _player;
+    private PlayerController _pC;
     [SerializeField] Collider _visionCollider;
     [SerializeField] Collider _attackCollider;
 
@@ -56,6 +57,7 @@ public class ExplosivoBehaviour : BehaviourRunner, IEnemyBehaviour
 
     private bool goStunned;
     [HideInInspector] public bool explotarJugador;
+    private Animator _animator;
 
     protected override BehaviourGraph CreateGraph()
 	{
@@ -123,6 +125,7 @@ public class ExplosivoBehaviour : BehaviourRunner, IEnemyBehaviour
         rangoAtaque = _attackCollider.transform.localScale.x;
 
         valorAtacado = _enemy.Hp.Value;
+        _animator = GetComponent<Animator>();
 
 
         base.Init();
@@ -177,7 +180,7 @@ public class ExplosivoBehaviour : BehaviourRunner, IEnemyBehaviour
 	
 	private void explode()
     {
-        Invoke("Espera", 2f);
+        _animator.SetTrigger("Attack");
 	}
 	
 	private Boolean onObjective()
@@ -206,20 +209,24 @@ public class ExplosivoBehaviour : BehaviourRunner, IEnemyBehaviour
         return jugadorVisto;
     }
 
+    public void HitPlayer(int dmg)
+    {
+        _pC.TakeDamage(dmg);
+        Destroy(gameObject);
+    }
+
     public void DetectPlayer(GameObject player)
     {
         jugadorVisto = true;
         _player = player;
+        _pC = player.GetComponent<PlayerController>();
+
     }
 
     public void CleanPlayer()
     {
 
         jugadorVisto = false;
-    }
-
-    public void Espera()
-    {
-        Destroy(gameObject);
-    }
+        _pC = null;
+    }   
 }

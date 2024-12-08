@@ -48,6 +48,7 @@ public class EscurridizoBehaviour : BehaviourRunner, IEnemyBehaviour
 
 
     private bool goStunned;
+	private Animator _animator;
 
     [HideInInspector] public bool atacarPlayer;
     protected override void Init()
@@ -69,7 +70,8 @@ public class EscurridizoBehaviour : BehaviourRunner, IEnemyBehaviour
         rangoAtaque = _attackCollider.transform.localScale.x;
 
         valorAtacado = _enemy.Hp.Value;
-
+		
+		_animator = GetComponent<Animator>();
 
         base.Init();
     }
@@ -148,8 +150,7 @@ public class EscurridizoBehaviour : BehaviourRunner, IEnemyBehaviour
 	}
 	
 	private void StartDash()
-	{
-		
+	{		
 		_meshAgent.speed = 7f;
 
 		Invoke("ReduceSpeed", 1f);
@@ -215,10 +216,9 @@ public class EscurridizoBehaviour : BehaviourRunner, IEnemyBehaviour
 
         if (HasArrived())
         {
-            Debug.Log("Deberia acabar");
             return Status.Success;
         }
-        Debug.Log("Sigue");
+
         return Status.Running;
     }
 	

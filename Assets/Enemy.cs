@@ -42,7 +42,7 @@ public class Enemy : NetworkBehaviour, IShootable
     }
     public void InitializeEnemy()
     {
-       // sliderFill.fillAmount = 1;
+        sliderFill.fillAmount = 1;
         if (IsServer) { Hp.Value = 100; }
 
         Hp.OnValueChanged += OnDamageTaken;
@@ -58,7 +58,7 @@ public class Enemy : NetworkBehaviour, IShootable
         hitted = true;
         //hpText.text = Hp.Value.ToString();
 
-       // sliderFill.fillAmount = newValue / 100f;
+        sliderFill.fillAmount = newValue / 100f;
 
         if (Hp.Value <= 0)
         {

@@ -49,6 +49,8 @@ public class TanqueBehaviour : BehaviourRunner, IEnemyBehaviour
 
 	[HideInInspector] public bool atacarPlayerFar;
     [HideInInspector] public bool atacarPlayerClose;
+
+	private Animator _animator;
     protected override void Init()
     {
         _debugger = GetComponent<BSRuntimeDebugger>();
@@ -69,6 +71,7 @@ public class TanqueBehaviour : BehaviourRunner, IEnemyBehaviour
 
         valorAtacado = _enemy.Hp.Value;
 
+        _animator = GetComponent<Animator>();
 
         base.Init();
     }
@@ -252,6 +255,7 @@ public class TanqueBehaviour : BehaviourRunner, IEnemyBehaviour
 	{
 		//Lanzar animacion
 		_pC.TakeDamage(20);
+		_animator.SetTrigger("Attack");
 	}
 	
 	private Status UpdateAtaqueBasico()
@@ -265,6 +269,7 @@ public class TanqueBehaviour : BehaviourRunner, IEnemyBehaviour
 	{
 		//Lanzar animacion
         _pC.TakeDamage(50);
+        _animator.SetTrigger("Attack_Hand");
     }
 	
 	private Status UpdateAtaqueFuerte()
@@ -279,12 +284,14 @@ public class TanqueBehaviour : BehaviourRunner, IEnemyBehaviour
 		//LAnzar animacion 
 		Invoke("AtacarPlayer", .5f);
         Invoke("AtacarPlayer", 1f);
+        _animator.SetTrigger("Attack_DHand");
     }
 
 	public void AtacarPlayer()
 	{
 
         _pC.TakeDamage(20);
+        _animator.SetTrigger("Attack_Hand");
     }
 	
 	private Status UpdateAtaquesBasicos()
@@ -309,6 +316,7 @@ public class TanqueBehaviour : BehaviourRunner, IEnemyBehaviour
 	private void StartAtacar()
     {
         _pC.TakeDamage(20);
+        _animator.SetTrigger("Attack");
     }
 	
 	private Status UpdateAtacar()
@@ -321,6 +329,7 @@ public class TanqueBehaviour : BehaviourRunner, IEnemyBehaviour
 	private void StartAtacarFuerte()
     {
         _pC.TakeDamage(50);
+        _animator.SetTrigger("Attack");
     }
 	
 	private Status UpdateAtacarFuerte()

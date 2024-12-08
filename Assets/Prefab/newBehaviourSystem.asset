@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db249917b7c50574eaa600c74aff1437, type: 3}
+  m_Name: newBehaviourSystem
+  m_EditorClassIdentifier: 
+  data:
+    graphs:
+    - name: newbehaviourgraph
+      id: e95805b3-98e2-4b67-b419-220aee68035b
+      graph:
+        rid: 7514706930721619972
+      nodes:
+      - name: secuencia
+        id: 31aa3e6f-8a52-4d75-903e-eed5c53a9dac
+        position: {x: 764, y: 201}
+        node:
+          rid: 7514706930721619974
+        references: []
+        parentIds: []
+        childIds:
+        - 488b1c84-ebb0-4632-85cb-81095bd8f02f
+        - 33df4e1c-fed4-4cfe-857b-4cf4286c733a
+      - name: a
+        id: 488b1c84-ebb0-4632-85cb-81095bd8f02f
+        position: {x: 626, y: 385}
+        node:
+          rid: 7514706930721619975
+        references: []
+        parentIds:
+        - 31aa3e6f-8a52-4d75-903e-eed5c53a9dac
+        childIds: []
+      - name: b
+        id: 33df4e1c-fed4-4cfe-857b-4cf4286c733a
+        position: {x: 982, y: 393}
+        node:
+          rid: 7514706930721619976
+        references: []
+        parentIds:
+        - 31aa3e6f-8a52-4d75-903e-eed5c53a9dac
+        childIds: []
+    pushPerceptions: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 7514706930721619972
+      type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706930721619974
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 7514706930721619975
+      type: {class: SuccederNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 7514706930721619976
+      type: {class: SuccederNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 

@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec80f8daf904834e9d8a3d59c355fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
 --- !u!1 &7589255878236046929
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec80f8daf904834e9d8a3d59c355fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!1001 &6820069002685772756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -310,7 +312,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e9920114b81b984083bf9873fdb8d63,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 492342632491388863}
+      addedObject: {fileID: 2006447537782083117}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e9920114b81b984083bf9873fdb8d63,
         type: 3}
       insertIndex: -1
@@ -334,7 +336,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6820069002685772756}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &492342632491388863
+--- !u!114 &2006447537782083117
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -343,7 +345,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5937056362540420741}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdef4d8879fd21949b53ae00f33d0fbb, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f7522be6d3ad874789dcf4c5746d693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   executeOnLoop: 0
@@ -351,6 +353,7 @@ MonoBehaviour:
   _player: {fileID: 0}
   _visionCollider: {fileID: 1312626023700248395}
   _attackCollider: {fileID: 5416629930502818531}
+  _attackColliderClose: {fileID: 1697619691452463271}
   position: {fileID: 0}
   groundCheck: {fileID: 0}
   finalPosition: {x: 0, y: 0, z: 0}
@@ -361,6 +364,7 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 128
+  invocado: 0
   atacarPlayerFar: 0
   atacarPlayerClose: 0
 --- !u!114 &522953890319504858
@@ -412,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2608797317
+  GlobalObjectIdHash: 2464414304
   InScenePlacedSourceGlobalObjectIdHash: 3760406332
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1

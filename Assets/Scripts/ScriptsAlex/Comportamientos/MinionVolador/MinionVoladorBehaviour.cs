@@ -19,6 +19,7 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
     BSRuntimeDebugger _debugger;
 
     [HideInInspector] public GameObject _player;
+    private PlayerController _pC;
     [SerializeField] Collider _visionCollider;
     [SerializeField] Collider _attackCollider;
 
@@ -53,10 +54,12 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
 
 
     private bool goStunned;
+    private Animator _animator;
 
     protected override void Init()
     {
         _debugger = GetComponent<BSRuntimeDebugger>();
+
 
         _enemy = GetComponent<Enemy>();
 
@@ -75,8 +78,10 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
         valorAtacado = _enemy.Hp.Value;
 
         int r = UnityEngine.Random.Range(0, destinies.Length);
-        chosenDestiny = destinies[r].position - new Vector3(-5f, 0f, 0f);
-        chosenDestinyTwo = destinies[r].position - new Vector3(5f, 0f, 0f);
+        chosenDestiny = destinies[r].position - new Vector3(-10f, 0f, 0f);
+        chosenDestinyTwo = destinies[r].position - new Vector3(10f, 0f, 0f);
+
+        _animator = GetComponent<Animator>();
 
 
         base.Init();
@@ -129,7 +134,7 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
         
 
         var attackFinished = new UnityTimePerception();
-        attackFinished.TotalTime = 2f;
+        attackFinished.TotalTime = 3f;
         var ataqueTerminado = MinionVolador.CreateTransition("ataqueTerminado", Atacando, Avanzando, attackFinished, statusFlags: StatusFlags.Success);
 
         //      var outRange_perception = new DistancePerception();
@@ -199,8 +204,13 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
 
     private void AtacarStart()
     {
-        Debug.Log("ATACANDOOOOOOOOOOOOOOOOOOOOOO");
         _meshAgent.isStopped = true;
+        _animator.SetTrigger("Attack");
+    }
+
+    public void HitPlayer(int dmg)
+    {
+        _pC.TakeDamage(dmg);
     }
 
     private Status AtacarUpdate()
@@ -281,6 +291,7 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
     {
         jugadorVisto = true;
         _player = player;
+        _pC = player.GetComponent<PlayerController>();
         outRange_perception_OtherTransform = player.transform;
     }
 
