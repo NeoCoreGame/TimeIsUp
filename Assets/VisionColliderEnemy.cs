@@ -15,7 +15,7 @@ public class VisionColliderEnemy : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log(other.gameObject);
-        if (other.GetComponent<PlayerController>())
+        if (other.GetComponent<PlayerController>() && transform.parent.gameObject.activeSelf)
         {
             m_Minion.DetectPlayer(other.gameObject);
         }

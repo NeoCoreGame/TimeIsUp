@@ -34,7 +34,7 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
     public Transform groundCheck;
     [HideInInspector] public Vector3 finalPosition;
     private float _speed;
-    private float arrivingOffset = 11f;
+    private float arrivingOffset;
 
     private bool atacado;
     private int valorAtacado;
@@ -44,7 +44,7 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
 
     public LayerMask groundMask;
     private float rangoVision;
-    [HideInInspector] public bool jugadorVisto;
+     public bool jugadorVisto;
 
     public LayerMask playerMask;
     private float rangoAtaque;
@@ -55,6 +55,8 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
 
     private bool goStunned;
     private Animator _animator;
+
+    private bool muerte;
 
     protected override void Init()
     {
@@ -137,11 +139,6 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
         attackFinished.TotalTime = 3f;
         var ataqueTerminado = MinionVolador.CreateTransition("ataqueTerminado", Atacando, Avanzando, attackFinished, statusFlags: StatusFlags.Success);
 
-        //      var outRange_perception = new DistancePerception();
-        //outRange_perception.OtherTransform = outRange_perception_OtherTransform;
-        //outRange_perception.MaxDistance = 3f;
-        //var outRange = MinionVolador.CreateTransition("outRange", Atacando, Avanzando, outRange_perception, statusFlags: StatusFlags.Finished);
-
         var PrimerPunto_action = new FunctionalAction();
         PrimerPunto_action.onStarted = StartPrimer;
         PrimerPunto_action.onUpdated = UpdatePrimer;
@@ -159,6 +156,14 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
         var Iteraciones = MinionVoladorPatrullar.CreateDecorator<LoopNode>("Iteraciones", Secuencia);
         Iteraciones.Iterations = -1;
 
+        var IdlePerception = new ConditionPerception();
+        IdlePerception.onCheck = Muerte;
+        var VolverDeambular = MinionVolador.CreateTransition("VolverDeambular", Avanzando, Patrullar, IdlePerception);
+
+        var IdlePerception2 = new ConditionPerception();
+        IdlePerception2.onCheck = Muerte;
+        var quedarsePatrullar = MinionVolador.CreateTransition("quedarsePatrullar", Patrullar, Patrullar, IdlePerception2);
+
 
         MinionVoladorPatrullar.SetRootNode(Iteraciones);
 
@@ -170,7 +175,9 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
 
     private void AvanzandoStart()
     {
+        muerte = false;
         _meshAgent.isStopped = false;
+        arrivingOffset = 11f;
         finalPosition = _player.transform.position;
         _meshAgent.SetDestination(finalPosition);
     }
@@ -180,8 +187,7 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
         finalPosition = _player.transform.position;
         _meshAgent.SetDestination(finalPosition);
 
-
-        Debug.Log(Vector3.Distance(finalPosition, transform.position));
+            
 
 
         if (HasArrived())
@@ -241,7 +247,7 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
     private void StartPrimer()
     {
 
-
+        arrivingOffset = 4f;
         finalPosition = chosenDestiny;
         _meshAgent.SetDestination(finalPosition);
 
@@ -272,6 +278,7 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
 
     private void StartSegundo()
     {
+        arrivingOffset = 4f;
         finalPosition = chosenDestinyTwo;
         _meshAgent.SetDestination(finalPosition);
     }
@@ -295,9 +302,24 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
         outRange_perception_OtherTransform = player.transform;
     }
 
+    private bool Muerte()
+    {
+        if (_enemy.Hp.Value <= 0)
+        {
+            muerte = true;
+            _animator.SetTrigger("Die");
+            CleanPlayer();
+        }
+        return muerte;
+    }
+
     public void CleanPlayer()
     {
 
         jugadorVisto = false;
+    }
+
+    public void kill() { gameObject.SetActive(false);
+        transform.position = new Vector3(-500f, 0f, -500f);
     }
 }

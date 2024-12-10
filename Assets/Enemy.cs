@@ -6,6 +6,7 @@ using Unity.Collections.LowLevel.Unsafe;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
+using static Enemy;
 
 public interface IShootable
 {
@@ -21,7 +22,7 @@ public class Enemy : NetworkBehaviour, IShootable
 {
 
     [SerializeField]
-    public NetworkVariable<int> Hp = new NetworkVariable<int>(100);
+    public NetworkVariable<int> Hp = new NetworkVariable<int>(300);
 
 
     public bool hitted;
@@ -33,6 +34,15 @@ public class Enemy : NetworkBehaviour, IShootable
 
     public Image sliderFill;
 
+    public enum EnemyType
+    {
+        Minion, Escurridizo, Explosivo, Tanque, Volador
+    }
+
+    public EnemyType enemyType;
+    private float ogHp;
+
+
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
@@ -40,15 +50,37 @@ public class Enemy : NetworkBehaviour, IShootable
         InitializeEnemy();
 
     }
+
+    private void OnEnable()
+    {
+        if(IsServer) { Hp.Value = (int)ogHp; }
+    }
     public void InitializeEnemy()
     {
         sliderFill.fillAmount = 1;
-        if (IsServer) { Hp.Value = 100; }
+        if (IsServer)
+        {
+            switch (enemyType)
+            {
+                case EnemyType.Minion: Hp = new NetworkVariable<int>(100); break;
+
+                case EnemyType.Escurridizo: Hp = new NetworkVariable<int>(50); break;
+
+                case EnemyType.Explosivo: Hp = new NetworkVariable<int>(40); break;
+
+                case EnemyType.Tanque: Hp = new NetworkVariable<int>(300); break;
+
+                case EnemyType.Volador: Hp = new NetworkVariable<int>(200); break;
+
+            }
+
+
+        }
 
         Hp.OnValueChanged += OnDamageTaken;
         // hpText.text = Hp.Value.ToString();
 
-
+        ogHp = Hp.Value;
         _enemySystem = FindObjectOfType<EnemySystem>();
 
     }
@@ -58,7 +90,7 @@ public class Enemy : NetworkBehaviour, IShootable
         hitted = true;
         //hpText.text = Hp.Value.ToString();
 
-        sliderFill.fillAmount = newValue / 100f;
+        sliderFill.fillAmount = newValue / ogHp;
 
         if (Hp.Value <= 0)
         {

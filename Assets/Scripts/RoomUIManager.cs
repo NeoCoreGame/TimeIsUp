@@ -47,6 +47,8 @@ public class HelloWorldManager : MonoBehaviour
         hostButton.onClick.AddListener(StartHost);
         joinButton.onClick.AddListener(StartClient);
         field.onValueChanged.AddListener(ChangeCode);
+
+        StartHost();
     }
 
     void StartButtons()
@@ -96,11 +98,11 @@ public class HelloWorldManager : MonoBehaviour
         var mode = NetworkManager.Singleton.IsHost ?
             "Host" : NetworkManager.Singleton.IsServer ? "Server" : "Client";
 
-        GUILayout.Label("Transport: " +
-            NetworkManager.Singleton.NetworkConfig.NetworkTransport.GetType().Name);
-        GUILayout.Label("Mode: " + mode);
+       // GUILayout.Label("Transport: " +
+      //      NetworkManager.Singleton.NetworkConfig.NetworkTransport.GetType().Name);
+      //  GUILayout.Label("Mode: " + mode);
 
-        GUILayout.Label("Room: " + joinCode);
+       // GUILayout.Label("Room: " + joinCode);
     }
 }
 

@@ -51,6 +51,7 @@ public class TanqueBehaviour : BehaviourRunner, IEnemyBehaviour
     [HideInInspector] public bool atacarPlayerClose;
 
 	private Animator _animator;
+
     protected override void Init()
     {
         _debugger = GetComponent<BSRuntimeDebugger>();
@@ -72,6 +73,8 @@ public class TanqueBehaviour : BehaviourRunner, IEnemyBehaviour
         valorAtacado = _enemy.Hp.Value;
 
         _animator = GetComponent<Animator>();
+
+
 
         base.Init();
     }
@@ -102,8 +105,9 @@ public class TanqueBehaviour : BehaviourRunner, IEnemyBehaviour
 	
 		var Selector = Tanque.CreateComposite<SelectorNode>("Selector", false, NoInvocado_1, Invocado_1);
 		Selector.IsRandomized = false;
-		
-		var Idle = Tanque_1.CreateState("Idle");
+
+    
+        var Idle = Tanque_1.CreateState("Idle");
 		
 		var Perseguir_action = new FunctionalAction();
 		Perseguir_action.onStarted = StartPerseguir;
@@ -199,6 +203,7 @@ public class TanqueBehaviour : BehaviourRunner, IEnemyBehaviour
 		jugadorMuyCerca_perception.onCheck = onObjectiveClose;
 		var jugadorMuyCerca = TanqueInvocado.CreateTransition("jugadorMuyCerca", Perseguir_1, AtacarFuerte, jugadorMuyCerca_perception);
 
+
         _debugger.RegisterGraph(Tanque);
         _debugger.RegisterGraph(Tanque_1);
         _debugger.RegisterGraph(TanqueAtaques);
@@ -207,7 +212,8 @@ public class TanqueBehaviour : BehaviourRunner, IEnemyBehaviour
 	}
 
 	
-	private void StartPerseguir()
+
+    private void StartPerseguir()
 	{
         finalPosition = _player.transform.position;
         _meshAgent.SetDestination(finalPosition);
@@ -367,4 +373,5 @@ public class TanqueBehaviour : BehaviourRunner, IEnemyBehaviour
 
         jugadorVisto = false;
     }
+
 }

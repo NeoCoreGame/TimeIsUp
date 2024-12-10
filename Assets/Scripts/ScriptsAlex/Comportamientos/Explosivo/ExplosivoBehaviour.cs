@@ -24,7 +24,7 @@ public class ExplosivoBehaviour : BehaviourRunner, IEnemyBehaviour
 
     BSRuntimeDebugger _debugger;
 
-    [HideInInspector] public GameObject _player;
+     public GameObject _player;
     private PlayerController _pC;
     [SerializeField] Collider _visionCollider;
     [SerializeField] Collider _attackCollider;
@@ -58,6 +58,8 @@ public class ExplosivoBehaviour : BehaviourRunner, IEnemyBehaviour
     private bool goStunned;
     [HideInInspector] public bool explotarJugador;
     private Animator _animator;
+
+    private bool muerte;
 
     protected override BehaviourGraph CreateGraph()
 	{
@@ -103,8 +105,21 @@ public class ExplosivoBehaviour : BehaviourRunner, IEnemyBehaviour
 		var JugadorVisto_perception = new ConditionPerception();
 		JugadorVisto_perception.onCheck = playerSeen;
 		var JugadorVisto = Explosivo.CreateTransition("JugadorVisto", Moverse, Persiguiendo, JugadorVisto_perception);
-		
-		return Explosivo;
+
+        var IdlePerception1 = new ConditionPerception();
+        IdlePerception1.onCheck = Muerte;
+        var VolverDormido = Explosivo.CreateTransition("VolverDormido", Explotar, Dormido, IdlePerception1);
+
+        var IdlePerception2 = new ConditionPerception();
+        IdlePerception2.onCheck = Muerte;
+        var mantenerseDormido = Explosivo.CreateTransition("mantenerseDormido", Dormido, Dormido, IdlePerception2);
+
+        var IdlePerception3 = new ConditionPerception();
+        IdlePerception3.onCheck = Muerte;
+        var regresarDormido = Explosivo.CreateTransition("regresarDormido", Persiguiendo, Dormido, IdlePerception3);
+
+
+        return Explosivo;
 	}
     protected override void Init()
     {
@@ -128,6 +143,7 @@ public class ExplosivoBehaviour : BehaviourRunner, IEnemyBehaviour
         _animator = GetComponent<Animator>();
 
 
+
         base.Init();
     }
 
@@ -135,25 +151,31 @@ public class ExplosivoBehaviour : BehaviourRunner, IEnemyBehaviour
 
     private void StartDormido()
     {
-
+        muerte = false;
     }
 
     private Status UpdateDormido()
     {
-
-       
+                
 
         return Status.Running;
     }
     private void StartPersiguiendo()
 	{
-        finalPosition = _player.transform.position;
+        if (_player != null)
+        {
+            finalPosition = _player.transform.position;
+        }
         _meshAgent.SetDestination(finalPosition);
+        _meshAgent.speed = 3f;
     }
 	
 	private Status UpdatePersiguiendo()
-	{
-        finalPosition = _player.transform.position;
+    {
+        if (_player != null)
+        {
+            finalPosition = _player.transform.position;
+        }
         _meshAgent.SetDestination(finalPosition);
 
         if (HasArrived())
@@ -196,13 +218,27 @@ public class ExplosivoBehaviour : BehaviourRunner, IEnemyBehaviour
 	
 	private void StartMoverse()
 	{
-		throw new System.NotImplementedException();
-	}
+        if (_player != null)
+        {
+            finalPosition = _player.transform.position;
+        }
+        _meshAgent.SetDestination(finalPosition);
+    }
 	
 	private Status UpdateMoverse()
 	{
-		throw new System.NotImplementedException();
-	}
+        if (_player!= null)
+        {
+            finalPosition = _player.transform.position; 
+        }
+        _meshAgent.SetDestination(finalPosition);
+
+        if (HasArrived())
+        {
+            return Status.Success;
+        }
+        return Status.Running;
+    }
 	
 	private Boolean playerSeen()
 	{
@@ -211,8 +247,17 @@ public class ExplosivoBehaviour : BehaviourRunner, IEnemyBehaviour
 
     public void HitPlayer(int dmg)
     {
-        _pC.TakeDamage(dmg);
-        Destroy(gameObject);
+        if (_pC!= null)
+        {
+            _pC.TakeDamage(dmg); 
+        }
+
+
+
+        CleanPlayer();
+        explotarJugador = false;
+
+        _enemy.Hp.Value = 0;
     }
 
     public void DetectPlayer(GameObject player)
@@ -225,8 +270,21 @@ public class ExplosivoBehaviour : BehaviourRunner, IEnemyBehaviour
 
     public void CleanPlayer()
     {
-
         jugadorVisto = false;
         _pC = null;
-    }   
+        _player = null;
+        _meshAgent.ResetPath();
+    }
+
+    private bool Muerte()
+    {
+        if (_enemy.Hp.Value <= 0)
+        {
+            muerte = true;
+            transform.position = new Vector3(-500f, 0f, -500f);
+            CleanPlayer();
+            gameObject.SetActive(false);
+        }
+        return muerte;
+    }
 }

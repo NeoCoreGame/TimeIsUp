@@ -22,7 +22,7 @@ public class enemyPool : MonoBehaviour
 
     public void InitializePool(GameObject obj)
     {
-        obj.transform.GetChild(0).GetComponent<Enemy>().InitializeEnemy();
+        obj.GetComponent<Enemy>().InitializeEnemy();
         obj.SetActive(false);
         pooledEnemies.Add(obj);
 

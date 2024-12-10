@@ -48,6 +48,7 @@ public class enemySpawner : MonoBehaviour
         if (enemy != null)
         {
             enemy.transform.position = spawnPoint[spawn].transform.position;
+            
             enemy.SetActive(true);
 
             //GameObject child = enemy.transform.GetChild(0).transform.gameObject;

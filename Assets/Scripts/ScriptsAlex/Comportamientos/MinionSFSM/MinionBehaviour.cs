@@ -14,12 +14,14 @@ using System.Collections;
 using BehaviourAPI.StateMachines.StackFSMs;
 using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
+using System.Linq;
 
 public class MinionBehaviour : BehaviourRunner, IEnemyBehaviour
 {
     BSRuntimeDebugger _debugger;
 
     [HideInInspector] public GameObject _player;
+    private PlayerController _pC;
     [SerializeField] Collider _visionCollider;
     [SerializeField] Collider _attackCollider;
 
@@ -28,11 +30,13 @@ public class MinionBehaviour : BehaviourRunner, IEnemyBehaviour
     public Transform position;
     private NavMeshAgent _meshAgent;
     private Transform[] destinies;
+    private Transform chosenTransf;
 
     public Transform groundCheck;
     [HideInInspector] public Vector3 finalPosition;
     private float _speed;
-    private float arrivingOffset = 1f;
+    public float arrivingOffset = 4f;
+    public float distance;
 
     private bool atacado;
     private int valorAtacado;
@@ -46,17 +50,20 @@ public class MinionBehaviour : BehaviourRunner, IEnemyBehaviour
 
     public LayerMask playerMask;
     private float rangoAtaque;
-    private bool enObjetivo;
+    public bool enObjetivo;
 
 
     private bool goStunned;
+    private bool deambularAcabado = false;
+    private bool muerte = false;
 
+    private Animator _anim;
 
     protected override void Init()
     {
         _debugger = GetComponent<BSRuntimeDebugger>();
 
-        _enemy = GetComponent<Enemy>();
+        _enemy = GetComponentInChildren<Enemy>();
 
         position = GetComponent<Transform>();
         groundCheck = transform.GetChild(2);
@@ -72,7 +79,7 @@ public class MinionBehaviour : BehaviourRunner, IEnemyBehaviour
 
         valorAtacado = _enemy.Hp.Value;
 
-
+        _anim =GetComponent<Animator>();
         base.Init();
     }
 
@@ -127,36 +134,81 @@ public class MinionBehaviour : BehaviourRunner, IEnemyBehaviour
 		salirAturdido_perception.onCheck = exitStunned;
 		var salirAturdido = Minion.CreatePopTransition("Salir Aturdido", Aturdido, salirAturdido_perception);
 
+        var Deambular_Perception = new ConditionPerception();
+        Deambular_Perception.onCheck = DeambularAcabado;
+
+        var DeambularAcabado_Transition = Minion.CreateTransition("deambular_acabado_transition", Deambular, Deambular, Deambular_Perception);
+
+        var IdlePerception = new ConditionPerception();
+        IdlePerception.onCheck = Muerte;
+        var VolverDeambular = Minion.CreateTransition("VolverDeambular", Avanzando, Deambular, IdlePerception);
+
+        var IdlePerception2 = new ConditionPerception();
+        IdlePerception2.onCheck = Muerte;
+        var quedarseDeambular = Minion.CreateTransition("quedarseDeambular", Deambular, Deambular, IdlePerception2);
+
+
         _debugger.RegisterGraph(Minion);
         return Minion;
 	}
-	
-	private void StartDeambular()
-	{
-        finalPosition = destinies[Random.Range(0, destinies.Length)].position;
-        _meshAgent.SetDestination(finalPosition);
+    private bool DeambularAcabado()
+    {
+        return deambularAcabado;
     }
-	
-	private Status UpdateDeambular()
-	{
+    private void StartDeambular()
+    {
+        deambularAcabado = false;
+        muerte = false;
+        atacado = false;
+        ChooseDestiny();
+       // _meshAgent.SetDestination(finalPosition);
+    }
+    private Status UpdateDeambular()
+    {
         _meshAgent.SetDestination(finalPosition);
 
+        distance = Vector3.Distance(finalPosition, transform.position);
+
+        if (_enemy.Hp.Value <= 0)
+        {
+            muerte = true;
+            transform.position = new Vector3(-500f, 0f, -500f);
+            CleanPlayer();
+            gameObject.SetActive(false);
+        }
 
         if (HasArrived())
         {
-
-            finalPosition = destinies[Random.Range(0, destinies.Length)].position;
+            ChooseDestiny();
 
             _meshAgent.SetDestination(finalPosition);
+
+            deambularAcabado = true;
 
             return Status.Success;
         }
 
-		return Status.Running;
-	}
+        return Status.Running;
+    }
+
+    public void ChooseDestiny()
+    {
+        arrivingOffset = Random.Range(5, 7);
+        List<Transform> transforms = destinies.ToList<Transform>();
+
+        if (chosenTransf != null)
+        {
+            transforms.Remove(chosenTransf);
+        }
+
+        finalPosition = transforms[Random.Range(0, transforms.Count)].position;
+
+    }
+
 
     public bool HasArrived()
     {
+   
         if (Vector3.Distance(finalPosition, transform.position) < arrivingOffset)
         {
             return true;
@@ -166,9 +218,10 @@ public class MinionBehaviour : BehaviourRunner, IEnemyBehaviour
     }
 
     private void StartAvanzando()
-	{
+    {
+        arrivingOffset = 4f;
         finalPosition = _player.transform.position;
-        _meshAgent.SetDestination(finalPosition);
+       // _meshAgent.SetDestination(finalPosition);
     }
 	
 	private Status UpdateAvanzando()
@@ -176,43 +229,40 @@ public class MinionBehaviour : BehaviourRunner, IEnemyBehaviour
         finalPosition = _player.GetComponent<Transform>().position;
         _meshAgent.SetDestination(finalPosition);
 
-
         if (HasArrived())
         {
             return Status.Success;
         }
         return Status.Running;
 
-        
-
     }
 
     private void StartAtacando()
     {
         _enemy.hitted = false;
-        // Lanzar animación ataque
+        ataqueFinalizado = true;
+        enObjetivo = false;
+        _anim.SetTrigger("Attack");
     }
 
     private Status UpdateAtacando()
     {
-        // Cuando acabe la animación de ataque
-        animacion = true;
-        if (animacion)
-        {
-            _player.GetComponent<PlayerController>().TakeDamage(_enemy.GetDmg());
-            ataqueFinalizado = true;
+        
+            
             return Status.Success;
-        }
 
-        return Status.Running;
     }
 
 	// Accion de estar aturdido
     private void StartAturdido()
     {
-        _meshAgent.isStopped = true;
+       // _meshAgent.isStopped = true;
         // Para animaciones del enemigo también
 
+    }
+    public void HitPlayer(int dmg)
+    {
+        _pC.TakeDamage(dmg);
     }
 
     private Status UpdateAturdido()
@@ -252,13 +302,7 @@ public class MinionBehaviour : BehaviourRunner, IEnemyBehaviour
 
     private bool onObjective()
 	{
-        if (_attackCollider.bounds.Contains(_player.GetComponent<Transform>().position))
-        {
-            Vector3 direction = (_player.GetComponent<Transform>().position - transform.position).normalized;
-            Ray ray = new Ray(transform.position + transform.up, direction * 20);
-
-            enObjetivo = Physics.Raycast(ray, out RaycastHit hit, rangoAtaque) && hit.collider.gameObject.transform == _player;
-        }
+       
         
 
         return enObjetivo;
@@ -294,6 +338,18 @@ public class MinionBehaviour : BehaviourRunner, IEnemyBehaviour
     {
         jugadorVisto = true;
         _player = player;
+        _pC = player.GetComponent<PlayerController>();
+    }
+    private bool Muerte()
+    {
+        if (_enemy.Hp.Value <= 0)
+        {
+            muerte = true;
+            transform.position = new Vector3(-500f, 0f, -500f);
+            CleanPlayer();
+            gameObject.SetActive(false);
+        }
+        return muerte;
     }
 
     public void CleanPlayer()

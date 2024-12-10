@@ -27,8 +27,8 @@ public class EnemyAttackTrigger : MonoBehaviour
             //Debug.Log(other.gameObject);
             if (other.GetComponent<PlayerController>())
             {
-                m_Minion.atacarPlayerFar = false;
-                m_Minion.atacarPlayerClose = true;
+
+                m_Minion.atacarPlayerFar = true;
             } 
         }
         else
@@ -48,7 +48,7 @@ public class EnemyAttackTrigger : MonoBehaviour
             //Debug.Log(other.gameObject);
             if (other.GetComponent<PlayerController>())
             {
-                m_Minion.atacarPlayerClose = false;
+                m_Minion.atacarPlayerFar = false;
             }
         }
         else

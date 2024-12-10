@@ -217,7 +217,6 @@ public class EscurridizoBehaviourDos : BehaviourRunner, IEnemyBehaviour
 
     public bool HasArrived()
     {
-        Debug.Log(Vector3.Distance(finalPosition, transform.position));
         if (Vector3.Distance(finalPosition, transform.position) < arrivingOffset)
         {
             return true;
@@ -240,10 +239,8 @@ public class EscurridizoBehaviourDos : BehaviourRunner, IEnemyBehaviour
 
         if (HasArrived())
         {
-            Debug.Log("Deberia acabar");
             return Status.Success;
         }
-        Debug.Log("Sigue");
         return Status.Running;
     }
 

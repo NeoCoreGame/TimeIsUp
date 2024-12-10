@@ -84,7 +84,6 @@ public class ShootingController : NetworkBehaviour
             {
                 if (hitInfo.collider.gameObject.TryGetComponent(out IShootable interactObj))
                 {
-                   // Debug.Log("Au");
     
                     if (interactObj.GetHealth() <= WeaponDmg)
                     {

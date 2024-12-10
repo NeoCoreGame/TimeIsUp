@@ -16,8 +16,8 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
 
     BSRuntimeDebugger _debugger;
 
-    [HideInInspector] public GameObject _player;
-    private PlayerController _pC;
+    public GameObject _player;
+    public PlayerController _pC;
     [SerializeField] Collider _visionCollider;
     [SerializeField] Collider _attackCollider;
     [SerializeField] Collider _attackColliderClose;
@@ -36,12 +36,12 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
     private bool atacado;
     private int valorAtacado;
 
-    private bool ataqueFinalizado;
+    public bool ataqueFinalizado;
     private bool animacion = false;
 
     public LayerMask groundMask;
     private float rangoVision;
-    [HideInInspector] public bool jugadorVisto;
+    public bool jugadorVisto;
 
     public LayerMask playerMask;
     private float rangoAtaque;
@@ -56,12 +56,14 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
     private int halfHp;
     private bool mitadVida = false;
 
-    [HideInInspector] public bool atacarPlayerFar;
-    [HideInInspector] public bool atacarPlayerClose;
+    public bool atacarPlayerFar;
+    public bool atacarPlayerClose;
 
     private Animator _animator;
 
     private Enemy _enem;
+
+    private bool muerte;
     protected override void Init()
     {
         _debugger = GetComponent<BSRuntimeDebugger>();
@@ -230,6 +232,18 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
         objetivoEncontrado_perception.onCheck = playerClose;
         var objetivoEncontrado = TanqueInvocado.CreateTransition("objetivoEncontrado", idle_Invocado, Perseguir, objetivoEncontrado_perception);
 
+        var idlePerception = new ConditionPerception();
+        idlePerception.onCheck = Muerte;
+        var idleTransition = Tanque_1.CreateTransition("idleTransition", perseguir, idle, idlePerception);
+
+        var idlePerception2 = new ConditionPerception();
+        idlePerception2.onCheck = Muerte;
+        var idleTransition2 = Tanque_1.CreateTransition("idleTransition2", atacarNoInvocado, idle, idlePerception2);
+
+        var idlePerception3 = new ConditionPerception();
+        idlePerception3.onCheck = Muerte;
+        var idleTransition3 = Tanque_1.CreateTransition("idleTransition3", idle, idle, idlePerception3);
+
         Tanque.SetRootNode(selector);
         TanqueAtaques.SetRootNode(seleccionAtaques);
 
@@ -270,39 +284,36 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
     private void StartIdleAction()
     {
         // Lo que se quiera hacer en el idle, como si es nada
+        muerte = false;
     }
 
     private Status UpdateIdleAction()
     {
-        return Status.Success;
+        if (_enemy.Hp.Value < 300 && _enemy.Hp.Value > 200 && _pC == null)
+        {
+            DetectPlayer(FindObjectOfType<PlayerController>().gameObject);
+
+            return Status.Success;
+        }
+
+        return Status.Running;
     }
 
     private void StartPerseguir()
     {
-        if (!invocado)
-        {
+        ataqueFinalizado = false;
+        
             finalPosition = _player.transform.position;
             _meshAgent.SetDestination(finalPosition); 
-        }
-        else
-        {
-            finalPosition = _enem.transform.position;
-            _meshAgent.SetDestination(finalPosition);
-        }
+        
     }
 
     private Status UpdatePerseguir()
     {
-        if (!invocado)
-        {
+        
             finalPosition = _player.transform.position;
             _meshAgent.SetDestination(finalPosition);
-        }
-        else
-        {
-            finalPosition = _enem.transform.position;
-            _meshAgent.SetDestination(finalPosition);
-        }
+
 
 
         if (HasArrived())
@@ -375,7 +386,6 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
     {
         // Secuencia de 2 ataques basicos
         ataqueFinalizado = false;
-        UnityEngine.Debug.Log("ATAQUES DOBLEEEEEEEEEEEEEEEEEEEEEEEEEEEEEES");
         AnimacionAtacar();
         Invoke("AnimacionAtacar", 1f);
 
@@ -394,16 +404,11 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
     public void DealDMGPlayer(int dmg)
     {
 
-        if (!invocado)
-        {
+       
             _pC.TakeDamage(dmg);
+            if(_pC.GetHealth() <= 0) { CleanPlayer(); }
             ataqueFinalizado = true; 
-        }
-        else
-        {
-            _enem.TakeDamage(dmg);
-            ataqueFinalizado = false;
-        }
+        
     }
     
 
@@ -415,23 +420,33 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
 
     public void DetectPlayer(GameObject player)
     {
-        if (!invocado)
-        {
+       
             jugadorVisto = true;
             _player = player;
             _animator.SetBool("Walking", true);
             _pC = player.GetComponent<PlayerController>(); 
-        }
+        
     }
 
-    public void DetectEnemy(Enemy e)
-    {
-        _enem = e;
-    }
 
     public void CleanPlayer()
     {
 
         jugadorVisto = false;
+    }
+    private bool Muerte()
+    {
+        if (_pC != null && (_enemy.Hp.Value <= 0 || _pC.GetHealth() <= 0)  )
+        {
+            muerte = true;
+            transform.position = new Vector3(-500f, 0f, -500f);
+            CleanPlayer();
+            _player = null;
+            _pC = null;
+            ataqueFinalizado = false;
+            atacarPlayerFar = false;
+            gameObject.SetActive(false);
+        }
+        return muerte;
     }
 }

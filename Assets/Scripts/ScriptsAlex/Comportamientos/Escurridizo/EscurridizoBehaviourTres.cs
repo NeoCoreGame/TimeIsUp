@@ -50,12 +50,15 @@ public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
 
 
     private bool goStunned;
+    private Animator _animator;
 
-    int random = Random.Range(0, 5);
+    int random;
     [HideInInspector] public bool atacarPlayer;
     [HideInInspector] public bool dashear;
 
     private float timer;
+
+    private bool muerte;
 
     protected override void Init()
     {
@@ -76,7 +79,7 @@ public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
         //rangoAtaque = _attackCollider.transform.localScale.x;
 
         valorAtacado = _enemy.Hp.Value;
-
+        random = Random.Range(0, 5);
 
         base.Init();
     }
@@ -149,6 +152,16 @@ public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
 		
 		var iteraciones = EscurridizoPatrullar.CreateDecorator<LoopNode>("iteraciones", secuencia);
 		iteraciones.Iterations = -1;
+
+        var IdlePerception = new ConditionPerception();
+        IdlePerception.onCheck = Muerte;
+        var VolverPatrullar = Escurridizo.CreateTransition("VolverPatrullar", huir, patrullar, IdlePerception);
+
+        var IdlePerception2 = new ConditionPerception();
+        IdlePerception2.onCheck = Muerte;
+        var quedarsePatrullar = Escurridizo.CreateTransition("quedarsePatrullar",patrullar, patrullar, IdlePerception2);
+
+
 
         EscurridizoPatrullar.SetRootNode(iteraciones);
 
@@ -277,7 +290,6 @@ public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
 
     public bool HasArrived()
     {
-        Debug.Log(Vector3.Distance(finalPosition, transform.position));
         if (Vector3.Distance(finalPosition, transform.position) < arrivingOffset)
         {
             return true;
@@ -301,10 +313,8 @@ public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
 
         if (HasArrived())
         {
-            Debug.Log("Deberia acabar");
             return Status.Success;
         }
-        Debug.Log("Sigue");
         return Status.Running;
     }
 
@@ -373,7 +383,24 @@ public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
         jugadorVisto = true;
         _player = player;
     }
+    private bool Muerte()
+    {
+        if (_enemy.Hp.Value <= 0)
+        {
+            muerte = true;
+          //  _.SetTrigger("Die");
+            transform.position = new Vector3(-500f, 0f, -500f);
+            CleanPlayer();
 
+            finalPosition = destinies[0].transform.position;
+            _meshAgent.SetDestination(finalPosition);
+            _meshAgent.speed = 3.5f;
+
+            gameObject.SetActive(false);
+
+        }
+        return muerte;
+    }
     public void CleanPlayer()
     {
 

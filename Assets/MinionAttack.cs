@@ -17,7 +17,7 @@ public class MinionAttack : MonoBehaviour
             //Debug.Log(other.gameObject);
             if (other.GetComponent<PlayerController>())
             {
-               // m_Minion.
+            m_Minion.enObjetivo = true;
             }
         
     }
