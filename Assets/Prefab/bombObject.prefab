@@ -102,7 +102,7 @@ MonoBehaviour:
   cooldown: 5
   currentCooldown: 3.1666296
   icon: {fileID: 0}
-  isOnCooldown: 1
+  isOnCooldown: 0
   cam: {fileID: 0}
   bomb: {fileID: 0}
   throwForce: 15

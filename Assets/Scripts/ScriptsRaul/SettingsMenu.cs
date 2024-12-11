@@ -16,6 +16,8 @@ public class SettingsMenu : MonoBehaviour
     public GameObject confirmationPanel;
     public GameObject settingsPanel;
 
+    public GameObject player;
+
 
     public class SettingsValues
     {
@@ -35,6 +37,7 @@ public class SettingsMenu : MonoBehaviour
         SetMasterVolume(settingsValues.masterVolume);
         SetMusicVolume(settingsValues.musicVolume);
         SetSFXVolume(settingsValues.sfxVolume);
+        SetSensitivity(settingsValues.sensitivity);
     }
 
     public void SaveToJson()
@@ -90,7 +93,8 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetSensitivity(float sensitivity)
     {
-
+        settingsValues.sensitivity = sensitivity;
+        player.GetComponent<MouseLook>().UpdateMouseSensitivity(sensitivity);
     }
 
     public void ConfirmationToggle()

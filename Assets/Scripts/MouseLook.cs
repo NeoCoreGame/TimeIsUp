@@ -60,6 +60,11 @@ public class MouseLook : NetworkBehaviour
         }
     }
 
+    public void UpdateMouseSensitivity(float sensitivity)
+    {
+        mouseSensitivity = sensitivity;
+    }
+
     #region Input
     public void OnLook(InputAction.CallbackContext context)
     {

@@ -7606,7 +7606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2368767718
+  GlobalObjectIdHash: 3880515151
   InScenePlacedSourceGlobalObjectIdHash: 1158524312
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -7881,8 +7881,8 @@ MonoBehaviour:
   tdIcon: {fileID: 0}
   petuniaIcon: {fileID: 0}
   bombThrowClip: {fileID: 8300000, guid: cf27e7e3946ac9949aa9b36e612e6378, type: 3}
-  hookClip: {fileID: 0}
-  rootsClip: {fileID: 0}
+  hookClip: {fileID: 8300000, guid: b62ba0798672ced4ca2e597bb92008f1, type: 3}
+  rootsClip: {fileID: 8300000, guid: 30f774c935129de408235704596846f0, type: 3}
 --- !u!136 &2843435861797364588
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7931,7 +7931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5aa220559b329a47af8af9ce43a11fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 0.1
+  mouseSensitivity: 0.2
   head: {fileID: 8069923879327324007}
   player: {fileID: 2851641169628040455}
   xRotation: 0

@@ -38,7 +38,7 @@ public class abilityController : MonoBehaviour
         tdIcon = GameObject.Find("Character2Icons");
         petuniaIcon = GameObject.Find("Character3Icons");
 
-        switch (1)
+        switch (StaticData.characterID)
         {
             case 0:
                 //Bomb Ability
@@ -78,7 +78,7 @@ public class abilityController : MonoBehaviour
 
     private void Update()
     {
-        switch (1)
+        switch (StaticData.characterID)
         {
             case 0:
                 if (Input.GetKeyDown(KeyCode.Q) && !bombAbility.isOnCooldown)

@@ -31,7 +31,7 @@ public class SFXManager : MonoBehaviour
     {
         AudioSource audioSource = Instantiate(sfxObject, spawnTransform.position, Quaternion.identity);
 
-        GetSettingsValues();
+        GetSettingsValues(); 
 
         audioSource.clip = audioClip;
 
