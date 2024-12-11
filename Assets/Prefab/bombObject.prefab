@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 5
-  currentCooldown: 1.996237
+  currentCooldown: 3.1666296
   icon: {fileID: 0}
   isOnCooldown: 1
   cam: {fileID: 0}
@@ -109,6 +109,8 @@ MonoBehaviour:
   throwUpwardForce: 3
   radius: 20
   dmg: 15
+  bombSplashClip: {fileID: 8300000, guid: 641efe2e6af6b8f4b93cafe92836d2c8, type: 3}
+  prueba: {fileID: 8300000, guid: 215e2a9f887374d49bf0e8ab2e9b7903, type: 3}
 --- !u!135 &6494632943583928400
 SphereCollider:
   m_ObjectHideFlags: 0

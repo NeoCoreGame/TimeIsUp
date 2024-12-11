@@ -25,13 +25,15 @@ public class abilityController : MonoBehaviour
     GameObject hook;
     private float mouseSensitivityAC;
 
+    //SFX
+    public AudioClip bombThrowClip;
+    public AudioClip hookClip;
+    public AudioClip rootsClip;
+
     private void Start()
     {
         cam = Camera.main.transform;
 
-        //bombBackIcon = GameObject.Find("bombAbilityIcon");
-        //hookBackIcon = GameObject.Find("hookAbilityIcon");
-        //stunBackIcon = GameObject.Find("stunAbilityIcon");
         skIcon = GameObject.Find("Character1Icons");
         tdIcon = GameObject.Find("Character2Icons");
         petuniaIcon = GameObject.Find("Character3Icons");
@@ -44,10 +46,6 @@ public class abilityController : MonoBehaviour
                 bombAbility.icon.fillAmount = 0;
                 bombAbility.cooldown = 5;
                 bombAbility.isOnCooldown = false;
-                //hookBackIcon.SetActive(false);
-                //stunBackIcon.SetActive(false);
-                //GameObject.Find("hookAbilityGrayIcon").SetActive(false);
-                //GameObject.Find("stunAbilityGrayIcon").SetActive(false);
                 tdIcon.SetActive(false);
                 petuniaIcon.SetActive(false);
 
@@ -58,10 +56,6 @@ public class abilityController : MonoBehaviour
                 hookAbility.icon.fillAmount = 0;
                 hookAbility.cooldown = 5;
                 hookAbility.isOnCooldown = false;
-                //bombBackIcon.SetActive(false);
-                //stunBackIcon.SetActive(false);
-                //GameObject.Find("bombAbilityGrayIcon").SetActive(false);
-                //GameObject.Find("stunAbilityGrayIcon").SetActive(false);
                 skIcon.SetActive(false);
                 petuniaIcon.SetActive(false);
                 break;
@@ -71,10 +65,6 @@ public class abilityController : MonoBehaviour
                 stunAbility.icon.fillAmount = 0;
                 stunAbility.cooldown = 2;
                 stunAbility.isOnCooldown = false;
-                //hookBackIcon.SetActive(false);
-                //bombBackIcon.SetActive(false);
-                //GameObject.Find("hookAbilityGrayIcon").SetActive(false);
-                //GameObject.Find("bombAbilityGrayIcon").SetActive(false);
                 tdIcon.SetActive(false);
                 skIcon.SetActive(false);
                 break;
@@ -94,6 +84,7 @@ public class abilityController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Q) && !bombAbility.isOnCooldown)
                 {
                     BombAbility();
+                    SFXManager.instance.PlaySFX(bombThrowClip, transform, 1f);
                 }
                 bombAbility.AbilityInput();
                 bombAbility.AbilityCooldown();
@@ -102,6 +93,7 @@ public class abilityController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Q) && !hookAbility.isOnCooldown)
                 {
                     HookAbility();
+                    SFXManager.instance.PlaySFX(hookClip, transform, 1f);
                 }
                 hookAbility.AbilityInput();
                 hookAbility.AbilityCooldown();
@@ -117,6 +109,7 @@ public class abilityController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Q) && !stunAbility.isOnCooldown)
                 {
                     StunAbility();
+                    SFXManager.instance.PlaySFX(rootsClip, transform, 1f);
                 }
                 stunAbility.AbilityInput();
                 stunAbility.AbilityCooldown();

@@ -11,6 +11,7 @@ public class SettingsMenu : MonoBehaviour
     public GameObject masterVolumeSlider;
     public GameObject musicVolumeSlider;
     public GameObject sfxVolumeSlider;
+    public GameObject sensitivitySlider;
 
     public GameObject confirmationPanel;
     public GameObject settingsPanel;
@@ -21,6 +22,7 @@ public class SettingsMenu : MonoBehaviour
         public float masterVolume;
         public float musicVolume;
         public float sfxVolume;
+        public float sensitivity;
     }
 
     public void Awake()
@@ -58,6 +60,7 @@ public class SettingsMenu : MonoBehaviour
             masterVolumeSlider.GetComponent<Slider>().value = settingsValues.masterVolume;
             musicVolumeSlider.GetComponent<Slider>().value = settingsValues.musicVolume;
             sfxVolumeSlider.GetComponent<Slider>().value = settingsValues.sfxVolume;
+            sensitivitySlider.GetComponent<Slider>().value = settingsValues.sensitivity;
             Debug.Log("Data loaded");
         }
         catch
@@ -83,6 +86,11 @@ public class SettingsMenu : MonoBehaviour
     {
         audioMixer.SetFloat("SFXVolume", sfxVolume);
         settingsValues.sfxVolume = sfxVolume;
+    }
+
+    public void SetSensitivity(float sensitivity)
+    {
+
     }
 
     public void ConfirmationToggle()

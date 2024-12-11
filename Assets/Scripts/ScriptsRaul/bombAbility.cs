@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -13,6 +14,9 @@ public class bombAbility : Ability
     public float radius;
     public int dmg;
 
+    public AudioClip bombSplashClip;
+    public AudioClip prueba;
+
     private void Start()
     {
         bomb = gameObject;
@@ -23,6 +27,8 @@ public class bombAbility : Ability
         if (collision.gameObject.tag == "Map" || collision.gameObject.tag == "Enemy")
         {
             EnemiesHit();
+            //SFXManager.instance.PlaySFX(prueba, transform, 1f);
+            SFXManager.instance.PlaySFX(bombSplashClip, transform, 1f);
             Destroy(gameObject);
         }
     }
