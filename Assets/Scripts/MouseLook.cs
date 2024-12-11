@@ -44,7 +44,6 @@ public class MouseLook : NetworkBehaviour
             player.Rotate(Vector3.up * mouseX);
             head.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             //head.Rotate(Vector3.right * xRotation);
-            Debug.Log("SOY SERVERR");
 
         }
     }

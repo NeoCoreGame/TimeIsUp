@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class RespawnPlayerManager : MonoBehaviour
 {
@@ -57,6 +58,8 @@ public class RespawnPlayerManager : MonoBehaviour
         h._pC.gameObject.transform.position = new Vector3(500f, 500f, 500f);
         h._pC.gameObject.transform.position = new Vector3(500f, 500f, 500f);
         yield return new WaitForSeconds(1);
+        h._hC.HP.Value = startingHP;
+        h._pC.GetComponent<PlayerInput>().enabled = true;
     }
 
     public IEnumerator RespawnRoutine(HealthProfile h)

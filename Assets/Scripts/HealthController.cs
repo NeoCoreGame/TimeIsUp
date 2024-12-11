@@ -62,9 +62,16 @@ public class HealthController : NetworkBehaviour
         if(newValue <= 0)
         {
             DeadScreen.localScale = Vector3.one;
+            DeadScreen.localScale = Vector3.one;
+            DeadScreen.localScale = Vector3.one;
+
+
+            GetComponent<PlayerCountdown>()._addedTimeUI.LaunchText(-60f);
         }
         if(newValue >= 100)
         {
+            DeadScreen.localScale = Vector3.zero;
+            DeadScreen.localScale = Vector3.zero;
             DeadScreen.localScale = Vector3.zero;
         }
     }

@@ -28,6 +28,11 @@ public class enemyPool : MonoBehaviour
 
     }
 
+    public void ClearPool()
+    {
+        pooledEnemies.Clear();
+    }
+
     public GameObject GetPooledEnemy()
     {
         for (int i = 0; i < pooledEnemies.Count; i++)
@@ -37,7 +42,6 @@ public class enemyPool : MonoBehaviour
                 return pooledEnemies[i];
             }
         }
-
         return null;
     }
 

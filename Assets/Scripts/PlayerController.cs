@@ -160,7 +160,7 @@ public class PlayerController : NetworkBehaviour, IShootable
     }
     public void TakeDamage(int dmg)
     {
-
+        
         OnTakeDamageServerRpc(dmg);
     }
 
@@ -173,6 +173,7 @@ public class PlayerController : NetworkBehaviour, IShootable
         {
             //GetComponent<NetworkTransform>().Teleport(new Vector3(-45f, 9f, 26f),transform.rotation,transform.localScale);
             _playerCountdown.TimeVariation(-60);
+            
             // _healthController.HP.Value = 100;
             _respawnPlayerManager.RespawnPlayer(_healthController);
 

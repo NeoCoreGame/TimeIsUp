@@ -25,14 +25,19 @@ public class EnemySystem : NetworkBehaviour
         _enemyPool = FindObjectOfType<enemyPool>();
         _enemy2Pool = FindObjectOfType<enemy2Pool>();
 
+        StartPool();
+
+    }
+
+    public void StartPool()
+    {
+        _enemyPool.ClearPool(); 
         foreach (GameObject e in enemies)
         {
 
             _enemyPool.InitializePool(e);
 
         }
-        //_enemy2Pool.InitializePool(_enemyPrefab, this);
-
     }
 
 

@@ -31,13 +31,13 @@ public class enemySpawner : MonoBehaviour
     {
         if(enableSpawn)
         {
-
             StartCoroutine(enemySpawn());
         }
         else
         {
-
-            StopCoroutine(enemySpawn());
+            //StopCoroutine(enemySpawn());
+            StopAllCoroutines();
+            _enemySystem.StartPool();
         }
     }
 
@@ -112,7 +112,7 @@ public class enemySpawner : MonoBehaviour
                 enemy2Count = 0;
                 randomSpawn = Random.Range(0, 5);
                 Vector3 position = spawnPoint[randomSpawn].transform.position;
-                Instantiate(enemy3, position, Quaternion.identity);
+               // Instantiate(enemy3, position, Quaternion.identity);
             }
 
             yield return new WaitForSeconds(2f);

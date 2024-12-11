@@ -12,6 +12,7 @@ public class InitialCountdown : NetworkBehaviour
     [SerializeField]
     public NetworkVariable<int> contador = new NetworkVariable<int>(4);
 
+
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
@@ -31,6 +32,15 @@ public class InitialCountdown : NetworkBehaviour
         {
             iCRect.localScale = Vector3.zero;
         }
+    }
+
+    public void RestartCounter()
+    {
+        if (IsServer)
+        {
+            contador.Value = 4; 
+        }
+        iCRect.localScale = Vector3.one;
     }
 
     public void SubstractOne()

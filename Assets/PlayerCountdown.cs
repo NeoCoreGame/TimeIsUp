@@ -11,7 +11,7 @@ public class PlayerCountdown : NetworkBehaviour
     public NetworkVariable<float> avaliableTime = new NetworkVariable<float>();
     public TextMeshProUGUI timerText;
 
-    private AddedTimeUI _addedTimeUI;
+    [HideInInspector] public AddedTimeUI _addedTimeUI;
 
 
     private void Update()
@@ -27,7 +27,10 @@ public class PlayerCountdown : NetworkBehaviour
         base.OnNetworkSpawn();
 
         timerText = GameObject.FindGameObjectWithTag("PlayerCountdown").GetComponent<TextMeshProUGUI>();
-        _addedTimeUI = FindObjectOfType<AddedTimeUI>();
+        if (IsOwner)
+        {
+            _addedTimeUI = FindObjectOfType<AddedTimeUI>(); 
+        }
 
 
         avaliableTime.OnValueChanged += OnCounterChange;
@@ -45,6 +48,7 @@ public class PlayerCountdown : NetworkBehaviour
     }
     public void OnCounterChange(float previousValue, float newValue)
     {
+
         if (newValue < 0f && GetComponent<HealthController>().DeadScreen.localScale != Vector3.one)
         {
             GetComponent<HealthController>().DeadScreen.localScale = Vector3.one;
@@ -55,10 +59,13 @@ public class PlayerCountdown : NetworkBehaviour
 
     public void TimeVariation(float timeVariation)
     {
-        
 
-        _addedTimeUI.LaunchText(timeVariation);
+
         TimeVariationServerRpc(timeVariation);
+        if (_addedTimeUI)
+        {
+            _addedTimeUI.LaunchText(timeVariation); 
+        }
 
 
     }

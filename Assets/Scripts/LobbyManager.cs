@@ -42,9 +42,9 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
     private enemySpawner spawner;
     private Destinies destinies;
 
-    private InitialCountdown startCountdown;
+    [HideInInspector] public InitialCountdown startCountdown;
 
-    private RectTransform lobbyRect;
+    [HideInInspector] public RectTransform lobbyRect;
 
     public Transform[] factorySpawn;
     public Transform[] boatSpawn;
@@ -55,6 +55,8 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
     public Image mapB;
     public Image mapLayout;
     private int selectedMapIdx;
+
+    public NetworkVariable<bool> returnPlayersToLobby = new NetworkVariable<bool>(); //Network variable de booleano que comienza la carrera
 
 
     void Awake() //Configuración del singleton
@@ -74,20 +76,18 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
     {
         //Suscribo funciones de cambio de valor
 
-        players.OnValueChanged += OnTextChanged;
-        votos.OnValueChanged += OnVote;
+        if (IsServer)
+        {
+            players.OnValueChanged += OnTextChanged;
+            votos.OnValueChanged += OnVote; 
+        }
 
         spawner = FindObjectOfType<enemySpawner>();
         destinies = FindObjectOfType<Destinies>();
 
         startCountdown = FindObjectOfType<InitialCountdown>();
 
-
-
         lobbyRect = GetComponent<RectTransform>();
-
-        
-
 
     }
 
@@ -153,11 +153,8 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
 
         if (startCountdown.contador.Value == 3 && lobbyRect.localScale != Vector3.zero) //Si la carrera comienza, invoco funciones para prepararla
         {
-
             Cursor.lockState = CursorLockMode.Locked;
-
             lobbyRect.localScale = Vector3.zero;
-
         }
 
     }
@@ -177,7 +174,6 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
 
     public void RestartInitialCountdown()
     {
-
         startCountdown.contador.Value = 4;
     }
     public void AddConnectedPlayers(GameObject newPlayer) //Funcion que añade a un jugador a la lista de coches
@@ -218,6 +214,7 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
 
                 int rNumber = UnityEngine.Random.Range(0, aux.Count);
                 aux.Remove(rNumber);
+                p.GetComponent<PlayerController>().enabled = true;
                 p.GetComponent<PlayerController>().TeleportPlayer(electedSpawn[rNumber].position);
 
             }
@@ -231,7 +228,6 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
         {
             foreach (GameObject p in playerObjects)
             {
-
                 p.GetComponent<PlayerController>().canMove.Value = true;
             }
         }
@@ -258,7 +254,7 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
     {
         if (IsServer)
         {
-            StopPlayers();
+            Debug.Log("VOLVIENDO AL LOBBY");
 
             spawner.EnableSpawning(false);
 
@@ -266,14 +262,27 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
 
             startGame.Value = false;
             movePlayers.Value = false;
+
+            Invoke("RestartLobbyReset", 1f);
         }
+        ShowButtons();
 
-        gameObject.SetActive(true);
+        startCountdown.RestartCounter();
+        Cursor.lockState = CursorLockMode.None;
+        lobbyRect.localScale = Vector3.one;
 
+    }
+
+    public void RestartLobbyReset()
+    {
+        returnPlayersToLobby.Value = false;
     }
 
     public void ResetLobby() //Funcion que resetea los votos y el circuito elegido
     {
+        VotosFabrica = 0;
+        VotosTotales = 0;
+        finishedVote = false;
 
         if (IsServer)
         {
@@ -286,6 +295,8 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
     public void ResetVotesServerRpc() //Llamada Rpc que restablece los votos
     {
         VotosFabrica = 0;
+        VotosBarco = 0;
+        VotosTotales = 0;
         finishedVote = false;
 
     }

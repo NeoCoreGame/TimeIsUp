@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SelectMap : MonoBehaviour, IPointerEnterHandler
+public class SelectMap : MonoBehaviour
 {
 
     private LobbyManager _manager;
@@ -14,8 +14,10 @@ public class SelectMap : MonoBehaviour, IPointerEnterHandler
         _manager = FindObjectOfType<LobbyManager>();
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+
+    public void SelecMapp()
     {
+
         _manager.SelectMap(mapIdx);
     }
 }
