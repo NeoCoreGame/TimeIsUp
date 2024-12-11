@@ -28,7 +28,7 @@ public class bombAbility : Ability
         {
             EnemiesHit();
             //SFXManager.instance.PlaySFX(prueba, transform, 1f);
-            SFXManager.instance.PlaySFX(bombSplashClip, transform, 1f);
+            SFXManager.instance.PlaySFX(bombSplashClip, transform);
             Destroy(gameObject);
         }
     }

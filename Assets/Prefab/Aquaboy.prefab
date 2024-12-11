@@ -7606,7 +7606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3778198366
+  GlobalObjectIdHash: 3880515151
   InScenePlacedSourceGlobalObjectIdHash: 1158524312
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -7879,6 +7879,9 @@ MonoBehaviour:
   skIcon: {fileID: 0}
   tdIcon: {fileID: 0}
   petuniaIcon: {fileID: 0}
+  bombThrowClip: {fileID: 8300000, guid: cf27e7e3946ac9949aa9b36e612e6378, type: 3}
+  hookClip: {fileID: 0}
+  rootsClip: {fileID: 0}
 --- !u!136 &2843435861797364588
 CapsuleCollider:
   m_ObjectHideFlags: 0

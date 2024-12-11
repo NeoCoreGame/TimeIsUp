@@ -84,7 +84,7 @@ public class abilityController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Q) && !bombAbility.isOnCooldown)
                 {
                     BombAbility();
-                    SFXManager.instance.PlaySFX(bombThrowClip, transform, 1f);
+                    SFXManager.instance.PlaySFX(bombThrowClip, transform);
                 }
                 bombAbility.AbilityInput();
                 bombAbility.AbilityCooldown();
@@ -93,7 +93,7 @@ public class abilityController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Q) && !hookAbility.isOnCooldown)
                 {
                     HookAbility();
-                    SFXManager.instance.PlaySFX(hookClip, transform, 1f);
+                    SFXManager.instance.PlaySFX(hookClip, transform);
                 }
                 hookAbility.AbilityInput();
                 hookAbility.AbilityCooldown();
@@ -109,7 +109,7 @@ public class abilityController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Q) && !stunAbility.isOnCooldown)
                 {
                     StunAbility();
-                    SFXManager.instance.PlaySFX(rootsClip, transform, 1f);
+                    SFXManager.instance.PlaySFX(rootsClip, transform);
                 }
                 stunAbility.AbilityInput();
                 stunAbility.AbilityCooldown();
