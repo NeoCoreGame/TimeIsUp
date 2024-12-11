@@ -53,24 +53,27 @@ public class Enemy : NetworkBehaviour, IShootable
 
     private void OnEnable()
     {
-        if(IsServer) { Hp.Value = (int)ogHp; }
+        if(NetworkManager.Singleton && NetworkManager.Singleton.IsServer) { Hp.Value = (int)ogHp; }
     }
     public void InitializeEnemy()
     {
+        gameObject.GetComponent<IEnemyBehaviour>().EnableBehaviour();
+
+
         sliderFill.fillAmount = 1;
-        if (IsServer)
+        if (NetworkManager.Singleton.IsServer)
         {
             switch (enemyType)
             {
-                case EnemyType.Minion: Hp = new NetworkVariable<int>(100); break;
+                case EnemyType.Minion: Hp.Value = 100; break;
 
-                case EnemyType.Escurridizo: Hp = new NetworkVariable<int>(50); break;
+                case EnemyType.Escurridizo: Hp.Value = 50; break;
 
-                case EnemyType.Explosivo: Hp = new NetworkVariable<int>(40); break;
+                case EnemyType.Explosivo: Hp.Value = 40; break;
 
-                case EnemyType.Tanque: Hp = new NetworkVariable<int>(300); break;
+                case EnemyType.Tanque: Hp.Value = 300; break;
 
-                case EnemyType.Volador: Hp = new NetworkVariable<int>(200); break;
+                case EnemyType.Volador: Hp.Value = 200; break;
 
             }
 

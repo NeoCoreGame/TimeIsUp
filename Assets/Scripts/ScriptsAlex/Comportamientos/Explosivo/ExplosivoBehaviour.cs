@@ -7,22 +7,22 @@ using BehaviourAPI.Core.Perceptions;
 using BehaviourAPI.UnityToolkit;
 using BehaviourAPI.StateMachines;
 using UnityEngine.AI;
-using BehaviourAPI.UnityToolkit.GUIDesigner.Runtime;
 using System.Diagnostics;
 using UnityEngine.UIElements;
 using System.Collections;
+using Unity.Netcode;
 
 public interface IEnemyBehaviour
 {
 	void DetectPlayer(GameObject player);
 	void CleanPlayer();
+
+    void EnableBehaviour();
 }
 
 
 public class ExplosivoBehaviour : BehaviourRunner, IEnemyBehaviour
 {
-
-    BSRuntimeDebugger _debugger;
 
      public GameObject _player;
     private PlayerController _pC;
@@ -123,7 +123,7 @@ public class ExplosivoBehaviour : BehaviourRunner, IEnemyBehaviour
 	}
     protected override void Init()
     {
-        _debugger = GetComponent<BSRuntimeDebugger>();
+
 
         _enemy = GetComponent<Enemy>();
 
@@ -286,5 +286,10 @@ public class ExplosivoBehaviour : BehaviourRunner, IEnemyBehaviour
             gameObject.SetActive(false);
         }
         return muerte;
+    }
+
+    public void EnableBehaviour()
+    {
+        if (NetworkManager.Singleton.IsServer) { enabled = true; }
     }
 }

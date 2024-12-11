@@ -523,12 +523,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7014506218632788977}
   - component: {fileID: 3180482528162092756}
-  - component: {fileID: 1352981534479437340}
   - component: {fileID: 820331344632053122}
   - component: {fileID: 4400850291408117322}
   - component: {fileID: 5061103763256403016}
   - component: {fileID: 5926987696525276644}
   - component: {fileID: 3566581434143598100}
+  - component: {fileID: 4156506434949645062}
+  - component: {fileID: 7366530579935657774}
   m_Layer: 6
   m_Name: EnemigoExplosivo
   m_TagString: Untagged
@@ -563,7 +564,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7643550373827862859}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5ce5bd9a49718b4999e34ffedb3083b, type: 3}
   m_Name: 
@@ -584,21 +585,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   explotarJugador: 0
---- !u!114 &1352981534479437340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7643550373827862859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1726e9fdb9ff2d4baa8710d607b31ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventHandler:
-    debugStatusChanges: 0
-    identifier: 
 --- !u!195 &820331344632053122
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -633,7 +619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2937681491
+  GlobalObjectIdHash: 686918755
   InScenePlacedSourceGlobalObjectIdHash: 115037561
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -704,6 +690,58 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4156506434949645062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7643550373827862859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 1
+  InLocalSpace: 1
+  Interpolate: 1
+  SlerpPosition: 0
+--- !u!114 &7366530579935657774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7643550373827862859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TransitionStateInfoList:
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: 2081823275
+    DestinationState: -660918792
+    TransitionDuration: 0
+    TriggerNameHash: 1080829965
+    TransitionIndex: 0
+  m_Animator: {fileID: 3566581434143598100}
 --- !u!1001 &5891988021735497492
 PrefabInstance:
   m_ObjectHideFlags: 0

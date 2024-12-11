@@ -7,18 +7,16 @@ using BehaviourAPI.Core.Actions;
 using BehaviourAPI.Core.Perceptions;
 using BehaviourAPI.UnityToolkit;
 using BehaviourAPI.StateMachines;
-using BehaviourAPI.UnityToolkit.GUIDesigner.Framework;
 using Random = UnityEngine.Random;
-using BehaviourAPI.UnityToolkit.GUIDesigner.Runtime;
 using System.Collections;
 using BehaviourAPI.StateMachines.StackFSMs;
 using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
 using System.Linq;
+using Unity.Netcode;
 
 public class MinionBehaviour : BehaviourRunner, IEnemyBehaviour
 {
-    BSRuntimeDebugger _debugger;
 
     [HideInInspector] public GameObject _player;
     private PlayerController _pC;
@@ -61,7 +59,7 @@ public class MinionBehaviour : BehaviourRunner, IEnemyBehaviour
 
     protected override void Init()
     {
-        _debugger = GetComponent<BSRuntimeDebugger>();
+
 
         _enemy = GetComponentInChildren<Enemy>();
 
@@ -148,7 +146,6 @@ public class MinionBehaviour : BehaviourRunner, IEnemyBehaviour
         var quedarseDeambular = Minion.CreateTransition("quedarseDeambular", Deambular, Deambular, IdlePerception2);
 
 
-        _debugger.RegisterGraph(Minion);
         return Minion;
 	}
     private bool DeambularAcabado()
@@ -356,5 +353,10 @@ public class MinionBehaviour : BehaviourRunner, IEnemyBehaviour
     {
 
         jugadorVisto = false;
+    }
+
+    public void EnableBehaviour()
+    {
+        if (NetworkManager.Singleton.IsServer) { enabled = true; }
     }
 }

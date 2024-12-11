@@ -671,10 +671,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 16d250ae4b7c7b04bb54ce7453b100e8,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4108709825822387153}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 16d250ae4b7c7b04bb54ce7453b100e8,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 5958614366030494722}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 16d250ae4b7c7b04bb54ce7453b100e8,
         type: 3}
@@ -692,6 +688,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2486822387797206900}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 16d250ae4b7c7b04bb54ce7453b100e8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3370704694999588210}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 16d250ae4b7c7b04bb54ce7453b100e8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8292508230015334596}
   m_SourcePrefab: {fileID: 100100000, guid: 16d250ae4b7c7b04bb54ce7453b100e8, type: 3}
 --- !u!1 &7383008952562962823 stripped
 GameObject:
@@ -706,7 +710,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7383008952562962823}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01256152098be1a4ba72ddff538b215f, type: 3}
   m_Name: 
@@ -727,21 +731,6 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 0
---- !u!114 &4108709825822387153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7383008952562962823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1726e9fdb9ff2d4baa8710d607b31ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventHandler:
-    debugStatusChanges: 0
-    identifier: 
 --- !u!195 &5958614366030494722
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -776,7 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3270227955
+  GlobalObjectIdHash: 2438540984
   InScenePlacedSourceGlobalObjectIdHash: 3262063684
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -847,6 +836,65 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.791375, y: 3.0474548, z: 3.9316988}
   m_Center: {x: -0.14807081, y: 8.287489, z: -0.9405589}
+--- !u!114 &3370704694999588210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7383008952562962823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 1
+  InLocalSpace: 1
+  Interpolate: 1
+  SlerpPosition: 0
+--- !u!114 &8292508230015334596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7383008952562962823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TransitionStateInfoList:
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -1614349503
+    DestinationState: 1762423820
+    TransitionDuration: 0.5
+    TriggerNameHash: 1080829965
+    TransitionIndex: 0
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -1614349503
+    DestinationState: -1626119341
+    TransitionDuration: 0
+    TriggerNameHash: 20298039
+    TransitionIndex: 1
+  m_Animator: {fileID: 6210443460293013529}
 --- !u!4 &7871842629275290429 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16d250ae4b7c7b04bb54ce7453b100e8,

@@ -7,13 +7,11 @@ using BehaviourAPI.Core.Perceptions;
 using BehaviourAPI.UnityToolkit;
 using BehaviourAPI.BehaviourTrees;
 using BehaviourAPI.StateMachines;
-using BehaviourAPI.UnityToolkit.GUIDesigner.Runtime;
 using UnityEngine.AI;
+using Unity.Netcode;
 
 public class TanqueBehaviour : BehaviourRunner, IEnemyBehaviour
 {
-    BSRuntimeDebugger _debugger;
-
     [HideInInspector] public GameObject _player;
 	private PlayerController _pC;
     [SerializeField] Collider _visionCollider;
@@ -54,7 +52,6 @@ public class TanqueBehaviour : BehaviourRunner, IEnemyBehaviour
 
     protected override void Init()
     {
-        _debugger = GetComponent<BSRuntimeDebugger>();
 
         _enemy = GetComponent<Enemy>();
 
@@ -203,11 +200,6 @@ public class TanqueBehaviour : BehaviourRunner, IEnemyBehaviour
 		jugadorMuyCerca_perception.onCheck = onObjectiveClose;
 		var jugadorMuyCerca = TanqueInvocado.CreateTransition("jugadorMuyCerca", Perseguir_1, AtacarFuerte, jugadorMuyCerca_perception);
 
-
-        _debugger.RegisterGraph(Tanque);
-        _debugger.RegisterGraph(Tanque_1);
-        _debugger.RegisterGraph(TanqueAtaques);
-        _debugger.RegisterGraph(TanqueInvocado);
         return Tanque;
 	}
 
@@ -374,4 +366,8 @@ public class TanqueBehaviour : BehaviourRunner, IEnemyBehaviour
         jugadorVisto = false;
     }
 
+    public void EnableBehaviour()
+    {
+        if (NetworkManager.Singleton.IsServer) { enabled = true; }
+    }
 }

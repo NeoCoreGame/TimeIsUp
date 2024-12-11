@@ -311,10 +311,10 @@ GameObject:
   - component: {fileID: 2915719955166075943}
   - component: {fileID: 1069942760179261576}
   - component: {fileID: 1844798958490847051}
-  - component: {fileID: 6447893638106305161}
   - component: {fileID: 553094665869974225}
   - component: {fileID: 8464073779362934018}
   - component: {fileID: 5132756608672758763}
+  - component: {fileID: 3234498504045241624}
   m_Layer: 6
   m_Name: Enemigo
   m_TagString: Enemy
@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1688102547
+  GlobalObjectIdHash: 1927606479
   InScenePlacedSourceGlobalObjectIdHash: 4025513271
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -391,8 +391,8 @@ MonoBehaviour:
   UseQuaternionSynchronization: 0
   UseQuaternionCompression: 0
   UseHalfFloatPrecision: 1
-  InLocalSpace: 0
-  Interpolate: 0
+  InLocalSpace: 1
+  Interpolate: 1
   SlerpPosition: 0
 --- !u!195 &1069942760179261576
 NavMeshAgent:
@@ -423,7 +423,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8247629546058775762}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 235f49dadc57d574fa4521997be865e2, type: 3}
   m_Name: 
@@ -446,21 +446,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   enObjetivo: 0
---- !u!114 &6447893638106305161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8247629546058775762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1726e9fdb9ff2d4baa8710d607b31ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventHandler:
-    debugStatusChanges: 0
-    identifier: 
 --- !u!114 &553094665869974225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,6 +508,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3234498504045241624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8247629546058775762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TransitionStateInfoList:
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: 1744665739
+    DestinationState: 1080829965
+    TransitionDuration: 0
+    TriggerNameHash: 1080829965
+    TransitionIndex: 0
+  m_Animator: {fileID: 5132756608672758763}
 --- !u!1 &8358629553886586255
 GameObject:
   m_ObjectHideFlags: 0

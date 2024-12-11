@@ -8,13 +8,11 @@ using BehaviourAPI.UnityToolkit;
 using BehaviourAPI.BehaviourTrees;
 using BehaviourAPI.StateMachines;
 using System.Diagnostics;
-using BehaviourAPI.UnityToolkit.GUIDesigner.Runtime;
 using UnityEngine.AI;
+using Unity.Netcode;
 
 public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
 {
-
-    BSRuntimeDebugger _debugger;
 
     public GameObject _player;
     public PlayerController _pC;
@@ -66,7 +64,6 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
     private bool muerte;
     protected override void Init()
     {
-        _debugger = GetComponent<BSRuntimeDebugger>();
 
         _enemy = GetComponent<Enemy>();
 
@@ -246,11 +243,6 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
 
         Tanque.SetRootNode(selector);
         TanqueAtaques.SetRootNode(seleccionAtaques);
-
-        _debugger.RegisterGraph(Tanque);
-        _debugger.RegisterGraph(Tanque_1);
-        _debugger.RegisterGraph(TanqueAtaques);
-        _debugger.RegisterGraph(TanqueInvocado);
 
         return Tanque;
     }
@@ -448,5 +440,10 @@ public class TanqueBehaviourTres : BehaviourRunner, IEnemyBehaviour
             gameObject.SetActive(false);
         }
         return muerte;
+    }
+
+    public void EnableBehaviour()
+    {
+        if (NetworkManager.Singleton.IsServer) { enabled = true; }
     }
 }

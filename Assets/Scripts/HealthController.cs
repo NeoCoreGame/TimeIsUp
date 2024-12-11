@@ -35,7 +35,7 @@ public class HealthController : NetworkBehaviour
             _camhit = Camera.main.GetComponent<CameraHit>();
             _camhit.InitializeScript(new Vector3(0f, 0.6f, 0.5f));
 
-            DeadScreen = GameObject.FindGameObjectWithTag("DeadScreen").GetComponent<RectTransform>();
+            DeadScreen = FindObjectOfType<DeadScreen>().gameObject.GetComponent<RectTransform>();
             DeadScreen.localScale = Vector3.zero;
 
             HP.OnValueChanged += OnHealthChange;

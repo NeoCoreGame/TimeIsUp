@@ -48,7 +48,6 @@ public class HelloWorldManager : MonoBehaviour
         joinButton.onClick.AddListener(StartClient);
         field.onValueChanged.AddListener(ChangeCode);
 
-        StartHost();
     }
 
     void StartButtons()

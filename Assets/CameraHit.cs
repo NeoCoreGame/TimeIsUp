@@ -59,27 +59,32 @@ public class CameraHit : MonoBehaviour
         {
             if (CamHit)
             {
-                transform.localPosition = Vector3.SmoothDamp(transform.localPosition, destiny, ref reference, hitSpeed * Time.deltaTime);
+               // transform.localPosition = Vector3.SmoothDamp(transform.localPosition, destiny, ref reference, hitSpeed * Time.deltaTime);
 
                 float vignetteAlpha = Mathf.SmoothDamp(redVignette.color.a, vignetteAlphaGoal, ref colorReference, colorSpeed *Time.deltaTime);
                 UpdateAlpha(vignetteAlpha);
 
-                if (transform.localPosition.z < (destiny.z + effectOffset)) { CamHit = false; }
+              //  if (transform.localPosition.z < (destiny.z + effectOffset)) { CamHit = false; }
+
+                if(redVignette.color.a >= vignetteAlphaGoal - 10f) { CamHit = false; }
             }
             else
             {
-                if (transform.localPosition.z != og_Pos.z)
-                {
-                    transform.localPosition = Vector3.SmoothDamp(transform.localPosition, og_Pos, ref reference, hitSpeed/2 * Time.deltaTime);
+               // if (transform.localPosition.z != og_Pos.z)
+                //{
+                  //  transform.localPosition = Vector3.SmoothDamp(transform.localPosition, og_Pos, ref reference, hitSpeed/2 * Time.deltaTime);
 
                     float vignetteAlpha = Mathf.SmoothDamp(redVignette.color.a, 0f, ref colorReference, colorSpeed/2 * Time.deltaTime);
                     UpdateAlpha(vignetteAlpha);
 
-                }
-                else
-                {
-                    effectPlaying = false;
-                }
+
+                    if (redVignette.color.a <= 0f) { effectPlaying = false; }
+
+               // }
+               // else
+               // {
+               //     effectPlaying = false;
+                //}
             } 
         }
     }

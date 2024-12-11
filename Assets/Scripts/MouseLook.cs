@@ -22,6 +22,7 @@ public class MouseLook : NetworkBehaviour
     {
         base.OnNetworkSpawn();
 
+        head = playerController.characters[playerController.selectedCharacter.Value].transform.GetChild(0).transform.GetChild(0).transform.GetChild(2).transform.GetChild(0).transform.GetChild(0);
     }
 
     public void SetCamera(PlayerController c, Vector3 pos)
@@ -38,11 +39,12 @@ public class MouseLook : NetworkBehaviour
     void FixedUpdate()
     {
         //No la multiplico por Time.DeltaTime para que no dependa del FrameRate
-        if (playerController.IsServer)
+        if (NetworkManager.Singleton.IsServer)
         {
             player.Rotate(Vector3.up * mouseX);
+            head.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             //head.Rotate(Vector3.right * xRotation);
-
+            Debug.Log("SOY SERVERR");
 
         }
     }
@@ -50,7 +52,7 @@ public class MouseLook : NetworkBehaviour
     void LateUpdate()
     {
         //No la multiplico por Time.DeltaTime para que no dependa del FrameRate
-        if (playerController.IsServer)
+        if (NetworkManager.Singleton.IsServer)
         {
             head.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             //head.Rotate(Vector3.right * xRotation);
@@ -66,7 +68,7 @@ public class MouseLook : NetworkBehaviour
         OnLookServerRpc(context.ReadValue<Vector2>());
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     public void OnLookServerRpc(Vector2 input)
     {
         if (playerController != null &&playerController.canMove.Value)
@@ -76,6 +78,9 @@ public class MouseLook : NetworkBehaviour
 
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+            player.Rotate(Vector3.up * mouseX);
+            head.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         }
 
     }

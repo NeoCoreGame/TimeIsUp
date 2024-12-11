@@ -7,15 +7,13 @@ using BehaviourAPI.Core.Perceptions;
 using BehaviourAPI.UnityToolkit;
 using BehaviourAPI.StateMachines;
 using BehaviourAPI.BehaviourTrees;
-using BehaviourAPI.UnityToolkit.GUIDesigner.Runtime;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 using System.Linq;
+using Unity.Netcode;
 
 public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
 {
-
-    BSRuntimeDebugger _debugger;
 
     [HideInInspector] public GameObject _player;
     private PlayerController _pC;
@@ -62,7 +60,6 @@ public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
 
     protected override void Init()
     {
-        _debugger = GetComponent<BSRuntimeDebugger>();
 
         _enemy = GetComponent<Enemy>();
 
@@ -164,9 +161,6 @@ public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
 
 
         EscurridizoPatrullar.SetRootNode(iteraciones);
-
-        _debugger.RegisterGraph(Escurridizo);
-        _debugger.RegisterGraph(EscurridizoPatrullar);
 
         return Escurridizo;
 	}
@@ -405,5 +399,10 @@ public class EscurridizoBehaviourTres : BehaviourRunner, IEnemyBehaviour
     {
 
         jugadorVisto = false;
+    }
+
+    public void EnableBehaviour()
+    {
+        if (NetworkManager.Singleton.IsServer) { enabled = true; }
     }
 }

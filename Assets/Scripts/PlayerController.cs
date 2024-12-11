@@ -139,7 +139,7 @@ public class PlayerController : NetworkBehaviour, IShootable
         OnTeleportServerRpc(newPosition);
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     public void OnTeleportServerRpc(Vector3 newPosition)
     {
         _cController.enabled = false;
@@ -180,7 +180,6 @@ public class PlayerController : NetworkBehaviour, IShootable
     }
     public void OnCharacterChange(int previousValue, int newValue)
     {
-     //   Debug.Log("VAMASOOS");
         foreach (GameObject c in characters) { c.SetActive(false); }
         characters[newValue].SetActive(true);
         if (IsOwner)
@@ -202,14 +201,14 @@ public class PlayerController : NetworkBehaviour, IShootable
 
     public void RidOfAnim()
     {
-        transform.GetChild(0).GetComponent<Animator>().enabled = false;
+      transform.GetChild(0).GetComponent<Animator>().enabled = false;
     }
 
     public void ChangeCharacters()
     {
         foreach (GameObject c in characters) { c.SetActive(false); }
         characters[selectedCharacter.Value].SetActive(true);
-        characters[selectedCharacter.Value].GetComponent<Animator>().enabled = true;
+        //characters[selectedCharacter.Value].GetComponent<Animator>().enabled = true;
     }
 
 

@@ -90,12 +90,6 @@ public class LobbyManager : NetworkBehaviour //Clase que controla lo relacionado
 
 
     }
-    public override void OnNetworkSpawn()
-    {
-        base.OnNetworkSpawn();
-
-        Invoke("PlayerVoteServerRpc",1.5f);
-    }
 
     private void Update()
     {

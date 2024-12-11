@@ -6,17 +6,14 @@ using BehaviourAPI.Core.Actions;
 using BehaviourAPI.Core.Perceptions;
 using BehaviourAPI.UnityToolkit;
 using BehaviourAPI.StateMachines;
-using BehaviourAPI.UnityToolkit.GUIDesigner.Framework;
 using BehaviourAPI.BehaviourTrees;
 using SimpleAction = BehaviourAPI.Core.Actions.SimpleAction;
-using BehaviourAPI.UnityToolkit.GUIDesigner.Runtime;
 using UnityEngine.AI;
-using Mono.Cecil.Cil;
+using Unity.Netcode;
 
 public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
 {
     [SerializeField] private Transform outRange_perception_OtherTransform;
-    BSRuntimeDebugger _debugger;
 
     [HideInInspector] public GameObject _player;
     private PlayerController _pC;
@@ -60,7 +57,6 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
 
     protected override void Init()
     {
-        _debugger = GetComponent<BSRuntimeDebugger>();
 
 
         _enemy = GetComponent<Enemy>();
@@ -167,7 +163,6 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
 
         MinionVoladorPatrullar.SetRootNode(Iteraciones);
 
-        _debugger.RegisterGraph(MinionVolador);
 
 
         return MinionVolador;
@@ -321,5 +316,10 @@ public class MinionVoladorBehaviour : BehaviourRunner, IEnemyBehaviour
 
     public void kill() { gameObject.SetActive(false);
         transform.position = new Vector3(-500f, 0f, -500f);
+    }
+
+    public void EnableBehaviour()
+    {
+        if (NetworkManager.Singleton.IsServer) { enabled = true; }
     }
 }

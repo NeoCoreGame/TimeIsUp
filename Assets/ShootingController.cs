@@ -60,7 +60,11 @@ public class ShootingController : NetworkBehaviour
 
     public void Shoot()
     {
-        _anim.SetTrigger("Attack");
+        if (_anim != null)
+        {
+
+            _anim.SetTrigger("Attack"); 
+        }
         pS.Play();
         shootingCdTimer = shootingCooldown;
 
