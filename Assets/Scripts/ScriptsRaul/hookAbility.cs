@@ -86,7 +86,8 @@ public class hookAbility : Ability
     {
         if(!collided && tagsToCheck.Contains(other.tag))
         {
-            Collision(other.transform.parent);
+            //Collision(other.transform.parent);
+            Collision(other.transform);
         }
     }
 

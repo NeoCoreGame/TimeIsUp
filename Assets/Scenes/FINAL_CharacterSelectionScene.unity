@@ -2188,6 +2188,7 @@ MonoBehaviour:
   masterVolumeSlider: {fileID: 1173479199}
   musicVolumeSlider: {fileID: 1634710615}
   sfxVolumeSlider: {fileID: 1990362714}
+  sensitivitySlider: {fileID: 0}
   confirmationPanel: {fileID: 2142056618}
   settingsPanel: {fileID: 1006500905}
 --- !u!4 &417985412
@@ -6076,10 +6077,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 901818045}
   m_HandleRect: {fileID: 1144411796}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0.0001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -9010,10 +9011,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 677902557}
   m_HandleRect: {fileID: 946151742}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0.0001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -11089,10 +11090,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 281153011}
   m_HandleRect: {fileID: 1843780485}
   m_Direction: 0
-  m_MinValue: -50
-  m_MaxValue: 0
+  m_MinValue: 0.0001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
