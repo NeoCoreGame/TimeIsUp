@@ -6,7 +6,7 @@ using UnityEngine;
 public class stunAbility : Ability
 {
     public Transform cam;
-    public GameObject roots;
+    public abilityController _player;
     private float stunDuration = 5;
     private bool isStuned = false;
     private float currentStunTime;
@@ -15,15 +15,31 @@ public class stunAbility : Ability
 
     public Animator _animator;
 
+    public int dmg = 50;
+
     void Start()
     {
-        roots = gameObject;
-        _animator.SetTrigger("Up");
+        _player = FindObjectOfType<abilityController>();
+
+    }
+    private void OnEnable()
+    {
+        ThrowSkill();
     }
 
     private void Update()
     {
         StunTime();
+    }
+
+    public void ThrowSkill()
+    {
+        if (!isStuned)
+        {
+            _animator.SetTrigger("Up");
+            isStuned = true;
+            currentStunTime = stunDuration; 
+        }
     }
 
     public void StunTime()
@@ -46,20 +62,18 @@ public class stunAbility : Ability
                     }
                 }
                 stunedEnemies.Clear();
-                Destroy(roots);
+                transform.parent = _player.transform;
+                transform.position = new Vector3(0f, -14.171f, 0f);
             }
         }
-        else
-        {
-            isStuned = true;
-            currentStunTime = stunDuration;
-        }
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy" && !stunedEnemies.Contains(other.gameObject))
         {
+            Debug.Log("PILLADO ENEMIGO");
             stunedEnemies.Add(other.gameObject);
             EnemiesHit();
         }
@@ -71,8 +85,18 @@ public class stunAbility : Ability
         {
             if (enemy.tag == "Enemy")
             {
-                //FRENAR ENEMIGOS AQUI!!!
-                Debug.Log("EnemyStunned");
+                //QUITAR VIDA AQUI!!!
+                //   Debug.Log("EnemyHit");
+                if (enemy.gameObject.TryGetComponent(out IShootable interactObj))
+                {
+                    if (interactObj.GetHealth() <= dmg)
+                    {
+                        //_playerCountdown.TimeVariation(interactObj.GetTimeReward());
+                    }
+                    interactObj.TakeDamage(dmg);
+
+
+                }
             }
         }
     }

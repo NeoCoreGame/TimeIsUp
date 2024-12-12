@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 5480684603991880109}
   - component: {fileID: 1562405724399113376}
   - component: {fileID: 2418965728175313521}
-  - component: {fileID: 7989742925544747806}
-  - component: {fileID: 99384107243978028}
+  - component: {fileID: 8331531725463955868}
+  - component: {fileID: 7305812134405110958}
+  - component: {fileID: 8253188139566929575}
   m_Layer: 0
   m_Name: stunObject
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 0.1, z: 10}
+  m_LocalScale: {x: 4.8145, y: 0.048145, z: 4.8145}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8469043302252256050}
@@ -104,10 +105,42 @@ MonoBehaviour:
   icon: {fileID: 0}
   isOnCooldown: 0
   cam: {fileID: 0}
-  roots: {fileID: 0}
+  _player: {fileID: 0}
   _animator: {fileID: 9029030383253310559}
---- !u!64 &7989742925544747806
-MeshCollider:
+  dmg: 20
+--- !u!114 &8331531725463955868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6950745442304941973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  Interpolate: 1
+  SlerpPosition: 0
+--- !u!65 &7305812134405110958
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -124,11 +157,10 @@ MeshCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &99384107243978028
+  serializedVersion: 3
+  m_Size: {x: 1, y: 38.30171, z: 1.0000001}
+  m_Center: {x: 0.000000049520946, y: 18.150845, z: -0.00000009904189}
+--- !u!54 &8253188139566929575
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -242,6 +274,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 9029030383253310559}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6ce927e50bbd3fb46a178273cee8b4a4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2390832880726410394}
   m_SourcePrefab: {fileID: 100100000, guid: 6ce927e50bbd3fb46a178273cee8b4a4, type: 3}
 --- !u!4 &8469043302252256050 stripped
 Transform:
@@ -276,3 +312,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2390832880726410394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9134362926987461000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TransitionStateInfoList:
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: 2081823275
+    DestinationState: -1609888186
+    TransitionDuration: 0
+    TriggerNameHash: -703542574
+    TransitionIndex: 0
+  m_Animator: {fileID: 9029030383253310559}

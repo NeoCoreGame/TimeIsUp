@@ -24,7 +24,6 @@ public class Ability : MonoBehaviour
     //    AbilityCooldown();
 
     //}
-
     public void AbilityInput()
     {
         if (Input.GetKeyDown(KeyCode.Q) && !isOnCooldown)

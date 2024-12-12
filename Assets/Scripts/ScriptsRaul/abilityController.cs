@@ -14,9 +14,11 @@ public class abilityController : MonoBehaviour
 
     public GameObject bombObject;
     public Ability bombAbility;
+    public bombAbility bAB;
 
     public GameObject stunObject;
-    public Ability stunAbility;
+    public Ability _stunAbility;
+    public stunAbility sAB;
 
     public GameObject skIcon;
     public GameObject tdIcon;
@@ -61,10 +63,10 @@ public class abilityController : MonoBehaviour
                 break;
             case 2:
                 //Stun Ability
-                stunAbility.icon = GameObject.Find("stunAbilityGrayIcon").GetComponent<Image>();
-                stunAbility.icon.fillAmount = 0;
-                stunAbility.cooldown = 2;
-                stunAbility.isOnCooldown = false;
+                _stunAbility.icon = GameObject.Find("stunAbilityGrayIcon").GetComponent<Image>();
+                _stunAbility.icon.fillAmount = 0;
+                _stunAbility.cooldown = 6;
+                _stunAbility.isOnCooldown = false;
                 tdIcon.SetActive(false);
                 skIcon.SetActive(false);
                 break;
@@ -106,13 +108,14 @@ public class abilityController : MonoBehaviour
                 }
                 break;
             case 2:
-                if (Input.GetKeyDown(KeyCode.Q) && !stunAbility.isOnCooldown)
+                if (Input.GetKeyDown(KeyCode.Q) && !_stunAbility.isOnCooldown)
                 {
                     StunAbility();
                     SFXManager.instance.PlaySFX(rootsClip, transform);
                 }
-                stunAbility.AbilityInput();
-                stunAbility.AbilityCooldown();
+               
+               _stunAbility.AbilityInput();
+                _stunAbility.AbilityCooldown();
                 break;
         }
     }
@@ -130,22 +133,36 @@ public class abilityController : MonoBehaviour
 
     void BombAbility()
     {
-        Debug.Log("Q apretada");
+        if (!bAB.thrown)
+        {
+            Debug.Log("Q apretada");
+            Rigidbody bombInstanceRb = bombAbility.GetComponent<Rigidbody>();
+            // var bombInstance = Instantiate(bombObject, granny.transform.position + granny.transform.forward, granny.transform.rotation);
 
-        var bombInstance = Instantiate(bombObject, granny.transform.position + granny.transform.forward, granny.transform.rotation);
+            bombInstanceRb.useGravity = false;
+            bombAbility.transform.position = granny.transform.position + granny.transform.forward;
+            bombAbility.transform.parent = null;
+            bombAbility.transform.position = granny.transform.position + granny.transform.forward;
 
-        Rigidbody bombInstanceRb = bombInstance.GetComponent<Rigidbody>();
+            bombInstanceRb.useGravity = true;
 
-        Vector3 forceToAdd = granny.transform.transform.forward * bombInstance.GetComponent<bombAbility>().throwForce + transform.up * bombInstance.GetComponent<bombAbility>().throwUpwardForce;
 
-        bombInstanceRb.AddForce(forceToAdd, ForceMode.Impulse);
+            Vector3 forceToAdd = granny.transform.transform.forward * bombAbility.GetComponent<bombAbility>().throwForce + transform.up * bombAbility.GetComponent<bombAbility>().throwUpwardForce;
+
+            bombInstanceRb.AddForce(forceToAdd, ForceMode.Impulse);
+
+            bAB.ThrowBomb(); 
+        }
     }
 
     void StunAbility()
     {
         Debug.Log("Q apretada Stun Ability");
 
-        var stunInstance = Instantiate(stunObject, granny.transform.position + (new Vector3(0, -1, 0)) + granny.transform.forward * 10, granny.transform.rotation);
+        //var stunInstance = Instantiate(stunObject, granny.transform.position + (new Vector3(0, -1, 0)) + granny.transform.forward * 10, granny.transform.rotation);
+        _stunAbility.transform.parent = null;
+        _stunAbility.transform.position = granny.transform.position + (new Vector3(0, -1, 0)) + granny.transform.forward * 10;
+        sAB.ThrowSkill();
     }
 
 }

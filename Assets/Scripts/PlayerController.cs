@@ -36,7 +36,7 @@ public class PlayerController : NetworkBehaviour, IShootable
 
     [Header("Ground Check Parameters")]
     public bool isGrounded;
-    public Transform groundCheck;
+    public Transform groundCheck;   
     public float groundDistance;
     public LayerMask groundMask;
 

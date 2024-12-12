@@ -8,6 +8,7 @@ public class bombAbility : Ability
 {
     public Transform cam;
     public GameObject bomb;
+    public abilityController _player;
 
     public float throwForce;
     public float throwUpwardForce;
@@ -17,19 +18,30 @@ public class bombAbility : Ability
     public AudioClip bombSplashClip;
     public AudioClip prueba;
 
+    public bool thrown;
+
     private void Start()
     {
         bomb = gameObject;
+        _player = FindObjectOfType<abilityController>();
+    }
+    public void ThrowBomb()
+    {
+        thrown = true;
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Map" || collision.gameObject.tag == "Enemy")
+        if (thrown)
         {
-            EnemiesHit();
-            //SFXManager.instance.PlaySFX(prueba, transform, 1f);
-            SFXManager.instance.PlaySFX(bombSplashClip, transform);
-            Destroy(gameObject);
+            if (collision.gameObject.tag == "Map" || collision.gameObject.tag == "Enemy")
+            {
+                EnemiesHit();
+                //SFXManager.instance.PlaySFX(prueba, transform, 1f);
+                SFXManager.instance.PlaySFX(bombSplashClip, transform);
+                thrown = false;
+                transform.parent = _player.transform;
+            } 
         }
     }
 
