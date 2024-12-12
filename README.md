@@ -564,6 +564,10 @@ Finalmente se optó por una representación más simple con la representación d
   <img src="Assets/Arte/Logos/NeoCoreVersiónBlanca.jpg" alt="LogoFinal1" width="320" height="250">
   <img src="Assets/Arte/Logos/NeoCoreVersiónAzul.jpg" alt="LogoFinal2" width="320" height="250">
 </p>
+<div align="center">
+   <img src="Assets/Arte/Logos/LogoGif.gif" alt="Logo Gif" width="640" height="360">
+</div>
+
 
 <u>Logo del juego:</u>
 Para el logo del juego se quiso incorporar una representación de que el tiempo corre ya que el nombre del juego es “Time Is Up”, así que se decidió hacer esta representación con un reloj de arena.
