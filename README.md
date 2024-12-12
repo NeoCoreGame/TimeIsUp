@@ -736,7 +736,7 @@ Finalmente se escogió la paleta de colores de azul con toques rojos:
 <u>**Robot Tostadora:**
 </u>
 <div align="center">
-   <img src="Assets/Arte/3D/Personajes/Robot Tostadora.png" alt="Robot Tostadora 3D"  width="340" height="540">
+   <img src="Assets/Arte/3D/Personajes/Robot Tostadora.png" alt="Robot Tostadora 3D"  width="379" height="540">
 </div>
 
 <p></p>
@@ -744,45 +744,54 @@ Finalmente se escogió la paleta de colores de azul con toques rojos:
 <u>**Niño Agua:**
 </u>
 <div align="center">
-   <img src="Assets/Arte/3D/Personajes/Niño.png" alt="Niño Agua 3D" width="340" height="540">
+   <img src="Assets/Arte/3D/Personajes/Niño.png" alt="Niño Agua 3D" width="379" height="540">
 </div>
 <p></p>
 
 <u>**Abuela Jardinera:**
 </u>
 <div align="center">
-   <img src="Assets/Arte/3D/Personajes/Abuela.png" alt="Niño Agua 3D" width="340" height="540">
+   <img src="Assets/Arte/3D/Personajes/Abuela.png" alt="Niño Agua 3D" width="379" height="540">
 </div>
 
 ### 8.3. Modelado enemigos
 <u>**Minion:**
 </u>
 <div align="center">
-   <img src="Assets/Arte/3D/Enemigos/Minion.png" alt="Enemigo Base" width="340" height="540">
+   <img src="Assets/Arte/3D/Enemigos/Minion.png" alt="Enemigo Base" width="379" height="540">
+</div>
+<div align="center">
+   <img src="Assets/Arte/3D/Enemigos/MinionEnfadado.png" alt="Enemigo Base" width="480" height="270">
 </div>
 
 <u>**Escurridizo:**
 </u>
 <div align="center">
-   <img src="Assets/Arte/3D/Enemigos/Escurridizo.png" alt="Enemigo Base" width="340" height="540">
+   <img src="Assets/Arte/3D/Enemigos/Escurridizo.png" alt="Enemigo Base" width="379" height="540">
 </div>
 
-<u>**Golem:**
+<u>**Golem Enemigo:**
 </u>
 <div align="center">
-   <img src="Assets/Arte/3D/Enemigos/Golem.png" alt="Enemigo Base" width="340" height="540">
+   <img src="Assets/Arte/3D/Enemigos/GolemEnemigo.png" alt="Enemigo Base" width="379" height="540">
+</div>
+
+<u>**Golem Aliado:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Enemigos/GolemAliado.png" alt="Enemigo Base" width="379" height="540">
 </div>
 
 <u>**Explosivo:**
 </u>
 <div align="center">
-   <img src="Assets/Arte/3D/Enemigos/Explosivo.png" alt="Enemigo Base" width="340" height="540">
+   <img src="Assets/Arte/3D/Enemigos/Explosivo.png" alt="Enemigo Base" width="379" height="540">
 </div>
 
 <u>**Volador:**
 </u>
 <div align="center">
-   <img src="Assets/Arte/3D/Enemigos/Volador.png" alt="Enemigo Base" width="340" height="540">
+   <img src="Assets/Arte/3D/Enemigos/Volador.png" alt="Enemigo Base" width="379" height="540">
 </div>
 
 ## 9. Animaciones
@@ -790,6 +799,9 @@ Finalmente se escogió la paleta de colores de azul con toques rojos:
 </u>
 <div align="center">
    <img src="Assets/Arte/3D/Animaciones/RobotWalk.gif" alt="Animacion andar" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/RobotAttack.gif" alt="Animacion andar" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/RobotHability.gif" alt="Animacion andar" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/RobotDeath.gif" alt="Animacion andar" width="640" height="360">
 </div>
 
 <u>**Niño agua:**
@@ -822,14 +834,27 @@ Finalmente se escogió la paleta de colores de azul con toques rojos:
 </u>
 <div align="center">
    <img src="Assets/Arte/3D/Animaciones/ExplosivoWalk.gif" alt="Animacion andar" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/ExplosivoDeath.gif" alt="Animacion andar" width="640" height="360">
 </div>
 
-<u>**Golem:**
+<u>**Golem Enemigo:**
 </u>
 <div align="center">
-   <img src="Assets/Arte/3D/Animaciones/GolemWalk.gif" alt="Animacion andar" width="640" height="360">
-   <img src="Assets/Arte/3D/Animaciones/GolemAtaque.gif" alt="Animacion ataque" width="640" height="360">
-   <img src="Assets/Arte/3D/Animaciones/GolemDeath.gif" alt="Animacion muerte" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/GolemEnemigoIdle.gif" alt="Animacion andar" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/GolemEnemigoWalk.gif" alt="Animacion andar" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/GolemEnemigoAttack1.gif" alt="Animacion ataque" width="640" height="360">
+      <img src="Assets/Arte/3D/Animaciones/GolemEnemigoAttack2.gif" alt="Animacion ataque" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/GolemEnemigoDeath.gif" alt="Animacion muerte" width="640" height="360">
+</div>
+
+<u>**Golem Aliado:**
+</u>
+<div align="center">
+   <img src="Assets/Arte/3D/Animaciones/GolemAliadoIdle.gif" alt="Animacion andar" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/GolemAliadoWalk.gif" alt="Animacion andar" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/GolemAliadoAttack1.gif" alt="Animacion ataque" width="640" height="360">
+      <img src="Assets/Arte/3D/Animaciones/GolemAliadoAttack2.gif" alt="Animacion ataque" width="640" height="360">
+   <img src="Assets/Arte/3D/Animaciones/GolemAliadoDeath.gif" alt="Animacion muerte" width="640" height="360">
 </div>
 
 <u>**Volador:**
