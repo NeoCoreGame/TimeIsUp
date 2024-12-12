@@ -18,6 +18,16 @@
    - Se ha añadido el segundo escenario
    - Se han modelado y texturizado todos los personajes menos el final
    - Se han riggeado y animado todos los personajes, tanto enemigos como jugables
+   - 
+### GDD versión 1.0.0:
+   -	Se ha añadido el postmortem de la versión Beta
+   -	Se ha completado el estudio de color de los personajes
+   -	Se ha completado el estudio de color de los personajes
+   -	Se ha modificado los colores de los modelos 3D
+   -	Se han implementado animaciones nuevas de los enemigos
+   -	Se han terminado de implementar las habilidades
+   -	Se ha mejorado la implementación de las interfaces
+   -	Se ha mejorado el feedback de las interfaces
 
 
 ## 2. Introducción
@@ -649,65 +659,67 @@ Finalmente se escogió la paleta de colores de azul con toques rojos:
 ####Personajes
 Se han establecido dos paletas de colores generales, una para los personajes jugables y otra para los enemigos, para utilizarlas como referencia.
 <p align="center">
-   <img src="Assets/Arte/Personajes/PaletaColores.png" alt="Paleta Colores Personajes Jugables" width="350" height="325">
-   <img src="Assets/Arte/Enemigos/PaletaColores.png" alt="Paleta Colores Enemigos" width="350" height="350">
+   <img src="Assets/Arte/Personajes/PaletaColores.png" alt="Paleta Colores Personajes Jugables" width="300" height="200">
+   <img src="Assets/Arte/Enemigos/PaletaColores.png" alt="Paleta Colores Enemigos" width="300" height="200">
 </p>
 A la izquierda encontramos una paleta de colores llamativa para los personajes jugables para dar ese toque familiar y amigable y sobre todo para poder ser fácilmente localizables en el mapa.
 Por otro lado, a la derecha encontramos con una paleta de colores más oscuros, definida para los enemigos. 
 
+
 **Personajes Jugables:**
+
 KidSplash:
 <p align="center">
-   <img src="Assets/Arte/Personajes/SplashKidColor.png" alt="Splash Kid Color" width="350" height="325">
-   <img src="Assets/Arte/Personajes/SplashKidFinal.png" alt="Splash Kid Final" width="350" height="350">
+   <img src="Assets/Arte/Personajes/SplashKidColor.png" alt="Splash Kid Color" width="325" height="270">
+   <img src="Assets/Arte/Personajes/SplashKidFinal.png" alt="Splash Kid Final" width="200" height="240">
 </p>
 
 Tosty Dory:
 <p align="center">
-   <img src="Assets/Arte/Personajes/RobotColor.png" alt="Robot Color" width="350" height="325">
-   <img src="Assets/Arte/Personajes/RobotFinal.png" alt="Robot Final" width="350" height="350">
+   <img src="Assets/Arte/Personajes/RobotColor.PNG" alt="Robot Color" width="450" height="210">
+   <img src="Assets/Arte/Personajes/RobotFinal.png" alt="Robot Final" width="200" height="140">
 </p>
 
 Petunia:
 <p align="center">
-   <img src="Assets/Arte/Personajes/AbuelitaJardineraColor.png" alt="Abuela Color" width="350" height="325">
-   <img src="Assets/Arte/Personajes/AbuelaFinal.png" alt="Abuela Final" width="350" height="350">
+   <img src="Assets/Arte/Personajes/AbuelitaJardineraColor.png" alt="Abuela Color" width="350" height="300">
+   <img src="Assets/Arte/Personajes/AbuelaFinal.png" alt="Abuela Final" width="200" height="240">
 </p>
 
 **Enemigos:**
 Minion:
 Para el minion se ha hecho dos versiones, una con degradado como formato final de la apariencia del enemigo, y otra sin degradado en el caso de que resulte complejo añadir este en el proyecto final del juego.
 <p align="center">
-   <img src="Assets/Arte/Enemigos/MinionBaseColorGradiente.png" alt="Minion Base Color Gradiente" width="350" height="325">
-   <img src="Assets/Arte/Enemigos/MinionFinal1.png" alt="Minion Final 1" width="350" height="350">
+   <img src="Assets/Arte/Enemigos/MinionBaseColorGradiente.png" alt="Minion Base Color Gradiente" width="350" height="220">
+   <img src="Assets/Arte/Enemigos/MinionFinal1.png" alt="Minion Final 1" width="150" height="150">
 </p>
 <p align="center">
-   <img src="Assets/Arte/Enemigos/MinionBaseColor.png" alt="Minion Base Color" width="350" height="325">
-   <img src="Assets/Arte/Enemigos/MinionFinal2.png" alt="Minion Final 2" width="350" height="350">
+   <img src="Assets/Arte/Enemigos/MinionBaseColor.png" alt="Minion Base Color" width="350" height="220">
+   <img src="Assets/Arte/Enemigos/MininonFinal2.png" alt="Minion Final 2" width="150" height="150">
 </p>
 
 Minion Volador:
 <p align="center">
-   <img src="Assets/Arte/Enemigos/MinionVoladorColor.png" alt="Minion Volador Color" width="350" height="325">
-   <img src="Assets/Arte/Enemigos/VoladorFinal.png" alt="Volador Final" width="350" height="350">
+   <img src="Assets/Arte/Enemigos/MinionVoladorColor.png" alt="Minion Volador Color" width="350" height="240">
+   <img src="Assets/Arte/Enemigos/VoladorFinal.png" alt="Volador Final" width="350" height="150">
 </p>
 
 Detonatsy:
 <p align="center">
-   <img src="Assets/Arte/Enemigos/DetonatsyColor.png" alt="Detonatsy Color" width="350" height="325">
-   <img src="Assets/Arte/Enemigos/ExplosivoFinal.png" alt="Detonatsy Final" width="350" height="350">
+   <img src="Assets/Arte/Enemigos/DetonatsyColor.png" alt="Detonatsy Color" width="350" height="225">
+   <img src="Assets/Arte/Enemigos/ExplosivoFinal.png" alt="Detonatsy Final" width="150" height="150">
 </p>
 
 Slipsy:
 <p align="center">
-   <img src="Assets/Arte/Enemigos/SlipsyColor.png" alt="Slipsy Color" width="350" height="325">
-   <img src="Assets/Arte/Enemigos/EscurridizoFinal.jpg" alt="Slipsy Final" width="350" height="350">
+   <img src="Assets/Arte/Enemigos/SlipsyColor.png" alt="Slipsy Color" width="350" height="225">
+   <img src="Assets/Arte/Enemigos/EscurridizoFinal.jpg" alt="Slipsy Final" width="150" height="150">
 </p>
 
 Petsy:
 <p align="center">
-   <img src="Assets/Arte/Enemigos/PetsyColor.png" alt="Petsy Color" width="350" height="325">
-   <img src="Assets/Arte/Enemigos/TanqueFinal.png" alt="Petsy Final" width="350" height="350">
+   <img src="Assets/Arte/Enemigos/PetsyColor.png" alt="Petsy Color" width="450" height="200">
+   <img src="Assets/Arte/Enemigos/TanqueFinal.png" alt="Petsy Final" width="250" height="170">
 </p>
 
 ## 8. Arte 3D
