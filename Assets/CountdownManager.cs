@@ -116,4 +116,10 @@ public class CountdownManager : MonoBehaviour
     {
         foreach(PlayerCountdown playerCountdown in contadores) { playerCountdown.avaliableTime.Value = 360f; }
     }
+
+    public void GoOutNet()
+    {
+        Destroy(NetworkManager.Singleton.gameObject);
+      
+    }
 }
