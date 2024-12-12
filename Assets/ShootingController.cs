@@ -70,14 +70,14 @@ public class ShootingController : NetworkBehaviour
             _anim.SetTrigger("Attack"); 
         }
         pS.Play();
-        if(StaticData.characterID == 0)
-        {
-            SFXManager.instance.PlaySFX(waterClip, transform);
-        }
-        else if (StaticData.characterID == 2)
-        {
-            SFXManager.instance.PlaySFX(petuniaClip, transform);
-        }
+        //if(StaticData.characterID == 0)
+        //{
+        //    SFXManager.instance.PlaySFX(waterClip, transform);
+        //}
+        //else if (StaticData.characterID == 2)
+        //{
+        //    SFXManager.instance.PlaySFX(petuniaClip, transform);
+        //}
 
         shootingCdTimer = shootingCooldown;
 

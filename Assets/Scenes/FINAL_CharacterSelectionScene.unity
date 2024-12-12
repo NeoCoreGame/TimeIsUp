@@ -678,7 +678,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: -12.6, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &259832508
 MonoBehaviour:
@@ -4091,7 +4091,8 @@ MonoBehaviour:
   m_text: petunia
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a901a60abe6f0074cb6b6f55f7a59a5c, type: 2}
-  m_sharedMaterial: {fileID: 0}
+  m_sharedMaterial: {fileID: -5587975158590748145, guid: a901a60abe6f0074cb6b6f55f7a59a5c,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4110,7 +4111,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -4141,7 +4142,7 @@ MonoBehaviour:
   checkPaddingRequired: 0
   m_isRichText: 1
   m_parseCtrlCharacters: 1
-  m_isOrthographic: 0
+  m_isOrthographic: 1
   m_isCullingEnabled: 0
   m_horizontalMapping: 0
   m_verticalMapping: 0
@@ -6917,7 +6918,7 @@ MonoBehaviour:
   m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.131
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -6965,7 +6966,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1738738404}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.46223915}
+  m_AnchorMin: {x: 0, y: 0.558319}
   m_AnchorMax: {x: 1, y: 0.99999934}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 32, y: 20}
@@ -7162,7 +7163,7 @@ MonoBehaviour:
   m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.131
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -7573,7 +7574,7 @@ MonoBehaviour:
   m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.131
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -7746,8 +7747,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1483765017}
   m_HandleRect: {fileID: 1483765016}
   m_Direction: 2
-  m_Value: 0.99999857
-  m_Size: 0.5377602
+  m_Value: 0.9999992
+  m_Size: 0.44168025
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8139,6 +8140,66 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurboAbuela (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8417361359673230750, guid: bdf4f606dd28a91499658dea5b64b18b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 74c2e746d68b0d544beaaeb541192c71, type: 2}
+    - target: {fileID: 8417361359673230750, guid: bdf4f606dd28a91499658dea5b64b18b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 80827bc0500374b4794c4a4583190a18, type: 2}
+    - target: {fileID: 8417361359673230750, guid: bdf4f606dd28a91499658dea5b64b18b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c148501d527f5540b13f15eefb935bb, type: 2}
+    - target: {fileID: 8417361359673230750, guid: bdf4f606dd28a91499658dea5b64b18b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: c00a0a5a9ded5284fb7fbb2f774ee390, type: 2}
+    - target: {fileID: 8417361359673230750, guid: bdf4f606dd28a91499658dea5b64b18b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 87c4f9a85e8b4434d97c38d907d9c30d, type: 2}
+    - target: {fileID: 8417361359673230750, guid: bdf4f606dd28a91499658dea5b64b18b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: decd9284583509d4197a2cd4807e135c, type: 2}
+    - target: {fileID: 8417361359673230750, guid: bdf4f606dd28a91499658dea5b64b18b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[6]
+      value: 
+      objectReference: {fileID: 2100000, guid: 19efeedd661db5945b202c487fe88061, type: 2}
+    - target: {fileID: 8417361359673230750, guid: bdf4f606dd28a91499658dea5b64b18b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[9]
+      value: 
+      objectReference: {fileID: 2100000, guid: 77c508a5ccc2b944b8f70c3de0007888, type: 2}
+    - target: {fileID: 8417361359673230750, guid: bdf4f606dd28a91499658dea5b64b18b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[10]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3568a7411af1e1149b1b52b6a824a6b1, type: 2}
+    - target: {fileID: 8417361359673230750, guid: bdf4f606dd28a91499658dea5b64b18b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[11]
+      value: 
+      objectReference: {fileID: 2100000, guid: 950eccafa94b9c94088f8c8ff6295ab2, type: 2}
+    - target: {fileID: 8417361359673230750, guid: bdf4f606dd28a91499658dea5b64b18b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[12]
+      value: 
+      objectReference: {fileID: 2100000, guid: 70a8e8625e6f9884dac2e88f25108b1b, type: 2}
+    - target: {fileID: 8417361359673230750, guid: bdf4f606dd28a91499658dea5b64b18b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[13]
+      value: 
+      objectReference: {fileID: 2100000, guid: 466f81f2bc7353547816a3236e466d29, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9119,7 +9180,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 9, y: 0.00036621094}
-  m_SizeDelta: {x: 0, y: 252.97}
+  m_SizeDelta: {x: 0, y: 472.63995}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1899707931
 MonoBehaviour:
@@ -9173,13 +9234,14 @@ MonoBehaviour:
     el que se encuentre."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a901a60abe6f0074cb6b6f55f7a59a5c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -5587975158590748145, guid: a901a60abe6f0074cb6b6f55f7a59a5c,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4288443971
   m_fontColor: {r: 0.2627451, g: 0.46274513, b: 0.6117647, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
