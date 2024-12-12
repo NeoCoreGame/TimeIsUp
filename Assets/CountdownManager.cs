@@ -10,8 +10,8 @@ public class CountdownManager : MonoBehaviour
 
     public List<PlayerCountdown> contadores;
 
-    //private float startingTime = 360f;
-    private float startingTime = 40f;
+    private float startingTime = 360f;
+    //private float startingTime = 40f;
     private RespawnPlayerManager _respawnPlayerManager;
 
     private LobbyManager _lobbyManager;

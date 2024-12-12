@@ -7839,6 +7839,8 @@ MonoBehaviour:
     m_InternalValue: 0
   pS: {fileID: 132948137518472014}
   _anim: {fileID: 0}
+  waterClip: {fileID: 8300000, guid: 39963565078e14643a33af049b6dfdb9, type: 3}
+  petuniaClip: {fileID: 8300000, guid: f44662b4cb8bd144c8d7396587d8be27, type: 3}
 --- !u!114 &6544860473220701062
 MonoBehaviour:
   m_ObjectHideFlags: 0
