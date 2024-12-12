@@ -18989,7 +18989,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c3a5e052b9a3642af6cfbe72554d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: fc250be2c3984f148987e06af2d8544e, type: 2}
   sfxObject: {fileID: 0}
 --- !u!4 &2021270558
 Transform:
@@ -20499,6 +20498,7 @@ MonoBehaviour:
   sensitivitySlider: {fileID: 0}
   confirmationPanel: {fileID: 484873391}
   settingsPanel: {fileID: 1153834523}
+  player: {fileID: 0}
 --- !u!1 &2135349003
 GameObject:
   m_ObjectHideFlags: 0

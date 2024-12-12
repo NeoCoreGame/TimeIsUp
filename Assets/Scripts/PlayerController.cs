@@ -47,6 +47,8 @@ public class PlayerController : NetworkBehaviour, IShootable
 
     private InitialCountdown iC;
 
+    public GameObject[] heads;
+
 
     public override void OnNetworkSpawn()
     {

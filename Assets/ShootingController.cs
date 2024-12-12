@@ -106,7 +106,7 @@ public class ShootingController : NetworkBehaviour
 
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     public void OnShootServerRpc(float input)
     {
 

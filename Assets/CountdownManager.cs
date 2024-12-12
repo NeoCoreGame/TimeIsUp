@@ -18,7 +18,7 @@ public class CountdownManager : MonoBehaviour
 
     public GameObject youWon;
 
-    private bool finishedGame;
+    public NetworkVariable<bool> finishedGame = new NetworkVariable<bool>();
 
     private void Start()
     {
@@ -37,7 +37,7 @@ public class CountdownManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_networkManager.IsServer && !finishedGame && _lobbyManager.startCountdown.iCRect.localScale == Vector3.zero)
+        if (_networkManager.IsServer && !finishedGame.Value && _lobbyManager.startCountdown.iCRect.localScale == Vector3.zero)
         {
             foreach (PlayerCountdown _contador in contadores)
             {
@@ -59,7 +59,7 @@ public class CountdownManager : MonoBehaviour
 
             }
 
-            if (!finishedGame)
+            if (!finishedGame.Value)
             {
                 if (contadores.Count == 1 && CheckAlivePlayers() <= 0)
                 {
@@ -67,17 +67,25 @@ public class CountdownManager : MonoBehaviour
                     ResetCounters();
 
                     Invoke("ReturnToLobby", 2f);
-                    finishedGame = true;
+                    finishedGame.Value = true;
                 }
                 if (contadores.Count > 1 && CheckAlivePlayers() <= 1)
                 {
                     //_lobbyManager.ReturnToLobby();
                     ResetCounters();
                     Invoke("ReturnToLobby", 2f);
-                    finishedGame = true;
+                    finishedGame.Value = true;
                 } 
             }
 
+        }
+        if (finishedGame.Value)
+        {
+            youWon.SetActive(true);
+        }
+        else
+        {
+            youWon.SetActive(false);
         }
         if (_lobbyManager.returnPlayersToLobby.Value)
         {
@@ -89,7 +97,7 @@ public class CountdownManager : MonoBehaviour
     {
 
         _lobbyManager.returnPlayersToLobby.Value = true;
-        finishedGame = false;
+        finishedGame.Value = false;
     }
 
     public int CheckAlivePlayers()

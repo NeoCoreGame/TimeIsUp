@@ -94,7 +94,7 @@ public class SettingsMenu : MonoBehaviour
     public void SetSensitivity(float sensitivity)
     {
         settingsValues.sensitivity = sensitivity;
-        player.GetComponent<MouseLook>().UpdateMouseSensitivity(sensitivity);
+        //player.GetComponent<MouseLook>().UpdateMouseSensitivity(sensitivity);
     }
 
     public void ConfirmationToggle()

@@ -22,14 +22,13 @@ public class MouseLook : NetworkBehaviour
     {
         base.OnNetworkSpawn();
 
-        head = playerController.characters[playerController.selectedCharacter.Value].transform.GetChild(0).transform.GetChild(0).transform.GetChild(2).transform.GetChild(0).transform.GetChild(0);
+      //  head = playerController.heads[playerController.selectedCharacter.Value].transform;
     }
 
     public void SetCamera(PlayerController c, Vector3 pos)
     {
         playerController = c;
-        head = playerController.characters[playerController.selectedCharacter.Value].transform.GetChild(0).transform.GetChild(0).transform.GetChild(2).transform.GetChild(0).transform.GetChild(0);
-
+        head = playerController.heads[playerController.selectedCharacter.Value].transform;
         Camera.main.transform.localPosition = pos;
         Camera.main.transform.parent = head.transform;
 
@@ -41,21 +40,9 @@ public class MouseLook : NetworkBehaviour
         //No la multiplico por Time.DeltaTime para que no dependa del FrameRate
         if (NetworkManager.Singleton.IsServer)
         {
-            player.Rotate(Vector3.up * mouseX);
-            head.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+           // player.Rotate(Vector3.up * mouseX);
+            //head.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             //head.Rotate(Vector3.right * xRotation);
-
-        }
-    }
-
-    void LateUpdate()
-    {
-        //No la multiplico por Time.DeltaTime para que no dependa del FrameRate
-        if (NetworkManager.Singleton.IsServer)
-        {
-            head.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-            //head.Rotate(Vector3.right * xRotation);
-
 
         }
     }
@@ -68,8 +55,14 @@ public class MouseLook : NetworkBehaviour
     #region Input
     public void OnLook(InputAction.CallbackContext context)
     {
-        //Debug.Log(context.ReadValue<Vector2>());
-        OnLookServerRpc(context.ReadValue<Vector2>());
+        Debug.Log(context.ReadValue<Vector2>()); 
+        if (IsOwner)
+        {
+
+            OnLookServerRpc(context.ReadValue<Vector2>()); 
+        }
+
+
     }
 
     [ServerRpc(RequireOwnership = false)]

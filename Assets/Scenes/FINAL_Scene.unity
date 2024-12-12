@@ -36678,7 +36678,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contadores: []
-  youWon: {fileID: 0}
+  youWon: {fileID: 1265832705}
+  finishedGame:
+    m_InternalValue: 0
 --- !u!114 &1086405112
 MonoBehaviour:
   m_ObjectHideFlags: 0
