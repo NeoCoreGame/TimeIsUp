@@ -402,18 +402,19 @@ El juego ofrece una experiencia rápida y llena de acción. Los jugadores comien
 
 **Tosty Dory (Robot Tostadora):** este personaje prepara tostadas que serán lanzadas hacia el enemigo para hacerles un gran daño. Su habilidad especial es alargar su brazo y atraer a un personaje como si de un gancho se tratase. Posee una gran vida a cambio de ser lento en cuanto a movimientos. Es excelente en el combate cuerpo a cuerpo debido a su gran daño.
 
-**Petunia (Abuelita Jardinera):** este personaje lanza las verduras que cosecha contra sus enemigos. Con su habilidad especial prepara unas raíces que le permiten bloquear el movimiento de los enemigos alcanzados. Este personaje tiene un equilibrio entre cantidad de vida, velocidad y la cantidad de daño que hace.
+**Petunia (Abuelita Jardinera):** ): este personaje lanza las verduras que cosecha contra sus enemigos. Con su habilidad especial prepara unas raíces que le permiten hacer daño en área. Este personaje tiene un equilibrio entre cantidad de vida, velocidad y la cantidad de daño que hace.
 
 ### 5.4. Personajes enemigos
-**Minion:** este enemigo al ser eliminado otorgará al jugador diez segundos de tiempo extra. Se moverá por el mapa de manera aleatoria y atacará a quien lo ataque primero.
+**Minion:** este enemigo otorga diez segundos más a tu tiempo. Se moverá por el mapa de manera aleatoria. Si encuentra al usuario lo persigue, y una vez el enemigo pierde al usuario, vuelve a su estado aleatorio. Daño de ataque: 10. Vida: 100. Aparición: muchos.
 
-**Minion Volador:** este enemigo al ser eliminado otorgará diez segundos de tiempo extra. Patrullará una zona del mapa y se mantendrá a rango del jugador mientras lo ataca.
+**Minion Volador:** este enemigo otorga veinte segundos más a tu tiempo. Aparecerán menos que el enemigo base y serán más difíciles de disparar porque mantendrán distancia con el jugador. 
+Se moverá por el mapa en zonas concretas que patrullará y atacará al jugador cuando entre en su campo de visión. Si el usuario sale del campo de visión, el volador volverá a patrullar por la zona donde encontró al usuario anteriormente. Daño de ataque: 20. Vida: 200. Aparición: algunos
 
-**Petsy:** este enemigo, una vez ejecutado, se convertirá en tu aliado (lo podrás invocar) y te ayudará con los enemigos base y rival. Se moverá lento hacia los jugadores.
+**Detonatsy:** se autodestruirá al acercarse al jugador tras unos instantes, causando daño en un área. Si el jugador lo elimina antes de que explote, ganará cinco segundos adicionales. Daño de explosión: 80. Vida: 40. Aparición: muy pocos. 
 
-**Slipsy:** este enemigo le otorgará vida al personaje al ser derrotado. Se encuentran alejados de los sitios de combate y evitarán el enfrentamiento contra los jugadores todo lo posible.
+**Slipsy:** este enemigo otorga cuarenta segundos más a tu tiempo.  Se encontrarán en sitios alejados de la zona de combate. Se desplazará de esquina a esquina del mapa y una vez se encuentra con el jugador, este pegará un sprint inicial y empezará a huir para que sea más complicado conseguir la ventaja. Daño de ataque: 0 (no ataca). Vida: 50. Aparición: muy pocos.
 
-**Detonatsy:** este enemigo buscará a los jugadores para explotar una vez se aproximen lo suficiente a su posición.
+**Petsy:** este enemigo otorga sesenta segundos más a tu tiempo. Permanecerá sentado hasta que el usuario le dispare. Una vez se active, se moverá lento e intentará atacar a quien lo ha dañado. Tendrá 3 tipos de ataques diferentes: el simple (10 de daño), el normal (20 de daño) y el doble (50 de daño). Vida: 300. Aparición: muy pocos.
 
 **Latsy:** este enemigo al ser eliminado roba la mitad del tiempo a tu contrincante. Este enemigo atacará a quien lo ataque y posee una gran cantidad de daño.
 
@@ -548,10 +549,6 @@ Para el logo de la empresa se han desarrollado diferentes ideas sobre cómo podr
    <img src="Assets/Arte/Logos/LogoVersionRechazada1.jpg" alt="Logo4" width="350" height="350">
 </p>
 
-<div align="center">
-  
-</div>
-
 Finalmente se optó por una representación más simple con la representación de joysticks en las “O”:
 <p align="center">
   <img src="Assets/Arte/Logos/NeoCoreVersiónBlanca.jpg" alt="LogoFinal1" width="320" height="250">
@@ -637,8 +634,8 @@ Este enemigo es capaz de convertirse en tu aliado una vez derrotado, es por ello
 - Mano derecha de la entidad invasora, este implacable guardián defiende su posición con ferocidad, ansioso por robar el tiempo de aquellos que osen enfrentarlo.
 
 
-### 7.2. Paleta de colores
-**Interfaces**
+### 7.2. Estudio de color
+####Interfaces
 Se han hecho varias pruebas de color para las interfaces, siguiendo esa temática cartoon con colores llamativos:
 <div align="center">
    <img src="Assets/Imagenes GDD/ColorInterfaces.png" alt="Estudio Color Interfaces" width="500" height="260">
@@ -649,6 +646,69 @@ Finalmente se escogió la paleta de colores de azul con toques rojos:
    <img src="Assets/Arte/Interfaces GDD/InterfazCreditos.png" alt="Interfaz Creditos" width="500" height="260">
 </div>
 
+####Personajes
+Se han establecido dos paletas de colores generales, una para los personajes jugables y otra para los enemigos, para utilizarlas como referencia.
+<p align="center">
+   <img src="Assets/Arte/Personajes/PaletaColores.png" alt="Paleta Colores Personajes Jugables" width="350" height="325">
+   <img src="Assets/Arte/Enemigos/PaletaColores.png" alt="Paleta Colores Enemigos" width="350" height="350">
+</p>
+A la izquierda encontramos una paleta de colores llamativa para los personajes jugables para dar ese toque familiar y amigable y sobre todo para poder ser fácilmente localizables en el mapa.
+Por otro lado, a la derecha encontramos con una paleta de colores más oscuros, definida para los enemigos. 
+
+**Personajes Jugables:**
+KidSplash:
+<p align="center">
+   <img src="Assets/Arte/Personajes/SplashKidColor.png" alt="Splash Kid Color" width="350" height="325">
+   <img src="Assets/Arte/Personajes/SplashKidFinal.png" alt="Splash Kid Final" width="350" height="350">
+</p>
+
+Tosty Dory:
+<p align="center">
+   <img src="Assets/Arte/Personajes/RobotColor.png" alt="Robot Color" width="350" height="325">
+   <img src="Assets/Arte/Personajes/RobotFinal.png" alt="Robot Final" width="350" height="350">
+</p>
+
+Petunia:
+<p align="center">
+   <img src="Assets/Arte/Personajes/AbuelitaJardineraColor.png" alt="Abuela Color" width="350" height="325">
+   <img src="Assets/Arte/Personajes/AbuelaFinal.png" alt="Abuela Final" width="350" height="350">
+</p>
+
+**Enemigos:**
+Minion:
+Para el minion se ha hecho dos versiones, una con degradado como formato final de la apariencia del enemigo, y otra sin degradado en el caso de que resulte complejo añadir este en el proyecto final del juego.
+<p align="center">
+   <img src="Assets/Arte/Enemigos/MinionBaseColorGradiente.png" alt="Minion Base Color Gradiente" width="350" height="325">
+   <img src="Assets/Arte/Enemigos/MinionFinal1.png" alt="Minion Final 1" width="350" height="350">
+</p>
+<p align="center">
+   <img src="Assets/Arte/Enemigos/MinionBaseColor.png" alt="Minion Base Color" width="350" height="325">
+   <img src="Assets/Arte/Enemigos/MinionFinal2.png" alt="Minion Final 2" width="350" height="350">
+</p>
+
+Minion Volador:
+<p align="center">
+   <img src="Assets/Arte/Enemigos/MinionVoladorColor.png" alt="Minion Volador Color" width="350" height="325">
+   <img src="Assets/Arte/Enemigos/VoladorFinal.png" alt="Volador Final" width="350" height="350">
+</p>
+
+Detonatsy:
+<p align="center">
+   <img src="Assets/Arte/Enemigos/DetonatsyColor.png" alt="Detonatsy Color" width="350" height="325">
+   <img src="Assets/Arte/Enemigos/ExplosivoFinal.png" alt="Detonatsy Final" width="350" height="350">
+</p>
+
+Slipsy:
+<p align="center">
+   <img src="Assets/Arte/Enemigos/SlipsyColor.png" alt="Slipsy Color" width="350" height="325">
+   <img src="Assets/Arte/Enemigos/EscurridizoFinal.jpg" alt="Slipsy Final" width="350" height="350">
+</p>
+
+Petsy:
+<p align="center">
+   <img src="Assets/Arte/Enemigos/PetsyColor.png" alt="Petsy Color" width="350" height="325">
+   <img src="Assets/Arte/Enemigos/TanqueFinal.png" alt="Petsy Final" width="350" height="350">
+</p>
 
 ## 8. Arte 3D
 ### 8.1. Modelado de escenario
