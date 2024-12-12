@@ -28,6 +28,10 @@ public class ShootingController : NetworkBehaviour
     private PlayerController playerController;
     public Animator _anim;
 
+    public AudioClip waterClip;
+    public AudioClip petuniaClip;
+    private AudioClip shootClip;
+
 
     // Start is called before the first frame update
     void Start()
@@ -66,6 +70,15 @@ public class ShootingController : NetworkBehaviour
             _anim.SetTrigger("Attack"); 
         }
         pS.Play();
+        if(StaticData.characterID == 0)
+        {
+            SFXManager.instance.PlaySFX(waterClip, transform);
+        }
+        else if (StaticData.characterID == 2)
+        {
+            SFXManager.instance.PlaySFX(petuniaClip, transform);
+        }
+
         shootingCdTimer = shootingCooldown;
 
 

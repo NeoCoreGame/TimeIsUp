@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/FINAL_CharacterSelectionScene.unity
     guid: ec458d3a7e75f7e4badcd82e65bc1f15
   - enabled: 1
+    path: Assets/Scenes/FNFINAL_Scene.unity
+    guid: 409c8970e24481e419a1020a92f73ba5
+  - enabled: 0
     path: Assets/Scenes/FINAL_Scene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 0

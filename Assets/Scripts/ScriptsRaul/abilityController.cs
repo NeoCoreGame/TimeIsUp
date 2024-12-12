@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.GraphicsBuffer;
 
-public class abilityController : MonoBehaviour
+public class abilityController : NetworkBehaviour
 {
     public Transform cam;
     public GameObject granny;
@@ -32,8 +33,15 @@ public class abilityController : MonoBehaviour
     public AudioClip hookClip;
     public AudioClip rootsClip;
 
+    public override void OnNetworkSpawn()
+    {
+        if (!IsOwner) { enabled = false; }
+        base.OnNetworkSpawn();
+    }
+
     private void Start()
     {
+
         cam = Camera.main.transform;
 
         skIcon = GameObject.Find("Character1Icons");
@@ -71,11 +79,11 @@ public class abilityController : MonoBehaviour
                 skIcon.SetActive(false);
                 break;
         }
-        
 
-        
 
-        
+
+
+
     }
 
     private void Update()
@@ -85,7 +93,8 @@ public class abilityController : MonoBehaviour
             case 0:
                 if (Input.GetKeyDown(KeyCode.Q) && !bombAbility.isOnCooldown)
                 {
-                    BombAbility();
+                    // BombAbility(); 
+                    BombAbilityServerRPC();
                     SFXManager.instance.PlaySFX(bombThrowClip, transform);
                 }
                 bombAbility.AbilityInput();
@@ -110,11 +119,12 @@ public class abilityController : MonoBehaviour
             case 2:
                 if (Input.GetKeyDown(KeyCode.Q) && !_stunAbility.isOnCooldown)
                 {
-                    StunAbility();
+                    //StunAbility();
+                    StunAbilityServerRPC();
                     SFXManager.instance.PlaySFX(rootsClip, transform);
                 }
-               
-               _stunAbility.AbilityInput();
+
+                _stunAbility.AbilityInput();
                 _stunAbility.AbilityCooldown();
                 break;
         }
@@ -140,19 +150,32 @@ public class abilityController : MonoBehaviour
             // var bombInstance = Instantiate(bombObject, granny.transform.position + granny.transform.forward, granny.transform.rotation);
 
             bombInstanceRb.useGravity = false;
-            bombAbility.transform.position = granny.transform.position + granny.transform.forward;
+            bombInstanceRb.isKinematic = true;
+            bombAbility.transform.localPosition = granny.transform.position + granny.transform.forward;
             bombAbility.transform.parent = null;
-            bombAbility.transform.position = granny.transform.position + granny.transform.forward;
+            bombAbility.transform.localPosition = granny.transform.position + granny.transform.forward;
 
             bombInstanceRb.useGravity = true;
+            bombInstanceRb.isKinematic = false;
 
 
             Vector3 forceToAdd = granny.transform.transform.forward * bombAbility.GetComponent<bombAbility>().throwForce + transform.up * bombAbility.GetComponent<bombAbility>().throwUpwardForce;
 
             bombInstanceRb.AddForce(forceToAdd, ForceMode.Impulse);
 
-            bAB.ThrowBomb(); 
+            bAB.ThrowBomb();
         }
+    }
+    [ServerRpc(RequireOwnership = false)]
+    void BombAbilityServerRPC()
+    {
+        BombAbility();
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    void StunAbilityServerRPC()
+    {
+        StunAbility();
     }
 
     void StunAbility()
@@ -161,7 +184,7 @@ public class abilityController : MonoBehaviour
 
         //var stunInstance = Instantiate(stunObject, granny.transform.position + (new Vector3(0, -1, 0)) + granny.transform.forward * 10, granny.transform.rotation);
         _stunAbility.transform.parent = null;
-        _stunAbility.transform.position = granny.transform.position + (new Vector3(0, -1, 0)) + granny.transform.forward * 10;
+        _stunAbility.transform.localPosition = granny.transform.position + (new Vector3(0, -1, 0)) + granny.transform.forward * 10;
         sAB.ThrowSkill();
     }
 

@@ -10,8 +10,8 @@ public class CountdownManager : MonoBehaviour
 
     public List<PlayerCountdown> contadores;
 
-    //private float startingTime = 360f;
-    private float startingTime = 40f;
+    private float startingTime = 360f;
+    //private float startingTime = 40f;
     private RespawnPlayerManager _respawnPlayerManager;
 
     private LobbyManager _lobbyManager;
@@ -115,5 +115,11 @@ public class CountdownManager : MonoBehaviour
     public void ResetCounters()
     {
         foreach(PlayerCountdown playerCountdown in contadores) { playerCountdown.avaliableTime.Value = 360f; }
+    }
+
+    public void GoOutNet()
+    {
+        Destroy(NetworkManager.Singleton.gameObject);
+      
     }
 }

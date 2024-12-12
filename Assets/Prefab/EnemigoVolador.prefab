@@ -538,6 +538,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -2.9579406
       objectReference: {fileID: 0}
+    - target: {fileID: -1526964690268444965, guid: 16d250ae4b7c7b04bb54ce7453b100e8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 36a6fceb2448b694f8957d7abefafc91, type: 2}
+    - target: {fileID: -1526964690268444965, guid: 16d250ae4b7c7b04bb54ce7453b100e8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: b735ce06834e8304c94214dfd8b45619, type: 2}
+    - target: {fileID: -1526964690268444965, guid: 16d250ae4b7c7b04bb54ce7453b100e8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: cc7f8b4a40a632f448d03d7b2a295978, type: 2}
+    - target: {fileID: -1526964690268444965, guid: 16d250ae4b7c7b04bb54ce7453b100e8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d6f9e7021c16a946a654a8fd6d49351, type: 2}
+    - target: {fileID: -1526964690268444965, guid: 16d250ae4b7c7b04bb54ce7453b100e8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: a4ad61cf3269cfd419a7f0f685963c9d, type: 2}
     - target: {fileID: -769993791385146879, guid: 16d250ae4b7c7b04bb54ce7453b100e8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -770,7 +795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3262063684
+  GlobalObjectIdHash: 3270227955
   InScenePlacedSourceGlobalObjectIdHash: 3262063684
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
