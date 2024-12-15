@@ -18,7 +18,7 @@
    - Se ha añadido el segundo escenario
    - Se han modelado y texturizado todos los personajes menos el final
    - Se han riggeado y animado todos los personajes, tanto enemigos como jugables
-   - 
+     
 ### GDD versión 1.0.0:
    -	Se ha añadido el postmortem de la versión Beta
    -	Se ha completado el estudio de color de los personajes
@@ -29,6 +29,10 @@
    -	Se ha mejorado la implementación de las interfaces
    -	Se ha mejorado el feedback de las interfaces
 
+GDD versión 1.0.1
+-	Se ha añadido el postmortem de la versión Gold
+-	Se ha llevado a cabo las estrategias de publicación y redes
+-	Se han elaborado y programado publicaciones para las redes sociales
 
 ## 2. Introducción
 El presente documento introduce el Game Design Document (GDD) del videojuego “Time Is Up”. A lo largo del desarrollo de este, se explicará a detalle las características que lo definen, así como el propósito del juego y su modelo de negocio. 
@@ -989,6 +993,22 @@ Los efectos de sonido para los personajes han sido obtenidos en freesound y se h
 **- Rindow:** en mi caso, como encargada de la parte de diseño 2D del juego, me propuse desarrollar los bocetos de todos los enemigos restantes, hacer un estudio de color de los personajes y las interfaces, completar todo el HUD, realizar ilustraciones de los personajes para la selección de personajes y las redes sociales y mantener activos los medios. A medida que avanzaba y lo veía con perspectiva, me propuse demasiadas metas que me llevaron a completar menos de los esperado, pero aun así estoy contenta con lo desarrollado. Pude hacer los bocetos de cuatro enemigos más (Minion Volador, Detonatsy, Slipsy y Petsy), tardando más de lo que creía ya que me costó encontrar referencias de lo que quería plasmar, además de que iba cambiando de idea a medida que lo desarrollaba haciendo que el proceso se alargara más de la cuenta. Por otro lado, hice un estudio de color con las interfaces antes de desarrollarlas todas para ver que colores cuadraban más con la estética del juego, cuando quedé satisfecha me puse a hacer el resto de pantallas. Me dio tiempo también a hacer unas cuantas pequeñas animaciones 2D como por ejemplo la pantalla de carga o el logo de la empresa. Siendo mi primera vez animando en 2D, me siento orgullosa del resultado. En cuanto a las redes sociales, creo que me empeñe demasiado en que estuviera visualmente atractivo, provocando que no se subiese demasiado contenido diario, por ello me he propuesto ponerle más empeño a este punto para las Gold Master.
 
 **- Xopo:** En mi parte, que es la programación y el diseño, los retos más grandes fueron fabricar unas mecánicas y dinámicas que fueran sencillas de entender, se sintieran bien de jugar y que fueran comprensibles para un juego multijugador, además del gran reto de realizar la conectividad del juego. Aún orgulloso por el trabajo realizado, el hecho de que el juego pueda conectar a varias personas y jugar partidas que reflejen las mecánicas de juego, me hubiera gustado haber pulido de mayor manera los sistemas para lograr un flujo de juego más satisfactorio, pulido y profesional, e iterar más con el diseño de juego hasta asegurarme de que encaja como debería. Además, me hubiera gustado añadir más opciones diferentes, como accesibilidad y localización, y diferentes mecánicas que, por falta de tiempo, no han llegado todavía, pero que de cara a la gold máster serían interesantes, como mayor variedad de enemigos.
+
+### 11.3. Gold
+- Equipo NeoCore:
+  
+- niconii (Blanca):
+  
+- Kr1veN (Daniel):
+  
+- QueZz (Alejandro):
+  
+- Raúl:
+  
+- Rindow (Andrea): para esta recta final del desarrollo del proyecto, he podido completar algunas tareas que me había propuesto para la anterior fase. He podido desarrollar el estudio de color para los personajes jugables y los enemigos, contando con la opinión del resto del equipo y en ocasiones con los seguidores del juego en las redes sociales para elegir el color final. Este estudio no estaba pensado para ser realizado tan tarde en la fase de desarrollo del proyecto ya que por este retraso mi compañero Dani (encargado del modelado 3D de los personajes) ha tenido que cambiar los colores de estos. Aun así no ha dado problemas y se han establecido los colores acordados lo cual me hace muy feliz. Por otro lado, he ido subiendo al proyecto las partes del HUD por separado para que el equipo de programación las fuera colocando en el proyecto y reutilizando algunas partes para otras interfaces si es necesario. También he organizado, editado y programado las publicaciones de las redes sociales de instagram y X (twitter). La verdad que, a pesar de que no he podido hacer algunas cosas que tenía planeadas, estoy orgullosa del trabajo que he aportado para este proyecto.
+  
+- Xopo (Manuel Alejandro):
+
 
 ## 12. Integrantes del equipo y roles
 ### Manuel Alejandro Villalba Cruz	
